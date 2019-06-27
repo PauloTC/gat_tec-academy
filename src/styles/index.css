@@ -1,0 +1,306 @@
+header {
+    background: rgba(41,9,83,1);
+    background: -moz-linear-gradient(top, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(41,9,83,1)), color-stop(100%, rgba(61,25,120,1)));
+    background: -webkit-linear-gradient(top, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: -o-linear-gradient(top, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: -ms-linear-gradient(top, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: linear-gradient(to bottom, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#290953', endColorstr='#3d1978', GradientType=0 );
+}
+   
+.index-header-body{
+    flex: 1 1 auto;
+    overflow-x: hidden;
+}
+
+/*header > div {
+    height: 100vh;
+    flex: 1 1 auto;
+    overflow-x: hidden;
+}*/
+
+#landing {
+    overflow: hidden;
+    height: 500px;
+    width: 100%;
+}
+
+#welcome-text {
+    /* margin-top: 120px; */
+    font-size: 60px;
+    /*line-height: normal;*/
+    line-height: 1.39;
+    padding-top: 100px;
+}
+
+#welcome-img {
+    height: 700px;
+    right: 40px;
+    bottom: -90px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    padding-top: 100px;
+}
+
+#tec-academy #image-container {
+    min-height: 200px;
+}
+
+#tec-academy #img-01 {
+    top: 80px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#tec-academy #img-02 {
+    bottom: 0;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#premios .tab-content {
+    min-height: 400px;
+}
+
+#premios #primer-puesto {
+    margin-bottom: 60px;
+}
+
+#premios #primer-puesto img {
+    height: 450px;
+}
+
+#premios #primer-puesto > div.container {
+    background-image: url('../images/sv-skyline.png');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
+
+#premios .img-premios {
+	height: 200px;
+	padding-top: 8px;
+	margin-bottom: 120px;
+}
+
+
+#ganar-puntos {
+    background-image: url('../images/nubes.svg');
+    background-position: 0 0;
+    background-repeat: repeat-x;
+	background-color: #F2F6FF;
+	padding-top: 40px;
+}
+
+#ganar-puntos .header {
+    border-radius: 8px;
+    padding: 12px 30px;
+    text-align: center;
+    min-width: 200px;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+#ganar-puntos #grupales .header {
+    background-color: #461886;
+}
+
+#ganar-puntos #personales .header {
+    background-color: #EB2B63;
+}
+
+#ganar-puntos .box-puntos {
+	background: white;
+    border-radius: 8px;
+    padding: 48px 24px 24px 24px;
+    position: relative;
+    top: -24px;
+    min-height: 261px;
+}
+
+#purple-bg {
+    background: rgba(41,9,83,1);
+    background: -moz-linear-gradient(top, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(41,9,83,1)), color-stop(100%, rgba(61,25,120,1)));
+    background: -webkit-linear-gradient(top, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: -o-linear-gradient(top, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: -ms-linear-gradient(top, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: linear-gradient(to bottom, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#290953', endColorstr='#3d1978', GradientType=0 );
+}
+
+.sectionWrapper {
+    padding: 50px 0;
+}
+
+.purple-bottom {
+    overflow: auto;
+    padding: 0px 0;
+    background: #1A043B;
+}
+.home_banner-img{
+    right: -10px;
+    top : -50px;
+    height: 600px;
+}
+
+
+@media (max-width: 576px) {
+
+    #welcome-text {
+        font-size: 31px;
+    }
+
+    #welcome-img {
+        height: 450px;
+        /*right: 0;*/
+        bottom: -30px;
+        margin-right: -40px;
+        padding-top: 147px;
+    }
+
+    .text-yellow {
+        font-size: 35px;
+    }
+
+    #tec-academy #img-01 {
+        top: 27;
+        right: 6%;
+        height: 86%;
+    }
+
+    #tec-academy #img-02 {
+        top: 0;
+        left: 5%;
+        height: 132px;
+    }
+
+    .capa_a_ocultar {
+        display: none;
+    }
+
+    #premios #primer-puesto img {
+        height: 290px;
+    }
+
+    #premios .img-premios {
+        height: 200px;
+        padding-top: 8px;
+        margin-bottom: 51px;
+    }
+
+    .container-fluid {
+        width: 100%;
+        padding-right: 0px; 
+        padding-left: 0px; 
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+
+}
+
+
+@media (max-width: 1200px) {
+    .home_banner-title {
+        font-size: 45px;
+    }
+    .home_banner-subtitle strong{
+        font-size: 55px;
+    }
+}
+
+@media (min-width: 1200px) { 
+    #tec-academy #img-01 {
+        right: 40px;
+        height: 285px;
+    }
+    
+    #tec-academy #img-02 {
+        left: 40px;
+        height: 195px;
+    }
+}
+
+@media (min-width: 1400px) {
+    #welcome-img {
+        height: 750px;
+        right: 100px;
+        bottom: -110px;
+    }
+}
+
+
+
+
+@media (max-width: 992px) {
+    .home_banner-img {
+        top: inherit;
+        bottom: -90px;
+        height: 500px;;
+    }
+}
+@media (min-width: 992px) { 
+    #tec-academy #img-01 {
+        right: 0px;
+        height: 285px;
+    }
+    
+    #tec-academy #img-02 {
+        left: 0px;
+        height: 185px;
+    }
+}
+@media (min-width: 768px) { 
+    #tec-academy #img-01 {
+        top: 80px;
+        right: 0;
+        height: 240px;
+    }
+    
+    #tec-academy #img-02 {
+        left: 0;
+        height: 175px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home_banner-img{
+        top: inherit;
+        bottom: -120px;
+        height: 500px;
+        right: -15%;
+    }
+    #welcome-text {
+        padding-top: 140px;
+    }
+}
+
+@media (min-width: 576px) { 
+
+    #tec-academy #image-container {
+        min-height: 350px;
+    }
+
+    #tec-academy #img-01 {
+        top: 0;
+        right: 30px;
+        height: 280px;
+    }
+    
+    #tec-academy #img-02 {
+        left: 30px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 576px){
+    .home_banner-title {
+        font-size: 35px;
+    }
+    .home_banner-subtitle strong{
+        font-size: 40px;
+    }
+}

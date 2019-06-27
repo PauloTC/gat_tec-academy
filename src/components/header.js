@@ -1,34 +1,46 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import logo from "../images/logo-tecacademy.png"
+import logonega from '../images/logo-tecacademy-nega.png'
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+<header className="d-flex">
+    <div className="position-relative index-header-body">
+        <div id="menu-container" className="container-fluid fixed-top navbar-fixed-top">
+            <div className="container">
+                <nav id="nav-menu" className="navbar navbar-expand-lg navbar-dark">
+                    <a className="navbar-brand" href="/">
+                        <img id="logo" src={logo} height="60" className="d-inline-block align-top d-none logo" alt="" />
+                        <img id="logo-nega" src={logonega} height="60" className="d-inline-block align-top d-none" alt="" />
+                    </a>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul className="navbar-nav text-navbar-nav">
+                            <li className="nav-item">
+                                <a className="nav-link" href="#tec-academy">Tec Academy</a>
+                            </li>
+                            {/*<li className="nav-item">
+                                <a className="nav-link" href="/#premios">Premios</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/#ganar-puntos">Puntos</a>
+                            </li>*/}
+                            <li className="nav-item">
+                                <a className="nav-link" href="/inscripcion">Cursos</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="/puntaje">Puntaje</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
     </div>
-  </header>
+</header>
 )
 
 Header.propTypes = {

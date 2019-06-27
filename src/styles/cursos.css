@@ -1,0 +1,330 @@
+﻿header {
+    background: rgba(41,9,83,1);
+    background: -moz-linear-gradient(top, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(41,9,83,1)), color-stop(100%, rgba(61,25,120,1)));
+    background: -webkit-linear-gradient(top, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: -o-linear-gradient(top, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: -ms-linear-gradient(top, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: linear-gradient(to bottom, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#290953', endColorstr='#3d1978', GradientType=0 );
+}
+
+    .cursos-header-body{
+        height: 404px;
+        flex: 1 1 auto;
+        overflow-x: hidden;
+    }
+
+    /*header > div {
+        height: 80vh;
+        flex: 1 1 auto;
+        overflow-x: hidden;
+    }*/
+
+
+
+#welcome-text {
+    /* margin-top: 20px; */
+    font-size: 60px;
+    background: linear-gradient(to bottom, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    /*line-height: normal;*/
+    line-height: 1.39;
+    /* padding-top: 100px; */
+    height: 80vh ;
+}
+
+#tec-academy #image-container {
+    min-height: 200px;
+}
+
+#tec-academy #img-01 {
+    top: 80px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#tec-academy #img-02 {
+    bottom: 0;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#premios .tab-content {
+    min-height: 400px;
+}
+
+#premios #primer-puesto {
+    margin-bottom: 60px;
+}
+
+    #premios #primer-puesto img {
+        height: 450px;
+    }
+
+    #premios #primer-puesto > div.container {
+        /* background-image: url('../images/sv-skyline.png'); */
+        background-position: bottom center;
+        background-repeat: no-repeat;
+    }
+
+#premios .img-premios {
+    height: 200px;
+    padding-top: 8px;
+    margin-bottom: 120px;
+}
+
+#link-malla {
+    top: -20px;
+    right: 0;
+}
+
+
+#curso-activo {
+    background-color: #ffffff;
+    padding-top: 40px;
+}
+
+    #curso-activo .header {
+        border-radius: 8px;
+        padding: 12px 30px;
+        text-align: center;
+        min-width: 200px;
+        width: 50%;
+        margin: auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    #curso-activo #grupales .header {
+        background-color: #461886;
+    }
+
+    #curso-activo #personales .header {
+        background-color: #EB2B63;
+    }
+
+    #curso-activo .box-puntos {
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 20px 30px #E9F0FA;
+        padding: 32px;
+        top: -90px;
+        min-height: 240px;
+        margin: auto;
+        position: relative;
+        z-index: 2;
+    }
+
+.box-puntos img{
+    max-width: 100%
+}
+#purple-bg {
+    background: rgba(41,9,83,1);
+    background: -moz-linear-gradient(top, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(41,9,83,1)), color-stop(100%, rgba(61,25,120,1)));
+    background: -webkit-linear-gradient(top, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: -o-linear-gradient(top, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: -ms-linear-gradient(top, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: linear-gradient(to bottom, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#290953', endColorstr='#3d1978', GradientType=0 );
+}
+
+.sectionWrapper {
+    padding: 50px 0;
+}
+
+.purple-bottom {
+    overflow: auto;
+    padding: 0px 0;
+    background: #1A043B;
+}
+
+.cursos-hard-bg {
+    overflow: auto;
+    padding: 0px 0;
+    background: #F3F8FE;
+}
+
+.post_cursos img {
+    max-width: 100%;
+    min-width: 100%;
+    height: auto;
+}
+
+.curso_hard_text {
+    margin-right: 5px !important;
+    margin-left: 5px !important;
+    padding-top: 0px !important;
+    padding-right: 14px !important;
+    padding-left: 14px !important;
+    padding-bottom: 70px !important;
+    font-size: 15px;
+}
+
+.curso_hard_button {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    padding-right: 0px !important;
+    padding-left: 137px !important;
+}
+
+.image_featured_text.round_img > img {
+    border-radius: 50%;
+}
+
+.image_featured_text > img {
+    float: left;
+    margin: 3px 16px 0 0;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    text-align: center;
+    -webkit-transition-duration: .3s;
+    -moz-transition-duration: .3s;
+    -ms-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
+}
+
+#nav-fecha-hora ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-fechas-hora li {
+    float: left;
+    margin: 0 0.15em;
+    border: 5px groove #FFAA33;
+}
+
+.curso-mes {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 7px 24px 7px 24px;
+    top: 0px;
+    position: relative;
+    border: 1px solid #EB2B63;
+    float: right;
+    margin-top: 15px; 
+}
+
+/* Aquí comienza el código css para la ventana popup */
+
+
+/* Aquí termina el código css para la ventana popup */
+
+@media (max-width: 576px) {
+    #welcome-text {
+        font-size: 31px;
+    }
+
+    #welcome-img {
+        height: 450px;
+        /*right: 0;*/
+        bottom: -30px;
+        margin-right: -40px;
+        padding-top: 147px;
+    }
+
+    .text-yellow {
+        font-size: 35px;
+    }
+
+    #tec-academy #img-01 {
+        top: 0;
+        right: 15%;
+        height: 75%;
+    }
+
+    #tec-academy #img-02 {
+        left: 10%;
+        height: 107px;
+    }
+
+    .curso_hard_button {
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+        padding-right: 0px !important;
+        padding-left: 207px !important;
+    }
+
+    #curso-activo .box-puntos {
+        /* padding: 48px 14px 0px 14px; */
+        top: -150px;
+    }
+}
+
+@media (min-width: 576px) {
+
+    #tec-academy #image-container {
+        min-height: 350px;
+    }
+
+    #tec-academy #img-01 {
+        top: 0;
+        right: 30px;
+        height: 280px;
+    }
+
+    #tec-academy #img-02 {
+        left: 30px;
+        height: 180px;
+    }
+
+    .curso_hard_button {
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+        padding-right: 0px !important;
+        padding-left: 124px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    #tec-academy #img-01 {
+        top: 80px;
+        right: 0;
+        height: 240px;
+    }
+
+    #tec-academy #img-02 {
+        left: 0;
+        height: 175px;
+    }
+
+    #link-malla{
+        position: static;
+    }
+}
+
+@media (min-width: 992px) {
+    #tec-academy #img-01 {
+        right: 0px;
+        height: 285px;
+    }
+
+    #tec-academy #img-02 {
+        left: 0px;
+        height: 185px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #tec-academy #img-01 {
+        right: 40px;
+        height: 285px;
+    }
+
+    #tec-academy #img-02 {
+        left: 40px;
+        height: 195px;
+    }
+}
+
+@media (min-width: 1400px) {
+    #welcome-img {
+        height: 750px;
+        right: 100px;
+        bottom: -110px;
+    }
+}

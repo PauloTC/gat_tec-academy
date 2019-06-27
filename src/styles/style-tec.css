@@ -1,0 +1,252 @@
+/* @font-face {
+    font-family: "Avenir";
+    src: url("fonts/Avenir.ttc");
+}
+
+@font-face {
+    font-family: "Avenir";
+    src: url("fonts/AvenirLTStd-Black.otf");
+    font-weight: bold;
+} */
+
+* {
+    font-family: 'Avenir', Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;    
+}
+h1 {
+	color: white;
+	font-size: 60px;
+	font-weight: 900;
+}
+h2 {
+	font-size: 42px;
+	font-weight: 900;
+	margin-bottom: 24px;
+}
+h5, .puntaje-individual thead th {
+	color: #B9007E;
+	font-size: 18px;
+	font-weight: 700;
+}
+h5.h5-p {
+	font-size: 16px;
+	color: #909094;
+	margin-bottom: 16px;
+}
+.leadboard-p{
+	font-size: 16px;
+}
+
+section {
+	margin: 80px 0 120px;
+}
+
+/*CARDS*/
+.card {
+	background-color: #f8f9fd;
+	border: none!important;
+}
+
+.card-group .col-xs-1, .card .col-sm-6, .card .col-md-3{
+	display: flex;
+}
+
+.card .card-footer {
+	background-color: #f8f9fd;
+}
+
+.card .closed {
+	background-color: #F5F5F7;
+}
+.card .closed .text-muted {
+	color: #D1D1D4!important;
+}
+
+
+/*Malla de Cursos*/
+.first-section {
+	background-color: #321065;
+	padding: 80px 0;
+
+}
+
+.first-section h1:last-child{
+	color: #F5A623;
+}
+/* Fin Malla de Cursos*/
+
+/* Leaderboard */
+/*.card-puntaje .card-header {
+	background-color: #FFB83C;
+}*/
+.pt-line {
+	width: 100%;
+    height: 1px;
+    background-color: #32106524;
+    margin-bottom: 24px;
+} 
+.puesto1 {
+	text-align: center;
+}
+.puesto1 img {
+	margin-bottom: 20px;
+}
+
+.card {
+	width: 100%;
+}
+.card-puntaje .card-header {
+	border-top: 4px solid #FFB83C;
+}
+.logo-grupal-primero img {
+	 width:100px;
+    height:100px;
+    border-radius:50px;
+    border: 4px solid white;
+    box-shadow: 0px 8px 16px #32116526;
+}
+.card-puntaje .media {
+	padding: 24px;
+}
+
+.card-facebook .card-header {
+	background-color: rgb(84, 138, 249);
+}
+.card-facebook .card-body {
+	background-color: rgb(84, 138, 249, 0.05);
+}
+
+.card-netflix .card-header {
+	background-color: rgb(225, 43, 43);
+}
+
+.card-netflix .card-body {
+	background-color: rgb(247, 245, 246);
+}
+
+.card-google .card-header {
+	background-color: rgb(255,184,60);
+}
+.card-google .card-body {
+	background-color: rgb(255, 249, 244);
+}
+
+.card-tesla .card-header {
+	background-color: rgb(197,51,47);
+}
+.card-tesla .card-body {
+	background-color: rgba(197, 51, 47, 0.02);
+}
+
+.card-apple .card-header {
+	background-color: rgb(121,105,167);
+}
+.card-apple .card-body {
+	background-color: rgba(166, 105, 167, 0.13);
+}
+
+.leaderboard .card-header {
+	color: white;
+	font-size: 20px;
+	font-weight: 500;
+}
+.leaderboard .trophy img {
+	width: 80px;
+	margin-right: 20px;
+}
+
+.o-puesto .card-body{
+	padding: 12px ;
+	font-size: 20px;
+    font-weight: 500;
+}
+.o-puesto-apple {
+	border-top: 4px solid rgb(121,105,167);
+	border-bottom: 8px solid white;
+}
+.o-puesto-facebook {
+	border-top: 4px solid rgb(84, 138, 249);
+	border-bottom: 8px solid white;
+}
+.o-puesto-google {
+	border-top: 4px solid rgb(255,184,60);
+	border-bottom: 8px solid white;
+}
+.o-puesto-netflix {
+	border-top: 4px solid rgb(225, 43, 43);
+	border-bottom: 8px solid white;
+}
+.o-puesto-tesla {
+	border-top: 4px solid rgb(197,51,47);
+	border-bottom: 8px solid white;
+}
+.puntaje-individual {
+	margin-top: 48px;
+}
+.puntaje-individual table {
+	text-align: center;
+}
+
+.puntaje-individual table thead {
+	background-color: #f8f9fd;
+	border-bottom: 2px solid #B9007E;
+}
+.puntaje-individual .table-light-tec {
+	background-color: #f8f9fd;
+}
+.ind-logo {
+	width: 24px;
+	border-radius: 100%;
+}
+/* Fin Leaderboard */
+
+
+
+
+
+/* MOBILE */
+
+@media (max-width: 576px) {
+	h1 {
+		font-size: 40px;
+	}
+	h2 {
+		font-size: 24px;
+	}
+	h3 {
+		font-size: 20px;
+	}
+	h5 {
+		font-size: 16px;
+	}
+	section {
+		margin: 40px 0 60px;
+	}
+	.leaderboard .card {
+		margin-bottom: 20px;
+	}
+	.leaderboard .card-header, .o-puesto .card-body {
+		font-size: 16px;
+		text-align: center;
+	}
+	.leaderboard .trophy img {
+		width: 40px;
+	}
+	.puntaje-individual table thead th, tbody tr {
+		font-size: 13px;
+	}
+	.table td, .table th {		
+    padding: .75rem .3rem;
+  }
+}
+
+/* FIN MOBILE */
+
+/*@media (min-width: 768px) { ... }
+
+@media (min-width: 992px) { ... }
+
+@media (min-width: 1200px) { ... }
+
+*/

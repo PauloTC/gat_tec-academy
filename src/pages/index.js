@@ -1,5 +1,11 @@
 import React from "react"
+
 import { Link } from "gatsby"
+
+import BannerHome from "../components/home/home-banner"
+import HomeAcademy from "../components/home/home-academy"
+import HomeAwards from "../components/home/home-awards"
+import HomePoints from "../components/home/home-points"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -7,14 +13,13 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    {/* <SEO title="Home" /> */}
+
+    <BannerHome />
+    <HomeAcademy />
+    <HomeAwards />
+    <HomePoints />
+    {/* <Link to="/page-2/">Go to page 2</Link> */}
   </Layout>
 )
 
