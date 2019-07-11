@@ -3,10 +3,27 @@ import PropTypes from "prop-types"
 import React from "react"
 import logo from "../images/logo-tecacademy.png"
 import logonega from '../images/logo-tecacademy-nega.png'
+import { Navbar, Nav, NavDropdown, Image, Container } from 'react-bootstrap';
 
 const Header = ({ siteTitle }) => (
-<header className="d-flex">
-    <div className="position-relative index-header-body">
+<Container className="container">
+    <Navbar collapseOnSelect expand="lg" fixed="top"  className="header" >
+        <Navbar.Brand href="#home">
+            <img   id="logo" src={logo} height="60" />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+            </Nav>
+            <Nav>
+                <Nav.Link  class="nav-link" href="#deets"> Tec Academy </Nav.Link>
+                <Nav.Link class="nav-link" href="#memes"> Premios </Nav.Link>
+                <Nav.Link class="nav-link" href="puntos"> Puntos </Nav.Link>
+                <Nav.Link class="nav-link" href="#pregutnas"> Preguntos </Nav.Link>
+            </Nav>
+        </Navbar.Collapse>
+    </Navbar>
+    {/* <div className="position-relative index-header-body">
         <div id="menu-container" className="container-fluid fixed-top navbar-fixed-top">
             <div className="container">
                 <nav id="nav-menu" className="navbar navbar-expand-lg navbar-dark">
@@ -22,25 +39,26 @@ const Header = ({ siteTitle }) => (
                             <li className="nav-item">
                                 <a className="nav-link" href="#tec-academy">Tec Academy</a>
                             </li>
-                            {/*<li className="nav-item">
+                            <li className="nav-item">
                                 <a className="nav-link" href="/#premios">Premios</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/#ganar-puntos">Puntos</a>
-                            </li>*/}
+                            </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/inscripcion">Cursos</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/puntaje">Puntaje</a>
                             </li>
+                            <Button variant="primary">Primary</Button>
                         </ul>
                     </div>
                 </nav>
             </div>
         </div>
-    </div>
-</header>
+    </div> */}
+</Container>
 )
 
 Header.propTypes = {

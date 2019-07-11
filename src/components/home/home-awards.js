@@ -4,9 +4,25 @@ import groupprize from "../../images/premiogrupal.svg"
 import singleprize from "../../images/premioindividual.svg"
 import prizes from "../../images/ico-premios.svg"
 
+import { Tab, Tabs, Container } from 'react-bootstrap';
+
 const HomeAwards = () => {
   return (
+
     <div id="premios" className="page-section">
+      <Container>
+        <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+          <Tab eventKey="home" title="Home">
+            <h3>Home</h3>
+          </Tab>
+          <Tab eventKey="profile" title="Profile">
+            <h3> Profile </h3>
+          </Tab>
+          <Tab eventKey="contact" title="Contact" >
+            <h3>Contact</h3>
+          </Tab>
+        </Tabs>
+      </Container>
       <div className="container">
         <div className="row">
           <div className="col-sm-12">
