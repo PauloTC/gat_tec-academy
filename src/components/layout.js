@@ -11,9 +11,10 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
-import "../plugins/bootstrap/css/bootstrap-grid.css"
-import "../plugins/bootstrap/css/bootstrap-reboot.css"
-import "../plugins/bootstrap/css/bootstrap.css"
+// import "../plugins/bootstrap/css/bootstrap-grid.css"
+// import "../plugins/bootstrap/css/bootstrap-reboot.css"
+import "../plugins/react-bootstrap/bootstrap.min.css"
+// import "../plugins/react-bootstrap/react-bootstrap.min.js"
 // import "../plugins/bootstrap/js/bootstrap.js"
 
 

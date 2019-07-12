@@ -1,13 +1,12 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import logo from "../images/logo-tecacademy.png"
-import logonega from '../images/logo-tecacademy-nega.png'
-import { Navbar, Nav, NavDropdown, Image, Container } from 'react-bootstrap';
+import  "../styles/header.css"
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 const Header = ({ siteTitle }) => (
-<Container className="container">
-    <Navbar collapseOnSelect expand="lg" fixed="top"  className="header" >
+<Container>
+    <Navbar collapseOnSelect expand="lg" fixed="top" bg="dark" variant="dark"  className="header" >
         <Navbar.Brand href="#home">
             <img   id="logo" src={logo} height="60" />
         </Navbar.Brand>
@@ -16,10 +15,10 @@ const Header = ({ siteTitle }) => (
             <Nav className="mr-auto">
             </Nav>
             <Nav>
-                <Nav.Link  class="nav-link" href="#deets"> Tec Academy </Nav.Link>
-                <Nav.Link class="nav-link" href="#memes"> Premios </Nav.Link>
-                <Nav.Link class="nav-link" href="puntos"> Puntos </Nav.Link>
-                <Nav.Link class="nav-link" href="#pregutnas"> Preguntos </Nav.Link>
+                <Nav.Link  className="nav-link" href="#deets"> Tec Academy </Nav.Link>
+                <Nav.Link className="nav-link" href="#memes"> Premios </Nav.Link>
+                <Nav.Link className="nav-link" href="puntos"> Puntos </Nav.Link>
+                <Nav.Link className="nav-link" href="#pregutnas"> Preguntas </Nav.Link>
             </Nav>
         </Navbar.Collapse>
     </Navbar>

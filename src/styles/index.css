@@ -8,7 +8,6 @@ header {
     background: linear-gradient(to bottom, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#290953', endColorstr='#3d1978', GradientType=0 );
 }
-   
 .index-header-body{
     flex: 1 1 auto;
     overflow-x: hidden;
@@ -140,11 +139,11 @@ header {
     padding: 0px 0;
     background: #1A043B;
 }
-.home_banner-img{
+/* .home_banner-img{
     right: -10px;
     top : -50px;
     height: 600px;
-}
+} */
 
 
 @media (max-width: 576px) {
@@ -203,14 +202,7 @@ header {
 }
 
 
-@media (max-width: 1200px) {
-    .home_banner-title {
-        font-size: 45px;
-    }
-    .home_banner-subtitle strong{
-        font-size: 55px;
-    }
-}
+
 
 @media (min-width: 1200px) { 
     #tec-academy #img-01 {
@@ -235,13 +227,13 @@ header {
 
 
 
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
     .home_banner-img {
         top: inherit;
         bottom: -90px;
         height: 500px;;
     }
-}
+} */
 @media (min-width: 992px) { 
     #tec-academy #img-01 {
         right: 0px;
@@ -297,10 +289,5 @@ header {
 }
 
 @media (max-width: 576px){
-    .home_banner-title {
-        font-size: 35px;
-    }
-    .home_banner-subtitle strong{
-        font-size: 40px;
-    }
+
 }

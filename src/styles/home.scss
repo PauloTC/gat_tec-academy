@@ -1,0 +1,98 @@
+@font-face {
+	font-family: 'Conv_AvenirLTStd-Roman';
+	src: url('fonts/AvenirLTStd-Roman.eot');
+	src: local('☺'), url('fonts/AvenirLTStd-Roman.woff') format('woff'), url('fonts/AvenirLTStd-Roman.ttf') format('truetype'), url('fonts/AvenirLTStd-Roman.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_AvenirLTStd-Black';
+	src: url('fonts/AvenirLTStd-Black.eot');
+	src: local('☺'), url('fonts/AvenirLTStd-Black.woff') format('woff'), url('fonts/AvenirLTStd-Black.ttf') format('truetype'), url('fonts/AvenirLTStd-Black.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$lg-screen: 1200px;
+$md-screen: 992px;
+$sm-screen: 768px;
+$xs-screen: 575px;
+
+ul {
+    margin-left: 0 !important;
+}
+
+* {
+    font-family: 'Conv_AvenirLTStd-Roman'
+}
+
+.home_banner-container {
+    background: linear-gradient(to bottom, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    font-size: 60px;
+    line-height: 1.39;
+    padding-top: 100px;
+    height: 90vh;
+}
+.home_banner-img {
+    width: 45%;
+    right: 0px;
+    bottom: -200px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.home_banner-title {
+    line-height: 130%;
+    strong, 
+    span {
+        font-family: 'Conv_AvenirLTStd-Black' !important;
+    }
+}
+.welcome-text {
+    font-size: 60px;
+}
+
+@media (max-width: 1200px) {
+    .home_banner-title {
+        font-size: 45px;
+    }
+    .home_banner-subtitle strong{
+        font-size: 55px;
+    }
+}
+
+@media (max-width: 992px) {
+    // .home_banner-title {
+    //     font-size: 45px;
+    // }
+    // .home_banner-subtitle strong{
+    //     font-size: 55px;
+    // }
+    .home_banner-img {
+        right: -20%;
+        top: 90px;
+        height: inherit;
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home_banner-img {
+        right: -110px;
+        top: 200px;
+    }
+}
+
+@media screen and (max-width: $xs-screen)  {
+    .home_banner-title {
+        font-size: 35px;
+    }
+    .home_banner-subtitle strong {
+        font-size: 40px;
+    }
+    .home_banner-img {
+        right: -30px;
+        width: 80%;
+    }
+}
