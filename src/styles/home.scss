@@ -14,10 +14,24 @@
 	font-style: normal;
 }
 
+.mt-60 {
+    margin-top: 60px; 
+}
+
+img {
+    margin: 0;
+}
+
+.pt-60 {
+    padding-top: 60px;
+}
+
 $lg-screen: 1200px;
 $md-screen: 992px;
 $sm-screen: 768px;
 $xs-screen: 575px;
+
+$subtitle: 'Conv_AvenirLTStd-Black';
 
 ul {
     margin-left: 0 !important;
@@ -27,12 +41,40 @@ ul {
     font-family: 'Conv_AvenirLTStd-Roman'
 }
 
+.g-subtitle {
+    font-family: $subtitle;
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.nav-pills .nav-link {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #EB2B63;
+    color: #EB2B63;
+    margin-right: 12px;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    background-color: #EB2B63;
+}
+
+.text-white {
+    color: #FFF;
+}
+
+
+
+// Home Styles
+
 .home_banner-container {
     background: linear-gradient(to bottom, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
     font-size: 60px;
     line-height: 1.39;
     padding-top: 100px;
-    height: 90vh;
+    height: 80vh;
 }
 .home_banner-img {
     width: 45%;
@@ -52,7 +94,27 @@ ul {
 .welcome-text {
     font-size: 60px;
 }
+.home_awards-container {
+    margin-top: 150px;
+    margin-bottom: 120px;
+    img {
+        margin-bottom: 0;
+    }
+}
+.image-award-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 100px;
+}
+.trophy-img{
+    width: 40px;
+    margin-bottom: 5px !important;
+    display: block;
+}
 
+.home_awards-container {
+    margin-top: 60px;
+}
 @media (max-width: 1200px) {
     .home_banner-title {
         font-size: 45px;
@@ -73,26 +135,55 @@ ul {
         right: -20%;
         top: 90px;
         height: inherit;
-        width: 70%;
+        width: 60%;
     }
-}
-
-@media screen and (max-width: 768px) {
-    .home_banner-img {
-        right: -110px;
-        top: 200px;
-    }
-}
-
-@media screen and (max-width: $xs-screen)  {
     .home_banner-title {
         font-size: 35px;
     }
     .home_banner-subtitle strong {
         font-size: 40px;
     }
+}
+
+@media screen and (max-width: 768px) {
     .home_banner-img {
-        right: -30px;
-        width: 80%;
+        right: -110px;
+        top: 150px;
+    }
+    .home_awards-container {
+        margin-bottom: 60px;
+    }
+    .image-award-container {
+        padding-right: 0;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: $xs-screen)  {
+    .home_awards-container {
+        margin-top: 30px;
+    }
+    .home_banner-container {
+        height:  600px;
+        .position-relative {
+            flex-direction: column;
+        }
+        
+    }
+
+    .home_banner-img {
+        width: 300px;
+        align-self: flex-end;
+        right: inherit;
+        top: inherit;
+        bottom: 0;
+    }
+    .mg-sm-top-40 {
+        margin-top: 60px;
+        margin-bottom: 20px;
+    }
+    .home_banner-img {
+        position: static;
+        margin-bottom: 0;
     }
 }

@@ -94,23 +94,6 @@ h5 {
     transition: all 200ms linear;
 }
 
-.nav-pills .nav-link {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #EB2B63;
-    color: #EB2B63;
-    margin-right: 12px;
-}
-
-.nav-pills .nav-link.active,
-.nav-pills .show>.nav-link {
-    background-color: #EB2B63;
-}
-
-.text-white {
-    color: #FFF;
-}
-
 .text-black {
     color: #000;
 }

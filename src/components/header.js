@@ -1,26 +1,30 @@
 import PropTypes from "prop-types"
 import React from "react"
 import logo from "../images/logo-tecacademy.png"
-import  "../styles/header.css"
+import  "../styles/header.scss"
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => (
 <Container>
-    <Navbar collapseOnSelect expand="lg" fixed="top" bg="dark" variant="dark"  className="header" >
-        <Navbar.Brand href="#home">
-            <img   id="logo" src={logo} height="60" />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
-            </Nav>
-            <Nav>
-                <Nav.Link  className="nav-link" href="#deets"> Tec Academy </Nav.Link>
-                <Nav.Link className="nav-link" href="#memes"> Premios </Nav.Link>
-                <Nav.Link className="nav-link" href="puntos"> Puntos </Nav.Link>
-                <Nav.Link className="nav-link" href="#pregutnas"> Preguntas </Nav.Link>
-            </Nav>
-        </Navbar.Collapse>
+    <Navbar collapseOnSelect expand="lg" fixed="top" className="header" >
+        <Container>    
+            <Navbar.Brand href="#home">
+                <img   id="logo" src={logo} width="170" />
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav className="mr-auto">
+                </Nav>
+                <Nav>
+                    {/* <Nav.Link  className="nav-link" href="#deets"> Tec Academy </Nav.Link> */}
+                    <Link  to="/" className="nav-link header-link"  >Tec Academy</Link>
+                    <Link  to="/courses/" className="nav-link header-link"  >Cursos</Link>
+                    <Link to="/points/" className="nav-link header-link" >Puntaje </Link>
+                    {/* <Nav.Link className="nav-link" href="#pregutnas"> Preguntas </Nav.Link> */}
+                </Nav>
+            </Navbar.Collapse>
+        </Container>
     </Navbar>
     {/* <div className="position-relative index-header-body">
         <div id="menu-container" className="container-fluid fixed-top navbar-fixed-top">

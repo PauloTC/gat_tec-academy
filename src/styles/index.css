@@ -65,10 +65,10 @@ header {
 #premios #primer-puesto {
     margin-bottom: 60px;
 }
-
+/* 
 #premios #primer-puesto img {
     height: 450px;
-}
+} */
 
 #premios #primer-puesto > div.container {
     background-image: url('../images/sv-skyline.png');
@@ -180,9 +180,9 @@ header {
         display: none;
     }
 
-    #premios #primer-puesto img {
+    /* #premios #primer-puesto img {
         height: 290px;
-    }
+    } */
 
     #premios .img-premios {
         height: 200px;

@@ -1,9 +1,14 @@
 import React from 'react'
+import { Container, Col , Row } from 'react-bootstrap';
 
-const Banner = () => {
+
+const Banner = (props) => {
     return(
-        <div id="welcome-text" className="container">
-            <h3>Banner General</h3>
+        <div className="g_banner-container align-center ">
+            <Container>
+                <h2>{props.title}</h2>
+                <h3>{props.subtitle}</h3>
+            </Container>
         </div>
     )
 }

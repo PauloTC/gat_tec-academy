@@ -57,15 +57,15 @@
     margin-bottom: 60px;
 }
 
-    #premios #primer-puesto img {
-        height: 450px;
-    }
+/* #premios #primer-puesto img {
+    height: 450px;
+} */
 
-    #premios #primer-puesto > div.container {
-        /* background-image: url('../images/sv-skyline.png'); */
-        background-position: bottom center;
-        background-repeat: no-repeat;
-    }
+#premios #primer-puesto > div.container {
+    /* background-image: url('../images/sv-skyline.png'); */
+    background-position: bottom center;
+    background-repeat: no-repeat;
+}
 
 #premios .img-premios {
     height: 200px;

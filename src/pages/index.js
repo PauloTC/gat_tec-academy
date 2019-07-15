@@ -8,14 +8,12 @@ import HomeAwards from "../components/home/home-awards"
 import HomePoints from "../components/home/home-points"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
     {/* <SEO title="Home" /> */}
 
-    <BannerHome />
+    {/* <BannerHome /> */}
     <HomeAcademy />
     <HomeAwards />
     <HomePoints />

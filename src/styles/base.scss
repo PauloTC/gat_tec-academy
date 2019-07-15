@@ -1,0 +1,61 @@
+@font-face {
+	font-family: 'Conv_AvenirLTStd-Roman';
+	src: url('fonts/AvenirLTStd-Roman.eot');
+	src: local('☺'), url('fonts/AvenirLTStd-Roman.woff') format('woff'), url('fonts/AvenirLTStd-Roman.ttf') format('truetype'), url('fonts/AvenirLTStd-Roman.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_AvenirLTStd-Black';
+	src: url('fonts/AvenirLTStd-Black.eot');
+	src: local('☺'), url('fonts/AvenirLTStd-Black.woff') format('woff'), url('fonts/AvenirLTStd-Black.ttf') format('truetype'), url('fonts/AvenirLTStd-Black.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.body-container {
+    padding-top: 83px;
+}
+
+.fs24 {
+    font-size: 24px;
+}
+
+.h40 {
+    height: 40px;
+}
+
+.btn-external {
+    font-family: 'Conv_AvenirLTStd-Black';
+    font-size: 14px;
+}
+// .fs20 {
+//     font-size: 20px;
+// }
+ul li {
+    margin-bottom: 0;
+}
+.g_banner-container {
+    background: linear-gradient(to bottom, #290953 0%, #3d1978 100%) !important;
+    color: #fff;
+    height: 320px;
+    padding-bottom: 30px;
+    display: flex;
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    h2, h3 {
+        font-family: 'Conv_AvenirLTStd-Black';
+        font-weight: bolder
+    }
+    h2 {
+        font-size: 60px;
+    }
+    h3 {
+        font-size: 70px;
+        color: #FFBC1F;
+    }
+}
