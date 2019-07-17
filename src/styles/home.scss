@@ -65,7 +65,9 @@ ul {
     color: #FFF;
 }
 
-
+.academy {
+    padding-top: 100px;
+}
 
 // Home Styles
 
@@ -79,7 +81,7 @@ ul {
 .home_banner-img {
     width: 45%;
     right: 0px;
-    bottom: -200px;
+    bottom: -120px;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
 }
@@ -133,10 +135,10 @@ ul {
     //     font-size: 55px;
     // }
     .home_banner-img {
-        right: -20%;
+        right: 0;
         top: 90px;
         height: inherit;
-        width: 60%;
+        width: 50%;
     }
     .home_banner-title {
         font-size: 35px;
@@ -148,7 +150,7 @@ ul {
 
 @media screen and (max-width: 768px) {
     .home_banner-img {
-        right: -110px;
+        right: 0px;
         top: 150px;
     }
     .home_awards-container {
@@ -158,6 +160,20 @@ ul {
         padding-right: 0;
         justify-content: center;
     }
+    .academy {
+        padding-top: 60px;
+    }
+    .home_banner-container{
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100px;
+            background: #fff;
+        }
+    }
 }
 
 @media screen and (max-width: $xs-screen)  {
@@ -165,11 +181,10 @@ ul {
         margin-top: 30px;
     }
     .home_banner-container {
-        height:  600px;
+        height:  580px;
         .position-relative {
             flex-direction: column;
         }
-        
     }
 
     .home_banner-img {

@@ -8,7 +8,7 @@ const HomePoints = () => {
         <div id="ganar-puntos" className="container-fluid page-section">
             <Container className="pt-60" >
                 <h2 className="g-subtitle text-purple" style={{ paddingBottom: "40px" }}>
-                    <img  class="medal-img" alt="medal" src={points} />
+                    <img  className="medal-img" alt="medal" src={points} />
                     ¿Cómo ganar puntos?
                 </h2>
                     <Row>     

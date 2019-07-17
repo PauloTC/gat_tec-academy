@@ -5,7 +5,7 @@ import '../../styles/base.css'
 import { Container, Row, Col } from 'react-bootstrap'
 const HomeAcademy = () => {
     return (
-        <div>
+        <div className="academy" >
             {/* <div className="w-100  mg-sm-top-40 mg-sm-top-40 mg-md-top-80 mg-xl-top-110"></div> */}
             <Container>
                 <div id="tec-academy" className="page-section">
