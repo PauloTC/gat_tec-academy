@@ -10,7 +10,7 @@ const Header = ({ siteTitle }) => (
     <Navbar collapseOnSelect expand="lg" fixed="top" className="header" >
         <Container>    
             <Navbar.Brand href="#home">
-                <img   id="logo" src={logo} width="170" />
+                <img  className="header__img" id="logo" src={logo} width="170" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
