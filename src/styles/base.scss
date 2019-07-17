@@ -59,3 +59,14 @@ ul li {
         color: #FFBC1F;
     }
 }
+
+@media (max-width: 576px) {
+    .g_banner-container  {
+        height: 300px;
+        padding-bottom: 50px;
+        h2,
+        h3 {
+            font-size: 2rem !important;
+        }
+    }
+}
