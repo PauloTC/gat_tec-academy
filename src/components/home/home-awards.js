@@ -41,22 +41,18 @@ const HomeAwards = () => {
             <Container>
                 <Tabs variant='pills'  defaultActiveKey="home" id="uncontrolled-tab-example">
                     <Tab eventKey="home" title="Individual">
-                        <div id="primer-puesto" className="home_awards-container container-fluid position-relative">
-                            <div className="container">
-                                <div className="row">
-                                    {/*<!-- Primer puesto -->*/}
-                                    <div className="col-xs-12 col-lg-6">
-                                        <h2 className="g-subtitle text-yellow-h2">1º Puesto:</h2>
-                                        <h2 className="g-subtitle  text-purple mg-top-0"> Viaje y Tour a Silicon Valley </h2>
-                                        <p className="font-size-14"> Aprovecha al máximo el Tec Academy y viaja a Silicon Valley! </p>
-                                        <p className="font-size-14"> Aprenderás de las empresas top en una experiencia inigualable. Viaje, hospedaje y entradas incluidos. </p>
-                                    </div>
-                                    <div className="col-xs-12 col-lg-6">
-                                        <img src={rocket} width="100%" alt="" />
-                                    </div>
-                                    {/*<!-- Fin Primer puesto -->*/}
+                        <div id="primer-puesto" className="home_awards-container position-relative">
+                            <Row>
+                                <div className="col-xs-12 col-lg-6">
+                                    <h2 className="g-subtitle text-yellow-h2">1º Puesto:</h2>
+                                    <h2 className="g-subtitle  text-purple mg-top-0"> Viaje y Tour a Silicon Valley </h2>
+                                    <p className="font-size-14"> Aprovecha al máximo el Tec Academy y viaja a Silicon Valley! </p>
+                                    <p className="font-size-14"> Aprenderás de las empresas top en una experiencia inigualable. Viaje, hospedaje y entradas incluidos. </p>
                                 </div>
-                            </div>
+                                <div className="col-xs-12 col-lg-6">
+                                    <img src={rocket} width="100%" alt="" />
+                                </div>
+                            </Row>
                             <div className="wrapper">
                                 <div className="confetti-149"></div>
                                 <div className="confetti-148"></div>

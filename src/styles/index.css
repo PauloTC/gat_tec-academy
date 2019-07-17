@@ -107,7 +107,8 @@ header {
 }
 
 #ganar-puntos #personales .header {
-    background-color: #EB2B63;
+    background: #EB2B63 !important;
+    background-color: #EB2B63 !important;
 }
 
 #ganar-puntos .box-puntos {

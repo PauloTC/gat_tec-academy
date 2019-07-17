@@ -35,9 +35,11 @@ const Layout = ({ children }) => {
       <div className="body-container" >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          {/* <a href="https://www.gatsbyjs.org">Gatsby</a> */}
+          <div className="purple-bottom">
+            <div className="container" style={{ paddingTop: '20px' }}>
+              <p className="text-white" style={{ textAlign: 'right' }}> TecAcademy 2019 </p>
+            </div>
+          </div>
         </footer>
       </div>
     </>
