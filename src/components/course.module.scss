@@ -1,3 +1,18 @@
-.title {
-    min-height: 40px;
+.course {
+    &__title {
+        min-height: 40px;
+        color: #000;
+    }
+    &__exhibitor {
+        color: #999999;
+        padding-bottom: 25px;
+    }
 }
+
+@media screen and (max-width: 575px) {
+    .course {
+        &__title {
+            min-height: auto;
+        }
+    }
+} 

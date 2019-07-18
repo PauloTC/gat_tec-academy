@@ -15,9 +15,9 @@ const Course = (props) => {
                         <img className="mb-3" src={ props.image } height="167" alt="" />
                         
                         <div className="curso_hard_text">
-                            <h6 className={courseStyles.title}>{ props.title } </h6>
+                            <h6 className={courseStyles.course__title}>{ props.title } </h6>
 
-                            <h6 className="text-gray" style={{ paddingBottom: "25px" }}> { props.exhibitor } </h6>
+                            <h6  className={courseStyles.course__exhibitor}> { props.exhibitor } </h6>
 
                             <p>{ props.description }</p>
 

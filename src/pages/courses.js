@@ -20,6 +20,7 @@ const CoursesPage = () => {
                           }
                         title
                         exhibitor
+                        principal
                         description {
                             content {
                                 content {
@@ -37,13 +38,29 @@ const CoursesPage = () => {
     
         <Layout>
             <GBanner  title='Malla de Cursos' subtitle="Tec Valley"  ></GBanner>
-            <CoursePrincipal></CoursePrincipal>
+            
+            { data.allContentfulCourse.edges.map( (edge, index) => {
+                if(edge.node.principal == true) {
+                    return (
+                        <CoursePrincipal
+                            key = { index }
+                            exhibitor = { edge.node.exhibitor }
+                            image= {edge.node.image.file.url }
+                            description={ edge.node.description.content[0].content[0].value }
+                            title= {edge.node.title}
+                        ></CoursePrincipal>
+                    )
+                }else {
+                    return false
+                }
+            } ) }
             <Container>
                 <h1 className="g-subtitle  col-xs-12 mb-3" >Cursos Soft</h1>
                 <Row>
-                     {   data.allContentfulCourse.edges.map( (edge) => {
+                     {   data.allContentfulCourse.edges.map( (edge, index) => {
                         return (
                             <Course
+                                key = {index}
                                 exhibitor = { edge.node.exhibitor }
                                 image= {edge.node.image.file.url }
                                 description={ edge.node.description.content[0].content[0].value }

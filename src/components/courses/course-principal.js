@@ -4,14 +4,14 @@ import  courseimage  from '../../images/curso-soft-2.png'
 import  profileimage  from '../../images/roxana-alvarado.jpg'
 
 
-const CoursePrincipal = () => (
+const CoursePrincipal = (props) => (
     <div id="curso-activo" className="container-fluid page-section">
         <Container>
             <div className="row">
                 <div id="grupales" className="col-xs-12">
                     <div className="box-puntos">
                         <div className="container">
-                            <h4 className="g-subtitle container-bottom mb-4">Liderazgo Digital</h4>
+                            <h4 className="g-subtitle container-bottom mb-4">{ props.title }</h4>
                             <div className="row ">
                                 <div className="col-xs-12  col-lg-4 col-xl-3 ">
                                     <div className="img-premios text-center container-bottom">
