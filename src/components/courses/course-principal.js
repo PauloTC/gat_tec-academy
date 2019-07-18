@@ -17,20 +17,17 @@ const CoursePrincipal = (props) => (
                                     <div className="img-premios text-center container-bottom">
                                         <img
                                             height="120"
-                                            src={courseimage}
+                                            src={props.image}
                                             alt=""
                                         />
                                     </div>
                                 </div>
 
-                                <div className="  mt-2  mt-lg-0  col-xs-12  col-lg-8 col-xl-9">
+                                <div className=" container mt-2  mt-lg-0  col-xs-12  col-lg-8 col-xl-9">
                                     <div className="row  mb-4  mb-lg-0">
                                         <div className="col-xs-12 col-md-6">
                                             <h5 className="g-subtitle">Descripción</h5>
-                                            <p className="font-size-14">
-                                                Estrategia para destacarse en la era digital donde las organizaciones
-                                                exponenciales generan ventajas diferenciales y se necesitan de líderes para romper
-                                                continuamente el paradigma competitivo.</p>
+                                            <p className="font-size-14"> { props.description } </p>
                                         </div>
 
                                         <div className="col-xs-12 col-md-6">
@@ -39,13 +36,13 @@ const CoursePrincipal = (props) => (
                                                 <img
                                                     width="50"
                                                     height="48"
-                                                    src={profileimage}
+                                                    src={ props.exhibitorImage }
                                                     className="attachment-full size-full"
                                                     alt=""
                                                 />
                                                 <div className="text">
-                                                    <h6 className="text-pink g-subtitle ">Fernando Mendoza</h6>
-                                                    <h6 className="font-weight-normal" >Jefe de Tecnologia Digital</h6>
+                                                    <h6 className="text-pink g-subtitle "> { props.exhibitor } </h6>
+                                                    <h6 className="font-weight-normal" >{ props.exhibitorJob} </h6>
                                                     {/* <h5><strong>Jefe de Analytics y Big Data</strong></h5> */}
                                                 </div>
                                             </div>

@@ -20,6 +20,12 @@ const CoursesPage = () => {
                           }
                         title
                         exhibitor
+                        exhibitorImage {
+                            file {
+                                url
+                            }
+                        }
+                        exhibitorJob
                         principal
                         description {
                             content {
@@ -42,8 +48,11 @@ const CoursesPage = () => {
             { data.allContentfulCourse.edges.map( (edge, index) => {
                 if(edge.node.principal == true) {
                     return (
+                        // console.log(edge.node.exhibitor)
                         <CoursePrincipal
                             key = { index }
+                            exhibitorJob = { edge.node.exhibitorJob }
+                            exhibitorImage = { edge.node.exhibitorImage.file.url }
                             exhibitor = { edge.node.exhibitor }
                             image= {edge.node.image.file.url }
                             description={ edge.node.description.content[0].content[0].value }
