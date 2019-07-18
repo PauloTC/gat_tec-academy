@@ -207,8 +207,8 @@ const HomeAwards = () => {
                             </div>
 
                             {/*<!-- Segundo y tercer puesto -->*/}
-                            <div className="container mt-60">
-                                <div className="row">
+                            <div className="mt-60">
+                                <Row>
                                     <div className="col-xs-12 col-lg-6 div-bottom">
                                         <h3 className="text-yellow-h3">2º Puesto:</h3>
                                         <h3>$1,000 para estudios</h3>
@@ -226,14 +226,14 @@ const HomeAwards = () => {
                                             <img width="250" src={singleprize} alt="" />
                                         </figure>
                                     </div>
-                                </div>
+                                </Row>
                             </div>
                             {/*<!-- Fin Segundo y tercer puesto -->*/}
                         </div>
                     </Tab>
                     <Tab eventKey="profile" title="Grupal">
-                        <div  className="home_awards-container container-fluid position-relative" >
-                            <div className="container position-relative">
+                        <div  className="home_awards-container position-relative" >
+                            <div className="position-relative">
                                 <div className="row">
                                     {/*<!-- Mejor Grupo -->*/}
                                     <div className="col-xs-12 col-lg-6">
