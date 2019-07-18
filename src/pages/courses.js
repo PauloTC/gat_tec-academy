@@ -51,7 +51,7 @@ const CoursesPage = () => {
                         ></CoursePrincipal>
                     )
                 }else {
-                    return false
+                    return false 
                 }
             } ) }
             <Container>
