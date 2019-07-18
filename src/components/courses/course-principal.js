@@ -24,7 +24,7 @@ const CoursePrincipal = (props) => (
                                 </div>
 
                                 <div className=" container mt-2  mt-lg-0  col-xs-12  col-lg-8 col-xl-9">
-                                    <div className="row  mb-4  mb-lg-0">
+                                    <div className="row   mb-4  mb-lg-0">
                                         <div className="col-xs-12 col-md-6">
                                             <h5 className="g-subtitle">Descripción</h5>
                                             <p className="font-size-14"> { props.description } </p>
