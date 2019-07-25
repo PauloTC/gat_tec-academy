@@ -17,7 +17,7 @@ const IndividualPoints = () => {
     return (
         <Container  className="individual"  >
             <section className="puntaje-individual">
-                <h2>Puntaje Individual</h2>
+                <h2 className="mt-5  mb-30  g-subtitle"  >Puntaje Individual</h2>
                 <p className="leadboard-p">Te mostramos el 1 y 2 puesto hasta el primer taller:</p>
                 {/*<!-- Tabla de Puntajes -->*/}
                 <table className="table table-borderless">

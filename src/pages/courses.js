@@ -64,7 +64,7 @@ const CoursesPage = () => {
                 }
             } ) }
             <Container>
-                <h1 className="g-subtitle  col-xs-12 mb-3" >Cursos Soft</h1>
+                <h2 className="g-subtitle mb-30" >Cursos Soft</h2>
                 <Row>
                      {   data.allContentfulCourse.edges.map( (edge, index) => {
                         return (

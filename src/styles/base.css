@@ -1,13 +1,18 @@
-/* @font-face {
-    font-family: "Avenir";
-    src: url('fonts/Avenir.ttc');
-} */
-/* 
 @font-face {
-    font-family: "Avenir";
-    src: url("fonts/AvenirLTStd-Black.otf");
-    font-weight: bold;
-} */
+	font-family: 'Conv_AvenirLTStd-Roman';
+	src: url('fonts/AvenirLTStd-Roman.eot');
+	src: local('☺'), url('fonts/AvenirLTStd-Roman.woff') format('woff'), url('fonts/AvenirLTStd-Roman.ttf') format('truetype'), url('fonts/AvenirLTStd-Roman.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_AvenirLTStd-Black';
+	src: url('fonts/AvenirLTStd-Black.eot');
+	src: local('☺'), url('fonts/AvenirLTStd-Black.woff') format('woff'), url('fonts/AvenirLTStd-Black.ttf') format('truetype'), url('fonts/AvenirLTStd-Black.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 
 * {
     font-family: 'Avenir', Arial, sans-serif;
@@ -30,7 +35,8 @@ h2 > img {
 h3 {
 	color: #1A043B;
 	font-size: 24px;
-	font-weight: 900;
+    font-weight: 900;
+    font-family: 'Conv_AvenirLTStd-Black'
 }
 
 h4 {
@@ -115,6 +121,7 @@ h5 {
 .text-yellow-h3 {
     color: #FFBC1F;
     font-size: 24px;
+    font-weight: 700
 }
 
 .text-blue {
@@ -215,7 +222,7 @@ h5 {
 }
 
 .div-bottom {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 
