@@ -4,7 +4,7 @@ import GBanner from  '../components/banner';
 import CoursePrincipal from  '../components/courses/course-principal';
 import Course from '../components/course/course'
 import { Container, Row } from 'react-bootstrap';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
 const CoursesPage = () => {
 
@@ -46,7 +46,7 @@ const CoursesPage = () => {
             <GBanner  title='Malla de Cursos' subtitle="Tec Valley"  ></GBanner>
             
             { data.allContentfulCourse.edges.map( (edge, index) => {
-                if(edge.node.principal == true) {
+                if(edge.node.principal === true) {
                     return (
                         // console.log(edge.node.exhibitor)
                         <CoursePrincipal
@@ -63,7 +63,7 @@ const CoursesPage = () => {
                     return false 
                 }
             } ) }
-            <Container>
+            <Container className="mb-30" >
                 <h2 className="g-subtitle mb-30" >Cursos Soft</h2>
                 <Row>
                      {   data.allContentfulCourse.edges.map( (edge, index) => {

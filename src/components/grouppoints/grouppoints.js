@@ -8,7 +8,7 @@ import { Container } from 'react-bootstrap';
 const PointsGroup = () => {
     return (
         <Container  className="group" >
-            <h2  class="mt-5  mb-30  g-subtitle" >Puntaje grupal</h2>
+            <h2  className="mt-5  mb-30  g-subtitle" >Puntaje grupal</h2>
             <div className="card-group">
                 {/*<!-- EMPATE -->*/}
                 <div className="col-xs-1 col-sm-6 col-md-8">

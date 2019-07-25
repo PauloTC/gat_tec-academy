@@ -7,6 +7,18 @@
         color: #999999;
         padding-bottom: 25px;
     }
+    &__button {
+        width: 90%;
+        display: block;
+        margin: auto;
+    }
+    &__footer {
+        border-top: 1px solid #321065;
+        color: #6C757D;
+        font-size: 14px;
+        margin-top: 15px;
+        height: 40px;
+    }
 }
 
 @media screen and (max-width: 575px) {

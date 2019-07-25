@@ -1,7 +1,5 @@
 import React from "react"
 
-import { Link } from "gatsby"
-
 import BannerHome from "../components/home/home-banner"
 import HomeAcademy from "../components/home/home-academy"
 import HomeAwards from "../components/awards/home-awards"
