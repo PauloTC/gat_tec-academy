@@ -1,0 +1,13 @@
+.individual {
+    &__thead {
+        text-align: center;
+        color: #B9007E;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    &__tbody {
+        td {
+            text-align: center;
+        }
+    }
+}

@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/layout';
 import GBanner from  '../components/banner';
 import CoursePrincipal from  '../components/courses/course-principal';
-import Course from '../components/course'
+import Course from '../components/course/course'
 import { Container, Row } from 'react-bootstrap';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 

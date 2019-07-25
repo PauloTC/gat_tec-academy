@@ -14,6 +14,10 @@
 	font-style: normal;
 }
 
+.individual__thead {
+    font-family:  'Conv_AvenirLTStd-Black'
+}
+
 .body-container {
     padding-top: 83px;
 }
@@ -63,10 +67,10 @@ ul li {
 @media (max-width: 576px) {
     .g_banner-container  {
         height: 300px;
-        padding-bottom: 50px;
+        padding-bottom: 0px;
         h2,
         h3 {
-            font-size: 2rem !important;
+            font-size: 3rem !important;
         }
     }
 }

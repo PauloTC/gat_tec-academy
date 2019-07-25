@@ -252,7 +252,11 @@
 
     #curso-activo .box-puntos {
         /* padding: 48px 14px 0px 14px; */
-        top: -150px;
+        top: 0px;
+    }
+    #curso-activo {
+        padding-top: 0;
+        margin: 40px 0px;
     }
 }
 

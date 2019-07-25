@@ -9,16 +9,19 @@ import HomePoints from "../components/home/home-points"
 
 import Layout from "../components/layout"
 
-const IndexPage = () => (
-  <Layout>
-    {/* <SEO title="Home" /> */}
+const IndexPage = () => {
 
-    <BannerHome />
-    <HomeAcademy />
-    <HomeAwards />
-    <HomePoints />
-    {/* <Link to="/page-2/">Go to page 2</Link> */}
-  </Layout>
-)
+  return (
+    <Layout>
+      {/* <SEO title="Home" /> */}
+
+      <BannerHome />
+      <HomeAcademy />
+      <HomeAwards />
+      <HomePoints />
+      {/* <Link to="/page-2/">Go to page 2</Link> */}
+    </Layout>
+  )
+}
 
 export default IndexPage

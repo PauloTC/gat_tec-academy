@@ -1,5 +1,5 @@
 import React from 'react'
-import image from '../images/curso-soft-1.png'
+import image from '../../images/curso-soft-1.png'
 import { useStaticQuery, graphql, Link } from 'gatsby';
 
 import courseStyles from './course.module.scss'
