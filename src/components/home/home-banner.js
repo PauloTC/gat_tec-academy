@@ -9,9 +9,9 @@ const HomeBanner = () => {
         <div  className="home_banner-container  d-flex align-items-lg-center" >
             <Container className="position-relative d-flex">
                 <p className="text-white home_banner-title ">
-                    <strong> Ya se despertó <br /> la señorita <br /></strong>
+                    <strong>Tec Academy ya <br />empezó y te lleva a <br /></strong>
                     <span className="text-yellow home_banner-subtitle">
-                        <strong>Sheyla ?</strong>
+                        <strong>Silicon Valley</strong>
                     </span>
                 </p>
                 <img className="position-absolute  home_banner-img" src={building}   />    
