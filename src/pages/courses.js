@@ -20,6 +20,7 @@ const CoursesPage = () => {
                           }
                         title
                         exhibitor
+                        slug
                         exhibitorImage {
                             file {
                                 url
@@ -64,7 +65,7 @@ const CoursesPage = () => {
                 }
             } ) }
             <Container className="mb-30" >
-                <h2 className="g-subtitle mb-30" >Cursos Soft</h2>
+                <h2 className="g-subtitle mb-30" >Cursos</h2>
                 <Row>
                      {   data.allContentfulCourse.edges.map( (edge, index) => {
                         return (
@@ -73,13 +74,11 @@ const CoursesPage = () => {
                                 exhibitor = { edge.node.exhibitor }
                                 image= {edge.node.image.file.url }
                                 description={ edge.node.description.content[0].content[0].value }
-                                title={ edge.node.title } >
-                                
+                                title={ edge.node.title } 
+                                slug= { edge.node.slug }>
                             </Course>
                         )
                      } ) }
-                    {/* { data.allContentfulCourse.edges.map( (edge)=> { 
-                    })} */}
                 </Row>
             </Container>
         </Layout>
