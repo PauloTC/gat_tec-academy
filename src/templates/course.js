@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from  "../components/layout"
+import Layout from "../components/layout"
 import { graphql } from 'gatsby';
 
 export const query = graphql`
@@ -10,6 +10,7 @@ export const query = graphql`
             }
           ){
             title
+            exhibitor
           }
     }
 
@@ -17,12 +18,14 @@ export const query = graphql`
 
 
 const Course = (props) => {
-    return (
-        <Layout>
-            <h1> { props.data.contentfulCourse.title } </h1>
-
-        </Layout>
-    )
+	return (
+		<Layout>
+			<div>
+				<h4> {props.data.contentfulCourse.title} </h4>
+				<p>{props.data.contentfulCourse.exhibitor}</p>
+			</div>
+		</Layout>
+	)
 }
 
 

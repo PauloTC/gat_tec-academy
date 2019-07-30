@@ -29,7 +29,7 @@ const Course = (props) => {
             
                 <Link to={`/courses/${ props.slug}`}  className={`btn btn-outline-primary ${Styles.course__button}`} > Ver resumen  </Link>
             
-                <div className={ `d-flex align-items-end flex-column justify-content-center  ${Styles.course__footer}` } >
+                <div className={ `d-flex align-items-center flex-column justify-content-center  ${Styles.course__footer}` } >
                     Taller terminado
                 </div>
             

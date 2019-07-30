@@ -11,6 +11,12 @@
         width: 90%;
         display: block;
         margin: auto;
+        color: #eb2b63 !important;
+        border-color: #eb2b63 !important;
+        &:hover {
+            background: #eb2b63 !important;
+            color:  #fff !important;
+        }
     }
     &__footer {
         border-top: 1px solid rgba(50, 16, 101, 0.3);
