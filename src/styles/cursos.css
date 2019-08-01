@@ -150,6 +150,7 @@
     max-width: 100%;
     min-width: 100%;
     height: auto;
+    max-height: 123px;
 }
 
 .curso_hard_text {
