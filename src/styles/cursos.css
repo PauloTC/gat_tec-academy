@@ -106,9 +106,9 @@
     #curso-activo .box-puntos {
         background: #ffffff;
         border-radius: 8px;
-        box-shadow: 0px 20px 30px #E9F0FA;
+        /* box-shadow: 0px 20px 30px #E9F0FA; */
         padding: 32px;
-        top: -90px;
+        top: 0px;
         min-height: 240px;
         margin: auto;
         position: relative;

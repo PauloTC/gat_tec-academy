@@ -1,93 +1,36 @@
 import React from 'react'
-import { Container, Col, Row, Button } from 'react-bootstrap';
-import  courseimage  from '../../images/curso-soft-2.png'
-import  profileimage  from '../../images/roxana-alvarado.jpg'
-
+import { Container, Box } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 const CoursePrincipal = (props) => (
-    <div id="curso-activo" className="container-fluid page-section">
-        <Container>
-            <div className="row">
-                <div id="grupales" className="col-xs-12">
-                    <div className="box-puntos">
-                        <div className="container">
-                            <h4 className="g-subtitle container-bottom mb-4">{ props.title }</h4>
-                            <div className="row ">
-                                <div className="col-xs-12  col-lg-4 col-xl-3 ">
-                                    <div className="img-premios text-center container-bottom">
-                                        <img
-                                            height="120"
-                                            src={props.image}
-                                            alt=""
-                                        />
-                                    </div>
-                                </div>
+    <Container maxWidth="lg" >
+        <Grid  spacing={4}  container >
+            <Grid  xs={12} md={7}  item >
+                <img height="320"  src={props.image} alt=""/>
+            </Grid>
+            <Grid xs={12} md={5} item container justify="center"   alignItems="flex-start"   direction="column" >
+                {/* <h4 className="g-subtitle container-bottom mb-4"></h4> */}
+                <Typography > 
+                    <Box fontSize="subtitle1.fontSize"> SET 19   </Box>
+                    <Box fontSize="h5.fontSize" fontWeight="fontWeightBold" > { props.title }  </Box>
+                    <Grid container alignItems="center"  >
+                        <img  width="50" height="48" src={ props.exhibitorImage } className="attachment-full size-full" alt="" />
+                        {/* <h6 className="text-pink g-subtitle "> { props.exhibitor } </h6>                 */}
+                        <Box fontSize="subtitle1.fontSize"> { props.exhibitor }  </Box>
+                        {/* <Typography variant="subtitle2">  { props.exhibitor } </Typography> */}
+                    </Grid>
+                </Typography>
+                <Typography  gutterBottom  variant="body2" >{ props.description }  </Typography>
+                {/* <p className="font-size-14"> </p> */}
 
-                                <div className=" container mt-2  mt-lg-0  col-xs-12  col-lg-8 col-xl-9">
-                                    <div className="row   mb-4  mb-lg-0">
-                                        <div className="col-xs-12 col-md-6">
-                                            <h5 className="g-subtitle">Descripción</h5>
-                                            <p className="font-size-14"> { props.description } </p>
-                                        </div>
-
-                                        <div className="col-xs-12 col-md-6">
-                                            <h5 className="g-subtitle">Expositor</h5>
-                                            <div className="image_featured_text round_img container-bottom">
-                                                <img
-                                                    width="50"
-                                                    height="48"
-                                                    src={ props.exhibitorImage }
-                                                    className="attachment-full size-full"
-                                                    alt=""
-                                                />
-                                                <div className="text">
-                                                    <h6 className="text-pink g-subtitle "> { props.exhibitor } </h6>
-                                                    <h6 className="font-weight-normal" >{ props.exhibitorJob} </h6>
-                                                    {/* <h5><strong>Jefe de Analytics y Big Data</strong></h5> */}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <h5 className="g-subtitle">Fecha y hora </h5>
-                                    <div id="nav-fecha-hora" className="div-bottom">
-                                        <ul id="navlist">
-                                            <li>* Martes 23 de Junio 10:30 pm a 01:00 pm</li>
-                                            <li>* Jueves 25 de Junio 03:00 pm a 05:30 pm</li>
-                                        </ul>
-                                    </div>
-
-                                    <ul
-                                        className="nav nav-pills mb-4  mb-lg-0 "
-                                        id="pills-tab"
-                                        role="tablist"
-                                    >
-                                        <li className="nav-item expand-sm">
-                                            <a
-                                                className="nav-link btn-external active"
-                                                target="_blank"
-                                                href="https://miscursosucb.belcorp.biz/course/view.php?id=2159"
-                                            >Inscríbete ahora</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="position-relative d-flex  justify-content-center  justify-content-md-end  mt-2 ">
-                                <div id="link-malla">
-                                    <span>
-                                        <a href="#tec-academy" className="link_purple">
-                                            Ver malla de cursos
-                    </a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </Container>
-    </div>
+                <Button variant="contained"   color="primary"> Inscríbete ahora </Button>
+                
+                {/* <a className="nav-link btn-external active" target="_blank" href="https://miscursosucb.belcorp.biz/course/view.php?id=2159" >Inscríbete ahora</a> */}
+            </Grid>
+        </Grid>
+    </Container>
 )
 
 export default CoursePrincipal

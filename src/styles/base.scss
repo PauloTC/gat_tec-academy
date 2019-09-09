@@ -19,7 +19,7 @@
 }
 
 .body-container {
-    padding-top: 83px;
+    padding-top: 0px;
 }
 
 .fs24 {
@@ -63,6 +63,17 @@ ul li {
         color: #FFBC1F;
         font-family: 'Conv_AvenirLTStd-Black'
     }
+}
+
+.individual .MuiPaper-elevation2 {
+    box-shadow: none !important;
+}
+.individual .MuiToolbar-root{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.individual .MuiTableSortLabel-icon {
+    font-size: 18px !important
 }
 
 @media (max-width: 576px) {

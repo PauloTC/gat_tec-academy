@@ -1,51 +1,49 @@
 import React from 'react'
 import prizes from "../../images/ico-premios.svg"
-
 import groupStyles from './grouppoints.module.scss'
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+import Styles from './grouppoints.module.scss'
 
-
-import { Container } from 'react-bootstrap';
-const PointsGroup = () => {
+const PointsGroup = (props) => {    
     return (
-        <Container  className="group" >
-            <h2  className="mt-5  mb-30  g-subtitle" >Puntaje grupal</h2>
-            <div className="card-group">
-                {/*<!-- EMPATE -->*/}
-                <div className="col-xs-1 col-sm-6 col-md-8">
-                    <div className="card puesto1 card-google">
-                        <div className={  groupStyles.group__header  }>
-                            <span role="img" aria-label="party">🎉</span>1er Puesto - Empate
-                        </div>
-                        <div className="card-body">
-                            <div className="trophy">
-                                <img  width={100} src={prizes} alt="" />
-                                <div className="media-body">
-                                    <h3 className={ groupStyles.group__h3 } >Team Facebook y Team Tesla</h3>
-                                    <h5   className={ groupStyles.group__h5 } >6 Puntos acumulados</h5>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                </div>
-                <div className="col-xs-1 col-sm-6 col-md-4">
-                    <div className="card o-puesto">
-                        <div className="card-body o-puesto-netflix">
-                            2do Puesto - Team Netflix
-                            <h5  className={ groupStyles.group__h5 } >5 Puntos acumulados</h5>
-                        </div>
-                        <div className="card-body o-puesto-google">
-                            3er Puesto - Team Google
-                        <h5 className={ groupStyles.group__h5 } >2 Puntos acumulados</h5>
-                        </div>
-                        <div className="card-body o-puesto-apple">
-                            4to Puesto - Team Apple
-                        <h5 className={ groupStyles.group__h5 } >1 Punto acumulados</h5>
-                        </div>
-                    </div>
-                </div>
-                {/*<!-- FIN EMPATE -->*/}
-            </div>
-        </Container>
+        <React.Fragment>
+                {(() => {
+                    if ( props.position == "0"  ) {
+                        return (
+                            <Typography className={Styles.group__position} variant="caption" > 1er puesto 🎉 </Typography>    
+                        )
+                    } else if ( props.position == "1" ) {
+                        return (
+                            <Typography className={Styles.group__position} variant="caption" > 2do puesto </Typography>    
+                        )
+                    } else if ( props.position == "2" ) {
+                        return (
+                            <Typography  variant="caption" > 3er puesto </Typography>    
+                        )
+                    } else if ( props.position == "3" ) {
+                        return (
+                            <Typography  variant="caption" > 4to puesto </Typography>    
+                        )
+                    } else {
+                        return (
+                            <Typography  variant="caption" > 5to puesto </Typography>    
+                        )
+                    }
+                })()}
+            
+            <Grid container  spacing={2} className={Styles.group__content} >
+                <Grid item >
+                    <img className={Styles.group__image}  src={props.image}  height="60" alt="" />
+                </Grid>
+                <Grid  item className={Styles.group__text}  >
+                    <Typography className={Styles.group__subtitle} variant="subtitle2"> Team {props.name} </Typography>
+                    <Typography variant="caption" display="block" > {props.points} pts </Typography>
+                </Grid>
+            </Grid>
+        </React.Fragment>
     )
 }
 

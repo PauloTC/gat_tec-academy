@@ -1,37 +1,32 @@
 import PropTypes from "prop-types"
 import React from "react"
 import logo from "../../images/logo-tecacademy.png"
+import AppBar from '@material-ui/core/AppBar';
 
-
+import {Helmet} from "react-helmet";
 import styles from './header.module.scss'
-
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import Container from '@material-ui/core/Container';
 import { Link } from "gatsby"
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 
 const Header = () => {
 
     return (
-    <Container>
-        <Navbar collapseOnSelect expand="lg" fixed="top" className={styles.header}>
-            <Container>    
-                <Navbar.Brand>
+        <AppBar elevation="0" position="static">
+            <Container>
+                <Grid  container >
                     <Link>
-                        <img  className={styles.header__img} id="logo" src={logo} width="170" />
+                        <img  className={styles.header__img} id="logo" src={logo} width="120" />
                     </Link>
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse  className={ styles.header__collapse  }  id="responsive-navbar-nav">
-                    <Nav className="mr-auto">
-                    </Nav>
-                    <Nav>
-                        <Link  to="/" className={`nav-link ${styles.header__link}`}  >Tec Academy</Link>
-                        <Link  to="/courses/" className={`nav-link ${styles.header__link}`} >Cursos</Link>
-                        <Link to="/points/" className={`nav-link ${styles.header__link}`} >Puntaje </Link>
-                    </Nav>
-                </Navbar.Collapse>
+                    <Link  activeClassName="active" to="/" className={`nav-link ${styles.header__link}`}  >Actividades</Link>
+                    <Link  activeClassName="active" to="/courses/" className={`nav-link ${styles.header__link}`} >Talleres</Link>
+                    <Link  activeClassName="active" to="/points/" className={`nav-link ${styles.header__link}`} >Puntajes</Link>
+                    <Link  activeClassName="active" to="/points/" className={`nav-link ${styles.header__link}`} >Comunidad</Link>
+                    <Link  activeClassName="active" to="/points/" className={`nav-link ${styles.header__link}`} >Blog</Link>
+                </Grid>
             </Container>
-        </Navbar>
-    </Container>
+        </AppBar>
     )
 }
 

@@ -5,9 +5,11 @@ html {
 }
 body {
   margin: 0;
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 article,
 aside,
 details,
@@ -587,6 +589,18 @@ td:first-child {
 th:last-child,
 td:last-child {
   padding-right: 0;
+}
+.slick-prev, .slick-next {
+  z-index: 9;
+}
+.slick-prev:before {
+    font-size: 30px;
+}
+.slick-next {
+  right: 15px !important;
+}
+.slick-prev {
+  left: 15px !important;
 }
 tt,
 code {
