@@ -2,14 +2,33 @@
     // background-color: linear-gradient(to bottom, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%) !important;
     background: linear-gradient(to bottom, #290953 0%, #2a1252 100%) !important;
     &__img {
-        margin: 0 !important;
+        display: flex;
+        align-items: center;
+        img {
+            margin: 10px 0px !important;
+            margin-right: 15px !important;
+        }
+    }
+    &__container_links {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        &.active {
+            background-color:  red !important;
+        }
+    }
+    &__icon {
+        margin-right: 10px
     }
     &__link {
         color: #fff !important;
         padding: .0rem 1rem;
-        font-size: 12px;
         display: flex;
         align-items: center;
+        text-decoration: none;
+        font-family: 'Lato', sans-serif;
+        font-weight: 900;
+        height: 100%;
     }
     &__collapse {
         padding-top: 20px;

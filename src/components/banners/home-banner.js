@@ -11,15 +11,17 @@ import Styles from './home-banner.module.scss'
 const HomeBanner = (props) => {
     return(
 
-        <div>
+        <Grid container>
             <img className={Styles.banner__image} src={ props.image }   />
-            {/* <Container className={Styles.banner__container} maxWidth="lg" >
-                <Typography>
-                    <Box  fontSize="h3.fontSize" fontWeight="fontWeightBold" > {props.title} </Box>
-                    <Button variant="contained" color="primary"> Primary </Button>
-                </Typography>
-            </Container> */}
-      </div>
+                <Container  className={Styles.banner__container} maxWidth="lg" >
+                    <Grid item xs={4} >
+                        <Typography >
+                            <Box gutterBottom mb={3} className={Styles.banner__text}  position="relative" fontSize="h4.fontSize" fontWeight={900} >  {props.title} 🚀 </Box>
+                            <Button className={Styles.banner__button}  size="small" variant="contained" color="primary"> Inscribirme ahora </Button>
+                        </Typography>
+                    </Grid>
+                </Container>
+        </Grid>
     )
 }
 

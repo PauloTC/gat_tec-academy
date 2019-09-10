@@ -39,7 +39,7 @@ module.exports = {
 			resolve: 'gatsby-plugin-web-font-loader',
 			options: {
 				google: {
-					families: [ 'Avenir: 900', 'Lato' ]
+					families: [ 'Avenir: 900', 'Lato: 400, 900, 700' ]
 				}
 			}
 		}
