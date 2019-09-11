@@ -4,6 +4,8 @@ import BannerHome from '../components/banners/home-banner';
 import HomeAcademy from '../components/home/home-academy';
 import HomeBanner from '../components/banners/home-banner';
 import HomeCourse from '../components/home-course/home-course';
+import SubHeader from '../components/comoon/subheader'
+
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -112,40 +114,25 @@ const IndexPage = () => {
 					)						
 				})}
 			</Slider> */}
-			<br />
+			
 			<Container className={Styles.index__carousel} maxWidth="lg">
-				<Typography>
-					<Grid  container justify="space-between" >
-						<Grid  container item direction="column" md={10} >
-							<Box fontWeight={900} fontSize="h6.fontSize" > Próximos eventos </Box>
-							<Box fontSize="body2.fontSize" >Descubre lo que pasará proximamente en Belcorp</Box>
-						</Grid>
-						<Grid container alignItems="center" justify="flex-end"  item md={2} >
-							<Button ontWeight={900} className={classes.button}  color="primary"> Ver talleres</Button>
-						</Grid>
-					</Grid>
-				</Typography>
+				
+				<SubHeader  
+						title="Próximos eventos"  
+						subtitle="Descubre lo que pasará proximamente en Belcorp"  
+						button="Ver talleres"  />
 
 				<Slider  className={ Styles.index__slick }  {...carousel}>
 					{data.carousel.edges.map((edge, index) => {
 						return <HomeCourse key={index} title={edge.node.title} exhibitor={edge.node.exhibitor} />;
 					})}
 				</Slider>
-				<br />
-				<br />
-				<br />
-				<br />
-				<Typography>
-					<Grid  container justify="space-between" >
-						<Grid  container item direction="column" md={10} >
-							<Box fontWeight={900} fontSize="h6.fontSize" > Próximos eventos </Box>
-							<Box fontSize="body2.fontSize" >Descubre lo que pasará proximamente en Belcorp</Box>
-						</Grid>
-						<Grid container alignItems="center" justify="flex-end"  item md={2} >
-							<Button ontWeight={900} className={classes.button}  color="primary"> Ver talleres</Button>
-						</Grid>
-					</Grid>
-				</Typography>
+
+				<SubHeader  
+					title="Próximas actividades"  
+					subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
+					button="Ver actividades"  />
+
 				<Box mt={4} >
 					<Grid  container justify="space-between" spacing={5} >
 						<Grid item sm={6}  container direction='column' >
@@ -185,23 +172,13 @@ const IndexPage = () => {
 						</Grid>
 					</Grid>
 				</Box>
-				<br />
-				<br />
-				<Typography>
-					<Grid  container justify="space-between" >
-						<Grid  container item direction="column" md={10} >
-							<Box fontWeight={900} fontSize="h6.fontSize" > Puntajes Tec Valley </Box>
-							<Box fontSize="body2.fontSize" >¿Estás cerca a ganar ese after office?  ¡Aprovecha al máximo TecAcademy!</Box>
-						</Grid>
-						<Grid container alignItems="center" justify="flex-end"  item md={2} >
-							<Button ontWeight={900} className={classes.button}  color="primary"> Ver puntajes</Button>
-						</Grid>
-					</Grid>
-				</Typography>
+				
+				<SubHeader  
+					title="Puntajes Tec Valley "  
+					subtitle="¿Estás cerca a ganar ese after office?  ¡Aprovecha al máximo TecAcademy!"  
+					button="Ver puntajes"  />
 
 			</Container>
-			<br />
-			<br />
 		</Layout>
 	);
 };
