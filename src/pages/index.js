@@ -178,7 +178,7 @@ const IndexPage = () => {
 				<Typography>
 					<Grid  container justify="space-between" >
 						<Grid  container item direction="column" xs={10} >
-							<Box fontWeight={900} fontSize="h6.fontSize" > vPuntajes Tec Valley </Box>
+							<Box fontWeight={900} fontSize="h6.fontSize" > Puntajes Tec Valley </Box>
 							<Box fontSize="body2.fontSize" >¿Estás cerca a ganar ese after office?  ¡Aprovecha al máximo TecAcademy!</Box>
 						</Grid>
 						<Grid container alignItems="center" justify="flex-end"  item xs={2} >
