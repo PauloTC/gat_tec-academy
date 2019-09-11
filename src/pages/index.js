@@ -116,11 +116,11 @@ const IndexPage = () => {
 			<Container className={Styles.index__carousel} maxWidth="lg">
 				<Typography>
 					<Grid  container justify="space-between" >
-						<Grid  container item direction="column" xs={10} >
+						<Grid  container item direction="column" md={10} >
 							<Box fontWeight={900} fontSize="h6.fontSize" > Próximos eventos </Box>
 							<Box fontSize="body2.fontSize" >Descubre lo que pasará proximamente en Belcorp</Box>
 						</Grid>
-						<Grid container alignItems="center" justify="flex-end"  item xs={2} >
+						<Grid container alignItems="center" justify="flex-end"  item md={2} >
 							<Button ontWeight={900} className={classes.button}  color="primary"> Ver talleres</Button>
 						</Grid>
 					</Grid>
@@ -133,9 +133,18 @@ const IndexPage = () => {
 				</Slider>
 				<br />
 				<br />
+				<br />
+				<br />
 				<Typography>
-					<Box fontWeight={900} fontSize="h6.fontSize" > Próximas actividades </Box>
-					<Box fontSize="body2.fontSize" >¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí.</Box>
+					<Grid  container justify="space-between" >
+						<Grid  container item direction="column" md={10} >
+							<Box fontWeight={900} fontSize="h6.fontSize" > Próximos eventos </Box>
+							<Box fontSize="body2.fontSize" >Descubre lo que pasará proximamente en Belcorp</Box>
+						</Grid>
+						<Grid container alignItems="center" justify="flex-end"  item md={2} >
+							<Button ontWeight={900} className={classes.button}  color="primary"> Ver talleres</Button>
+						</Grid>
+					</Grid>
 				</Typography>
 				<Box mt={4} >
 					<Grid  container justify="space-between" spacing={5} >
@@ -156,20 +165,22 @@ const IndexPage = () => {
 								</Grid>
 							</Paper>
 						</Grid>
-						<Grid  item sm={6} container direction='column'   >
-							<img className={classes.image} src="http://tinyimg.io/i/tSFDV33.jpeg"  />
-							<Grid  container className={classes.container} >
-								<Box>
-									<Typography> 
-										<Box fontSize="subtitle2.fontSize">mar., 10 sept.</Box>
-										<Box lineHeight={1.2} mb={1}   fontSize="h5.fontSize" fontWeight="fontWeightBold" > Meetup: Time Management Skills </Box>
-										<Box  fontSize="body2.fontSize" > Bruno Díaz </Box>
-									</Typography>
-								</Box>
-								<Grid  container justify="flex-end" >
-									<Button size="small" variant="outlined" color="primary"> Unirme </Button>
+						<Grid item sm={6}  container direction='column' >
+							<Paper  elevation={5} >
+								<img className={classes.image} src="http://tinyimg.io/i/tSFDV33.jpeg"  />
+								<Grid container  className={classes.container}  >
+									<Grid item xs={9} >
+										<Typography> 
+											<Box mb={1}  fontSize="subtitle2.fontSize">mar., 10 sept.</Box>
+											<Box lineHeight={1.2} mb={1}   fontSize="h6.fontSize" fontWeight="fontWeightBold" > Meetup: Time Management Skills </Box>
+											<Box  fontSize="body2.fontSize" > Bruno Díaz </Box>
+										</Typography>
+									</Grid>
+									<Grid xs={3} item container justify="flex-end" alignContent="flex-end" >
+										<Button size="small" variant="outlined" color="primary"> Unirme </Button>
+									</Grid>
 								</Grid>
-							</Grid>
+							</Paper>
 						</Grid>
 					</Grid>
 				</Box>
@@ -177,11 +188,11 @@ const IndexPage = () => {
 				<br />
 				<Typography>
 					<Grid  container justify="space-between" >
-						<Grid  container item direction="column" xs={10} >
+						<Grid  container item direction="column" md={10} >
 							<Box fontWeight={900} fontSize="h6.fontSize" > Puntajes Tec Valley </Box>
 							<Box fontSize="body2.fontSize" >¿Estás cerca a ganar ese after office?  ¡Aprovecha al máximo TecAcademy!</Box>
 						</Grid>
-						<Grid container alignItems="center" justify="flex-end"  item xs={2} >
+						<Grid container alignItems="center" justify="flex-end"  item md={2} >
 							<Button ontWeight={900} className={classes.button}  color="primary"> Ver puntajes</Button>
 						</Grid>
 					</Grid>
