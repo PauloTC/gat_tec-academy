@@ -33,7 +33,7 @@ const Header = () => {
                         <Link className={styles.header__img} >
                             <img id="logo" src={logo} width="120" />
                         </Link>
-                        <Box  display={{ xs: 'none', md: 'block', lg: 'block' }}>
+                        <Box  display={{ xs: 'none', md: 'none', lg: 'block' }}>
                             <Typography s className={ styles.header__container_links }   variant="body2">
                                 {
                                     Links.map(  (link , index )  => {

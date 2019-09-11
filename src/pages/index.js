@@ -105,13 +105,13 @@ const IndexPage = () => {
 	return (
 		<Layout>
 			<SEO title="Home" />
-			<Slider {...settings}>
+			{/* <Slider {...settings}>
 				{data.slider.edges.map((edge, index) => {
 					return (
 						<HomeBanner key={index} title={edge.node.title} image={edge.node.image.file.url} />
 					)						
 				})}
-			</Slider>
+			</Slider> */}
 			<br />
 			<Container className={Styles.index__carousel} maxWidth="lg">
 				<Typography>
