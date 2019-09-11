@@ -36,6 +36,9 @@ const useStyles = makeStyles({
 	},
 	container: {
 		padding: '10px 15px 15px 15px'
+	},
+	slider: {
+		height: '300px'
 	}
   });
 
@@ -99,25 +102,27 @@ const IndexPage = () => {
 					)						
 				})}
 			</Slider> */}
-
+			<SwipeableTextMobileStepper></SwipeableTextMobileStepper>
 			<Container className={Styles.index__carousel} maxWidth="lg">
 				
 				<SubHeader  
 						title="Próximos eventos"  
 						subtitle="Descubre lo que pasará proximamente en Belcorp"  
 						button="Ver talleres"  />
+				<div className={classes.slider} >
+					<Slider className={classes.slider}  {...carousel}>
+						{data.carousel.edges.map((edge, index) => {
+							return <HomeCourse key={index} title={edge.node.title} exhibitor={edge.node.exhibitor} />;
+						})}
+					</Slider>
 
-				<Slider  {...carousel}>
-					{data.carousel.edges.map((edge, index) => {
-						return <HomeCourse key={index} title={edge.node.title} exhibitor={edge.node.exhibitor} />;
-					})}
-				</Slider>
+				</div>
 
 				<SubHeader  
 					title="Próximas actividades"  
 					subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
 					button="Ver actividades"  />
-				<SwipeableTextMobileStepper></SwipeableTextMobileStepper>
+				
 				{/* <Box mt={4} >
 					<Grid  container justify="space-between" spacing={5} >
 						<Grid item sm={6}  container direction='column' >
