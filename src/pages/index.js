@@ -22,6 +22,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import SwipeableTextMobileStepper  from '../components/mobcarousel'
 
 
 const useStyles = makeStyles({
@@ -116,7 +117,7 @@ const IndexPage = () => {
 					title="Próximas actividades"  
 					subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
 					button="Ver actividades"  />
-
+				<SwipeableTextMobileStepper></SwipeableTextMobileStepper>
 				{/* <Box mt={4} >
 					<Grid  container justify="space-between" spacing={5} >
 						<Grid item sm={6}  container direction='column' >
