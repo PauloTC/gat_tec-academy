@@ -167,6 +167,7 @@ const IndexPage = () => {
 						</Grid>
 						<Grid item sm={6}  container direction='column' >
 							<Paper  elevation={5} >
+							
 								<img className={classes.image} src="http://tinyimg.io/i/tSFDV33.jpeg"  />
 								<Grid container  className={classes.container}  >
 									<Grid item xs={9} >
