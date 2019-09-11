@@ -109,21 +109,21 @@ const IndexPage = () => {
 						title="Próximos eventos"  
 						subtitle="Descubre lo que pasará proximamente en Belcorp"  
 						button="Ver talleres"  />
-				<div className={classes.slider} >
+				{/* <div className={classes.slider} >
 					<Slider className={classes.slider}  {...carousel}>
 						{data.carousel.edges.map((edge, index) => {
 							return <HomeCourse key={index} title={edge.node.title} exhibitor={edge.node.exhibitor} />;
 						})}
 					</Slider>
 
-				</div>
+				</div> */}
 
 				<SubHeader  
 					title="Próximas actividades"  
 					subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
 					button="Ver actividades"  />
 				
-				{/* <Box mt={4} >
+				<Box my={4} >
 					<Grid  container justify="space-between" spacing={5} >
 						<Grid item sm={6}  container direction='column' >
 							<Paper  elevation={5} >
@@ -161,7 +161,7 @@ const IndexPage = () => {
 							</Paper>
 						</Grid>
 					</Grid>
-				</Box> */}
+				</Box>
 				
 				<SubHeader  
 					title="Puntajes Tec Valley "  
