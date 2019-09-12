@@ -19,8 +19,7 @@ import {
 
 const useStyles = makeStyles( theme =>  ({
         menu: {
-            display: 'none',
-            alignItems: 'center',
+            display: 'none !important',
             [theme.breakpoints.up('md')]: {
                 display: 'flex',
             },
