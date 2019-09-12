@@ -124,8 +124,8 @@ const IndexPage = () => {
 					button="Ver actividades"  />
 				
 				<Box my={4} >
-					<Grid  container justify="space-between" spacing={5} >
-						<Grid item sm={6}  container direction='column' >
+					<Grid  container justify="space-between" spacing={5}  >
+						<Grid item sm={12} md={6}  container direction='column' >
 							<Paper  elevation={5} >
 								<img className={classes.image} src="http://tinyimg.io/i/tSFDV33.jpeg"  />
 								<Grid container  className={classes.container}  >
@@ -142,7 +142,7 @@ const IndexPage = () => {
 								</Grid>
 							</Paper>
 						</Grid>
-						<Grid item sm={6}  container direction='column' >
+						<Grid item sm={12} md={6}  container direction='column' >
 							<Paper  elevation={5} >
 							
 								<img className={classes.image} src="http://tinyimg.io/i/tSFDV33.jpeg"  />
