@@ -15,8 +15,8 @@ const HomeCourse = (props) => {
             <Box  mb={3}>
                 <Typography> 
                     <Box fontSize="subtitle2.fontSize">mar., 10 sept.</Box>
-                    <Box lineHeight={1.2} mb={1}  className={Styles.course__title} fontSize="h5.fontSize" fontWeight="fontWeightBold" > {props.title} </Box>
-                    <Box  fontSize="body2.fontSize" > {props.exhibitor} </Box>
+                    <Box lineHeight={1.2} mb={1}  className={Styles.course__title} fontSize="h5.fontSize" fontWeight="fontWeightBold" > {props.edge.node.title} </Box>
+                    <Box  fontSize="body2.fontSize" > {props.edge.node.exhibitor} </Box>
                 </Typography>
             </Box>
             <Grid  container justify="flex-end" >

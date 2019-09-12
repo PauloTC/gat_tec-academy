@@ -103,7 +103,7 @@ const IndexPage = () => {
 				})}
 			</Slider> */}
 			<SwipeableTextMobileStepper></SwipeableTextMobileStepper>
-			<Container className={Styles.index__carousel} maxWidth="lg">
+			<Container className={Styles.index__carousel} maxWidth="md">
 				
 				<SubHeader  
 						title="Próximos eventos"  
@@ -111,13 +111,7 @@ const IndexPage = () => {
 						button="Ver talleres"  />
 				<div className={classes.slider} >
 					<Slider className={classes.slider}  {...carousel}>
-						{data.carousel.edges.map((edge, index) => {
-							return (
-								<div>
-									<HomeCourse key={index} title={edge.node.title} exhibitor={edge.node.exhibitor} />;		
-								</div>
-							)
-						})}
+						{data.carousel.edges.map((edge) => ( <div> <HomeCourse edge={edge} /> </div>))}
 					</Slider>
 				</div>
 
