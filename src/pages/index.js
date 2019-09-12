@@ -64,6 +64,7 @@ const IndexPage = () => {
 			carousel:allContentfulCourse(filter: { showHomeCarousel:{ eq: true }  }){
 				edges {
 					node {
+						id
 						title
 						exhibitor
 					}
@@ -110,8 +111,8 @@ const IndexPage = () => {
 						subtitle="Descubre lo que pasará proximamente en Belcorp"  
 						button="Ver talleres"  />
 				<div className={classes.slider} >
-					<Slider className={classes.slider}  {...carousel}>
-						{data.carousel.edges.map((edge) => ( <div> <HomeCourse edge={edge} /> </div>))}
+					<Slider {...carousel}>
+						{data.carousel.edges.map( edge => ( <div  key={edge.node.id}  > <HomeCourse edge={edge} /> </div>))}
 					</Slider>
 				</div>
 
