@@ -12,11 +12,28 @@ import SimpleMenu from '../menudrop'
 import TemporaryDrawer from '../menu-responsive/MenuResponsive'
 import { 
         Grid, 
-        Typography, 
+        Typography,
+        makeStyles,
         Box } from '@material-ui/core';
 
-const Header = () => {
 
+const useStyles = makeStyles( theme =>  ({
+        menu: {
+            display: 'none',
+            alignItems: 'center',
+            [theme.breakpoints.up('md')]: {
+                display: 'flex',
+            },
+        },
+        box: {
+            display: 'flex'
+        }
+ }));
+
+
+
+const Header = () => {
+	const classes = useStyles();
     const Links = [
         {  name: 'Actividades', to: '/actividades' , icon: 'icon-support' },
         {  name: 'Talleres', to: 'courses', icon: 'icon-lectern'  },
@@ -33,8 +50,8 @@ const Header = () => {
                         <Link className={styles.header__img} >
                             <img id="logo" src={logo} width="120" />
                         </Link>
-                        <Box  display={{ xs: 'none', md: 'none', lg: 'none' }}>
-                            <Typography s className={ styles.header__container_links }   variant="body2">
+                        <Box  className={classes.box} >
+                            <Typography  className={classes.menu}  variant="body2">
                                 {
                                     Links.map(  (link , index )  => {
                                         return (
