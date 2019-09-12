@@ -112,10 +112,13 @@ const IndexPage = () => {
 				<div className={classes.slider} >
 					<Slider className={classes.slider}  {...carousel}>
 						{data.carousel.edges.map((edge, index) => {
-							return <HomeCourse key={index} title={edge.node.title} exhibitor={edge.node.exhibitor} />;
+							return (
+								<div>
+									<HomeCourse key={index} title={edge.node.title} exhibitor={edge.node.exhibitor} />;		
+								</div>
+							)
 						})}
 					</Slider>
-
 				</div>
 
 				<SubHeader  
