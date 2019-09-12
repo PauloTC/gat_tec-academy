@@ -109,14 +109,14 @@ const IndexPage = () => {
 						title="Próximos eventos"  
 						subtitle="Descubre lo que pasará proximamente en Belcorp"  
 						button="Ver talleres"  />
-				{/* <div className={classes.slider} >
+				<div className={classes.slider} >
 					<Slider className={classes.slider}  {...carousel}>
 						{data.carousel.edges.map((edge, index) => {
 							return <HomeCourse key={index} title={edge.node.title} exhibitor={edge.node.exhibitor} />;
 						})}
 					</Slider>
 
-				</div> */}
+				</div>
 
 				<SubHeader  
 					title="Próximas actividades"  
