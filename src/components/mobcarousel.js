@@ -52,6 +52,9 @@ const useStyles = makeStyles(theme => ({
   },
   img: {
     height: 255,
+    [theme.breakpoints.up('md')]: {
+        height: 400
+    },
     display: 'block',
     overflow: 'hidden',
     width: '100%',

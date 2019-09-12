@@ -5,6 +5,7 @@ import HomeAcademy from '../components/home/home-academy';
 import HomeBanner from '../components/banners/home-banner';
 import HomeCourse from '../components/home-course/home-course';
 import SubHeader from '../components/comoon/subheader'
+import ActivityItem from '../components/activity-item'
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -31,16 +32,10 @@ const useStyles = makeStyles({
 		fontSize: '16px',
 		fontWeight: 900
 	},
-	image: {
-		margin: 0
-	},
-	container: {
-		padding: '10px 15px 15px 15px'
-	},
 	slider: {
 		height: '300px'
 	}
-  });
+});
 
 
 
@@ -103,61 +98,34 @@ const IndexPage = () => {
 					)						
 				})}
 			</Slider> */}
-			<SwipeableTextMobileStepper></SwipeableTextMobileStepper>
+			<Box mb={4}>
+				<SwipeableTextMobileStepper></SwipeableTextMobileStepper>
+			</Box>
 			<Container className={Styles.index__carousel} maxWidth="md">
 				
 				<SubHeader  
 						title="Próximos eventos"  
 						subtitle="Descubre lo que pasará proximamente en Belcorp"  
 						button="Ver talleres"  />
-				<div className={classes.slider} >
-					<Slider {...carousel}>
-						{data.carousel.edges.map( edge => ( <div  key={edge.node.id}  > <HomeCourse edge={edge} /> </div>))}
-					</Slider>
-				</div>
+				<Box my={4}>
+					<Grid  container justify="space-between" spacing={2}  >
+						{	
+							data.carousel.edges.map( edge => ( <HomeCourse key={edge.node.id}  edge={edge} />))
+						}
+					</Grid>
+				</Box>
 
 				<SubHeader  
 					title="Próximas actividades"  
 					subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
 					button="Ver actividades"  />
-				
+
 				<Box my={4} >
 					<Grid  container justify="space-between" spacing={5}  >
-						<Grid item sm={12} md={6}  container direction='column' >
-							<Paper  elevation={5} >
-								<img className={classes.image} src="http://tinyimg.io/i/tSFDV33.jpeg"  />
-								<Grid container  className={classes.container}  >
-									<Grid item xs={9} >
-										<Typography> 
-											<Box mb={1}  fontSize="subtitle2.fontSize">mar., 10 sept.</Box>
-											<Box lineHeight={1.2} mb={1}   fontSize="h6.fontSize" fontWeight="fontWeightBold" > Meetup: Time Management Skills </Box>
-											<Box  fontSize="body2.fontSize" > Bruno Díaz </Box>
-										</Typography>
-									</Grid>
-									<Grid xs={3} item container justify="flex-end" alignContent="flex-end" >
-										<Button size="small" variant="outlined" color="primary"> Unirme </Button>
-									</Grid>
-								</Grid>
-							</Paper>
-						</Grid>
-						<Grid item sm={12} md={6}  container direction='column' >
-							<Paper  elevation={5} >
-							
-								<img className={classes.image} src="http://tinyimg.io/i/tSFDV33.jpeg"  />
-								<Grid container  className={classes.container}  >
-									<Grid item xs={9} >
-										<Typography> 
-											<Box mb={1}  fontSize="subtitle2.fontSize">mar., 10 sept.</Box>
-											<Box lineHeight={1.2} mb={1}   fontSize="h6.fontSize" fontWeight="fontWeightBold" > Meetup: Time Management Skills </Box>
-											<Box  fontSize="body2.fontSize" > Bruno Díaz </Box>
-										</Typography>
-									</Grid>
-									<Grid xs={3} item container justify="flex-end" alignContent="flex-end" >
-										<Button size="small" variant="outlined" color="primary"> Unirme </Button>
-									</Grid>
-								</Grid>
-							</Paper>
-						</Grid>
+						
+						<ActivityItem />
+						<ActivityItem />
+								
 					</Grid>
 				</Box>
 				
