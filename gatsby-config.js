@@ -6,7 +6,14 @@ module.exports = {
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
-		`gatsby-plugin-material-ui`,
+		{
+			resolve: `gatsby-plugin-material-ui`,
+			options: {
+			  stylesProvider: {
+				injectFirst: true,
+			  },
+			},
+		},
 		{
 			resolve: `gatsby-source-contentful`,
 			options: {
