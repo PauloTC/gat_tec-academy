@@ -17,7 +17,7 @@ const useStyles = makeStyles({
         color: 'white',
         '& div' :  {
             fontSize: '16px !important',
-            fontWeight: 400
+            // fontWeight: 400
         }
     },
     item: {
@@ -28,7 +28,7 @@ const useStyles = makeStyles({
             '& div' : {
                 color : 'black !important', 
                 background: 'transparent !important',
-                
+                fontWeight: 400
             },
             '& p' :  {
                 display: 'flex  !important',

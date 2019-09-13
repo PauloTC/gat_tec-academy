@@ -19,9 +19,9 @@ import {
 
 const useStyles = makeStyles( theme =>  ({
         menu: {
-            display: 'none !important',
+            display: 'flex !important',
             [theme.breakpoints.up('md')]: {
-                display: 'flex',
+                display: 'none',
             },
         },
         box: {
