@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, {  Fragment } from 'react'
 import { Typography, Box, Button, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 

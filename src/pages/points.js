@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from '../components/layout'
-import GBanner from  '../components/banner';
 import PointsGroup from  '../components/grouppoints/grouppoints';
 import IndividualPoints from '../components/individualpoints/individualpoints'
 import SEO from "../components/seo"

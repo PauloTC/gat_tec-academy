@@ -1,6 +1,5 @@
 import React from 'react'
-import image from '../../images/curso-soft-1.png'
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { Link } from 'gatsby';
 
 import Badge from 'react-bootstrap/Badge'
 import Styles from './course.module.scss'
@@ -12,7 +11,7 @@ const Course = (props) => {
   
             <div className="cursos-hard-bg  d-flex flex-column post_cursos"> 
 
-                <img className="mb-3" src={ props.image } height="167" alt="" />
+                <img className="mb-3" src={ props.image } height="167" alt="image2" />
                 
                 <div className="curso_hard_text">
                     <h6>

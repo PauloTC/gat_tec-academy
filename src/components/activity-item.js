@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, {  Fragment } from 'react'
 import { 
                     Paper, 
                     Typography, 
@@ -23,9 +23,9 @@ const ActivityItem = () => {
     return (
         <Fragment>
             <Grid item xs={12} sm={6}  container direction='column' >
-                <Paper  elevation={5} >
+                <Paper  elevation="5" >
                 
-                    <img className={classes.image} src="http://tinyimg.io/i/tSFDV33.jpeg"  />
+                    <img  alt="Bruno Díaz " className={classes.image} src="http://tinyimg.io/i/tSFDV33.jpeg"  />
                     <Grid container  className={classes.container}  >
                         <Grid xs={12} md={9} item>
                             <Typography> 

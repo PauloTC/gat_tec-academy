@@ -1,29 +1,25 @@
 import React from 'react'
-import prizes from "../../images/ico-premios.svg"
-import groupStyles from './grouppoints.module.scss'
-import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import Styles from './grouppoints.module.scss'
 
 const PointsGroup = (props) => {    
     return (
         <React.Fragment>
                 {(() => {
-                    if ( props.position == "0"  ) {
+                    if ( props.position === "0"  ) {
                         return (
-                            <Typography className={Styles.group__position} variant="caption" > 1er puesto 🎉 </Typography>    
+                            <Typography className={Styles.group__position} variant="caption" > 1er puesto  <span  role="img" >🎉</span>  </Typography>    
                         )
-                    } else if ( props.position == "1" ) {
+                    } else if ( props.position === "1" ) {
                         return (
                             <Typography className={Styles.group__position} variant="caption" > 2do puesto </Typography>    
                         )
-                    } else if ( props.position == "2" ) {
+                    } else if ( props.position === "2" ) {
                         return (
                             <Typography  variant="caption" > 3er puesto </Typography>    
                         )
-                    } else if ( props.position == "3" ) {
+                    } else if ( props.position === "3" ) {
                         return (
                             <Typography  variant="caption" > 4to puesto </Typography>    
                         )

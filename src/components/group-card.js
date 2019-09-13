@@ -1,12 +1,8 @@
 import React, { Fragment } from 'react'
 import { 
-    Box, 
-    Button,
-    Paper, 
+    Box,
     Grid } from '@material-ui/core';
-import { makeStyles, styled } from '@material-ui/styles';
-import { green } from '@material-ui/core/colors';
-import { borderRadius, height, width } from '@material-ui/system';
+import { makeStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
@@ -17,7 +13,6 @@ const useStyles = makeStyles({
         color: 'white',
         '& div' :  {
             fontSize: '16px !important',
-            // fontWeight: 400
         }
     },
     item: {

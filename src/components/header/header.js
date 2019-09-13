@@ -3,12 +3,9 @@ import React from "react"
 import logo from "../../images/logo-tecacademy.png"
 import "../../assets/icons/style.css"
 import AppBar from '@material-ui/core/AppBar';
-
-import {Helmet} from "react-helmet";
 import styles from './header.module.scss'
 import Container from '@material-ui/core/Container';
 import { Link } from "gatsby"
-import SimpleMenu from '../menudrop'
 import TemporaryDrawer from '../menu-responsive/MenuResponsive'
 import { 
         Grid, 
@@ -47,7 +44,7 @@ const Header = () => {
                 <Grid  container  justify="space-between">
                     <Grid container justify="space-between"  item  xs={11} md={12} >
                         <Link className={styles.header__img} >
-                            <img id="logo" src={logo} width="120" />
+                            <img alt="logo"  id="logo" src={logo} width="120" />
                         </Link>
                         <Box  className={classes.box} >
                             <Typography  className={classes.menu}  variant="body2">

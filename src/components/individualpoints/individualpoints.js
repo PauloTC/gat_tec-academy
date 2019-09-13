@@ -1,15 +1,5 @@
 import React from 'react';
-
-import Container from '@material-ui/core/Container';
-
-import appleIcon from '../../images/logos-leaderboard/apple.jpg'; // Tell Webpack this JS file uses this image
-import facebookIcon from '../../images/logos-leaderboard/facebook.jpg'; // Tell Webpack this JS file uses this image
-import googleIcon from '../../images/logos-leaderboard/google.jpg'; // Tell Webpack this JS file uses this image
-import netflixIcon from '../../images/logos-leaderboard/netflix.jpg'; // Tell Webpack this JS file uses this image
-import teslaIcon from '../../images/logos-leaderboard/tesla.jpg'; // Tell Webpack this JS file uses this image
-
 import MaterialTable from 'material-table';
-import Button from '@material-ui/core/Button';
 import Styles from './individualpoints.module.scss';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -32,7 +22,7 @@ const IndividualPoints = () => {
 	`)
 
 
-	const [ state, setState ] = React.useState({
+	const [ state ] = React.useState({
 		columns: [
 			// { title: 'Puesto', field: 'place', type: 'numeric' },
 			// { title: 'Puesto', field: 'place' },

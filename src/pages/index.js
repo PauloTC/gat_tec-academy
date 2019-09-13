@@ -1,8 +1,4 @@
 import React from 'react';
-
-import BannerHome from '../components/banners/home-banner';
-import HomeAcademy from '../components/home/home-academy';
-import HomeBanner from '../components/banners/home-banner';
 import HomeCourse from '../components/home-course/home-course';
 import SubHeader from '../components/comoon/subheader'
 import ActivityItem from '../components/activity-item'
@@ -12,16 +8,12 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 import Styles from '../components/index.module.scss';
-import { makeStyles } from '@material-ui/styles';
 
-
-import Typography from '@material-ui/core/Typography';
-import { Paper, Container, Box, Button, Grid } from '@material-ui/core';
+import {  Container, Box, Grid } from '@material-ui/core';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import Slider from 'react-slick';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import SwipeableTextMobileStepper  from '../components/mobcarousel'
@@ -69,27 +61,6 @@ const IndexPage = () => {
             }
 		}
 	`);
-
-	var settings = {
-		dots: false,
-		fade: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		adaptiveHeight: true
-	};
-
-	const carousel = {
-		dots: false,
-		fade: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		adaptiveHeight: true
-	};
-
 	return (
 		<Layout>
 			<SEO title="Home" />
