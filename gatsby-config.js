@@ -7,12 +7,7 @@ module.exports = {
 	plugins: [
 		`gatsby-plugin-react-helmet`,
 		{
-			resolve: `gatsby-plugin-material-ui`,
-			options: {
-			  stylesProvider: {
-				injectFirst: true,
-			  },
-			},
+			resolve: `gatsby-plugin-material-ui`
 		},
 		{
 			resolve: `gatsby-source-contentful`,
@@ -31,12 +26,7 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-sass`,
-		{
-			resolve: `gatsby-plugin-styled-components`,
-			options: {
-			  // Add any options here
-			},
-		  },
+		'gatsby-plugin-styled-components',
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
