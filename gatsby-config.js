@@ -9,9 +9,9 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-material-ui`,
 			options: {
-			  stylesProvider: {
-				injectFirst: true,
-			  },
+			//   stylesProvider: {
+			// 	injectFirst: true,
+			//   },
 			},
 		},
 		{
@@ -31,6 +31,7 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-sass`,
+		'gatsby-plugin-styled-components',
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
