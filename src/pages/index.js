@@ -6,6 +6,7 @@ import HomeBanner from '../components/banners/home-banner';
 import HomeCourse from '../components/home-course/home-course';
 import SubHeader from '../components/comoon/subheader'
 import ActivityItem from '../components/activity-item'
+import GroupCard from '../components/group-card'
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -25,22 +26,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import SwipeableTextMobileStepper  from '../components/mobcarousel'
 
-
-const useStyles = makeStyles({
-	button: {
-		textTransform: 'capitalize',
-		fontSize: '16px',
-		fontWeight: 900
-	},
-	slider: {
-		height: '300px'
-	}
-});
-
-
-
 const IndexPage = () => {
-	const classes = useStyles();
 	const data = useStaticQuery(graphql`
 		query {
 			slider : allContentfulCourse(filter: { showHomeBanner: { eq: true } }) {
@@ -64,7 +50,23 @@ const IndexPage = () => {
 						exhibitor
 					}
 				}
-			}
+			},
+			countries: allContentfulGroup (sort : {
+                fields: points,
+                order: DESC
+            }) {
+                edges {
+                    node {
+                        name
+                        points
+                        image {
+                            file {
+                                url
+                            }
+                        }
+                    }
+                }
+            }
 		}
 	`);
 
@@ -134,6 +136,14 @@ const IndexPage = () => {
 					subtitle="¿Estás cerca a ganar ese after office?  ¡Aprovecha al máximo TecAcademy!"  
 					button="Ver puntajes"  />
 
+				<Box position="relative" my={4} >
+					<Grid  container spacing={3}  >	
+						{
+							data.countries.edges.map(  edge => (  <GroupCard  data={edge.node}  />  )  )
+						}			
+					</Grid>
+				</Box>
+				
 			</Container>
 		</Layout>
 	);

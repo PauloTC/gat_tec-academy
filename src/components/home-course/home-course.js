@@ -11,7 +11,6 @@ import Styles from './home-course.module.scss'
 const HomeCourse = (props) => {
     return(
         <Grid item xs={12} md={4}>
-
             <Paper  className={ Styles.course__card }  elevation="5" >
                 <Box  mb={3}>
                     <Typography> 
@@ -24,7 +23,6 @@ const HomeCourse = (props) => {
                     <Button className={ Styles.course__button } size="small" variant="outlined" color="primary"> Asistiré </Button>
                 </Grid>
             </Paper>
-
         </Grid>
     )
 }
