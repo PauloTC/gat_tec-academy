@@ -14,7 +14,10 @@ const useStyles = makeStyles({
 	},
 	container: {
 		padding: '10px 15px 15px 15px'
-	},
+    },
+    button: {
+        textTransform: "capitalize"
+    }
 });
 
 
@@ -35,7 +38,7 @@ const ActivityItem = () => {
                             </Typography>
                         </Grid>
                         <Grid  xs={12} md={3} item container justify="flex-end" alignContent="flex-end" >
-                            <Button size="small" variant="outlined" color="primary"> Unirme </Button>
+                            <Button className={classes.button} size="small" variant="outlined" color="primary"> Unirme </Button>
                         </Grid>
                     </Grid>
                 </Paper>

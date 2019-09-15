@@ -34,7 +34,7 @@ const Header = () => {
         {  name: 'Actividades', to: '/actividades' , icon: 'icon-support' },
         {  name: 'Talleres', to: 'courses', icon: 'icon-lectern'  },
         {  name: 'Puntajes', to: 'points' , icon: 'icon-star'  },
-        {  name: 'Comunidad', to: 'points', icon: 'icon-group'  },
+        {  name: '¿Porque TecAcademy?', to: 'comunity', icon: 'icon-group'  },
         {  name: 'Blog', to: 'points', icon: 'icon-education'  }
     ]
 

@@ -39,6 +39,7 @@ const IndexPage = () => {
 					node {
 						id
 						title
+						slug
 						exhibitor
 					}
 				}
