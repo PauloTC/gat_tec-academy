@@ -6,6 +6,7 @@ import {
           Typography,
           Button,
           Container,
+          CardMedia,
           Paper,
           Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
@@ -18,54 +19,57 @@ const useStyles = makeStyles({
     image: {
         margin: 0,
         borderRadius: 50
+    },
+    card: {
+        height: 400
     }
 });
 
 
-// export const query = graphql`
-//     query(  $slug: String! ) {
-//         course: contentfulCourse ( slug: { eq: $slug }) {
-//             title
-//             exhibitor
-//             exhibitorJob
-//             exhibitorImage {
-//                 file {
-//                     url
-//                 }
-//             }
-//             image {
-//                 file {
-//                     url
-//                 }
-//             }
-//             description {
-//                 content {
-//                     content {
-//                         value
-//                     }
-//                 }
-//             }
-//         },
-//         carousel:allContentfulCourse(filter: { showHomeCarousel:{ eq: true }  }){
-//             edges {
-//                 node {
-//                     id
-//                     title
-//                     slug
-//                     exhibitor
-//                 }
-//             }
-//         },
-//     }
-// `
+export const query = graphql`
+    query(  $slug: String! ) {
+        course: contentfulCourse ( slug: { eq: $slug }) {
+            title
+            exhibitor
+            exhibitorJob
+            exhibitorImage {
+                file {
+                    url
+                }
+            }
+            image {
+                file {
+                    url
+                }
+            }
+            description {
+                content {
+                    content {
+                        value
+                    }
+                }
+            }
+        },
+        carousel:allContentfulCourse(filter: { showHomeCarousel:{ eq: true }  }){
+            edges {
+                node {
+                    id
+                    title
+                    slug
+                    exhibitor
+                }
+            }
+        },
+    }
+`
 const Course = (props) => {
     const classes = useStyles();
 	return (
 		<Layout>
-            <Container maxWidth="lg" spacing={5}  >
+            <Container maxWidth="md" spacing={5}  >
                 <Grid  container  justify={"space-between"} >
                     <Grid item xs={12}  md={7}  >
-                        <Box px={5} my={3}  >
+                        <Box my={3}  >
                             <Typography> 
                                 <Box  fontSize="body2.fontSize" >sábado, 14 de septiembre de 2019</Box>
                                 <Box  fontSize="h5.fontSize"  fontWeight={900} >  {props.data.course.title}  </Box>
@@ -85,8 +89,10 @@ const Course = (props) => {
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box px={5} my={3} >
-                            <img width={600}  src={ props.data.course.image.file.url } />
+                        <Box  my={3} >
+                            <Box  mb={3} >
+                                <CardMedia className={classes.card}  image={ props.data.course.image.file.url } />
+                            </Box>
                             <Paper  elevation={0}  >
                                 <Typography gutterBottom>
                                     <Box  fontSize="subtitle1" fontWeight={700}  >Detalles</Box>  
@@ -114,7 +120,7 @@ const Course = (props) => {
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Box px={5} width={1}  my={4} >
+                    <Box width={1}  my={4} >
                         <Typography gutterBottom>
                             <Box  fontSize="subtitle1" fontWeight={700}  >Próximos eventos</Box>  
                         </Typography>

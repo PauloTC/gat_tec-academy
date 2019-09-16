@@ -20,7 +20,7 @@ const useStyles = makeStyles({
         textTransform: "capitalize"
     },
     card: {
-        height: 310,
+        height: 305,
         backgroundSize: 'contain'
     }
 });
