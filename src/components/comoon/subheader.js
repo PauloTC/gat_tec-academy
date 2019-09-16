@@ -22,7 +22,7 @@ const SubHeader = (props) => {
                         <Box fontSize="body2.fontSize" > {  props.subtitle } </Box>
                     </Grid>
                     <Grid container alignItems="center" justify="flex-end"  item md={2} >
-                        <Button ontWeight={900} className={classes.button}  color="primary"> { props.button } </Button>
+                        <Button fontWeight={900} className={classes.button}  color="primary"> { props.button } </Button>
                     </Grid>
                 </Grid>
             </Typography>

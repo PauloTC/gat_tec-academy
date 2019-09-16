@@ -62,13 +62,6 @@ const IndexPage = () => {
 	return (
 		<Layout>
 			<SEO title="Inicio" />
-			{/* <Slider {...settings}>
-				{data.slider.edges.map((edge, index) => {
-					return (
-						<HomeBanner key={index} title={edge.node.title} image={edge.node.image.file.url} />
-					)						
-				})}
-			</Slider> */}
 			<Box mb={4}>
 				<SwipeableTextMobileStepper></SwipeableTextMobileStepper>
 			</Box>

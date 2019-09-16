@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import OpenIconSpeedDial from "./speeddial"
 import Header from "./header/header"
 // import "./layout.css"
 
@@ -20,6 +20,7 @@ const Layout = ({ children }) => {
   return (
     <>
       {/* <Link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> */}
+      <OpenIconSpeedDial></OpenIconSpeedDial>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className="body-container" >
         <main>{children}</main>

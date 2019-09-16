@@ -54,7 +54,8 @@ const useStyles = makeStyles(theme => ({
     top: '50%',
     transform: 'translateY(-50%)',
     zIndex: 10,
-    background: 'transparent'
+    background: 'transparent',
+    fontSize: 0
   },
   header: {
     display: 'flex',
