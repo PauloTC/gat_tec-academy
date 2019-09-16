@@ -40,6 +40,20 @@
 ul li {
     margin-bottom: 0;
 }
+.individual {
+    .MuiToolbar-gutters {
+        background: #fafafa !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        h6 {
+            font-weight: bold;
+            font-size: 16px !important;
+        }
+    }
+    .MuiTablePagination-root {
+        border-bottom: none
+    }
+}
 .g_banner-container {
     background: linear-gradient(to bottom, #290953 0%, #3d1978 100%) !important;
     color: #fff;
@@ -67,10 +81,6 @@ ul li {
 
 .individual .MuiPaper-elevation2 {
     box-shadow: none !important;
-}
-.individual .MuiToolbar-root{
-    padding-left: 0 !important;
-    padding-right: 0 !important;
 }
 .individual .MuiTableSortLabel-icon {
     font-size: 18px !important

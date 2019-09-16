@@ -10,8 +10,23 @@
             text-align: center;
         }
     }
+    &__table {
+        background-color: #fafafa !important;
+        h4 {
+            font-weight: 700;
+        }
+    } 
+    .MuiToolbar-gutters {
+        background-color: #fafafa !important;
+    }
+    .MuiPaper-root {
+        background: red !important;
+    }
+    &__section{
+        border-radius: 8px;
+        margin: 0;
+    }
 }
-
 
 
 @media screen and (max-width: 575px) {

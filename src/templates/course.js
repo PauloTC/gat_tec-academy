@@ -22,42 +22,42 @@ const useStyles = makeStyles({
 });
 
 
-export const query = graphql`
-    query(  $slug: String! ) {
-        course: contentfulCourse ( slug: { eq: $slug }) {
-            title
-            exhibitor
-            exhibitorJob
-            exhibitorImage {
-                file {
-                    url
-                }
-            }
-            image {
-                file {
-                    url
-                }
-            }
-            description {
-                content {
-                    content {
-                        value
-                    }
-                }
-            }
-        },
-        carousel:allContentfulCourse(filter: { showHomeCarousel:{ eq: true }  }){
-            edges {
-                node {
-                    id
-                    title
-                    slug
-                    exhibitor
-                }
-            }
-        },
-    }
-`
+// export const query = graphql`
+//     query(  $slug: String! ) {
+//         course: contentfulCourse ( slug: { eq: $slug }) {
+//             title
+//             exhibitor
+//             exhibitorJob
+//             exhibitorImage {
+//                 file {
+//                     url
+//                 }
+//             }
+//             image {
+//                 file {
+//                     url
+//                 }
+//             }
+//             description {
+//                 content {
+//                     content {
+//                         value
+//                     }
+//                 }
+//             }
+//         },
+//         carousel:allContentfulCourse(filter: { showHomeCarousel:{ eq: true }  }){
+//             edges {
+//                 node {
+//                     id
+//                     title
+//                     slug
+//                     exhibitor
+//                 }
+//             }
+//         },
+//     }
+// `
 const Course = (props) => {
     const classes = useStyles();
 	return (
