@@ -11,9 +11,6 @@ import Styles from '../components/index.module.scss';
 
 import {  Container, Box, Grid } from '@material-ui/core';
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
 import { useStaticQuery, graphql } from 'gatsby';
 
 import SwipeableTextMobileStepper  from '../components/mobcarousel'
@@ -64,7 +61,7 @@ const IndexPage = () => {
 	`);
 	return (
 		<Layout>
-			<SEO title="Home" />
+			<SEO title="Inicio" />
 			{/* <Slider {...settings}>
 				{data.slider.edges.map((edge, index) => {
 					return (

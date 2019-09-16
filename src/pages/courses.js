@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout';
+import SEO from "../components/seo"
 import CoursePrincipal from  '../components/courses/course-principal';
 import Course from '../components/course/course'
 import { useStaticQuery, graphql } from 'gatsby';
@@ -43,6 +44,7 @@ const CoursesPage = () => {
     return(
     
         <Layout>
+            <SEO title="Cursos" />
             <Container maxWidth="md"  >
                 <Box my={5} >
                     { data.allContentfulCourse.edges.map( (edge, index) => {

@@ -10,79 +10,77 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
-import { 
-                Grid } from '@material-ui/core';
-import  styles from './menu-responsive.module.scss'
+import { Grid  } from '@material-ui/core';
+import styles from './menu-responsive.module.scss';
+import { Link } from "gatsby"
+
 
 const useStyles = makeStyles({
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: 'auto',
-  },
+	list: {
+		width: 250
+	},
+	fullList: {
+		width: 'auto'
+	}
 });
 
 export default function TemporaryDrawer() {
-  const classes = useStyles();
-  const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
+    const classes = useStyles();
 
-  const toggleDrawer = (side, open) => event => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
+    const Links = [
+        {  name: 'Actividades', to: '/' , icon: 'icon-support' },
+        {  name: 'Talleres', to: '/courses', icon: 'icon-lectern'  },
+        {  name: 'Puntajes', to: '/points' , icon: 'icon-star'  },
+        {  name: '¿Porque TecAcademy?', to: '/comunity', icon: 'icon-group'  },
+        {  name: 'Blog', to: '/points', icon: 'icon-education'  }
+    ]
 
-    setState({ ...state, [side]: open });
-  };
+	const [ state, setState ] = React.useState({
+		top: false,
+		left: false,
+		bottom: false,
+		right: false
+	});
 
-  const sideList = side => (
-    <div
-      className={classes.list}
-      role="presentation"
-      onClick={toggleDrawer(side, false)}
-      onKeyDown={toggleDrawer(side, false)}
-    >
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
-  );
+	const toggleDrawer = (side, open) => (event) => {
+		if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+			return;
+		}
 
-  return (
-    <Grid 
-        container 
-        alignItems="center" 
-        className={ styles.menu__container } 
-        justify="center"
-        height="100%" >
-        <IconButton 
-            className={ styles.menu__icon } 
-            onClick={toggleDrawer('right', true)} 
-            aria-label="menu">
-            <MenuIcon />
-        </IconButton>
-        <Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)}>
-            {sideList('right')}
-        </Drawer>
-    </Grid>
-  );
+		setState({ ...state, [side]: open });
+	};
+
+	const sideList = (side) => (
+		<div
+			className={classes.list}
+			role="presentation"
+			onClick={toggleDrawer(side, false)}
+			onKeyDown={toggleDrawer(side, false)}
+		>
+			<List>
+				{ Links.map(( link, index) => (
+                    <ListItem button key={link.to}>
+                        
+					    <Link  to={ link.to } >
+                            <i className={`${ link.icon }`} ></i>
+                            { link.name }</Link>
+						{/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+						<ListItemText primary={text} /> */}
+					</ListItem>
+
+				))}
+			</List>
+		</div>
+	);
+
+	return (
+		<Grid container alignItems="center" className={styles.menu__container} justify="center" height="100%">
+			<IconButton className={styles.menu__icon} onClick={toggleDrawer('right', true)} aria-label="menu">
+				<MenuIcon />
+			</IconButton>
+			<Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)}>
+				{sideList('right')}
+			</Drawer>
+		</Grid>
+	);
 }

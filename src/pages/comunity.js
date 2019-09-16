@@ -48,7 +48,7 @@ const Comunity = () => {
     return (
         <Fragment>
             <Layout>
-                <SEO title="Comunity" />
+                <SEO title="Comunidad" />
                 <Card>
                         <CardMedia  className={classes.banner} image={ bannerimage }  />
                         <CardContent className={classes.textbanner}  >
