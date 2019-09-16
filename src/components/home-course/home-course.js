@@ -12,11 +12,15 @@ import { Link } from 'gatsby';
 const useStyles = makeStyles({
     button: {
         textTransform: "capitalize",
+        color: "#ff00a6",
+        border: '1px solid rgba(255, 0, 166, 0.5)',
         '& a': {
             textDecoration: 'none',
             color:  'inherit'
         }
-
+    },
+    date: {
+        color: "#ff00a6"
     }
 });
 
@@ -27,8 +31,8 @@ const HomeCourse = (props) => {
             <Paper  className={ Styles.course__card }  elevation="5" >
                 <Box  mb={3}>
                     <Typography> 
-                        <Box fontSize="subtitle2.fontSize">mar., 10 sept.</Box>
-                        <Box lineHeight={1.2} mb={1}  className={Styles.course__title} fontSize="h5.fontSize" fontWeight="fontWeightBold" > {props.edge.node.title} </Box>
+                        <Box mb={1} className={classes.date} fontSize="subtitle2.fontSize">mar., 10 sept.</Box>
+                        <Box lineHeight={1.2} mb={1}  className={Styles.course__title} fontSize="h6.fontSize" fontWeight="fontWeightBold" > {props.edge.node.title} </Box>
                         <Box  fontSize="body2.fontSize" > {props.edge.node.exhibitor} </Box>
                     </Typography>
                 </Box>

@@ -2,9 +2,8 @@ import React from 'react'
 import Layout from '../components/layout';
 import CoursePrincipal from  '../components/courses/course-principal';
 import Course from '../components/course/course'
-import { Row } from 'react-bootstrap';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Container } from '@material-ui/core';
+import { Container, Box, Typography, Grid } from '@material-ui/core';
 
 const CoursesPage = () => {
 
@@ -44,48 +43,51 @@ const CoursesPage = () => {
     return(
     
         <Layout>
-            {/* <GBanner  title='Malla de Cursos' subtitle="Tec Valley"  ></GBanner> */}
-            <Container>
-                { data.allContentfulCourse.edges.map( (edge, index) => {
-                    if(edge.node.principal === true) {
-                        return (
-                            // console.log(edge.node.exhibitor)
-                            <CoursePrincipal
-                                key = { index }
-                                exhibitorJob = { edge.node.exhibitorJob }
-                                exhibitorImage = { edge.node.exhibitorImage.file.url }
-                                exhibitor = { edge.node.exhibitor }
-                                image= {edge.node.image.file.url }
-                                description={ edge.node.description.content[0].content[0].value }
-                                title= {edge.node.title}
-                            ></CoursePrincipal>
-                        )
-                    }else {
-                        return false 
-                    }
-                } ) }
-                <Container className="mb-30" >
-                    <h2 className="g-subtitle mb-30" >Cursos</h2>
-                    <Row>
-                        {   data.allContentfulCourse.edges.map( (edge, index) => {
+            <Container maxWidth="md"  >
+                <Box my={5} >
+                    { data.allContentfulCourse.edges.map( (edge, index) => {
+                        if(edge.node.principal === true) {
                             return (
-                                <Course
-                                    key = {index}
+                                // console.log(edge.node.exhibitor)
+                                <CoursePrincipal
+                                    key = { index }
+                                    exhibitorJob = { edge.node.exhibitorJob }
+                                    exhibitorImage = { edge.node.exhibitorImage.file.url }
                                     exhibitor = { edge.node.exhibitor }
                                     image= {edge.node.image.file.url }
                                     description={ edge.node.description.content[0].content[0].value }
-                                    title={ edge.node.title } 
-                                    slug= { edge.node.slug }>
-                                </Course>
+                                    title= {edge.node.title}
+                                ></CoursePrincipal>
                             )
-                        } ) }
-                    </Row>
-                </Container>
+                        }else {
+                            return false 
+                        }
+                    } ) }
+                </Box>
+                <Typography>
+                    <Box mb={2}  gutterBottom fontSize="h5.fontSize" fontWeight="fontWeightBold" >Cursos</Box>
+                </Typography>
+                <Box mb={4} >
+                    <Grid container spacing={2} >
+                            {   data.allContentfulCourse.edges.map( (edge, index) => {
+                                return (
+                                    <Course
+                                        key = {index}
+                                        exhibitor = { edge.node.exhibitor }
+                                        image= {edge.node.image.file.url }
+                                        exhibitorImage = { edge.node.exhibitorImage.file.url }
+                                        description={ edge.node.description.content[0].content[0].value }
+                                        title={ edge.node.title } 
+                                        slug= { edge.node.slug }>
+                                    </Course>
+                                )
+                            } ) }
+                    </Grid>
+                </Box>
             </Container>
         </Layout>
     
     )
 }
-
 
 export default CoursesPage

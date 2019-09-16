@@ -1,40 +1,65 @@
 import React from 'react'
 import { Link } from 'gatsby';
-
-import Badge from 'react-bootstrap/Badge'
 import Styles from './course.module.scss'
+import {  
+                    Box, 
+                    Typography, 
+                    Grid, 
+                    Card, 
+                    CardActionArea, 
+                    CardMedia, 
+                    CardContent,
+                    CardActions,
+                    Button } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
+
+
+const useStyles = makeStyles({
+    media: {
+        height: 150,
+    },
+    image: {
+        borderRadius: 50,
+        margin: 0
+    },
+    button: {
+        '& a' : {
+            textDecoration: 'none',
+            color: '#ff00a6',
+            textTransform: 'capitalize'
+        }
+    }
+});
 
 
 const Course = (props) => {
+    const classes = useStyles();
     return(
-        <div className="course col-xs-12 col-sm-6 col-lg-3 container-bottom">
-  
-            <div className="cursos-hard-bg  d-flex flex-column post_cursos"> 
+        <Grid item xs={12} sm={6}  md={4} >
+            <Card>
+                <CardActionArea>
+                    <CardMedia className={classes.media} image={ props.image }   />
+                    <CardContent>
+                        <Typography variant="h6">
+                            <Box> { props.title }  </Box>
+                            <Box  my={1} gutterBottom fontSize="subtitle2.fontSize" >7PM  |  Domos Art, Lima</Box>
+                            
+                            <Grid gutterBottom container alignItems="center"  >
+                                <img  className={classes.image} width="24"  src={ props.exhibitorImage }  alt="exhibitorimage" />
+                                <Grid item >
+                                    <Box mx={2} fontSize="subtitle2.fontSize"> { props.exhibitor }  </Box>
+                                </Grid>
+                            </Grid>
 
-                <img className="mb-3" src={ props.image } height="167" alt="image2" />
-                
-                <div className="curso_hard_text">
-                    <h6>
-                        <Badge variant="success" >Softskill</Badge>
-                    </h6>
-
-                    <h6 className={Styles.course__title}>{ props.title } </h6>
-
-                    <h6  className={Styles.course__exhibitor}> { props.exhibitor } </h6>
-
-                    <p>{ props.description }</p>
-
-                </div>
-            
-                <Link to={`/courses/${ props.slug}`}  className={`btn btn-outline-primary ${Styles.course__button}`} > Ver resumen  </Link>
-            
-                <div className={ `d-flex align-items-center flex-column justify-content-center  ${Styles.course__footer}` } >
-                    Taller terminado
-                </div>
-            
-            </div>
-
-        </div>
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+                <CardActions>
+                    <Button className={classes.button} size="small" color="primary"> 
+                        <Link to={`/courses/${ props.slug}`} > Ver detalle </Link>  </Button>
+                </CardActions>
+            </Card>
+        </Grid>
     )
 }
 
