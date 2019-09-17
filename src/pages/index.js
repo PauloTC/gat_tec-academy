@@ -62,7 +62,7 @@ const useStyles = makeStyles({
 		boxShadow : "1px 1px 16px 0 rgba(50, 16, 99, 0.1)"
 	},
 	courses: {
-		display: 'flex',
+		display: 'flex !important',
 		justifyContent: 'space-between'
 	},
 	course : {
@@ -143,19 +143,17 @@ const IndexPage = () => {
 						subtitle="Descubre lo que pasará proximamente en Belcorp"  
 						button="Ver talleres"  ></SubHeader>
 
-					<Box my={4}>
-						<div className={ classes.courses }  >
-							{	
-								data.carousel.edges.map( edge => {
-									return (
-										<div className={ classes.course }   >
-											<HomeCourse key={edge.node.id}  edge={edge} />
-										</div>
-									)
-								})		
-							}
-						</div>
-					</Box>
+					<section className={ classes.courses }  >
+						{	
+							data.carousel.edges.map( edge => {
+								return (
+									<div className={ classes.course }   >
+										<HomeCourse key={edge.node.id}  edge={edge} />
+									</div>
+								)
+							})		
+						}
+					</section>
 
 					<SubHeader  
 							title="Próximas actividades"  
