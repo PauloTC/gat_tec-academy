@@ -62,7 +62,7 @@ HideOnScroll.propTypes = {
 function Header(props) {
     const { classes } = props;
     const Links = [
-        {  name: 'Actividades', to: 'actividades' , icon: 'icon-support' },
+        {  name: 'Actividades', to: 'courses' , icon: 'icon-support' },
         {  name: 'Talleres', to: 'courses', icon: 'icon-lectern'  },
         {  name: 'Puntajes', to: 'points' , icon: 'icon-star'  },
         {  name: '¿Porque TecAcademy?', to: 'comunity', icon: 'icon-group'  },
