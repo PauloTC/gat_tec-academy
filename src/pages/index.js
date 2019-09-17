@@ -1,15 +1,14 @@
 import React from 'react';
+import SEO from '../components/seo';
+
+import {  Container, Box, Grid } from '@material-ui/core';
+import Styles from '../components/index.module.scss';
+
+import Layout from '../components/layout';
 import HomeCourse from '../components/home-course/home-course';
 import SubHeader from '../components/comoon/subheader'
 import ActivityItem from '../components/activity-item'
 import GroupCard from '../components/group-card'
-
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-
-import Styles from '../components/index.module.scss';
-
-import {  Container, Box, Grid } from '@material-ui/core';
 
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -62,9 +61,9 @@ const IndexPage = () => {
 	return (
 		<Layout>
 			<SEO title="Inicio" />
-			<Box mb={4}>
+			{/* <Box mb={4}>
 				<SwipeableTextMobileStepper></SwipeableTextMobileStepper>
-			</Box>
+			</Box> */}
 			<Container className={Styles.index__carousel} maxWidth="md">
 				
 				<SubHeader  

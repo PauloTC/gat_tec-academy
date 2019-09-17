@@ -15,8 +15,10 @@ import {
     Grid,
     Typography } from '@material-ui/core';
 
+import Ambassadors from '../components/ambassadors'
 import { makeStyles } from '@material-ui/styles';
-
+import HomeAcademy from '../components/home-academy'
+import rocket from '../assets/media/rocket.jpg'
 
 const useStyles = makeStyles({
     banner: {
@@ -65,7 +67,7 @@ const Comunity = () => {
 
                 <Box mt={10} mb={5} >
                     <Container maxWidth="md" >
-                        <Grid   container spacing={4}  >
+                        <Grid   container spacing={2}  >
                             <Grid md={4} item >
                                 <Typography variant="h5" >
                                     <Box fontWeight="fontWeightBold" > Conoce nuestros</Box> 
@@ -73,7 +75,9 @@ const Comunity = () => {
                                 </Typography>
                                 <Box my={3} >
                                     <Typography   variant="body2"  >Con nuevos y mejores espacios para aprender, compartir y desarrollarnos.</Typography>
-
+                                </Box>
+                                <Box mt={30} >
+                                    <img width={200} src={rocket} />
                                 </Box>
                             </Grid>
                             <Grid md={4} item >
@@ -198,6 +202,7 @@ const Comunity = () => {
                         </CardContent>
                     </Card>
                 </Box>
+                <Ambassadors></Ambassadors>
             </Layout>
         </Fragment>
     )

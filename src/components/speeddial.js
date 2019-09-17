@@ -9,6 +9,7 @@ import SaveIcon from '@material-ui/icons/Save';
 import PrintIcon from '@material-ui/icons/Print';
 import ShareIcon from '@material-ui/icons/Share';
 import DeleteIcon from '@material-ui/icons/Delete';
+import { navigate } from "gatsby"
 
 const useStyles = makeStyles(theme => ({
     speedDial: {
@@ -23,11 +24,11 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const actions = [
-  { icon: <FileCopyIcon />, name: 'Copy' },
-  { icon: <SaveIcon />, name: 'Save' },
-  { icon: <PrintIcon />, name: 'Print' },
-  { icon: <ShareIcon />, name: 'Share' },
-  { icon: <DeleteIcon />, name: 'Delete' },
+  { icon: <FileCopyIcon />, name: 'Actividades' },
+  { icon: <SaveIcon />, name: 'Talleres' },
+  { icon: <PrintIcon />, name: 'Puntajes' },
+  { icon: <ShareIcon />, name: 'TecAcademy' },
+  { icon: <DeleteIcon />, name: 'Blog' },
 ];
 
 export default function SpeedDialTooltipOpen() {
@@ -42,6 +43,7 @@ export default function SpeedDialTooltipOpen() {
 
   const handleClick = () => {
     setOpen(prevOpen => !prevOpen);
+    // console.log(e)
   };
 
   const handleOpen = () => {

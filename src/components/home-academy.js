@@ -1,15 +1,22 @@
 import React from 'react'
-import  bigimage from '../../images/TecAcademy-01.png'
-import smallimage from '../../images/TecAcademy-02.png'
-import '../../styles/base.css'
-import { Container, Row, Col } from 'react-bootstrap'
+import { 
+                Box, 
+                Button,
+                Container,
+                CardContent,
+                Card,
+                CardMedia,
+                Paper, 
+                Grid,
+                Typography } from '@material-ui/core'; 
 const HomeAcademy = () => {
     return (
         <div className="academy" >
             {/* <div className="w-100  mg-sm-top-40 mg-sm-top-40 mg-md-top-80 mg-xl-top-110"></div> */}
-            <Container>
+            <Container maxWidth="md" >
                 <div id="tec-academy" className="page-section">
-                    <Row>
+                    <h3>wejlkrkjqwe</h3>
+                    {/* <Row>
                         <Col sm={12} md={6}>
                             <h2 className="g-subtitle mb-30">Tec Academy</h2>
                             <p className="font-size-14">Nuestro objetivo es enriquecer la visión y conocimiento de nuestros equipos en las 5 direcciones de la VP de tecnología, a través de un espacio integrador que nos permita desarrollar nuestras habilidades Soft y Hard.</p>
@@ -20,7 +27,7 @@ const HomeAcademy = () => {
                             <img id="img-01" alt="img-01" src={bigimage} className="position-absolute" />
                             <img id="img-02" alt="img-02" src={smallimage} className="position-absolute" />
                         </Col>
-                    </Row>
+                    </Row> */}
                     {/* <div className="row">
                         <div className="col-sm-12 col-md-6">
                         </div>
