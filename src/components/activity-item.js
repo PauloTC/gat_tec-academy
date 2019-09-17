@@ -30,7 +30,6 @@ const ActivityItem = () => {
     const classes = useStyles();
     return (
         <Fragment>
-            <Grid item xs={12} sm={6}  container direction='column' >
                 <Card >
                     <CardMedia className={classes.card}  image="http://tinyimg.io/i/tSFDV33.jpeg" />
                     <Grid container  alignItems="flex-end"  >
@@ -52,7 +51,6 @@ const ActivityItem = () => {
                         </Grid>
                     </Grid>
                 </Card>
-            </Grid>
         </Fragment>
     )
 }

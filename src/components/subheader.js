@@ -7,7 +7,17 @@ const useStyles = makeStyles({
 		textTransform: 'capitalize',
 		fontSize: '16px',
 		fontWeight: 900
-	}
+    },
+    container: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginBottom: 30
+    },
+    text: {
+        display: "flex",
+        flexDirection: "column"
+    }
   });
 
 
@@ -16,15 +26,15 @@ const SubHeader = (props) => {
     return(
         <Fragment>
             <Typography>
-                <Grid  container justify="space-between" >
-                    <Grid  container item direction="column"   md={10} >
+                <div  className={ classes.container }  >
+                    <div  className={classes.text} >
                         <Box fontWeight={900} fontSize="h6.fontSize" > {  props.title } </Box>
                         <Box fontSize="body2.fontSize" > {  props.subtitle } </Box>
-                    </Grid>
-                    <Grid container alignItems="center" justify="flex-end"  item md={2} >
+                    </div>
+                    <div  >
                         <Button fontWeight={900} className={classes.button}  color="primary"> { props.button } </Button>
-                    </Grid>
-                </Grid>
+                    </div>
+                </div>
             </Typography>
         </Fragment>
     )

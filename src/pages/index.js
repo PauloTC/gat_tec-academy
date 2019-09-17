@@ -50,7 +50,13 @@ const useStyles = makeStyles({
             fontWeight: "bold",
             fontSize: 14
         }
-    }
+	},
+	activities: {
+		display: "flex",
+		justifyContent: "space-between",
+		flexWrap: "wrap",
+		marginBottom: 30
+	}
 });
 const IndexPage = () => {
 	const data = useStaticQuery(graphql`
@@ -110,15 +116,13 @@ const IndexPage = () => {
 							title="Próximas actividades"  
 							subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
 							button="Ver actividades"  ></SubHeader>
+					
+					<div  className={classes.activities} >
+						<ActivityItem />
+						<ActivityItem />
+					</div>
 
-					<Box my={4} >
-						<Grid  container justify="space-between" spacing={5}  >
-							
-							<ActivityItem />
-							<ActivityItem />
-									
-						</Grid>
-					</Box>
+
 					<SubHeader  
 						title="Puntajes Tec Valley "  
 						subtitle="¿Estás cerca a ganar ese after office?  ¡Aprovecha al máximo TecAcademy!"  
