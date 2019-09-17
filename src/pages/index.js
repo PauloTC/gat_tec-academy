@@ -107,14 +107,37 @@ const IndexPage = () => {
 								button="Ver talleres"  ></SubHeader>
 					<Box my={4} >
 						<Grid  container spacing={3}  >	
-							{
-								data.countries.edges.map(  edge =>  {
-									return (
-										<GroupCard  data={edge.node}  /> 
-								
-									)
-								})
-							}			
+							<Grid item >
+								<Typography>
+									<Box fontSize="body2.fontSize" > {  data.countries.edges[0].node.name }  team</Box> 
+									<Box fontSize="body2.fontSize" >  {  data.countries.edges[0].node.name }  puntos</Box> 
+								</Typography>
+							</Grid>
+							<Grid item >
+								<Typography>
+									<Box fontSize="body2.fontSize" > {  data.countries.edges[1].node.name }  team</Box> 
+									<Box fontSize="body2.fontSize" >  {  data.countries.edges[1].node.name }  puntos</Box> 
+								</Typography>
+
+							</Grid>
+							<Grid item >
+								<Typography>
+									<Box fontSize="body2.fontSize" > {  data.countries.edges[2].node.name }  team</Box> 
+									<Box fontSize="body2.fontSize" >  {  data.countries.edges[2].node.name }  puntos</Box> 
+								</Typography>
+							</Grid>
+							<Grid item >
+								<Typography>
+									<Box fontSize="body2.fontSize" > {  data.countries.edges[3].node.name }  team</Box> 
+									<Box fontSize="body2.fontSize" >  {  data.countries.edges[3].node.name }  puntos</Box> 
+								</Typography>
+							</Grid>
+							<Grid item >
+								<Typography>
+									<Box fontSize="body2.fontSize" > {  data.countries.edges[4].node.name }  team</Box> 
+									<Box fontSize="body2.fontSize" >  {  data.countries.edges[4].node.name }  puntos</Box> 
+								</Typography>
+							</Grid>
 						</Grid>
 					</Box>
 					<SubHeader  
