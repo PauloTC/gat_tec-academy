@@ -12,7 +12,7 @@ import GroupCard from '../components/group-card'
 
 import { useStaticQuery, graphql } from 'gatsby';
 
-import SwipeableTextMobileStepper  from '../components/mobcarousel'
+// import SwipeableTextMobileStepper  from '../components/mobcarousel'
 
 const IndexPage = () => {
 	const data = useStaticQuery(graphql`
