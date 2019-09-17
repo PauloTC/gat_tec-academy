@@ -1,18 +1,9 @@
 import React , { Fragment }from 'react';
-import SEO from '../components/seo';
-
-import {  Container, Box, Grid, Typography, Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
-
-// import Styles from '../components/index.module.scss';
-
 import Layout from '../components/layout';
-import HomeCourse from '../components/home-course/home-course';
-import SubHeader from '../components/comoon/subheader'
-import ActivityItem from '../components/activity-item'
-import GroupCard from '../components/group-card'
+import SEO from '../components/seo';
+import { makeStyles } from '@material-ui/styles';
+import {  Container, Box, Grid, Typography, Button } from '@material-ui/core';
 
-import { useStaticQuery, graphql } from 'gatsby';
 
 // import SwipeableTextMobileStepper  from '../components/mobcarousel'
 const useStyles = makeStyles({
@@ -63,7 +54,7 @@ const IndexPage = () => {
 							title="Próximas actividades"  
 							subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
 							button="Ver actividades"  ></SubHeader> */}
-					<Fragment>
+					{/* <Fragment>
 						<Typography>
 							<Grid  container justify="space-between" >
 								<Grid  container item direction="column"   md={10} >
@@ -75,7 +66,7 @@ const IndexPage = () => {
 								</Grid>
 							</Grid>
 						</Typography>
-					</Fragment>
+					</Fragment> */}
 					{/* <Box my={4} >
 						<Grid  container justify="space-between" spacing={5}  >
 							
