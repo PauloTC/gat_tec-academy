@@ -15,49 +15,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 // import SwipeableTextMobileStepper  from '../components/mobcarousel'
 
 const IndexPage = () => {
-	const data = useStaticQuery(graphql`
-		query {
-			slider : allContentfulCourse(filter: { showHomeBanner: { eq: true } }) {
-				edges {
-					node {
-						title
-						image {
-							file {
-								url
-							}
-						}
-						exhibitor
-					}
-				}
-			},
-			carousel:allContentfulCourse(filter: { showHomeCarousel:{ eq: true }  }){
-				edges {
-					node {
-						id
-						title
-						slug
-						exhibitor
-					}
-				}
-			},
-			countries: allContentfulGroup (sort : {
-                fields: points,
-                order: DESC
-            }) {
-                edges {
-                    node {
-                        name
-                        points
-                        image {
-                            file {
-                                url
-                            }
-                        }
-                    }
-                }
-            }
-		}
-	`);
+	
 	return (
 		<Fragment>
 			<Layout>
