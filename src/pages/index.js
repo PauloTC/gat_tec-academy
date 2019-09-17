@@ -105,7 +105,7 @@ const IndexPage = () => {
 								title="Próximos eventos"  
 								subtitle="Descubre lo que pasará proximamente en Belcorp"  
 								button="Ver talleres"  ></SubHeader>
-					<Box position="relative" my={4} >
+					<Box my={4} >
 						<Grid  container spacing={3}  >	
 							{
 								data.countries.edges.map(  edge =>  {
@@ -117,6 +117,10 @@ const IndexPage = () => {
 							}			
 						</Grid>
 					</Box>
+					<SubHeader  
+						title="Próximas actividades"  
+						subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
+						button="Ver actividades"  ></SubHeader>
 				</Container>
             </Layout>
         </Fragment>
