@@ -108,7 +108,21 @@ const IndexPage = () => {
 					<Box position="relative" my={4} >
 						<Grid  container spacing={3}  >	
 							{
-								data.countries.edges.map(  edge => (  <GroupCard  data={edge.node}  />  )  )
+								data.countries.edges.map(  edge =>  {
+									return (
+										<Grid  
+												container  
+												justify="center"  
+												alignContent="center"
+												className={ classes.item }
+												item 
+												xs={6} 
+												sm={4}
+												md={3} >
+											<GroupCard  data={edge.node}  /> 
+										</Grid>
+									)
+								})
 							}			
 						</Grid>
 					</Box>

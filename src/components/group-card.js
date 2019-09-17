@@ -87,57 +87,45 @@ const useStyles = makeStyles({
 const GroupCard = (props) => {
     const classes = useStyles();
     return (
-        <Fragment>
-            <Grid  
-                container  
-                justify="center"  
-                alignContent="center"
-                className={ classes.item }
-                item 
-                xs={6} 
-                sm={4}
-                md={3} >
-                <Grid className={   `${classes.text}  ${props.data.name}` }   container   justify="center" alignItems="center"  direction="column"  >
-                  
-                    <Typography >
-                        <Grid spacing={2} container alignItems="center"   >
-                            <Grid item >
-                                    {
-                                        (()=> {
-                                            if( props.data.name === "Facebook"  ) {
-                                                return (
-                                                    <i  className={`icon-facebook-copy-4  ${classes.icon} `} ></i>
-                                                )
-                                            } else if ( props.data.name === "Apple"  )  {
-                                                return (
-                                                    <i  className={`icon-apple-copy-2 ${classes.icon}` } ></i>
-                                                )
-                                            } else if ( props.data.name === "Tesla"  )  {
-                                                return (
-                                                    <i  className={  `icon-tesla-copy-2 ${classes.icon35}`} ></i>
-                                                )
-                                            } else if ( props.data.name === "Google"  )  {
-                                                return (
-                                                    <i  className="icon-google-plus-copy-3" ></i>
-                                                )
-                                            } else {
-                                                return (
-                                                    <i  className="icon-netflix-copy-4" ></i>
-                                                )
-                                            }
-                                        })()
-                                    }
-                            </Grid>
-                            <Grid   item >
-                                <Box className={ classes.name } fontSize="body1.fontSize" fontWeight="fontWeightBold" > Team {  props.data.name }  </Box> 
-                                <Box fontSize="body2.fontSize" > {  props.data.points }  puntos</Box> 
-                            </Grid>
+            <Grid className={   `${classes.text}  ${props.data.name}` }   container   justify="center" alignItems="center"  direction="column"  >
+                
+                <Typography >
+                    <Grid spacing={2} container alignItems="center"   >
+                        <Grid item >
+                                {
+                                    (()=> {
+                                        if( props.data.name === "Facebook"  ) {
+                                            return (
+                                                <i  className={`icon-facebook-copy-4  ${classes.icon} `} ></i>
+                                            )
+                                        } else if ( props.data.name === "Apple"  )  {
+                                            return (
+                                                <i  className={`icon-apple-copy-2 ${classes.icon}` } ></i>
+                                            )
+                                        } else if ( props.data.name === "Tesla"  )  {
+                                            return (
+                                                <i  className={  `icon-tesla-copy-2 ${classes.icon35}`} ></i>
+                                            )
+                                        } else if ( props.data.name === "Google"  )  {
+                                            return (
+                                                <i  className="icon-google-plus-copy-3" ></i>
+                                            )
+                                        } else {
+                                            return (
+                                                <i  className="icon-netflix-copy-4" ></i>
+                                            )
+                                        }
+                                    })()
+                                }
                         </Grid>
-                    </Typography>
-                </Grid>
-                {/* <Box  className={ classes.winner }> 1er Puesto </Box>  */}
-            </Grid>
-        </Fragment>
+                        <Grid   item >
+                            <Box className={ classes.name } fontSize="body1.fontSize" fontWeight="fontWeightBold" > Team {  props.data.name }  </Box> 
+                            <Box fontSize="body2.fontSize" > {  props.data.points }  puntos</Box> 
+                        </Grid>
+                    </Grid>
+                </Typography>
+            {/* <Box  className={ classes.winner }> 1er Puesto </Box>  */}
+        </Grid>
     )
 }
 
