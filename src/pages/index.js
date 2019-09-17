@@ -111,7 +111,7 @@ const IndexPage = () => {
 								data.countries.edges.map(  edge =>  {
 									return (
 										<Grid  
-												container  
+												// container  
 												justify="center"  
 												alignContent="center"
 												className={ classes.item }
