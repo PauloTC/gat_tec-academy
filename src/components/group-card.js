@@ -88,6 +88,7 @@ const GroupCard = (props) => {
     const classes = useStyles();
     return (
         <Typography>
+            <Box fontSize="body2.fontSize" > {  props.data.name }  puntos</Box> 
             <Box fontSize="body2.fontSize" > {  props.data.points }  puntos</Box> 
         </Typography>
     )
