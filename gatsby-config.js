@@ -6,9 +6,7 @@ module.exports = {
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
-		{
-			resolve: `gatsby-plugin-material-ui`
-		},
+		`gatsby-plugin-material-ui`,
 		{
 			resolve: `gatsby-source-contentful`,
 			options: {
@@ -26,7 +24,7 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-sass`,
-		'gatsby-plugin-styled-components',
+		// 'gatsby-plugin-styled-components',
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
@@ -39,13 +37,13 @@ module.exports = {
 				icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
 			}
 		},
-		{
-			resolve: 'gatsby-plugin-web-font-loader',
-			options: {
-				google: {
-					families: [ 'Avenir: 900', 'Lato: 400, 900, 700' ]
-				}
-			}
-		}
+		// {
+		// 	resolve: 'gatsby-plugin-web-font-loader',
+		// 	options: {
+		// 		google: {
+		// 			families: [ 'Avenir: 900', 'Lato: 400, 900, 700' ]
+		// 		}
+		// 	}
+		// }
 	]
 };
