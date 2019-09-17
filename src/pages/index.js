@@ -20,6 +20,7 @@ import rocket from '../assets/media/rocket.jpg'
 import SwipeableTextMobileStepper  from '../components/mobcarousel'
 import SubHeader from '../components/subheader'
 import GroupCard from '../components/group-card'
+import ActivityItem from '../components/activity-item'
 import { useStaticQuery, graphql } from 'gatsby';
 
 const useStyles = makeStyles({
@@ -106,9 +107,22 @@ const IndexPage = () => {
 				</Box>
 				<Container maxWidth="md" >
 					<SubHeader  
-								title="Próximos eventos"  
-								subtitle="Descubre lo que pasará proximamente en Belcorp"  
-								button="Ver talleres"  ></SubHeader>
+							title="Próximas actividades"  
+							subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
+							button="Ver actividades"  ></SubHeader>
+
+					<Box my={4} >
+						<Grid  container justify="space-between" spacing={5}  >
+							
+							<ActivityItem />
+							<ActivityItem />
+									
+						</Grid>
+					</Box>
+					<SubHeader  
+						title="Puntajes Tec Valley "  
+						subtitle="¿Estás cerca a ganar ese after office?  ¡Aprovecha al máximo TecAcademy!"  
+						button="Ver puntajes"  ></SubHeader>
 					<section className={ classes.teamcontainer } >
 							{
 								data.countries.edges.map(  edge =>   <GroupCard  data={edge.node}  />    )
