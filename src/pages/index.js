@@ -20,6 +20,7 @@ import rocket from '../assets/media/rocket.jpg'
 import SwipeableTextMobileStepper  from '../components/mobcarousel'
 import SubHeader from '../components/subheader'
 import GroupCard from '../components/group-card'
+import HomeCourse from '../components/home-course/home-course'
 import ActivityItem from '../components/activity-item'
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -55,9 +56,12 @@ const useStyles = makeStyles({
 		display: "flex",
 		justifyContent: "space-between",
 		flexWrap: "wrap",
-		marginBottom: 30
+		marginBottom: 60
 	}
 });
+
+
+
 const IndexPage = () => {
 	const data = useStaticQuery(graphql`
 		query {
@@ -102,7 +106,14 @@ const IndexPage = () => {
             }
 		}
 	`);
-    const classes = useStyles();
+	const classes = useStyles();
+	
+
+	const dataActivity = [
+		{  name: "Meetup: Time Management Skills"  },
+		{  name: "Pizza Nights: Guvery"  }
+	]
+
     return (
         <Fragment>
             <Layout>
@@ -112,14 +123,35 @@ const IndexPage = () => {
 
 				</Box>
 				<Container maxWidth="md" >
+
+					{/* <SubHeader  
+						title="Próximos eventos"  
+						subtitle="Descubre lo que pasará proximamente en Belcorp"  
+						button="Ver talleres"  ></SubHeader>
+
+					<Box my={4}>
+						<Grid  container justify="space-between" spacing={2}  >
+							{	
+								data.carousel.edges.map( edge => ( <HomeCourse key={edge.node.id}  edge={edge} />))
+							}
+						</Grid>
+					</Box> */}
+
 					<SubHeader  
 							title="Próximas actividades"  
 							subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
 							button="Ver actividades"  ></SubHeader>
 					
 					<div  className={classes.activities} >
-						<ActivityItem />
-						<ActivityItem />
+						{ dataActivity.map((item, index) => {
+							return (
+									<div  key= { index }  >
+										<ActivityItem   data={item} />
+									</div>
+							)
+						})
+
+						}
 					</div>
 
 
