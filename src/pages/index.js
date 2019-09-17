@@ -81,9 +81,9 @@ const IndexPage = () => {
 					</Box> */}
 
 					<SubHeader  
-						title="Próximas actividades"  
-						subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
-						button="Ver actividades"  ></SubHeader>
+							title="Próximas actividades"  
+							subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
+							button="Ver actividades"  ></SubHeader>
 
 					{/* <Box my={4} >
 						<Grid  container justify="space-between" spacing={5}  >
