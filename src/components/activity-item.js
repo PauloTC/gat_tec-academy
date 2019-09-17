@@ -53,6 +53,7 @@ const ActivityItem = (props) => {
                     <div  className={ classes.flexible  } >
                         <Typography className={ classes.text  } > 
                             <Box mb={1}  fontSize="subtitle2.fontSize">mar., 10 sept.</Box>
+                            <Box lineHeight={1.2}    fontSize="h6.fontSize" fontWeight="fontWeightBold" > { props.data.type } </Box>
                             <Box lineHeight={1.2} mb={1}   fontSize="h6.fontSize" fontWeight="fontWeightBold" > { props.data.name } </Box>
                             <Box  fontSize="body2.fontSize" > Bruno Díaz </Box>
                         </Typography>

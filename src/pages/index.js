@@ -110,8 +110,8 @@ const IndexPage = () => {
 	
 
 	const dataActivity = [
-		{  name: "Meetup: Time Management Skills"  },
-		{  name: "Pizza Nights: Guvery"  }
+		{  type: "Meetup ",name: "Time Management Skills"  },
+		{  type: "Pizza Nights", name: "Guvery"  }
 	]
 
     return (
