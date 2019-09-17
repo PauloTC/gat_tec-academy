@@ -57,6 +57,20 @@ const useStyles = makeStyles({
 		justifyContent: "space-between",
 		flexWrap: "wrap",
 		marginBottom: 60
+	},
+	activity: {
+		boxShadow : "1px 1px 16px 0 rgba(50, 16, 99, 0.1)"
+	},
+	courses: {
+		display: 'flex',
+		justifyContent: 'space-between'
+	},
+	course : {
+		width: '100%',
+		marginRight: 20,
+		'&:nth-of-type(3)' : {
+			marginRight: 0
+		}
 	}
 });
 
@@ -124,18 +138,24 @@ const IndexPage = () => {
 				</Box>
 				<Container maxWidth="md" >
 
-					{/* <SubHeader  
+					<SubHeader  
 						title="Próximos eventos"  
 						subtitle="Descubre lo que pasará proximamente en Belcorp"  
 						button="Ver talleres"  ></SubHeader>
 
 					<Box my={4}>
-						<Grid  container justify="space-between" spacing={2}  >
+						<div className={ classes.courses }  >
 							{	
-								data.carousel.edges.map( edge => ( <HomeCourse key={edge.node.id}  edge={edge} />))
+								data.carousel.edges.map( edge => {
+									return (
+										<div className={ classes.course }   >
+											<HomeCourse key={edge.node.id}  edge={edge} />
+										</div>
+									)
+								})		
 							}
-						</Grid>
-					</Box> */}
+						</div>
+					</Box>
 
 					<SubHeader  
 							title="Próximas actividades"  
@@ -145,7 +165,7 @@ const IndexPage = () => {
 					<div  className={classes.activities} >
 						{ dataActivity.map((item, index) => {
 							return (
-									<div  key= { index }  >
+									<div  className={classes.activity}  key= { index }  >
 										<ActivityItem   data={item} />
 									</div>
 							)

@@ -23,12 +23,9 @@ const useStyles = makeStyles({
         height: 305,
         backgroundSize: 'contain'
     },
-    container: {
-        boxShadow : "1px 1px 16px 0 rgba(50, 16, 99, 0.1)"
-    },
     flexible: {
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'flex-end',
         padding: 15
     },
     text: {
@@ -53,7 +50,7 @@ const ActivityItem = (props) => {
                     <div  className={ classes.flexible  } >
                         <Typography className={ classes.text  } > 
                             <Box mb={1}  fontSize="subtitle2.fontSize">mar., 10 sept.</Box>
-                            <Box lineHeight={1.2}    fontSize="h6.fontSize" fontWeight="fontWeightBold" > { props.data.type } </Box>
+                            <Box lineHeight={1.2}    fontSize="h6.fontSize" fontWeight="fontWeightBold" > { props.data.type } :</Box>
                             <Box lineHeight={1.2} mb={1}   fontSize="h6.fontSize" fontWeight="fontWeightBold" > { props.data.name } </Box>
                             <Box  fontSize="body2.fontSize" > Bruno Díaz </Box>
                         </Typography>

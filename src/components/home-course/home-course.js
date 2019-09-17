@@ -21,13 +21,16 @@ const useStyles = makeStyles({
     },
     date: {
         color: "#ff00a6"
+    },
+    container: {
+        width: "100%"
     }
 });
 
 const HomeCourse = (props) => {
     const classes = useStyles();
     return(
-        <Grid item xs={12} md={4}>
+        <div  className={ classes.container }  >
             <Paper  className={ Styles.course__card }  elevation="5" >
                 <Box  mb={3}>
                     <Typography> 
@@ -42,7 +45,7 @@ const HomeCourse = (props) => {
                     </Button>
                 </Grid>
             </Paper>
-        </Grid>
+        </div>
     )
 }
 
