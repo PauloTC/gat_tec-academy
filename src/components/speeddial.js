@@ -9,18 +9,17 @@ import SaveIcon from '@material-ui/icons/Save';
 import PrintIcon from '@material-ui/icons/Print';
 import ShareIcon from '@material-ui/icons/Share';
 import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
 
 const useStyles = makeStyles(theme => ({
-  speedDial: {
-    position: 'fixed',
-    bottom: theme.spacing(2),
-    right: theme.spacing(3),
-    visibility: "hidden",
-    [theme.breakpoints.down('sm')]: {
-        visibility: "visible"
-    }
-  },
+    speedDial: {
+      position: 'fixed',
+      bottom: theme.spacing(2),
+      right: theme.spacing(3),
+      visibility: "hidden",
+      [theme.breakpoints.down('sm')]: {
+          visibility: "visible"
+      }
+    },
 }));
 
 const actions = [
@@ -31,7 +30,7 @@ const actions = [
   { icon: <DeleteIcon />, name: 'Delete' },
 ];
 
-export default function OpenIconSpeedDial() {
+export default function SpeedDialTooltipOpen() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [hidden, setHidden] = React.useState(false);
@@ -58,10 +57,10 @@ export default function OpenIconSpeedDial() {
   return (
     <div className={classes.root}>
       <SpeedDial
-        ariaLabel="SpeedDial openIcon example"
+        ariaLabel="SpeedDial tooltip example"
         className={classes.speedDial}
         hidden={hidden}
-        icon={<SpeedDialIcon openIcon={<EditIcon />} />}
+        icon={<SpeedDialIcon />}
         onBlur={handleClose}
         onClick={handleClick}
         onClose={handleClose}
@@ -75,6 +74,7 @@ export default function OpenIconSpeedDial() {
             key={action.name}
             icon={action.icon}
             tooltipTitle={action.name}
+            tooltipOpen
             onClick={handleClick}
           />
         ))}

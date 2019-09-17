@@ -15,6 +15,7 @@ import { makeStyles } from '@material-ui/styles';
 import { withStyles } from '@material-ui/core/styles';
 import logo from '../../images/logo-tecacademy.png';
 import "../../assets/icons/style.css"
+import { inherits } from 'util';
 
 const useStyles = theme => ({
 	menu: {
@@ -23,7 +24,16 @@ const useStyles = theme => ({
         [theme.breakpoints.down('sm')]: {
             display: 'none'
         }
-	}
+    },
+    container: {
+        "justify-content": 'space-between',
+        [theme.breakpoints.down('sm')]: {
+            "justify-content": 'center'
+        }
+    },
+    // toolbar: {
+    //     height: 43
+    // }
 });
 
 function HideOnScroll(props) {
@@ -52,7 +62,7 @@ HideOnScroll.propTypes = {
 function Header(props) {
     const { classes } = props;
     const Links = [
-        {  name: 'Actividades', to: '/actividades' , icon: 'icon-support' },
+        {  name: 'Actividades', to: 'actividades' , icon: 'icon-support' },
         {  name: 'Talleres', to: 'courses', icon: 'icon-lectern'  },
         {  name: 'Puntajes', to: 'points' , icon: 'icon-star'  },
         {  name: '¿Porque TecAcademy?', to: 'comunity', icon: 'icon-group'  },
@@ -63,10 +73,10 @@ function Header(props) {
 			<CssBaseline />
 			<HideOnScroll {...props}>
 				<AppBar>
-					<Toolbar>
+					<Toolbar  className={classes.toolbar}  >
 						<Container maxWidth="lg">
-							<Grid container justify="space-between">
-								<Grid container justify="space-between" item xs={11} md={12}>
+							<Grid container >
+								<Grid className={classes.container}   container justify="space-between" item xs={12} md={12}>
 									<Link className={styles.header__img}>
 										<img alt="logo" id="logo" src={logo} width="120" />
 									</Link>
@@ -86,15 +96,6 @@ function Header(props) {
 												);
 											})}
 										</Typography>
-									</Box>
-								</Grid>
-								{/* <Grid item xs={2} >
-                        <SimpleMenu></SimpleMenu>
-                    </Grid> */}
-
-								<Grid height="100%" item xs={1}>
-									<Box height="100%" display={{ xs: 'block', md: 'none', lg: 'none' }}>
-										<TemporaryDrawer />
 									</Box>
 								</Grid>
 							</Grid>
