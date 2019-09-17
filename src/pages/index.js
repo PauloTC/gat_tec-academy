@@ -23,29 +23,11 @@ import GroupCard from '../components/group-card'
 import { useStaticQuery, graphql } from 'gatsby';
 
 const useStyles = makeStyles({
-    banner: {
-        height: 400
-    },
-    text: {
-        position: "absolute",
-        top: 100,
-        left: 150,
-        color: "white"
-    },
-    textbanner: {
-        position: "absolute",
-        top: '30%',
-        color: "white",
-        width: '100%'
-    },
-    button: {
-        background: "white",
-        textTransform: "inherit",
-        '& span': {
-            fontWeight: "bold",
-            fontSize: 14
-        }
-    }
+	boxflexible : {
+		display: 'flex',
+		flexWrap: 'wrap',
+		justifyContent: 'space-between'
+	}
 });
 const IndexPage = () => {
 	const data = useStaticQuery(graphql`
@@ -105,39 +87,37 @@ const IndexPage = () => {
 								title="Próximos eventos"  
 								subtitle="Descubre lo que pasará proximamente en Belcorp"  
 								button="Ver talleres"  ></SubHeader>
-					<Box my={4} >
-						<Grid  container spacing={3}  >	
-							<Grid item >
-								<Typography>
-									<Box fontSize="body2.fontSize" > {  data.countries.edges[0].node.name }  team</Box> 
-									<Box fontSize="body2.fontSize" >  {  data.countries.edges[0].node.name }  puntos</Box> 
-								</Typography>
-							</Grid>
-							<Grid item >
-								<Typography>
-									<Box fontSize="body2.fontSize" > {  data.countries.edges[1].node.name }  team</Box> 
-									<Box fontSize="body2.fontSize" >  {  data.countries.edges[1].node.name }  puntos</Box> 
-								</Typography>
+					<Box className={classes.boxflexible}   my={4} >	
+						<Grid item >
+							<Typography>
+								<Box fontSize="body2.fontSize" > {  data.countries.edges[0].node.name }  team</Box> 
+								<Box fontSize="body2.fontSize" >  {  data.countries.edges[0].node.name }  puntos</Box> 
+							</Typography>
+						</Grid>
+						<Grid item >
+							<Typography>
+								<Box fontSize="body2.fontSize" > {  data.countries.edges[1].node.name }  team</Box> 
+								<Box fontSize="body2.fontSize" >  {  data.countries.edges[1].node.name }  puntos</Box> 
+							</Typography>
 
-							</Grid>
-							<Grid item >
-								<Typography>
-									<Box fontSize="body2.fontSize" > {  data.countries.edges[2].node.name }  team</Box> 
-									<Box fontSize="body2.fontSize" >  {  data.countries.edges[2].node.name }  puntos</Box> 
-								</Typography>
-							</Grid>
-							<Grid item >
-								<Typography>
-									<Box fontSize="body2.fontSize" > {  data.countries.edges[3].node.name }  team</Box> 
-									<Box fontSize="body2.fontSize" >  {  data.countries.edges[3].node.name }  puntos</Box> 
-								</Typography>
-							</Grid>
-							<Grid item >
-								<Typography>
-									<Box fontSize="body2.fontSize" > {  data.countries.edges[4].node.name }  team</Box> 
-									<Box fontSize="body2.fontSize" >  {  data.countries.edges[4].node.name }  puntos</Box> 
-								</Typography>
-							</Grid>
+						</Grid>
+						<Grid item >
+							<Typography>
+								<Box fontSize="body2.fontSize" > {  data.countries.edges[2].node.name }  team</Box> 
+								<Box fontSize="body2.fontSize" >  {  data.countries.edges[2].node.name }  puntos</Box> 
+							</Typography>
+						</Grid>
+						<Grid item >
+							<Typography>
+								<Box fontSize="body2.fontSize" > {  data.countries.edges[3].node.name }  team</Box> 
+								<Box fontSize="body2.fontSize" >  {  data.countries.edges[3].node.name }  puntos</Box> 
+							</Typography>
+						</Grid>
+						<Grid item >
+							<Typography>
+								<Box fontSize="body2.fontSize" > {  data.countries.edges[4].node.name }  team</Box> 
+								<Box fontSize="body2.fontSize" >  {  data.countries.edges[4].node.name }  puntos</Box> 
+							</Typography>
 						</Grid>
 					</Box>
 					<SubHeader  
