@@ -9,17 +9,35 @@ const useStyles = makeStyles({
     text: {
         borderRadius: 8,
         boxShadow: '1px 1px 16px 0 rgba(50, 16, 99, 0.1)',
-        height: 80,
+        width: '100%',
         color: 'white',
+        marginRight: 10,
+        '&:nth-of-type(5)' :  {
+            marginRight: 0
+        },
         '& div' :  {
-            fontSize: '16px !important',
+            textAlign: 'center'
+        }
+    },
+    textcontainer: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100%',
+        flexDirection: 'column',
+        padding: 15,
+        '& div' :  {
+            display: 'flex',
+            flexDirection: 'column'
         }
     },
     icon: {
-        fontSize : 30
+        fontSize : 30,
+        marginBottom: 10
     },
     icon35: {
-        fontSize: 35
+        fontSize: 35,
+        marginBottom: 10
     },
     item: {
         '&:nth-of-type(5)' : {
@@ -88,10 +106,8 @@ const GroupCard = (props) => {
     const classes = useStyles();
     return (
         <Fragment>
-                <div className={   `${classes.text}  ${props.data.name}` }   container   justify="center" alignItems="center"  direction="column"  >
-                  
-                    <Typography >
-                        <div spacing={2} container alignItems="center"   >
+                <div className={   `${classes.text}  ${props.data.name}` }   >
+                    <Typography alignItems="center" className={ classes.textcontainer }  >
                             <div>
                                     {
                                         (()=> {
@@ -109,11 +125,11 @@ const GroupCard = (props) => {
                                                 )
                                             } else if ( props.data.name === "Google"  )  {
                                                 return (
-                                                    <i  className="icon-google-plus-copy-3" ></i>
+                                                    <i  className={`icon-google-plus-copy-3 ${classes.icon}`} ></i>
                                                 )
                                             } else {
                                                 return (
-                                                    <i  className="icon-netflix-copy-4" ></i>
+                                                    <i  className= { `  icon-netflix-copy-4 ${classes.icon}   `  }  ></i>
                                                 )
                                             }
                                         })()
@@ -123,7 +139,6 @@ const GroupCard = (props) => {
                                 <Box className={ classes.name } fontSize="body1.fontSize" fontWeight="fontWeightBold" > Team {  props.data.name }  </Box> 
                                 <Box fontSize="body2.fontSize" > {  props.data.points }  puntos</Box> 
                             </Grid>
-                        </div>
                     </Typography>
                 {/* <Box  className={ classes.winner }> 1er Puesto </Box>  */}
             </div>
