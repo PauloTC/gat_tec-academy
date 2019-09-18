@@ -1,7 +1,7 @@
 import React, {  Fragment } from 'react'
 import { Typography, Box, Button, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-
+import { Link } from 'gatsby'
 const useStyles = makeStyles(theme => ({
     buttonctn: {
         [theme.breakpoints.down('sm')]: {
@@ -45,7 +45,8 @@ const SubHeader = (props) => {
                         <Box fontSize="body2.fontSize" > {  props.subtitle } </Box>
                     </div>
                     <div  className={classes.buttonctn} >
-                        <Button fontWeight={900} className={classes.button}  color="secondary"> { props.button } </Button>
+                        <Button fontWeight={900} className={classes.button}  color="secondary"> 
+                            <Link  to={props.to} > { props.button } </Link> </Button>
                     </div>
                 </div>
             </Typography>

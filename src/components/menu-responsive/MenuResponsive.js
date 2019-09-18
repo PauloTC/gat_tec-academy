@@ -21,6 +21,16 @@ const useStyles = makeStyles({
 	},
 	fullList: {
 		width: 'auto'
+	},
+	link: {
+		textDecoration: 'none',
+		fontSize: 16,
+		display: 'flex',
+		alignItems: 'center',
+		'& i' : {
+			color: "#321063",
+			marginRight: 20
+		} 
 	}
 });
 
@@ -61,7 +71,7 @@ export default function TemporaryDrawer() {
 				{ Links.map(( link, index) => (
                     <ListItem button key={link.to}>
                         
-					    <Link  to={ link.to } >
+					    <Link className={ classes.link }  to={ link.to } >
                             <i className={`${ link.icon }`} ></i>
                             { link.name }</Link>
 						{/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>

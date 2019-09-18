@@ -173,7 +173,8 @@ export default function IndexPage() {
 						}
 					</section> */}
 
-					<SubHeader  
+					<SubHeader
+							to="courses"
 							title="Próximas actividades"  
 							subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
 							button="Ver actividades"  ></SubHeader>
@@ -192,6 +193,7 @@ export default function IndexPage() {
 
 
 					<SubHeader  
+						to="points"
 						title="Puntajes Tec Valley "  
 						subtitle="¿Estás cerca a ganar ese after office?  ¡Aprovecha al máximo TecAcademy!"  
 						button="Ver puntajes"  ></SubHeader>

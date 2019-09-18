@@ -6,8 +6,9 @@ import { makeStyles } from '@material-ui/styles';
 const useStyles = makeStyles({
     image: {
         margin: 0,
-        height: 320,
-        borderRadius: 5
+        height: 300,
+        borderRadius: 5,
+        backgroundPosition: 'left'
     },
     exhibitorimg : {
         borderRadius: 50,

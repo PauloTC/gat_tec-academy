@@ -21,7 +21,8 @@ const useStyles = makeStyles({
         borderRadius: 50
     },
     card: {
-        height: 400
+        height: 300,
+        backgroundPosition: 'left'
     }
 });
 

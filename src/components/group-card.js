@@ -85,6 +85,13 @@ const useStyles = makeStyles(theme => ({
         }
     },
     "@global": {
+        "a": {
+            textDecoration: 'none',
+            color: 'inherit'
+        },
+        "body" : {
+            "background-color": "#fff !important"
+        },
         ".Facebook": {
             background: '#475993',
             "&:before" : {
