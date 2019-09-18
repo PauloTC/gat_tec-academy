@@ -129,8 +129,9 @@ const Comunity = () => {
                                     <Paper>
                                         <Box mb={4} p={2} >
                                             <Grid container  >
-                                                <Typography gutterBottom variant="subtitle1"  >
+                                                <Typography  className={ classes.head } gutterBottom variant="subtitle1"  >
                                                     <Box  fontWeight="fontWeightBold" >Workshops</Box>
+                                                    <span className={ classes.circle }  ></span>
                                                 </Typography>
                                             </Grid>
                                             <Typography variant="body2">Ahora más dinámicos y además con Workshops Talks para profundizar y resolver casos del día a día.</Typography>

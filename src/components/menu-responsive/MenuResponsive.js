@@ -30,7 +30,7 @@ const useStyles = makeStyles({
 		'& i' : {
 			color: "#321063",
 			marginRight: 20,
-			
+
 		} 
 	}
 });
@@ -41,9 +41,7 @@ export default function TemporaryDrawer() {
     const Links = [
         {  name: 'Actividades', to: 'courses' , icon: 'icon-support' },
         {  name: 'Puntajes', to: 'points', icon: 'icon-lectern'  },
-        {  name: 'Nosotros', to: 'comunity' , icon: 'icon-star'  },
-        {  name: 'reglas', to: 'comunity', icon: 'icon-group'  },
-        {  name: 'blog', to: 'points', icon: 'icon-education'  }
+        {  name: 'Nosotros', to: 'comunity' , icon: 'icon-star'  }
     ]
 
 	const [ state, setState ] = React.useState({

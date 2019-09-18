@@ -47,7 +47,7 @@ const CoursePrincipal = (props) => {
                     </Typography>
                     {/* <p className="font-size-14"> </p> */}
 
-                    <Button variant="contained" color="secondary" > Inscríbete ahora </Button>
+                    <Button href="https://miscursosucb.belcorp.biz/course/view.php?id=2201"  variant="contained" color="secondary" > Inscríbete ahora </Button>
                     
                     {/* <a className="nav-link btn-external active" target="_blank" href="https://miscursosucb.belcorp.biz/course/view.php?id=2159" >Inscríbete ahora</a> */}
                 </Grid>

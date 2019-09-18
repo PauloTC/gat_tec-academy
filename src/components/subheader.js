@@ -46,7 +46,7 @@ const SubHeader = (props) => {
                     </div>
                     <div  className={classes.buttonctn} >
                         <Button fontWeight={900} className={classes.button}  color="secondary"> 
-                            <Link  to={props.to} > { props.button } </Link> </Button>
+                            <Link    to={props.to} > { props.button } </Link> </Button>
                     </div>
                 </div>
             </Typography>

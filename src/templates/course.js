@@ -115,17 +115,17 @@ const Course = (props) => {
                     <Grid item xs={12}  md={4}   >
                         <Box  my={3} >
                             <Typography> 
-                                <Box fontWeight={700}  fontSize="body2.fontSize" >¿Asistirás?  </Box>
+                                <Box   fontWeight={700}  fontSize="body2.fontSize" >¿Asistirás?  </Box>
                             </Typography>
                         </Box>
                         <Grid  container spacing={5} > 
                             <Grid item xs={6} >
-                                <Button size="small" fullWidth="true" variant="contained" color="secondary" className={classes.button}>
+                                <Button  href="https://miscursosucb.belcorp.biz/course/view.php?id=2201"  size="small" fullWidth="true" variant="contained" color="secondary" className={classes.button}>
                                     <CheckIcon />
                                 </Button>
                             </Grid>
                             <Grid item xs={6} >
-                                <Button size="small" fullWidth="true" variant="contained" color="secondary" className={classes.button}>
+                                <Button  size="small" fullWidth="true" variant="contained" color="secondary" className={classes.button}>
                                     <CloseIcon />
                                 </Button>
                             </Grid>

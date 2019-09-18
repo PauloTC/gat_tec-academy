@@ -63,7 +63,7 @@ const IndividualPoints = () => {
 				{/*<!-- Fin Tabla de Puntajes -->*/}
 				<div style={{ textAlign: 'right', marginTop: '40px' }}>
 					<a href="assets/puntaje-tecacademy.xlsx">
-						<Button variant="contained" color="primary" >Descargar listado completo</Button>
+						{/* <Button variant="contained" color="primary" >Descargar listado completo</Button> */}
 						{/* <button type="button" className={`btn btn-outline-primary ${Styles.individual__button}`}>
 							
 						</button> */}

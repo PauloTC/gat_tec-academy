@@ -17,30 +17,10 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const tutorialSteps = [
   {
-    label: 'San Francisco – Oakland Bay Bridge, United States',
+    label: 'Sé parte de TecAcademy y viaja a Silicon Valley',
     imgPath:
       'http://tinyimg.io/i/TacBZwj.jpeg',
-  },
-  {
-    label: 'Bird',
-    imgPath:
-      'http://tinyimg.io/i/TacBZwj.jpeg',
-  },
-  {
-    label: 'Bali, Indonesia',
-    imgPath:
-      'http://tinyimg.io/i/TacBZwj.jpeg',
-  },
-  {
-    label: 'NeONBRAND Digital Marketing, Las Vegas, United States',
-    imgPath:
-    'http://tinyimg.io/i/TacBZwj.jpeg',
-  },
-  {
-    label: 'Goč, Serbia',
-    imgPath:
-    'http://tinyimg.io/i/TacBZwj.jpeg',
-  },
+  }
 ];
 
 const useStyles = makeStyles(theme => ({
@@ -69,18 +49,31 @@ const useStyles = makeStyles(theme => ({
     top: 0,
     bottom: 0,
     left: 0,
-    right: 0
+    right: 0,
+    [theme.breakpoints.down('xs')]: {
+      paddingLeft: 0
+    },
   },
   button: {
     textTransform: "capitalize",
     color: "white"
   },
+  container: {
+    textAlign: 'left',
+    [theme.breakpoints.down('xs')]: {
+        textAlign: 'center'
+    },
+  },
   title: {
     color: '#fff',
-    maxWidth: 600
+    maxWidth: 600,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: 25,
+      textAlign: 'center'
+    },
   },
   img: {
-    height: 255,
+    height: 300,
     [theme.breakpoints.up('md')]: {
         height: 400
     },
@@ -111,11 +104,11 @@ function SwipeableTextMobileStepper() {
   return (
     <div className={classes.root}>
       <Paper square elevation={0} className={classes.header}>
-        <Container maxWidth="md"  >
+        <Container className={ classes.container }  maxWidth="md"  >
           <Typography  >
               <Box mb={2} className={classes.title} fontSize="h4.fontSize" fontWeight={800} >{tutorialSteps[activeStep].label}</Box>
             </Typography>
-          <Button variant="contained" color="primary" className={classes.button}>
+          <Button variant="contained" color="secondary" className={classes.button}>
               Inscribete ahora
           </Button>
         </Container>
@@ -140,16 +133,6 @@ function SwipeableTextMobileStepper() {
         variant="text"
         activeStep={activeStep}
         className={classes.steps}
-        nextButton={
-          <Button size="small" className={classes.button} onClick={handleNext} disabled={activeStep === maxSteps - 1}>
-            {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-          </Button>
-        }
-        backButton={
-          <Button size="small" className={classes.button} onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-          </Button>
-        }
       />
     </div>
   );
