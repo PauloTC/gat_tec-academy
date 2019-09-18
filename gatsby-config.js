@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
-		title: `Gatsby Default Starter`,
-		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+		title: `Tec Academy`,
+		description: `TecAcademy es el espacio que nos permite desarrollar nuestras habilidades softs y hard, mediante talleres, meetups, pizza nights, after office, etc.`,
 		author: `@gatsbyjs`
 	},
 	plugins: [
