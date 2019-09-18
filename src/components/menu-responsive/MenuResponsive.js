@@ -10,7 +10,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
-import { Grid  } from '@material-ui/core';
+import { Grid, Box  } from '@material-ui/core';
 import styles from './menu-responsive.module.scss';
 import { Link } from "gatsby"
 
@@ -74,13 +74,15 @@ export default function TemporaryDrawer() {
 	);
 
 	return (
-		<Grid container alignItems="center" className={styles.menu__container} justify="center" height="100%">
-			<IconButton className={styles.menu__icon} onClick={toggleDrawer('right', true)} aria-label="menu">
-				<MenuIcon />
-			</IconButton>
-			<Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)}>
-				{sideList('right')}
-			</Drawer>
-		</Grid>
+		<Box display={{ xs: 'block', sm: 'block', md: 'none' }}>
+			<Grid container alignItems="center" className={styles.menu__container} justify="flex-end" height="100%">
+				<IconButton className={styles.menu__icon} onClick={toggleDrawer('right', true)} aria-label="menu">
+					<MenuIcon />
+				</IconButton>
+				<Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)}>
+					{sideList('right')}
+				</Drawer>
+			</Grid>
+		</Box>
 	);
 }

@@ -26,7 +26,6 @@ const Layout = ({ children }) => {
   
   return (
     <>
-          <OpenIconSpeedDial></OpenIconSpeedDial>
           <Header siteTitle={data.site.siteMetadata.title} />
           <div className="body-container" >
             <ThemeProvider theme={theme}>

@@ -18,7 +18,6 @@ import "../../assets/icons/style.css"
 import { inherits } from 'util';
 import { ThemeProvider } from '@material-ui/styles';
 import theme from "../../theme/muiTheme"
-import MenuDrop  from "../menu-dropdown"
 
 const useStyles = theme => ({
 	menu: {
@@ -28,11 +27,14 @@ const useStyles = theme => ({
             display: 'none'
         }
     },
-    container: {
-        "justify-content": 'space-between',
+    menuresponsive: {
+        display: "none",
         [theme.breakpoints.down('sm')]: {
-            "justify-content": 'center'
+            display: 'flex'
         }
+    },
+    container: {
+        "justify-content": 'space-between'
     },
     active: {
         color: "red"
@@ -87,7 +89,7 @@ function Header(props) {
                         <Toolbar  className={classes.toolbar}  >
                             <Container maxWidth="lg">
                                 <Grid container >
-                                    <Grid className={classes.container}   container justify="space-between" item xs={12} md={12}>
+                                    <Grid className={classes.container}   container wrap="nowrap" justify="space-between" item xs={12} md={12}>
                                         <Link className={styles.header__img}>
                                             <img alt="logo" id="logo" src={logo} width="120" />
                                         </Link>
@@ -108,6 +110,7 @@ function Header(props) {
                                                 })}
                                             </Typography>
                                         </Box>
+                                        <TemporaryDrawer  className={ classes.menuresponsive } ></TemporaryDrawer>
                                     </Grid>
                                 </Grid>
                             </Container>

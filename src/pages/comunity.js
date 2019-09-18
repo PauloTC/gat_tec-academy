@@ -19,7 +19,6 @@ import Ambassadors from '../components/ambassadors'
 import { makeStyles } from '@material-ui/styles';
 import HomeAcademy from '../components/home-academy'
 import rocket from '../assets/media/rocket.jpg'
-import video from '../assets/media/video.mp4'
 
 const useStyles = makeStyles({
     banner: {
@@ -76,14 +75,6 @@ const Comunity = () => {
                 <Card>
 
                         <CardMedia  className={classes.banner} image={ bannerimage }  />
-                        <video id="background-video" width="100%" loop autoPlay>
-                            <source src="https://youtu.be/LPXeQ-bTXtU" type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                        <video id="background-video" width="100%" loop autoPlay>
-                            <source src={video} type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
                         <CardContent className={classes.textbanner}  >
                             <Container maxWidth="md"  >
                                 <Grid height={400} container justify="center" alignItems="center" >
