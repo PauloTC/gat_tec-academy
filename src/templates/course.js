@@ -38,6 +38,9 @@ export const query = graphql`
                     url
                 }
             }
+            fecha1
+            fecha2
+            fecha3
             image {
                 file {
                     url
@@ -58,6 +61,7 @@ export const query = graphql`
                     title
                     slug
                     exhibitor
+                    fecha1
                 }
             }
         },
@@ -72,7 +76,7 @@ const Course = (props) => {
                     <Grid item xs={12}  md={7}  >
                         <Box my={3}  >
                             <Typography> 
-                                <Box  fontSize="body2.fontSize" >sábado, 14 de septiembre de 2019</Box>
+                                <Box  fontSize="body2.fontSize" > { props.data.course.fecha1 } </Box>
                                 <Box  fontSize="h5.fontSize"  fontWeight={900} >  {props.data.course.title}  </Box>
                             </Typography>
                             <Grid  container spacing={2}  alignItems='center' >
@@ -96,9 +100,15 @@ const Course = (props) => {
                             </Box>
                             <Paper  elevation={0}  >
                                 <Typography gutterBottom>
-                                    <Box  fontSize="subtitle1" fontWeight={700}  >Detalles</Box>  
+                                    <Box   fontSize="subtitle1" fontWeight={700}  >Detalles</Box>  
                                 </Typography>
                                 <Typography  variant="body2" >  { props.data.course.description.content[0].content[0].value }  </Typography>
+                                <Typography  variant="body2" > 
+                                        <Box my={3}  >{ props.data.course.fecha2 }</Box> 
+                                 </Typography>
+                                <Typography  variant="body2" > 
+                                        <Box my={3}  >{ props.data.course.fecha3 }</Box> 
+                                 </Typography>
                             </Paper>
                         </Box>
                     </Grid>

@@ -34,7 +34,7 @@ const HomeCourse = (props) => {
             <Paper  className={ Styles.course__card }  >
                 <Box  mb={3}>
                     <Typography> 
-                        <Box mb={1} className={classes.date} fontSize="subtitle2.fontSize">mar., 10 sept.</Box>
+                        <Box mb={1} className={classes.date} fontSize="subtitle2.fontSize">{ props.edge.node.fecha1 }.</Box>
                         <Box lineHeight={1.2} mb={1}  className={Styles.course__title} fontSize="h6.fontSize" fontWeight="fontWeightBold" > {props.edge.node.title} </Box>
                         <Box  fontSize="body2.fontSize" > {props.edge.node.exhibitor} </Box>
                     </Typography>
