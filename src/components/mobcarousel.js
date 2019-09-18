@@ -19,7 +19,7 @@ const tutorialSteps = [
   {
     label: 'Sé parte de TecAcademy y viaja a Silicon Valley',
     imgPath:
-      'http://tinyimg.io/i/TacBZwj.jpeg',
+      'http://tinyimg.io/i/nMOkfKT.jpeg',
   }
 ];
 
@@ -73,9 +73,9 @@ const useStyles = makeStyles(theme => ({
     },
   },
   img: {
-    height: 300,
+    height: 400,
     [theme.breakpoints.up('md')]: {
-        height: 400
+        height: 500
     },
     display: 'block',
     overflow: 'hidden',
