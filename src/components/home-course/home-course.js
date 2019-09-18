@@ -31,7 +31,7 @@ const HomeCourse = (props) => {
     const classes = useStyles();
     return(
         <div  className={ classes.container }  >
-            <Paper  className={ Styles.course__card }  elevation="5" >
+            <Paper  className={ Styles.course__card }  >
                 <Box  mb={3}>
                     <Typography> 
                         <Box mb={1} className={classes.date} fontSize="subtitle2.fontSize">mar., 10 sept.</Box>

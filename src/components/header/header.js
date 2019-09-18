@@ -16,6 +16,9 @@ import { withStyles } from '@material-ui/core/styles';
 import logo from '../../images/logo-tecacademy.png';
 import "../../assets/icons/style.css"
 import { inherits } from 'util';
+import { ThemeProvider } from '@material-ui/styles';
+import theme from "../../theme/muiTheme"
+import MenuDrop  from "../menu-dropdown"
 
 const useStyles = theme => ({
 	menu: {
@@ -31,6 +34,12 @@ const useStyles = theme => ({
             "justify-content": 'center'
         }
     },
+    active: {
+        color: "red"
+    }
+    // header: {
+    //     boxShadow: "none"
+    // }
     // toolbar: {
     //     height: 43
     // }
@@ -63,46 +72,49 @@ function Header(props) {
     const { classes } = props;
     const Links = [
         {  name: 'Actividades', to: 'courses' , icon: 'icon-support' },
-        {  name: 'Talleres', to: 'courses', icon: 'icon-lectern'  },
+        // {  name: 'Talleres', to: 'courses', icon: 'icon-lectern'  },
         {  name: 'Puntajes', to: 'points' , icon: 'icon-star'  },
-        {  name: '¿Porque TecAcademy?', to: 'comunity', icon: 'icon-group'  },
-        {  name: 'Blog', to: 'points', icon: 'icon-education'  }
+        {  name: 'Nosotros', to: 'comunity', icon: 'icon-group'  },
+        {  name: 'reglas', to: 'comunity', icon: 'icon-education'  },
+        {  name: 'blog', to: 'points', icon: 'icon-education'  }
     ]
 	return (
 		<React.Fragment>
 			<CssBaseline />
-			<HideOnScroll {...props}>
-				<AppBar>
-					<Toolbar  className={classes.toolbar}  >
-						<Container maxWidth="lg">
-							<Grid container >
-								<Grid className={classes.container}   container justify="space-between" item xs={12} md={12}>
-									<Link className={styles.header__img}>
-										<img alt="logo" id="logo" src={logo} width="120" />
-									</Link>
-									<Box className={classes.menu}>
-										<Typography className={classes.menu} variant="body2">
-											{Links.map((link, index) => {
-												return (
-													<Link
-														key={index}
-														activeClassName="active"
-														to={link.to}
-														className={`nav-link ${styles.header__link}`}
-													>
-														<i className={`${styles.header__icon} ${link.icon}`} />
-														{link.name}
-													</Link>
-												);
-											})}
-										</Typography>
-									</Box>
-								</Grid>
-							</Grid>
-						</Container>
-					</Toolbar>
-				</AppBar>
-			</HideOnScroll>
+            <ThemeProvider theme={theme}>
+                <HideOnScroll {...props}>
+                    <AppBar  elevation={0} className={ classes.header  }  >
+                        <Toolbar  className={classes.toolbar}  >
+                            <Container maxWidth="lg">
+                                <Grid container >
+                                    <Grid className={classes.container}   container justify="space-between" item xs={12} md={12}>
+                                        <Link className={styles.header__img}>
+                                            <img alt="logo" id="logo" src={logo} width="120" />
+                                        </Link>
+                                        <Box className={classes.menu}>
+                                            <Typography className={classes.menu} variant="body2">
+                                                {Links.map((link, index) => {
+                                                    return (
+                                                        <Link
+                                                            key={index}
+                                                            activeClassName="active"
+                                                            to={link.to}
+                                                            className={`nav-link ${styles.header__link}`}
+                                                        >
+                                                            <i className={`${styles.header__icon} ${link.icon}`} />
+                                                            {link.name}
+                                                        </Link>
+                                                    );
+                                                })}
+                                            </Typography>
+                                        </Box>
+                                    </Grid>
+                                </Grid>
+                            </Container>
+                        </Toolbar>
+                    </AppBar>
+                </HideOnScroll>
+            </ThemeProvider>
 			<Toolbar />
 		</React.Fragment>
 	);

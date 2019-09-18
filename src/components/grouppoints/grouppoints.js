@@ -57,7 +57,7 @@ const PointsGroup = (props) => {
                     }
                 })()}
             
-            <Grid container alignItems="center"  spacing={2} className={classes.content} >
+            <Grid container alignItems="center"  spacing={1} className={classes.content} >
                 <Grid item >
                     <img className={classes.image}  src={props.image}  height="60" alt="" />
                 </Grid>

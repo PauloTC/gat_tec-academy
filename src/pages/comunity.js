@@ -19,6 +19,7 @@ import Ambassadors from '../components/ambassadors'
 import { makeStyles } from '@material-ui/styles';
 import HomeAcademy from '../components/home-academy'
 import rocket from '../assets/media/rocket.jpg'
+import video from '../assets/media/cover.mp4'
 
 const useStyles = makeStyles({
     banner: {
@@ -43,6 +44,27 @@ const useStyles = makeStyles({
             fontWeight: "bold",
             fontSize: 14
         }
+    },
+    colorbox: {
+        height: 120,
+        borderRadius: 8,
+        fontWeight: 900,
+        color: "white",
+        padding: 15,
+        display: 'flex',
+        alignItems: "center"
+    },
+    pink: {
+        background: "#d14982"
+    },
+    yellow: {
+        background: "#e9c85a"
+    },
+    green: {
+        background: "#6ab7a0"
+    },
+    blue: {
+        background: "#3f7fbe"
     }
 });
 const Comunity = () => {
@@ -52,13 +74,18 @@ const Comunity = () => {
             <Layout>
                 <SEO title="Comunidad" />
                 <Card>
+
                         <CardMedia  className={classes.banner} image={ bannerimage }  />
+                        <video id="background-video" width="100%" loop autoPlay>
+                            <source src={video} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
                         <CardContent className={classes.textbanner}  >
                             <Container maxWidth="md"  >
                                 <Grid height={400} container justify="center" alignItems="center" >
                                     <Typography align='center' >
-                                        <Box  fontSize="h3.fontSize" fontWeight="fontWeightBold">Nos renovamos</Box>
-                                        <Box fontSize="subtitle2.fontSize"  >Con nuevos y mejores espacios para aprender, compartir y desarrollarnos.</Box>
+                                        <Box  fontSize="h4.fontSize" fontWeight="fontWeightLight">We want to be a movement <br/>  that shares and develops a tech learning culture.</Box>
+                                        <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > De nosotros para nosotros.</Box>
                                     </Typography>
                                 </Grid>
                             </Container>
@@ -189,6 +216,38 @@ const Comunity = () => {
                     </Container>
                 </Box>
 
+                <Box>
+                    <Container  maxWidth="md" >
+                        <Grid  container spacing={2} >
+                            <Grid md={4} item >
+                                <Typography variant="h5" >
+                                    <Box fontWeight="fontWeightBold" > Nuestros </Box> 
+                                    <Box fontWeight="fontWeightBold" > pilares </Box> 
+                                </Typography>
+                            </Grid>
+                            <Grid md={4} item >
+                                <Typography>
+                                    <Box  mb={2}  className={ `${classes.colorbox} ${classes.pink}` }   fontSize="h6.fontSize" >Share knowledge and develop capabilities</Box>
+                                </Typography>
+                                <Typography>
+                                    <Box className={ `${classes.colorbox} ${classes.yellow}` }   fontSize="h6.fontSize">Expand beyond our boundaries</Box>
+                                </Typography>
+                            </Grid>
+                            <Grid md={4} item >
+                                <Typography>
+                                    <Box mb={2} className={ `${classes.colorbox} ${classes.green}` }   fontSize="h6.fontSize" >Increase value to business throught people</Box>
+                                </Typography>
+                                <Typography>
+                                    <Box className={ `${classes.colorbox} ${classes.blue}` }   fontSize="h6.fontSize" >Be attractive to the world</Box>
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    </Container>
+
+                </Box>
+
+
+                <Ambassadors></Ambassadors>
                 <Box position="relative" >
                     <Card>
                         <CardMedia  className={classes.banner} image={ bannergoogle }  />
@@ -202,7 +261,6 @@ const Comunity = () => {
                         </CardContent>
                     </Card>
                 </Box>
-                <Ambassadors></Ambassadors>
             </Layout>
         </Fragment>
     )

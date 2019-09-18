@@ -27,7 +27,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 const useStyles = makeStyles({
 	teamcontainer: {
 		display: 'flex',
-		justifyContent: 'space-between'
+		justifyContent: 'space-between',
+		marginBottom: 60
 	},
     banner: {
         height: 400
@@ -63,11 +64,12 @@ const useStyles = makeStyles({
 	},
 	courses: {
 		display: 'flex !important',
-		justifyContent: 'space-between'
+		justifyContent: 'space-between',
+		marginBottom: 60
 	},
 	course : {
 		width: '100%',
-		marginRight: 20,
+		marginRight: 30,
 		'&:nth-of-type(3)' : {
 			marginRight: 0
 		}
@@ -132,18 +134,17 @@ const IndexPage = () => {
         <Fragment>
             <Layout>
                 <SEO title="Inicio" />
-				<Box mb={4}>
+				<Box mb={6}>
 					<SwipeableTextMobileStepper></SwipeableTextMobileStepper>
-
 				</Box>
 				<Container maxWidth="md" >
 
-					<SubHeader  
+					{/* <SubHeader  
 						title="Próximos eventos"  
 						subtitle="Descubre lo que pasará proximamente en Belcorp"  
-						button="Ver talleres"  ></SubHeader>
+						button="Ver talleres"  ></SubHeader> */}
 
-					<section className={ classes.courses }  >
+					{/* <section className={ classes.courses }  >
 						{	
 							data.carousel.edges.map( edge => {
 								return (
@@ -153,7 +154,7 @@ const IndexPage = () => {
 								)
 							})		
 						}
-					</section>
+					</section> */}
 
 					<SubHeader  
 							title="Próximas actividades"  
@@ -182,7 +183,14 @@ const IndexPage = () => {
 								data.countries.edges.map(  edge =>   <GroupCard  data={edge.node}  />    )
 							}			
 					</section>
-			
+					
+					<SubHeader  
+						title="Comunidad TecAcademy "  
+						subtitle="Un grupo de apasionados y entusiastas. ¿Quiéres ser un TecAcademy Ambassador?"  
+						button="Ver puntajes"  ></SubHeader>
+
+
+
 				</Container>
             </Layout>
         </Fragment>

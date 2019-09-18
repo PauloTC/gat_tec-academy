@@ -3,7 +3,14 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import OpenIconSpeedDial from "./speeddial"
 import Header from "./header/header"
+
+
+import { ThemeProvider } from '@material-ui/styles';
+import theme from "../theme/muiTheme"
+
+import Footer from "../components/footer"
 // import "./layout.css"
+
 
 
 const Layout = ({ children }) => {
@@ -19,19 +26,17 @@ const Layout = ({ children }) => {
   
   return (
     <>
-      {/* <Link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> */}
-      <OpenIconSpeedDial></OpenIconSpeedDial>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div className="body-container" >
-        <main>{children}</main>
-        <footer>
-          <div className="purple-bottom">
-            <div className="container" style={{ paddingTop: '20px' }}>
-              <p className="text-white" style={{ textAlign: 'right' }}> TecAcademy 2019 </p>
-            </div>
+          <OpenIconSpeedDial></OpenIconSpeedDial>
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <div className="body-container" >
+            <ThemeProvider theme={theme}>
+
+              <main>{children}</main>
+              
+            </ThemeProvider>
           </div>
-        </footer>
-      </div>
+          <Footer></Footer>
+      {/* <Link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> */}
     </>
   )
 }
