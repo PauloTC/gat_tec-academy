@@ -86,6 +86,27 @@ const useStyles = makeStyles(theme =>({
     },
     blue: {
         background: "#3f7fbe"
+    },
+    circle: {
+        height: 25,
+        width: 25,
+        background: "red",
+        display: 'flex',
+        borderRadius: '50%'
+    },
+    workshop: {
+        background: "#04d3f2"
+    },
+    talks : {
+        background: "#ff71ad"
+    },
+    pitch: {
+        background: "#e2af03"
+    },
+    head: {
+        display: 'flex',
+        width: '100%',
+        justifyContent: 'space-between'
     }
 }));
 const Comunity = () => {
@@ -131,7 +152,7 @@ const Comunity = () => {
                                             <Grid container  >
                                                 <Typography  className={ classes.head } gutterBottom variant="subtitle1"  >
                                                     <Box  fontWeight="fontWeightBold" >Workshops</Box>
-                                                    <span className={ classes.circle }  ></span>
+                                                    <span className={ ` ${classes.circle} ${classes.workshop} `  }  ></span>
                                                 </Typography>
                                             </Grid>
                                             <Typography variant="body2">Ahora más dinámicos y además con Workshops Talks para profundizar y resolver casos del día a día.</Typography>
@@ -144,8 +165,9 @@ const Comunity = () => {
                                     <Paper>
                                         <Box mb={4} p={2} >
                                             <Grid container  >
-                                                <Typography gutterBottom variant="subtitle1"  >
+                                                <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
                                                     <Box  fontWeight="fontWeightBold" >Talks</Box>
+                                                    <span className={ ` ${classes.circle} ${classes.talks} `  }  ></span>
                                                 </Typography>
                                             </Grid>
                                             <Typography variant="body2">Invitados especiales y charlas inspiradoras de innovación y tecnología.</Typography>
@@ -157,8 +179,9 @@ const Comunity = () => {
                                     <Paper>
                                         <Box mb={4} p={2} >
                                             <Grid container  >
-                                                <Typography gutterBottom variant="subtitle1"  >
+                                                <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
                                                     <Box  fontWeight="fontWeightBold" >Pitch Day</Box>
+                                                    <span className={ ` ${classes.circle} ${classes.pitch} `  }  ></span>
                                                 </Typography>
                                             </Grid>
                                             <Typography variant="body2">Tu creatividad y experiencia se pueden convertir en proyectos reales Belcorp. Te acompañaremos en el proceso de ideación para que expongas frente a líderes de Belcorp.</Typography>
