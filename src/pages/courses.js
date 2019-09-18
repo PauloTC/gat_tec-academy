@@ -17,7 +17,8 @@ const CoursesPage = () => {
                             file {
                                 url
                             }
-                          }
+                        }
+                        fecha1
                         title
                         exhibitor
                         slug
@@ -56,6 +57,7 @@ const CoursesPage = () => {
                                     exhibitorJob = { edge.node.exhibitorJob }
                                     exhibitorImage = { edge.node.exhibitorImage.file.url }
                                     exhibitor = { edge.node.exhibitor }
+                                    fecha = { edge.node.fecha1 }
                                     image= {edge.node.image.file.url }
                                     description={ edge.node.description.content[0].content[0].value }
                                     title= {edge.node.title}
@@ -80,6 +82,7 @@ const CoursesPage = () => {
                                         exhibitorImage = { edge.node.exhibitorImage.file.url }
                                         description={ edge.node.description.content[0].content[0].value }
                                         title={ edge.node.title } 
+                                        fecha={ edge.node.fecha1 } 
                                         slug= { edge.node.slug }>
                                     </Course>
                                 )

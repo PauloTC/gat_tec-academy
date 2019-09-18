@@ -42,7 +42,7 @@ const Course = (props) => {
                     <CardContent>
                         <Typography variant="h6">
                             <Box> { props.title }  </Box>
-                            <Box  my={1} gutterBottom fontSize="subtitle2.fontSize" >7PM  |  Domos Art, Lima</Box>
+                            <Box  my={1} gutterBottom fontSize="subtitle2.fontSize" >{ props.fecha }</Box>
                             
                             <Grid gutterBottom container alignItems="center"  >
                                 <img  className={classes.image} width="24"  src={ props.exhibitorImage }  alt="exhibitorimage" />

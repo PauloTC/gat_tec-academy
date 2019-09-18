@@ -32,9 +32,9 @@ const CoursePrincipal = (props) => {
                 <Grid xs={12} md={5} item container  alignItems="flex-start"   direction="column" >
                     {/* <h4 className="g-subtitle container-bottom mb-4"></h4> */}
                     <Typography > 
-                        <Box  gutterBottom fontSize="subtitle2.fontSize"> SET 19   </Box>
+                        <Box  gutterBottom fontSize="subtitle2.fontSize"> { props.fecha } </Box>
                         <Box  gutterBottom fontSize="h5.fontSize" fontWeight="fontWeightBold" > { props.title }  </Box>
-                        <Box  my={1} gutterBottom fontSize="subtitle2.fontSize" >7PM  |  Domos Art, Lima</Box>
+                        <Box  my={1} gutterBottom fontSize="subtitle2.fontSize" > Sala: Por definir </Box>
                         <Grid gutterBottom container alignItems="center"  >
                             <img  className={classes.exhibitorimg} width="50" height="48" src={ props.exhibitorImage }  alt="exhibitorimage" />
                             <Grid  item >
@@ -47,7 +47,7 @@ const CoursePrincipal = (props) => {
                     </Typography>
                     {/* <p className="font-size-14"> </p> */}
 
-                    <Button variant="contained" className={classes.button} > Inscríbete ahora </Button>
+                    <Button variant="contained" color="secondary" > Inscríbete ahora </Button>
                     
                     {/* <a className="nav-link btn-external active" target="_blank" href="https://miscursosucb.belcorp.biz/course/view.php?id=2159" >Inscríbete ahora</a> */}
                 </Grid>
