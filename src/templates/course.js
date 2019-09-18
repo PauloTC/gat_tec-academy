@@ -125,9 +125,16 @@ const Course = (props) => {
                             <Box  fontSize="subtitle1" fontWeight={700}  >Próximos eventos</Box>  
                         </Typography>
                         <Box  my={2}>
-                            <Grid   xs={12}  container justify="space-between" spacing={2}  >
+                            <Grid   xs={12}  container  spacing={2}  >
                                 {	
-                                    props.data.carousel.edges.map( edge => (<HomeCourse key={edge.node.id}  edge={edge} />))
+                                    props.data.carousel.edges.map( edge =>  {
+                                        return (
+                                            <Grid  item md={4} >
+                                                <HomeCourse key={edge.node.id}  edge={edge} />
+
+                                            </Grid>
+                                        )
+                                    } )
                                 }
                             </Grid>
                         </Box>

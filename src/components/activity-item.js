@@ -4,6 +4,7 @@ import {
                     Box,
                     Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import { Link } from 'gatsby';
 
 
 const useStyles =  makeStyles(theme => ({
@@ -46,17 +47,18 @@ const ActivityItem = (props) => {
     return (
         <Fragment>
                 <div  className={ classes.container }  >
-                    <img className={ classes.image }   width={430}  src="http://tinyimg.io/i/tSFDV33.jpeg"  />
+                    <img className={ classes.image }   width={430}  src={ props.data.image.file.url } />
                     {/* <CardMedia className={classes.card}    image="" /> */}
                     <div  className={ classes.flexible  } >
                         <Typography className={ classes.text  } > 
-                            <Box mb={1}  fontSize="subtitle2.fontSize">mar., 10 sept.</Box>
-                            <Box lineHeight={1.2}    fontSize="h6.fontSize" fontWeight="fontWeightBold" > { props.data.type } :</Box>
-                            <Box lineHeight={1.2} mb={1}   fontSize="h6.fontSize" fontWeight="fontWeightBold" > { props.data.name } </Box>
-                            <Box  fontSize="body2.fontSize" > Bruno Díaz </Box>
+                            <Box mb={1}  fontSize="subtitle2.fontSize">{ props.data.fecha1 }</Box>
+                            {/* <Box lineHeight={1.2}    fontSize="h6.fontSize" fontWeight="fontWeightBold" > { props.data.type } :</Box> */}
+                            <Box lineHeight={1.2} mb={1}   fontSize="h6.fontSize" fontWeight="fontWeightBold" > { props.data.title } </Box>
+                            <Box  fontSize="body2.fontSize" > { props.data.exhibitor }</Box>
                         </Typography>
                         <Box className={ classes.btncontainer  }  >
-                            <Button className={classes.button} size="medium" variant="outlined" color="primary"> Unirme </Button>
+                            <Button className={classes.button} size="medium" variant="outlined" color="secondary"> 
+                                <Link to={`/courses/${ props.data.slug}`} >Unirme</Link>   </Button>
                         </Box>
                     </div>
                 </div>

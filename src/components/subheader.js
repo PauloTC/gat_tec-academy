@@ -45,7 +45,7 @@ const SubHeader = (props) => {
                         <Box fontSize="body2.fontSize" > {  props.subtitle } </Box>
                     </div>
                     <div  className={classes.buttonctn} >
-                        <Button fontWeight={900} className={classes.button}  color="primary"> { props.button } </Button>
+                        <Button fontWeight={900} className={classes.button}  color="secondary"> { props.button } </Button>
                     </div>
                 </div>
             </Typography>

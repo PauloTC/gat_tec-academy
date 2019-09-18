@@ -59,7 +59,7 @@ const useStyles = makeStyles(theme => ({
 		marginBottom: 60
 	},
 	activity: {
-		boxShadow : "1px 1px 16px 0 rgba(50, 16, 99, 0.1)",
+		border : "1px solid #eae7ef !important",
 		[theme.breakpoints.down('md')]: {
 			width: '48% !important',
 			boxSizing: "border-box",
@@ -112,6 +112,13 @@ export default function IndexPage() {
 						title
 						slug
 						exhibitor
+						fecha1
+						slug
+						image {
+							file {
+								url
+							}
+						}
 					}
 				}
 			},
@@ -172,10 +179,10 @@ export default function IndexPage() {
 							button="Ver actividades"  ></SubHeader>
 					
 					<div  className={classes.activities} >
-						{ dataActivity.map((item, index) => {
+						{ data.carousel.edges.map((item, index) => {
 							return (
 									<div  className={classes.activity}  key= { index }  >
-										<ActivityItem   data={item} />
+										<ActivityItem   data={item.node} />
 									</div>
 							)
 						})

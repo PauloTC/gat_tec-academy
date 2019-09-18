@@ -55,7 +55,7 @@ const Course = (props) => {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button className={classes.button} size="small" color="primary"> 
+                    <Button className={classes.button} size="small" color="secondary"> 
                         <Link to={`/courses/${ props.slug}`} > Ver detalle </Link>  </Button>
                 </CardActions>
             </Card>
