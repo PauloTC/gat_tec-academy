@@ -16,25 +16,42 @@ import {
     Typography } from '@material-ui/core';
 
 import Ambassadors from '../components/ambassadors'
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import HomeAcademy from '../components/home-academy'
 import rocket from '../assets/media/rocket.jpg'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme =>({
     banner: {
         height: 400
+    },
+    containertext: {
+        [theme.breakpoints.down('sm')]: {
+            textAlign: "center"
+		},
     },
     text: {
         position: "absolute",
         top: 100,
         left: 150,
-        color: "white"
+        color: "white",
+        [theme.breakpoints.down('md')]: {
+            left: 0,
+            width: "100%"
+		},
     },
     textbanner: {
         position: "absolute",
         top: '30%',
         color: "white",
-        width: '100%'
+        width: '100%',
+        [theme.breakpoints.down('xs')]: {
+			top: '20%'
+		},
+    },
+    title: {
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 25
+		},
     },
     button: {
         background: "white",
@@ -43,6 +60,11 @@ const useStyles = makeStyles({
             fontWeight: "bold",
             fontSize: 14
         }
+    },
+    rocket: {
+        [theme.breakpoints.down('md')]: {
+			display: 'none'
+		},
     },
     colorbox: {
         height: 120,
@@ -65,7 +87,7 @@ const useStyles = makeStyles({
     blue: {
         background: "#3f7fbe"
     }
-});
+}));
 const Comunity = () => {
     const classes = useStyles();
     return (
@@ -79,7 +101,7 @@ const Comunity = () => {
                             <Container maxWidth="md"  >
                                 <Grid height={400} container justify="center" alignItems="center" >
                                     <Typography align='center' >
-                                        <Box  fontSize="h4.fontSize" fontWeight="fontWeightLight">We want to be a movement <br/>  that shares and develops a tech learning culture.</Box>
+                                        <Box className={classes.title}  fontSize="h4.fontSize" fontWeight="fontWeightLight">We want to be a movement <br/>  that shares and develops a tech learning culture.</Box>
                                         <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > De nosotros para nosotros.</Box>
                                     </Typography>
                                 </Grid>
@@ -98,7 +120,7 @@ const Comunity = () => {
                                 <Box my={3} >
                                     <Typography   variant="body2"  >Con nuevos y mejores espacios para aprender, compartir y desarrollarnos.</Typography>
                                 </Box>
-                                <Box mt={30} >
+                                <Box className={ classes.rocket }    mt={30} >
                                     <img width={200} src={rocket} />
                                 </Box>
                             </Grid>
@@ -214,13 +236,13 @@ const Comunity = () => {
                 <Box>
                     <Container  maxWidth="md" >
                         <Grid  container spacing={2} >
-                            <Grid md={4} item >
+                            <Grid xs={12} md={4} item >
                                 <Typography variant="h5" >
                                     <Box fontWeight="fontWeightBold" > Nuestros </Box> 
                                     <Box fontWeight="fontWeightBold" > pilares </Box> 
                                 </Typography>
                             </Grid>
-                            <Grid md={4} item >
+                            <Grid xs={12} md={4} item >
                                 <Typography>
                                     <Box  mb={2}  className={ `${classes.colorbox} ${classes.pink}` }   fontSize="h6.fontSize" >Share knowledge and develop capabilities</Box>
                                 </Typography>
@@ -228,7 +250,7 @@ const Comunity = () => {
                                     <Box className={ `${classes.colorbox} ${classes.yellow}` }   fontSize="h6.fontSize">Expand beyond our boundaries</Box>
                                 </Typography>
                             </Grid>
-                            <Grid md={4} item >
+                            <Grid xs={12} md={4} item >
                                 <Typography>
                                     <Box mb={2} className={ `${classes.colorbox} ${classes.green}` }   fontSize="h6.fontSize" >Increase value to business throught people</Box>
                                 </Typography>
@@ -247,7 +269,7 @@ const Comunity = () => {
                     <Card>
                         <CardMedia  className={classes.banner} image={ bannergoogle }  />
                         <CardContent className={classes.text}  >
-                            <Container maxWidth="md"  >
+                            <Container className={classes.containertext} maxWidth="md"  >
                                 <Typography variant="h4">
                                     <Box  fontWeight={700} mb={4}>¿Estás cerca de ganar el <br/> viaje a Silicon Valley?</Box>
                                 </Typography>

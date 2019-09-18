@@ -18,6 +18,9 @@ import luisb from '../assets/media/luisb.jpg'
 import daniel from '../assets/media/daniel.jpg'
 import luisn from '../assets/media/luisn.jpg'
 import carla from '../assets/media/carla.jpg'
+import karla from '../assets/media/karla.jpg'
+import danilo from '../assets/media/danilo.jpg'
+import alonso from '../assets/media/alonso.jpg'
 import { makeStyles } from '@material-ui/styles';
 
 
@@ -32,6 +35,9 @@ const useStyles = makeStyles({
         display: "block",
         background: "#ff00a6",
         marginTop: -2
+    },
+    item: {
+        marginBottom : 5
     }
 });
 
@@ -45,11 +51,14 @@ const Ambassadors = () => {
         { name: 'Andrea Pacheco', photo: andrea  },
         { name: 'Camila Rodríguez', photo: camila  },
         { name: 'Sofía Shimabukuro', photo: sofia  },
-        { name: 'Priscila Elías', photo: priscila  },
+        { name: 'Danilo Montenegro', photo: danilo  },
         { name: 'Luis Bendezú', photo: luisb  },
-        { name: 'Daniel Quispe', photo: daniel  },
+        { name: 'Karla Casallas', photo: karla  },
         { name: 'Luis Nieto', photo: luisn  },
         { name: 'Carla Silva', photo: carla  },
+        { name: 'Daniel Quispe', photo: daniel  },
+        { name: 'Alonso Rodriguez', photo: alonso  },
+        { name: 'Priscila Elías', photo: priscila  },
     ]
     
     return (
@@ -65,11 +74,11 @@ const Ambassadors = () => {
                                 <Typography variant="body2" >Un grupo de personas apasionadas y entusiastas. ¡Conócelos!</Typography>
                             </Box>
                         </Grid>
-                        <Grid md={8} container spacing={2}  item >
+                        <Grid md={8} container  justify="center" spacing={2}  item >
                             {
                                 images.map( item => {
                                     return (
-                                        <Grid  key={item.photo}  md={4} item > 
+                                        <Grid className={ classes.item }  key={item.photo}  md={4} item > 
                                             <Box mb={1} >
                                                 <img className={classes.image} src={item.photo} />
                                             </Box>
