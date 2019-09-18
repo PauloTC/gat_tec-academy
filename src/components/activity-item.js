@@ -1,18 +1,12 @@
 import React, {  Fragment } from 'react'
 import { 
-                    Card,
-                    Paper,
-                    CardActions,
                     Typography, 
                     Box,
-                    CardMedia,
-                    CardContent,
-                    Button, 
-                    Grid } from '@material-ui/core';
+                    Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 
-const useStyles = makeStyles({
+const useStyles =  makeStyles(theme => ({
 	image: {
 		margin: 0
 	},
@@ -36,8 +30,15 @@ const useStyles = makeStyles({
         display: "flex",
         justifyContent: "flex-end",
         alignContent: "flex-end"
+    },
+    image: {
+        [theme.breakpoints.down('md')]: {
+            width: 'auto',
+            height: "auto",
+            maxWidth: "100%"
+        }
     }
-});
+}));
 
 
 const ActivityItem = (props) => {
@@ -45,7 +46,7 @@ const ActivityItem = (props) => {
     return (
         <Fragment>
                 <div  className={ classes.container }  >
-                    <img  width={430}  src="http://tinyimg.io/i/tSFDV33.jpeg"  />
+                    <img className={ classes.image }   width={430}  src="http://tinyimg.io/i/tSFDV33.jpeg"  />
                     {/* <CardMedia className={classes.card}    image="" /> */}
                     <div  className={ classes.flexible  } >
                         <Typography className={ classes.text  } > 

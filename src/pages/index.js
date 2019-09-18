@@ -4,17 +4,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { 
     Box, 
-    Button,
-    Container,
-    CardContent,
-    Card,
-    CardMedia,
-    Paper, 
-    Grid,
-    Typography } from '@material-ui/core';
+    Container, } from '@material-ui/core';
 
-import Ambassadors from '../components/ambassadors'
-import { makeStyles } from '@material-ui/styles';
 import HomeAcademy from '../components/home-academy'
 import rocket from '../assets/media/rocket.jpg'
 import SwipeableTextMobileStepper  from '../components/mobcarousel'
@@ -23,12 +14,20 @@ import GroupCard from '../components/group-card'
 import HomeCourse from '../components/home-course/home-course'
 import ActivityItem from '../components/activity-item'
 import { useStaticQuery, graphql } from 'gatsby';
+import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+
+const useStyles = makeStyles(theme => ({
 	teamcontainer: {
 		display: 'flex',
 		justifyContent: 'space-between',
-		marginBottom: 60
+		marginBottom: 60,
+		[theme.breakpoints.down('xs')]: {
+			flexWrap: 'wrap'
+		},
+		[theme.breakpoints.down('sm')]: {
+			marginBottom: 30
+		},
 	},
     banner: {
         height: 400
@@ -60,7 +59,18 @@ const useStyles = makeStyles({
 		marginBottom: 60
 	},
 	activity: {
-		boxShadow : "1px 1px 16px 0 rgba(50, 16, 99, 0.1)"
+		boxShadow : "1px 1px 16px 0 rgba(50, 16, 99, 0.1)",
+		[theme.breakpoints.down('md')]: {
+			width: '48% !important',
+			boxSizing: "border-box",
+			margin: "1%"
+		},
+		[theme.breakpoints.down('xs')]: {
+			width: '100% !important',
+			'&:nth-of-type(2)' : {
+				marginTop: 15
+			}
+		},
 	},
 	courses: {
 		display: 'flex !important',
@@ -74,11 +84,12 @@ const useStyles = makeStyles({
 			marginRight: 0
 		}
 	}
-});
+}));
 
 
 
-const IndexPage = () => {
+export default function IndexPage() {
+	const classes = useStyles();
 	const data = useStaticQuery(graphql`
 		query {
 			slider : allContentfulCourse(filter: { showHomeBanner: { eq: true } }) {
@@ -122,7 +133,6 @@ const IndexPage = () => {
             }
 		}
 	`);
-	const classes = useStyles();
 	
 
 	const dataActivity = [
@@ -183,18 +193,9 @@ const IndexPage = () => {
 								data.countries.edges.map(  edge =>   <GroupCard  data={edge.node}  />    )
 							}			
 					</section>
-					
-					<SubHeader  
-						title="Comunidad TecAcademy "  
-						subtitle="Un grupo de apasionados y entusiastas. ¿Quiéres ser un TecAcademy Ambassador?"  
-						button="Ver puntajes"  ></SubHeader>
-
-
 
 				</Container>
             </Layout>
         </Fragment>
     )
 }
-
-export default IndexPage

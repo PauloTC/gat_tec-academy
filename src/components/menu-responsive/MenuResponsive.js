@@ -28,11 +28,11 @@ export default function TemporaryDrawer() {
     const classes = useStyles();
 
     const Links = [
-        {  name: 'Actividades', to: '/' , icon: 'icon-support' },
-        {  name: 'Talleres', to: '/courses', icon: 'icon-lectern'  },
-        {  name: 'Puntajes', to: '/points' , icon: 'icon-star'  },
-        {  name: '¿Porque TecAcademy?', to: '/comunity', icon: 'icon-group'  },
-        {  name: 'Blog', to: '/points', icon: 'icon-education'  }
+        {  name: 'Actividades', to: 'courses' , icon: 'icon-support' },
+        {  name: 'Puntajes', to: 'points', icon: 'icon-lectern'  },
+        {  name: 'Nosotros', to: 'comunity' , icon: 'icon-star'  },
+        {  name: 'reglas', to: 'comunity', icon: 'icon-group'  },
+        {  name: 'blog', to: 'points', icon: 'icon-education'  }
     ]
 
 	const [ state, setState ] = React.useState({

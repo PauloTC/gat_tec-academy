@@ -2,10 +2,10 @@ import React, { Fragment } from 'react'
 import { 
     Box,
     Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     text: {
         borderRadius: 8,
         boxShadow: '1px 1px 16px 0 rgba(50, 16, 99, 0.1)',
@@ -17,7 +17,11 @@ const useStyles = makeStyles({
         },
         '& div' :  {
             textAlign: 'center'
-        }
+        },
+        [theme.breakpoints.down('xs')]: {
+            marginRight: 0,
+            marginBottom: 15
+		},
     },
     textcontainer: {
         display: 'flex',
@@ -100,7 +104,7 @@ const useStyles = makeStyles({
             background: '#e4404a'
         }
       }
-});
+}));
 
 const GroupCard = (props) => {
     const classes = useStyles();
