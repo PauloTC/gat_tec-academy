@@ -88,8 +88,8 @@ const useStyles = makeStyles(theme =>({
         background: "#3f7fbe"
     },
     circle: {
-        height: 25,
-        width: 25,
+        height: 20,
+        width: 20,
         background: "red",
         display: 'flex',
         borderRadius: '50%'
@@ -102,6 +102,15 @@ const useStyles = makeStyles(theme =>({
     },
     pitch: {
         background: "#e2af03"
+    },
+    countries: {
+        background: "#17c548"
+    },
+    meetups: {
+        background: "#54008b"
+    },
+    nights: {
+        background: "#44deb0"
     },
     head: {
         display: 'flex',
@@ -193,8 +202,9 @@ const Comunity = () => {
                                     <Paper>
                                         <Box mb={4} p={2} >
                                             <Grid container  >
-                                                <Typography gutterBottom variant="subtitle1"  >
+                                                <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
                                                     <Box  fontWeight="fontWeightBold" >Countries</Box>
+                                                    <span className={ ` ${classes.circle} ${classes.countries} `  }  ></span>
                                                 </Typography>
                                             </Grid>
                                             <Typography variant="body2">Ahora somos internacionales. Colombia será nuestro primer país de expansión.</Typography>
@@ -208,8 +218,9 @@ const Comunity = () => {
                                     <Paper>
                                         <Box mb={4} p={2} >
                                             <Grid container  >
-                                                <Typography gutterBottom variant="subtitle1"  >
+                                                <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
                                                     <Box  fontWeight="fontWeightBold" >Meetups</Box>
+                                                    <span className={ ` ${classes.circle} ${classes.meetups} `  }  ></span>
                                                 </Typography>
                                             </Grid>
                                             <Typography variant="body2">Entramos a la plataforma de comunidades para compartir conocimientos con muchos entusiastas de la tecnología. Búscanos en meetup.com como Belcorp Tec Academy</Typography>
@@ -220,8 +231,9 @@ const Comunity = () => {
                                     <Paper>
                                         <Box mb={4} p={2} >
                                             <Grid container  >
-                                                <Typography gutterBottom variant="subtitle1"  >
+                                                <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
                                                     <Box  fontWeight="fontWeightBold" >Special Events!</Box>
+                                                    <span className={ ` ${classes.circle} ${classes.special} `  }  ></span>
                                                 </Typography>
                                             </Grid>
                                             <Typography variant="body2">TEC Conference Day: Un día entero lleno de conocimiento para retroalimentarnos, integrarnos y energizarnos todos juntos. </Typography>
@@ -232,8 +244,9 @@ const Comunity = () => {
                                     <Paper>
                                         <Box mb={4} p={2} >
                                             <Grid container  >
-                                                <Typography gutterBottom variant="subtitle1"  >
+                                                <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
                                                     <Box  fontWeight="fontWeightBold" >Nights</Box>
+                                                    <span className={ ` ${classes.circle} ${classes.nights} `  }  ></span>
                                                 </Typography>
                                             </Grid>
                                             <Typography variant="body2">Un espacio para conocer historias de emprendedores como tú y motivarnos a soñar y seguir retándonos. </Typography>
