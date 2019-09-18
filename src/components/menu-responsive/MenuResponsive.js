@@ -29,7 +29,8 @@ const useStyles = makeStyles({
 		alignItems: 'center',
 		'& i' : {
 			color: "#321063",
-			marginRight: 20
+			marginRight: 20,
+			
 		} 
 	}
 });
