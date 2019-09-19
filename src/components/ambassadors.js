@@ -9,38 +9,50 @@ import {
     Paper, 
     Grid,
     Typography } from '@material-ui/core';
-import { useStaticQuery, graphql } from 'gatsby'
-import karen from '../assets/media/karen.jpg'
-import andrea from '../assets/media/andrea.jpg'
-import camila from '../assets/media/camila.jpg'
-import sofia from '../assets/media/sofia.jpg'
-import priscila from '../assets/media/priscila.jpg'
-import luisb from '../assets/media/luisb.jpg'
-import daniel from '../assets/media/daniel.jpg'
-import luisn from '../assets/media/luisn.jpg'
-import carla from '../assets/media/carla.jpg'
-import karla from '../assets/media/karla.jpg'
-import danilo from '../assets/media/danilo.jpg'
-import alonso from '../assets/media/alonso.jpg'
+import { useStaticQuery, graphql } from 'gatsby';
 import { makeStyles } from '@material-ui/styles';
 
 
-const useStyles = makeStyles({
-    image: {
+const useStyles = makeStyles(theme => ({
+    container : {
+        marginBottom: 120,
+        [theme.breakpoints.down('xs')]: {
+			marginBottom: 60
+		},
+    },
+    image :  {
         maxWidth: '100%',
-        paddingBottom: 255,
-        width: 345,
-        position: 'absolute',
+        height: 'auto',
         transition: 'all .3s ease-in-out',
-        borderRadius: 8,
-        left: 0,
-        right: 0,
-        top: 0,
         cursor: 'pointer',
-        bottom: 0,
         '&:hover':{
             opacity: 0
         }
+    },
+    item: {
+        marginBottom: 20,
+        [theme.breakpoints.down('xs')]: {
+			textAlign: 'center'
+		},
+    },
+    imagehover: {
+        cursor: 'pointer',
+        maxWidth: '100%',
+        position: 'absolute',
+        borderRadius: 8,
+        transition: 'all .3s ease-in-out',
+        left: 0,
+        right: 0,
+        top: 0,
+        bottom: 0,
+        opacity: 0,
+        '&:hover' : {
+            opacity: 1
+        },
+        [theme.breakpoints.down('xs')]: {
+            textAlign: 'center',
+            margin: 'auto'
+		},
     },
     // imagedefault: {
     //     opacity: 1,
@@ -55,12 +67,12 @@ const useStyles = makeStyles({
         height: 3,
         width: 50,
         display: "block",
-        background: "#ff00a6"
-    },
-    item: {
-        height: 255
+        background: "#ff00a6",
+        [theme.breakpoints.down('xs')]: {
+            margin: 'auto'
+		},
     }
-});
+}));
 
 
 
@@ -91,7 +103,7 @@ export default function  Ambassadors() {
     ` )
     
     return (
-        <Container  maxWidth="md" >
+        <Container className={ classes.container }  maxWidth="md" >
             <Box my={8} >
                 <Grid container spacing={1} >
                         <Grid md={4} item >
@@ -107,10 +119,10 @@ export default function  Ambassadors() {
                             {
                                 data.ambassadors.edges.map( item => {
                                     return (
-                                        <Grid className={ classes.item }  key={item.id}  md={4} item > 
+                                        <Grid className={ classes.item }  key={item.id}  xs={12}  sm={6}   md={4} item > 
                                             <Box position="relative"  >
-                                                <CardMedia className={classes.image} image={item.node.imagehover.file.url}   mb={1} />
-                                                <CardMedia className={classes.image} image={item.node.image.file.url}   mb={1} />
+                                                <img className={ classes.image  } src={item.node.image.file.url}   mb={1} />
+                                                <img className={  ` ${classes.imagehover}` } src={item.node.imagehover.file.url}   mb={1} />
                                             </Box>
                                             {/* <Box mb={1} >
                                                 <img className={classes.image} src={item.node.image.file.url} />
