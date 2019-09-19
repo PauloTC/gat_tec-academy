@@ -20,6 +20,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import HomeAcademy from '../components/home-academy'
 import FormatsSection from '../components/comunity/formats'
 import PillarsSection from '../components/comunity/pillars'
+import  BannerSection from '../components/comoon/banner'
 
 const useStyles = makeStyles(theme =>({
     banner: {
@@ -90,20 +91,7 @@ const Comunity = () => {
                 <FormatsSection /> 
                 <PillarsSection />
                 <Ambassadors />
-
-                <Box position="relative" >
-                    <Card>
-                        <CardMedia  className={classes.banner} image={ bannergoogle }  />
-                        <CardContent className={classes.text}  >
-                            <Container className={classes.containertext} maxWidth="md"  >
-                                <Typography variant="h4">
-                                    <Box  fontWeight={700} mb={4}>¿Estás cerca de ganar el <br/> viaje a Silicon Valley?</Box>
-                                </Typography>
-                                <Button variant="contained" className={classes.button}> Quiero saber más </Button>
-                            </Container>
-                        </CardContent>
-                    </Card>
-                </Box>
+                <BannerSection />
             </Layout>
         </Fragment>
     )

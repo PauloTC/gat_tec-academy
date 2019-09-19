@@ -14,7 +14,8 @@ const useStyles = makeStyles({
         display: "flex",
         alignItems: "center",
         paddingTop: 10,
-        paddingBottom: 10
+        paddingBottom: 10,
+        position: 'relative'
     },
     text: {
         color: "white"
