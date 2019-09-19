@@ -43,12 +43,17 @@ const useStyles = makeStyles(theme =>({
     },
     textbanner: {
         position: "absolute",
-        top: '30%',
+        top: 0,
+        bottom: 0,
         color: "white",
         width: '100%',
-        [theme.breakpoints.down('xs')]: {
-			top: '20%'
-		},
+        display: 'flex',
+        alignItems: 'center'
+        // [theme.breakpoints.down('xs')]: {
+		// },
+    },
+    bannercontainer: {
+        position: 'relative'
     },
     title: {
         [theme.breakpoints.down('xs')]: {
@@ -73,14 +78,14 @@ const Comunity = () => {
         <Fragment className={ classes.container } >
             <Layout>
                 <SEO title="Comunidad" />
-                <Card>
+                <Card  className={ classes.bannercontainer } >
 
                         <CardMedia  className={classes.banner} image={ bannerimage }  />
                         <CardContent className={classes.textbanner}  >
                             <Container maxWidth="md"  >
                                 <Grid height={400} container justify="center" alignItems="center" >
                                     <Typography align='center' >
-                                        <Box className={classes.title}  fontSize="h4.fontSize" fontWeight="fontWeightLight">We want to be a movement <br/>  that shares and develops a tech learning culture.</Box>
+                                        <Box className={classes.title}  fontFamily="Lato-light" fontSize="h4.fontSize" fontWeight="fontWeightLight">We want to be a movement <br/>  that shares and develops a tech learning culture.</Box>
                                         <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > De nosotros para nosotros.</Box>
                                     </Typography>
                                 </Grid>

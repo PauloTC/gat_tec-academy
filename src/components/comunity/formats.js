@@ -7,10 +7,11 @@ import {
                 Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import rocket from '../../assets/media/rocket.jpg'
+import '../../assets/icons/style.css'
 
 const useStyles = makeStyles(theme =>({
     rocket: {
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
 			display: 'none'
 		},
     },
@@ -24,10 +25,11 @@ const useStyles = makeStyles(theme =>({
         alignItems: "center"
     },
     circle: {
-        height: 20,
-        width: 20,
-        background: "red",
+        height: 32,
+        width: 32,
         display: 'flex',
+        alignItems: 'center',
+        justifyContent: ' center',
         borderRadius: '50%'
     },
     workshop: {
@@ -44,6 +46,9 @@ const useStyles = makeStyles(theme =>({
     },
     meetups: {
         background: "#54008b"
+    },
+    special: {
+        background: "#0529bb"
     },
     nights: {
         background: "#44deb0"
@@ -80,7 +85,9 @@ const Formats = () => {
                                     <Grid container  >
                                         <Typography  className={ classes.head } gutterBottom variant="subtitle1"  >
                                             <Box  fontWeight={900} >Workshops</Box>
-                                            <span className={ ` ${classes.circle} ${classes.workshop} `  }  ></span>
+                                            <span className={ ` ${classes.circle} ${classes.workshop} `  }  >
+                                                <i  className={ `icon-activity1` }  ></i>
+                                            </span>
                                         </Typography>
                                     </Grid>
                                     <Typography variant="body2">Ahora más dinámicos y además con Workshops Talks para profundizar y resolver casos del día a día.</Typography>
@@ -95,7 +102,9 @@ const Formats = () => {
                                     <Grid container  >
                                         <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
                                             <Box  fontWeight={900} >Talks</Box>
-                                            <span className={ ` ${classes.circle} ${classes.talks} `  }  ></span>
+                                            <span className={ ` ${classes.circle} ${classes.talks} `  }  >
+                                                <i  className={`icon-activity6`}></i>
+                                            </span>
                                         </Typography>
                                     </Grid>
                                     <Typography variant="body2">Invitados especiales y charlas inspiradoras de innovación y tecnología.</Typography>
@@ -109,7 +118,9 @@ const Formats = () => {
                                     <Grid container  >
                                         <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
                                             <Box  fontWeight={900} >Pitch Day</Box>
-                                            <span className={ ` ${classes.circle} ${classes.pitch} `  }  ></span>
+                                            <span className={ ` ${classes.circle} ${classes.pitch} `  }  >
+                                                <i  className={`icon-activity3`}></i>
+                                            </span>
                                         </Typography>
                                     </Grid>
                                     <Typography variant="body2">Tu creatividad y experiencia se pueden convertir en proyectos reales Belcorp. Te acompañaremos en el proceso de ideación para que expongas frente a líderes de Belcorp.</Typography>
@@ -123,7 +134,9 @@ const Formats = () => {
                                     <Grid container  >
                                         <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
                                             <Box  fontWeight={900} >Countries</Box>
-                                            <span className={ ` ${classes.circle} ${classes.countries} `  }  ></span>
+                                            <span className={ ` ${classes.circle} ${classes.countries} `  }  >
+                                                <i  className={`icon-activity4`}></i>
+                                            </span>
                                         </Typography>
                                     </Grid>
                                     <Typography variant="body2">Ahora somos internacionales. Colombia será nuestro primer país de expansión.</Typography>
@@ -139,7 +152,9 @@ const Formats = () => {
                                     <Grid container  >
                                         <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
                                             <Box  fontWeight={900}  >Meetups</Box>
-                                            <span className={ ` ${classes.circle} ${classes.meetups} `  }  ></span>
+                                            <span className={ ` ${classes.circle} ${classes.meetups} `  }  >
+                                                <i  className={`icon-activity5`}></i>
+                                            </span>
                                         </Typography>
                                     </Grid>
                                     <Typography variant="body2">Entramos a la plataforma de comunidades para compartir conocimientos con muchos entusiastas de la tecnología. Búscanos en meetup.com como Belcorp Tec Academy</Typography>
@@ -152,7 +167,9 @@ const Formats = () => {
                                     <Grid container  >
                                         <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
                                             <Box  fontWeight={900} >Special Events!</Box>
-                                            <span className={ ` ${classes.circle} ${classes.special} `  }  ></span>
+                                            <span className={ ` ${classes.circle} ${classes.special} `  }  >
+                                                <i  className={`icon-activity2`}></i>
+                                            </span>
                                         </Typography>
                                     </Grid>
                                     <Typography variant="body2">TEC Conference Day: Un día entero lleno de conocimiento para retroalimentarnos, integrarnos y energizarnos todos juntos. </Typography>
@@ -165,7 +182,9 @@ const Formats = () => {
                                     <Grid container  >
                                         <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
                                             <Box  fontWeight={900} >Nights</Box>
-                                            <span className={ ` ${classes.circle} ${classes.nights} `  }  ></span>
+                                            <span className={ ` ${classes.circle} ${classes.nights} `  }  >
+                                                <i  className={`icon-activity7`}></i>                                            
+                                            </span>
                                         </Typography>
                                     </Grid>
                                     <Typography variant="body2">Un espacio para conocer historias de emprendedores como tú y motivarnos a soñar y seguir retándonos. </Typography>
