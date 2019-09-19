@@ -61,12 +61,15 @@ const useStyles = makeStyles(theme =>({
             fontWeight: "bold",
             fontSize: 14
         }
+    },
+    container: {
+        background: "white"
     }
 }));
 const Comunity = () => {
     const classes = useStyles();
     return (
-        <Fragment>
+        <Fragment className={ classes.container } >
             <Layout>
                 <SEO title="Comunidad" />
                 <Card>
@@ -87,7 +90,7 @@ const Comunity = () => {
                 <FormatsSection /> 
                 <PillarsSection />
                 <Ambassadors />
-                
+
                 <Box position="relative" >
                     <Card>
                         <CardMedia  className={classes.banner} image={ bannergoogle }  />

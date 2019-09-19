@@ -29,13 +29,16 @@ const useStyles = makeStyles(theme =>({
     },
     blue: {
         background: "#3f7fbe"
+    },
+    container: {
+        background: "#f9f9f9"
     }
 }));
 
 const Pillars = () => {
     const classes = useStyles();
     return (
-        <Box>
+        <Box py={6} className={ classes.container } >
             <Container  maxWidth="md" >
                 <Grid  container spacing={2} >
                     <Grid xs={12}   md={4} item >

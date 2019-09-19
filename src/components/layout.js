@@ -10,10 +10,17 @@ import theme from "../theme/muiTheme"
 
 import Footer from "../components/footer"
 // import "./layout.css"
+import { makeStyles } from '@material-ui/core/styles';
 
+const useStyles = makeStyles(theme => ({
+  generalcontainer: {
+    background: 'white'
+  }
+}));
 
 
 const Layout = ({ children }) => {
+  const classes = useStyles();
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,9 +32,9 @@ const Layout = ({ children }) => {
   `)
   
   return (
-    <>
+    <body  className={classes.generalcontainer} >
           <Header siteTitle={data.site.siteMetadata.title} />
-          <div className="body-container" >
+          <div >
             <ThemeProvider theme={theme}>
 
               <main>{children}</main>
@@ -36,7 +43,7 @@ const Layout = ({ children }) => {
           </div>
           <Footer></Footer>
       {/* <Link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> */}
-    </>
+    </body>
   )
 }
 

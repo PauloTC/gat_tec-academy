@@ -35,16 +35,7 @@ const useStyles = theme => ({
     },
     container: {
         "justify-content": 'space-between'
-    },
-    // active: {
-    //     color: "red"
-    // }
-    // header: {
-    //     boxShadow: "none"
-    // }
-    // toolbar: {
-    //     height: 43
-    // }
+    }
 });
 
 function HideOnScroll(props) {
