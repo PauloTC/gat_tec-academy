@@ -101,7 +101,7 @@ function Header(props) {
                                                             key={index}
                                                             activeClassName="active"
                                                             to={link.to}
-                                                            className={`nav-link ${styles.header__link}`}
+                                                            className={`nav-link ${styles.header__link}  ${classes.link} `}
                                                         >
                                                             <i className={`${styles.header__icon} ${link.icon}`} />
                                                             {link.name}

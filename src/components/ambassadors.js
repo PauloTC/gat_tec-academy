@@ -9,6 +9,7 @@ import {
     Paper, 
     Grid,
     Typography } from '@material-ui/core';
+import { useStaticQuery, graphql } from 'gatsby'
 import karen from '../assets/media/karen.jpg'
 import andrea from '../assets/media/andrea.jpg'
 import camila from '../assets/media/camila.jpg'
@@ -27,39 +28,67 @@ import { makeStyles } from '@material-ui/styles';
 const useStyles = makeStyles({
     image: {
         maxWidth: '100%',
-        height: 'auto'
+        paddingBottom: 255,
+        width: 345,
+        position: 'absolute',
+        transition: 'all .3s ease-in-out',
+        borderRadius: 8,
+        left: 0,
+        right: 0,
+        top: 0,
+        cursor: 'pointer',
+        bottom: 0,
+        '&:hover':{
+            opacity: 0
+        }
     },
+    // imagedefault: {
+    //     opacity: 1,
+    // },
+    // imagehover: {
+    //     opacity
+    // }
+    // image:hover {
+    //     opacity: 0
+    // },
     line: {
         height: 3,
         width: 50,
         display: "block",
-        background: "#ff00a6",
-        marginTop: -2
+        background: "#ff00a6"
     },
     item: {
-        marginBottom : 5
+        height: 255
     }
 });
 
 
 
-const Ambassadors = () => {
+export default function  Ambassadors() {
     const classes = useStyles();
 
-    const images = [
-        { name: 'Karen Valdivia', photo: karen  },
-        { name: 'Andrea Pacheco', photo: andrea  },
-        { name: 'Camila Rodríguez', photo: camila  },
-        { name: 'Sofía Shimabukuro', photo: sofia  },
-        { name: 'Danilo Montenegro', photo: danilo  },
-        { name: 'Luis Bendezú', photo: luisb  },
-        { name: 'Karla Casallas', photo: karla  },
-        { name: 'Luis Nieto', photo: luisn  },
-        { name: 'Carla Silva', photo: carla  },
-        { name: 'Daniel Quispe', photo: daniel  },
-        { name: 'Alonso Rodriguez', photo: alonso  },
-        { name: 'Priscila Elías', photo: priscila  },
-    ]
+    const data = useStaticQuery( graphql`
+        query {
+            ambassadors: allContentfulAmbassador {
+                edges {
+                    node {
+                        id
+                        name
+                        image {
+                            file {
+                            url
+                            }
+                        }
+                        imagehover{
+                            file {
+                            url
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ` )
     
     return (
         <Container  maxWidth="md" >
@@ -67,8 +96,8 @@ const Ambassadors = () => {
                 <Grid container spacing={1} >
                         <Grid md={4} item >
                             <Typography variant="h5" >
-                                <Box fontWeight="fontWeightBold" >Nuestros </Box>
-                                <Box fontWeight="fontWeightBold" >embajadores</Box>
+                                <Box fontWeight={900} >Nuestros </Box>
+                                <Box fontWeight={900} >embajadores</Box>
                             </Typography>
                             <Box my={3} >
                                 <Typography variant="body2" >Un grupo de personas apasionadas y entusiastas. ¡Conócelos!</Typography>
@@ -76,14 +105,18 @@ const Ambassadors = () => {
                         </Grid>
                         <Grid md={8} container  justify="center" spacing={2}  item >
                             {
-                                images.map( item => {
+                                data.ambassadors.edges.map( item => {
                                     return (
-                                        <Grid className={ classes.item }  key={item.photo}  md={4} item > 
-                                            <Box mb={1} >
-                                                <img className={classes.image} src={item.photo} />
+                                        <Grid className={ classes.item }  key={item.id}  md={4} item > 
+                                            <Box position="relative"  >
+                                                <CardMedia className={classes.image} image={item.node.imagehover.file.url}   mb={1} />
+                                                <CardMedia className={classes.image} image={item.node.image.file.url}   mb={1} />
                                             </Box>
+                                            {/* <Box mb={1} >
+                                                <img className={classes.image} src={item.node.image.file.url} />
+                                            </Box> */}
                                             <Typography  >
-                                                <Box fontWeight={900}  fontSize="h6.fontSize"  > { item.name }</Box>
+                                                <Box fontWeight={900}  fontSize="h6.fontSize"  > { item.node.name }</Box>
                                                 <span className={classes.line} ></span>
                                             </Typography>
                                         </Grid>
@@ -96,5 +129,3 @@ const Ambassadors = () => {
         </Container>
     )
 }
-
-export default Ambassadors
