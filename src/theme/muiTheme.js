@@ -61,10 +61,6 @@ const theme = createMuiTheme({
         },
     },
     palette: {
-        background: {
-            paper: "#fff imporatnt",
-            default: "#ffffff !important"
-        },
         primary: {
             light: '#63ccff',
             main: '#321063',
