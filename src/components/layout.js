@@ -13,8 +13,9 @@ import Footer from "../components/footer"
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
-  generalcontainer: {
-    background: 'white'
+  body: {
+    background: 'white',
+    overflow: 'hidden'
   }
 }));
 
@@ -32,7 +33,7 @@ const Layout = ({ children }) => {
   `)
   
   return (
-    <body  className={classes.generalcontainer} >
+    <body  className={classes.body} >
           <Header siteTitle={data.site.siteMetadata.title} />
           <div >
             <ThemeProvider theme={theme}>

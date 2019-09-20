@@ -17,6 +17,9 @@ const useStyles = makeStyles({
        ".individual" : {
 		   ".MuiToolbar-gutters" : {
 			   paddingLeft: 0
+		   },
+		   "MuiPaper-root" : {
+			   boxShadow: "none !important"
 		   }
 	   }
       }
@@ -59,16 +62,22 @@ const IndividualPoints = () => {
 					title="Puntaje individual"
 					columns={state.columns}
 					data={data.allContentfulStudent.nodes}
+					options={{
+						headerStyle: {
+							backgroundColor: 'rgba(50, 16, 99, 0.10)',
+							color: '#321063',
+							textTransform: 'uppercase'
+						},
+						searchFieldStyle: {
+							background: 'white',
+							borderRadius: 8
+						},
+						rowStyle: {
+							color: "321063"
+						}
+					}}
 				/>
 				{/*<!-- Fin Tabla de Puntajes -->*/}
-				<div style={{ textAlign: 'right', marginTop: '40px' }}>
-					<a href="assets/puntaje-tecacademy.xlsx">
-						{/* <Button variant="contained" color="primary" >Descargar listado completo</Button> */}
-						{/* <button type="button" className={`btn btn-outline-primary ${Styles.individual__button}`}>
-							
-						</button> */}
-					</a>
-				</div>
 			</section>
 		</div>
 	);

@@ -2,11 +2,11 @@ import React from 'react'
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Styles from './grouppoints.module.scss'
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
 import { maxWidth } from '@material-ui/system';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     position: {
         borderBottom: '1px solid #321063',
         backgroundColor: '#321063',
@@ -22,17 +22,22 @@ const useStyles = makeStyles({
     },
     content: {
         marginTop: 10,
-        marginBottom: 10
+        marginBottom: 10,
+        [theme.breakpoints.down('xs')]: {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start'
+		},
     },
     image: {
         borderRadius: 10
     }
-});
+}));
 
 const PointsGroup = (props) => {
     const classes = useStyles();
     return (
-        <React.Fragment>
+        <Grid item xs={6}>
                 {(() => {
                     if ( props.position === 0  ) {
                         return (
@@ -68,7 +73,7 @@ const PointsGroup = (props) => {
                     <Typography variant="caption" display="block" > {props.points} pts </Typography>
                 </Grid>
             </Grid>
-        </React.Fragment>
+        </Grid>
     )
 }
 

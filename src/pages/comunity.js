@@ -79,7 +79,6 @@ const Comunity = () => {
             <Layout>
                 <SEO title="Comunidad" />
                 <Card  className={ classes.bannercontainer } >
-
                         <CardMedia  className={classes.banner} image={ bannerimage }  />
                         <CardContent className={classes.textbanner}  >
                             <Container maxWidth="md"  >

@@ -35,13 +35,15 @@ const PointsPage = () => {
             <Container maxWidth="md" >
                 <Box my={5} >
                     <Grid  container spacing={8} >
-                        <Grid item sm={12} md={9} >
+                        <Grid item xs={12} sm={9} >
                             <IndividualPoints></IndividualPoints>   
                         </Grid>
-                        <Grid item sm={12} md={3}  >
-                                <Typography gutterBottom variant="subtitle1"> 
-                                    <Box fontWeight={700} mt={1} mb={2} >Puntaje grupal</Box> 
-                                </Typography>
+                        <Grid container item xs={12} sm={3}  >
+                                <Grid item xs={12} >
+                                    <Typography gutterBottom variant="subtitle1"> 
+                                        <Box fontWeight={700} mt={1} mb={2} >Puntaje grupal</Box> 
+                                    </Typography>
+                                </Grid>
                                 { data.allContentfulGroup.edges.map( (edge, index ) => {
                                         return (
                                             <PointsGroup
