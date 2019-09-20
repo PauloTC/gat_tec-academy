@@ -14,7 +14,9 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   body: {
-    background: 'white',
+    background: 'white'
+  },
+  containergeneral: {
     overflow: 'hidden'
   }
 }));
@@ -35,7 +37,7 @@ const Layout = ({ children }) => {
   return (
     <body  className={classes.body} >
           <Header siteTitle={data.site.siteMetadata.title} />
-          <div >
+          <div className= { classes.containergeneral }  >
             <ThemeProvider theme={theme}>
 
               <main>{children}</main>

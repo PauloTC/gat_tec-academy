@@ -68,7 +68,7 @@ function Header(props) {
         // {  name: 'Talleres', to: 'courses', icon: 'icon-lectern'  },
         {  name: 'Puntajes', to: 'points' , icon: 'icon-star'  },
         {  name: 'Nosotros', to: 'comunity', icon: 'icon-group'  },
-        // {  name: 'reglas', to: 'comunity', icon: 'icon-education'  },
+        {  name: 'Reglas', to: 'comunity', icon: 'icon-education'  },
         // {  name: 'blog', to: 'points', icon: 'icon-education'  }
     ]
 	return (

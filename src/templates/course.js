@@ -20,9 +20,9 @@ const useStyles = makeStyles({
         margin: 0,
         borderRadius: 50
     },
-    card: {
-        height: 300,
-        backgroundPosition: 'left'
+    bannerimage: {
+        height: 'auto',
+        maxWidth: '100%'
     }
 });
 
@@ -96,7 +96,7 @@ const Course = (props) => {
                         </Box>
                         <Box  my={3} >
                             <Box  mb={3} >
-                                <CardMedia className={classes.card}  image={ props.data.course.image.file.url } />
+                                <img  className={ classes.bannerimage } src={ props.data.course.image.file.url }  />
                             </Box>
                             <Paper  elevation={0}  >
                                 <Typography gutterBottom>
@@ -140,9 +140,8 @@ const Course = (props) => {
                                 {	
                                     props.data.carousel.edges.map( edge =>  {
                                         return (
-                                            <Grid  item md={4} >
+                                            <Grid  item  xs={12} sm={6}  md={4} >
                                                 <HomeCourse key={edge.node.id}  edge={edge} />
-
                                             </Grid>
                                         )
                                     } )
