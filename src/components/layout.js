@@ -35,18 +35,18 @@ const Layout = ({ children }) => {
   `)
   
   return (
-    <body  className={classes.body} >
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <div className= { classes.containergeneral }  >
-            <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <body  className={classes.body} >
+            <Header siteTitle={data.site.siteMetadata.title} />
+            <div className= { classes.containergeneral }  >
 
-              <main>{children}</main>
-              
-            </ThemeProvider>
-          </div>
-          <Footer></Footer>
-      {/* <Link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> */}
-    </body>
+                <main>{children}</main>
+                
+            </div>
+            <Footer></Footer>
+        {/* <Link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> */}
+      </body>
+    </ThemeProvider>
   )
 }
 

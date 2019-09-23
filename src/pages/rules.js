@@ -10,7 +10,7 @@ const Rules = () => {
     return (
       <Layout>
         <SEO title="Reglas" />
-            <BannerSection />    
+            <BannerSection  />    
             <IndividualPrize />
             <GroupPrize />
             <WinPoints />

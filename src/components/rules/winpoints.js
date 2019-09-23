@@ -82,7 +82,7 @@ const WinPoints = () => {
     const classes = useStyles();
     return (
         <Box  py={7} mb={3} className={ classes.container } >
-            <Container maxWidth="md" >
+            <Container maxWidth="lg" >
                 <Typography variant="h5" >
                     <Box mb={7} fontWeight={900} > ¿Cómo ganar puntos? </Box>  
                 </Typography>

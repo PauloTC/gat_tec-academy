@@ -51,7 +51,8 @@ const useStyles = makeStyles(theme =>({
         }
     }
 }));
-const Banner = () => {
+
+const Banner = (props) => {
     const classes = useStyles();
     return (
             <Fragment>
@@ -59,14 +60,14 @@ const Banner = () => {
                     <Card  className={classes.container}  >
                         <CardMedia  className={classes.banner} image={ bannergoogle }  />
                         <CardContent className={classes.text}  >
-                            <Container className={classes.containertext} maxWidth="md"  >
+                            <Container className={classes.containertext} maxWidth="lg"  >
                                 <Typography variant="h4">
-                                    <Box  fontWeight={700} mb={4}>¿Estás cerca de ganar el <br/> viaje a Silicon Valley?</Box>
+                                    <Box  fontWeight={700} mb={4}>¿Estás cerca de ganar el <br/> viaje a Silicon Valley?  </Box>
                                 </Typography>
                                 <Button variant="contained" className={classes.button}> Quiero saber más </Button>
                             </Container>
                         </CardContent>
-                        <img  className={classes.building}   src={ building }   />
+                        <img    className={`${classes.building}` }   src={ building }   />
                     </Card>
                 </Box>
             </Fragment>

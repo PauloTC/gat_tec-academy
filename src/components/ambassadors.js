@@ -103,7 +103,7 @@ export default function  Ambassadors() {
     ` )
     
     return (
-        <Container className={ classes.container }  maxWidth="md" >
+        <Container className={ classes.container }  maxWidth="lg" >
             <Box my={8} >
                 <Grid container spacing={1} >
                         <Grid md={4} item >

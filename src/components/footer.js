@@ -27,7 +27,7 @@ const Footer = (props) => {
     const classes = useStyles();
     return (
         <footer className={ classes.footer } >
-            <Container  maxWidth="md" >
+            <Container  maxWidth="lg" >
                 <Grid  alignItems="center"  justify="space-between" container >
                     <Grid item >
                         <img width={100}  src={logo}  />

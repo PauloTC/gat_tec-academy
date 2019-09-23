@@ -39,7 +39,7 @@ const Pillars = () => {
     const classes = useStyles();
     return (
         <Box py={6} className={ classes.container } >
-            <Container  maxWidth="md" >
+            <Container  maxWidth="lg" >
                 <Grid  container spacing={2} >
                     <Grid xs={12}   md={4} item >
                         <Typography variant="h5" >

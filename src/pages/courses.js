@@ -46,7 +46,7 @@ const CoursesPage = () => {
     
         <Layout>
             <SEO title="Cursos" />
-            <Container maxWidth="md"  >
+            <Container maxWidth="lg"  >
                 <Box my={5} >
                     { data.allContentfulCourse.edges.map( (edge, index) => {
                         if(edge.node.principal === true) {

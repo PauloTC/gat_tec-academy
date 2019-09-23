@@ -11,32 +11,29 @@ import Slide from '@material-ui/core/Slide';
 import { Link } from 'gatsby';
 import styles from './header.module.scss';
 import TemporaryDrawer from '../menu-responsive/MenuResponsive';
-import { makeStyles } from '@material-ui/styles';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import logo from '../../images/logo-tecacademy.png';
 import "../../assets/icons/style.css"
-import { inherits } from 'util';
-import { ThemeProvider } from '@material-ui/styles';
-import theme from "../../theme/muiTheme"
+// import theme from "../../theme/muiTheme"
 
-const useStyles = theme => ({
+const useStyles = makeStyles(theme => ({
 	menu: {
         display: 'flex',
         // Styles will be applies to screen sizes from "sm" and up
         [theme.breakpoints.down('sm')]: {
-            display: 'none'
+            display: 'none',
         }
     },
     menuresponsive: {
-        display: "none",
+        display: 'flex',
         [theme.breakpoints.down('sm')]: {
-            display: 'flex'
+            display: "none"
         }
     },
     container: {
-        "justify-content": 'space-between'
+        justifyContent: 'space-between'
     }
-});
+}));
 
 function HideOnScroll(props) {
 	const { children, window } = props;
@@ -62,7 +59,7 @@ HideOnScroll.propTypes = {
 };
 
 function Header(props) {
-    const { classes } = props;
+    const classes = useStyles();
     const Links = [
         {  name: 'Actividades', to: 'courses' , icon: 'icon-support' },
         // {  name: 'Talleres', to: 'courses', icon: 'icon-lectern'  },
@@ -74,9 +71,8 @@ function Header(props) {
 	return (
 		<React.Fragment>
 			<CssBaseline />
-            <ThemeProvider theme={theme}>
                 <HideOnScroll {...props}>
-                    <AppBar  elevation={0} className={ classes.header  }  >
+                    <AppBar color="primary" elevation={0} className={ classes.header  }  >
                         <Toolbar  className={classes.toolbar}  >
                             <Container maxWidth="lg">
                                 <Grid container >
@@ -108,14 +104,9 @@ function Header(props) {
                         </Toolbar>
                     </AppBar>
                 </HideOnScroll>
-            </ThemeProvider>
 			<Toolbar />
 		</React.Fragment>
 	);
 }
 
-Header.propTypes = {
-    classes: PropTypes.object.isRequired,
-  };
-
-  export default withStyles(useStyles)(Header);
+  export default Header

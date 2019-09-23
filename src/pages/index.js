@@ -154,7 +154,7 @@ export default function IndexPage() {
 				<Box mb={6}>
 					<SwipeableTextMobileStepper></SwipeableTextMobileStepper>
 				</Box>
-				<Container maxWidth="md" >
+				<Container maxWidth="lg" >
 
 					{/* <SubHeader  
 						title="Próximos eventos"  

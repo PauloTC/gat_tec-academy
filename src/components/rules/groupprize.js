@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme =>({
         background: "#f9f9f9"
     },
     image: {
-        width: 304,
+        width: 315,
         height: 300,
         borderTopRightRadius: 8,
         borderBottomRightRadius: 8,
@@ -37,7 +37,8 @@ const useStyles = makeStyles(theme =>({
         lineHeight: "35px"
     },
     border: {
-        borderRadius: 8
+        borderRadius: 8,
+        boxShadow: '1px 1px 16px 0 rgba(50, 16, 99, 0.1)'
     }
 }));
 
@@ -46,7 +47,7 @@ const GroupPrize = () => {
     
     return (
         <Box  py={3} className={ classes.container } >
-            <Container maxWidth="md" >
+            <Container maxWidth="lg" >
                 <Box my={5} >
                     <Grid container spacing={2} >
                         <Grid sm={12} md={4} item >
@@ -55,9 +56,9 @@ const GroupPrize = () => {
                             </Typography>
                         </Grid>
                         <Grid  sm={12} md={8}  >
-                            <Paper  className={ classes.border }  elevation={5} >
+                            <Paper  className={ classes.border }  elevation={0} >
                                 <Grid container  >
-                                    <Grid item container className={ classes.after }  alignItems='center' sm={12} md={6} >
+                                    <Grid item container className={ classes.after }  alignItems='center' md={12} lg={6} >
                                         <Typography>
                                             <Box mb={1} fontSize="subtitle1.fontSize" fontWeight={900} > Premio al mejor grupo</Box>  
                                             <Box className={ classes.title } mb={1} fontSize="h5.fontSize" fontWeight={900} > After Office <br /> en el 15</Box>  

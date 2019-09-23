@@ -81,7 +81,7 @@ const Comunity = () => {
                 <Card  className={ classes.bannercontainer } >
                         <CardMedia  className={classes.banner} image={ bannerimage }  />
                         <CardContent className={classes.textbanner}  >
-                            <Container maxWidth="md"  >
+                            <Container maxWidth="lg"  >
                                 <Grid height={400} container justify="center" alignItems="center" >
                                     <Typography align='center' >
                                         <Box className={classes.title}  fontFamily="Lato-light" fontSize="h4.fontSize" fontWeight="fontWeightLight">We want to be a movement <br/>  that shares and develops a tech learning culture.</Box>

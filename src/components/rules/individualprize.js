@@ -11,21 +11,26 @@ import {
     CardContent} from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import SecondPlace from '../../assets/media/puesto2.jpg'
+import  ThirdPlace from '../../assets/media/puesto3.jpg'
 import rocket from '../../assets/media/rocket.svg'
 import BackgroundMedia from  '../../assets/media/fondo.jpg'
 
 const useStyles = makeStyles(theme =>({
     image: {
         maxWidth: '100%',
-        width: '100%',
         height: 'auto'
     },
     cardcontainer: {
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        height: 150
     },
     textcolor: {
         color: '#321063'
+    },
+    paper: {
+        boxShadow: "1px 1px 16px 0 rgba(50, 16, 99, 0.1)",
+        border: "1px solid #eae7ef"
     },
     media: {
         backgroundSize: 'contain',
@@ -41,7 +46,7 @@ const IndividualPrize = () => {
     const classes = useStyles();
     return(
         <Fragment>
-            <Container maxWidth="md" >
+            <Container maxWidth="lg" >
             <Box  my={5} >
                 <Grid container spacing={2} >
                     <Grid md={4}  item >
@@ -50,7 +55,7 @@ const IndividualPrize = () => {
                         </Typography>
                     </Grid>
                     <Grid md={8}  >
-                        <Paper elevation={5}  >
+                        <Paper  className={ classes.paper }  elevation={0}  >
                             <CardMedia className={ classes.media }  image={BackgroundMedia} >
                                 <Grid  container alignItems="center" >
                                     <Grid item  sm={7} >
@@ -69,7 +74,7 @@ const IndividualPrize = () => {
                         <Box mt={3} >
                             <Grid container spacing={4} >
                                 <Grid  item xs={12} sm={6} >
-                                    <Paper  elevation={2} >
+                                    <Paper >
                                         <Grid container justify="center" >
                                             <Box  className={ classes.cardcontainer } p={2} >
             
@@ -84,16 +89,16 @@ const IndividualPrize = () => {
                                     </Paper>
                                 </Grid>
                                 <Grid  item xs={12} sm={6} >
-                                    <Paper  elevation={2} >
+                                    <Paper >
                                         <Grid container  justify="center"  >
                                             <Box  className={ classes.cardcontainer } p={2} >
             
                                                     <Typography>
-                                                        <Box className={ classes.textcolor } mb={1}  fontSize="subtitle2.fontSize"  fontWeight={900} >2do puesto:</Box>
-                                                        <Box fontSize="subtitle1.fontSize" >$1,000 para estudios</Box>
+                                                        <Box className={ classes.textcolor } mb={1}  fontSize="subtitle2.fontSize"  fontWeight={900} >3er y 4to puesto:</Box>
+                                                        <Box fontSize="subtitle1.fontSize" >$500 para estudios</Box>
                                                     </Typography>  
                                             
-                                                    <img  width={200} className={classes.image} src={SecondPlace} />
+                                                    <img  width={200} className={classes.image} src={ThirdPlace} />
                                             </Box>
                                         </Grid>
                                     </Paper>

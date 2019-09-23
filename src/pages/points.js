@@ -32,7 +32,7 @@ const PointsPage = () => {
     return (
         <Layout>
             <SEO title="Puntos" />
-            <Container maxWidth="md" >
+            <Container maxWidth="lg" >
                 <Box my={5} >
                     <Grid  container spacing={8} >
                         <Grid item xs={12} sm={9} >

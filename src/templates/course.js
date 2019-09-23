@@ -71,7 +71,7 @@ const Course = (props) => {
     const classes = useStyles();
 	return (
 		<Layout>
-            <Container maxWidth="md" spacing={5}  >
+            <Container maxWidth="lg" spacing={5}  >
                 <Grid  container  justify={"space-between"} >
                     <Grid item xs={12}  md={7}  >
                         <Box my={3}  >

@@ -64,7 +64,7 @@ const Formats = () => {
     const classes = useStyles();
     return (
         <Box mt={10} mb={5} >
-            <Container maxWidth="md" >
+            <Container maxWidth="lg" >
                 <Grid   container spacing={2}  >
                     <Grid xs={12} md={4} item >
                         <Typography variant="h5" >
