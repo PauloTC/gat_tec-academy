@@ -31,7 +31,7 @@ const PointsPage = () => {
     
     return (
         <Layout>
-            <SEO title="Points" />
+            <SEO title="Puntos" />
             <Container maxWidth="md" >
                 <Box my={5} >
                     <Grid  container spacing={8} >
