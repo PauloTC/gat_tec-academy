@@ -71,8 +71,11 @@ export default function TemporaryDrawer() {
 				{ Links.map(( link, index) => (
                     <ListItem button key={link.to}>
                         
-					    <Link className={ classes.link }  to={ link.to } >
-                            <i className={`${ link.icon }`} ></i>
+					    <Link
+							activeClassName={ classes.activelink } 
+							className={ classes.link }  
+							to={ link.to } >
+                            {/* <i className={`${ link.icon }`} ></i> */}
                             { link.name }</Link>
 						{/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
 						<ListItemText primary={text} /> */}

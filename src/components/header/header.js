@@ -30,6 +30,13 @@ const useStyles = makeStyles(theme => ({
             display: "none"
         }
     },
+    link: {
+        borderBottom: "5px solid transparent",
+        borderRadius: "2px"
+    },
+    activelink: {
+        borderColor: "#ff00a6"
+    },
     container: {
         justifyContent: 'space-between'
     }
@@ -86,7 +93,7 @@ function Header(props) {
                                                     return (
                                                         <Link
                                                             key={index}
-                                                            activeClassName="active"
+                                                            activeClassName={ classes.activelink }
                                                             to={link.to}
                                                             className={`nav-link ${styles.header__link}  ${classes.link} `}
                                                         >
