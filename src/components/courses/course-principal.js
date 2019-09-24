@@ -1,14 +1,17 @@
 import React from 'react'
 import { Container, Box, CardMedia, Button, Typography, Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     image: {
         margin: 0,
         height: 300,
         borderRadius: 5,
-        backgroundPosition: 'left'
+        backgroundPosition: 'left',
+        [theme.breakpoints.down('sm')]: {
+			height: 200
+		},
     },
     exhibitorimg : {
         borderRadius: 50,
@@ -19,9 +22,10 @@ const useStyles = makeStyles({
         background: '#ff00a6',
         color: 'white'
     }
-});
+}));
 
 const CoursePrincipal = (props) => {
+    
     const classes = useStyles();
     return (
             <Grid  spacing={3} container >

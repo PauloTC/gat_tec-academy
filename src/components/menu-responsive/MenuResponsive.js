@@ -27,12 +27,15 @@ const useStyles = makeStyles({
 		fontSize: 16,
 		display: 'flex',
 		alignItems: 'center',
-		'& i' : {
-			color: "#321063",
-			marginRight: 20,
+		color: '#321063',
+		'&$active' :  {
+			color: '#ff00a6 !important'
+		},
+		'&$hover': {
+			color: 'green !important',
+		  },
+	},
 
-		} 
-	}
 });
 
 export default function TemporaryDrawer() {
