@@ -14,7 +14,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { makeStyles } from '@material-ui/core/styles';
 import Video from "../components/comoon/video";
 import TecVideoPoster from "../assets/media/poster.jpeg"
-import TecVideo from "../assets/media/Carousselle.mp4"
+import TecVideo from "../assets/media/video.mp4"
 
 const useStyles = makeStyles(theme => ({
 	teamcontainer: {
@@ -168,7 +168,7 @@ export default function IndexPage() {
 				<Box mb={6}>
 					{/* <SwipeableTextMobileStepper></SwipeableTextMobileStepper>*/}
 					<video  className={ classes.video } poster={ TecVideoPoster } muted="true" autoplay="true" loop  >
-						<source src={ Video} type="video/mp4" />
+						<source src={ TecVideo } type="video/mp4" />
 					</video>
 				</Box>
 				<Container maxWidth="lg" >
