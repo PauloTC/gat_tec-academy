@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
             textAlign: 'center'
         },
         [theme.breakpoints.down('xs')]: {
-            marginRight: 0,
+            margin: "2%",
             marginBottom: 15
 		},
     },
@@ -42,47 +42,6 @@ const useStyles = makeStyles(theme => ({
     icon35: {
         fontSize: 35,
         marginBottom: 10
-    },
-    item: {
-        '&:nth-of-type(5)' : {
-            boxShadow:'none',
-            position: 'absolute',
-            right: '-8px',
-            '& div' : {
-                color : 'black !important', 
-                background: 'transparent !important',
-                fontWeight: 400,
-                display: 'flex',
-                padding: 0 
-            },
-            '& p' :  {
-                display: 'flex  !important',
-                paddingTop: '30px'
-            },
-            '& i' : { 
-                display: 'none'
-            },
-            'name' : {
-                marginRight: 10
-            }
-        },
-        '&:nth-of-type(4)' : {
-            '& div' :  {
-                fontSize: '16px !important',
-                fontWeight: 400,
-                background: 'white !important',
-                color:  'black !important',
-                display: 'flex',
-                padding: 0
-            },
-            '& p' :  {
-                display: 'flex  !important',
-                paddingBottom: '30px'
-            },
-            '& i' : { 
-                display: 'none'
-            }
-        }
     },
     "@global": {
         "a": {
