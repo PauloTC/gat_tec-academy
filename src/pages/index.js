@@ -86,15 +86,22 @@ const useStyles = makeStyles(theme => ({
 	video: {
 		height: 400,
 		objectFit: "fill",
-		width: 1440,
-		[theme.breakpoints.down('xl')]: {
-			width: 1200,
+		width: '100%',
+		// [theme.breakpoints.down('xl')]: {
+		// 	width: 1200,
+		// },
+		// [theme.breakpoints.down('lg')]: {
+		// 	width:  992
+		// },
+		[theme.breakpoints.down('md')]: {
+			// maxWidth: '100%',
+			height: 250
+			// width:  768
 		},
-		[theme.breakpoints.down('lg')]: {
-			width:  992
-		},
-		[theme.breakpoints.down('xl')]: {
-			width: 768
+		[theme.breakpoints.down('sm')]: {
+			// maxWidth: '100%',
+			height: 250
+			// width: 576
 		},
 	}
 }));
@@ -161,7 +168,7 @@ export default function IndexPage() {
 				<Box mb={6}>
 					{/* <SwipeableTextMobileStepper></SwipeableTextMobileStepper>*/}
 					<video  className={ classes.video } poster={ TecVideoPoster } muted="true" autoplay="true" loop  >
-						<source src={TecVideo} type="video/mp4" />
+						<source src={ Video} type="video/mp4" />
 					</video>
 				</Box>
 				<Container maxWidth="lg" >
