@@ -4,7 +4,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { 
     Box, 
-    Container, } from '@material-ui/core';
+	Container,
+	Button,
+	Typography } from '@material-ui/core';
 
 import SwipeableTextMobileStepper  from '../components/mobcarousel'
 import SubHeader from '../components/subheader'
@@ -15,6 +17,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Video from "../components/comoon/video";
 import TecVideoPoster from "../assets/media/poster.jpeg"
 import TecVideo from "../assets/media/video.mp4"
+import { textAlign } from "@material-ui/system";
 
 const useStyles = makeStyles(theme => ({
 	teamcontainer: {
@@ -43,14 +46,6 @@ const useStyles = makeStyles(theme => ({
         color: "white",
         width: '100%'
     },
-    button: {
-        background: "white",
-        textTransform: "inherit",
-        '& span': {
-            fontWeight: "bold",
-            fontSize: 14
-        }
-	},
 	activities: {
 		display: "flex",
 		justifyContent: "space-between",
@@ -83,6 +78,31 @@ const useStyles = makeStyles(theme => ({
 			marginRight: 0
 		}
 	},
+	textcontainer: {
+		top: 0,
+		bottom: 0,
+		left: 0,
+		right:	0,
+		margin: 'auto',
+		display: 'flex',
+		alignItems: 'center',
+		backgroundColor: 'rgba(0, 0, 0, 0.4)',
+	},
+	text: {
+		color: 'white',
+		maxWidth: 400,
+		[theme.breakpoints.down('md')]: {
+			fontSize: "1.8rem"
+		},
+		[theme.breakpoints.down('sm')]: {
+			fontSize: "1.5rem"
+		},
+	},
+	container : {
+		[theme.breakpoints.down('sm')]: {
+			textAlign: 'center'
+		},
+	},
 	video: {
 		height: 400,
 		objectFit: "fill",
@@ -95,7 +115,7 @@ const useStyles = makeStyles(theme => ({
 		// },
 		[theme.breakpoints.down('md')]: {
 			// maxWidth: '100%',
-			height: 250
+			height: 300
 			// width:  768
 		},
 		[theme.breakpoints.down('sm')]: {
@@ -165,11 +185,21 @@ export default function IndexPage() {
         <Fragment>
             <Layout>
                 <SEO title="Inicio" />
-				<Box mb={6}>
+				<Box position="relative" mb={6}>
 					{/* <SwipeableTextMobileStepper></SwipeableTextMobileStepper>*/}
 					<video  className={ classes.video } poster={ TecVideoPoster } muted="true" autoplay="true" loop  >
 						<source src={ TecVideo } type="video/mp4" />
 					</video>
+					<Box  className={classes.textcontainer}  position="absolute"  >
+						<Container className={ classes.container }  maxWidth="lg">
+							<Typography>
+								<Box className={ classes.text }  mb={2} fontSize="h4.fontSize" fontWeight={800} > Sé parte de TecAcademy y viaja a Silicon Valley </Box>
+								</Typography>
+							<Button variant="contained" color="secondary" className={classes.button}>
+								Inscribete ahora
+							</Button>
+						</Container>
+					</Box>
 				</Box>
 				<Container maxWidth="lg" >
 
