@@ -6,7 +6,6 @@ import {
           Typography,
           Button,
           Container,
-          CardMedia,
           Paper,
           Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
@@ -81,7 +80,7 @@ const Course = (props) => {
                             </Typography>
                             <Grid  container spacing={2}  alignItems='center' >
                                 <Grid item >
-                                    <img   className={classes.image}  height={45}  width={45} src={ props.data.course.exhibitorImage.file.url }  />
+                                    <img  alit="exhibitor"  className={classes.image}  height={45}  width={45} src={ props.data.course.exhibitorImage.file.url }  />
                                 </Grid>
                                 <Grid  item >
                                     <Box my={1} >
@@ -96,7 +95,7 @@ const Course = (props) => {
                         </Box>
                         <Box  my={3} >
                             <Box  mb={3} >
-                                <img  className={ classes.bannerimage } src={ props.data.course.image.file.url }  />
+                                <img  alt="image" className={ classes.bannerimage } src={ props.data.course.image.file.url }  />
                             </Box>
                             <Paper  elevation={0}  >
                                 <Typography gutterBottom>

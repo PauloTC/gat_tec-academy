@@ -6,16 +6,15 @@ import {
     Box, 
     Container, } from '@material-ui/core';
 
-import HomeAcademy from '../components/home-academy'
-import rocket from '../assets/media/rocket.jpg'
 import SwipeableTextMobileStepper  from '../components/mobcarousel'
 import SubHeader from '../components/subheader'
 import GroupCard from '../components/group-card'
-import HomeCourse from '../components/home-course/home-course'
 import ActivityItem from '../components/activity-item'
 import { useStaticQuery, graphql } from 'gatsby';
 import { makeStyles } from '@material-ui/core/styles';
-
+import Video from "../components/comoon/video";
+import TecVideoPoster from "../assets/media/poster.jpeg"
+import TecVideo from "../assets/media/Carousselle.mp4"
 
 const useStyles = makeStyles(theme => ({
 	teamcontainer: {
@@ -83,6 +82,20 @@ const useStyles = makeStyles(theme => ({
 		'&:nth-of-type(3)' : {
 			marginRight: 0
 		}
+	},
+	video: {
+		height: 400,
+		objectFit: "fill",
+		width: 1440,
+		[theme.breakpoints.down('xl')]: {
+			width: 1200,
+		},
+		[theme.breakpoints.down('lg')]: {
+			width:  992
+		},
+		[theme.breakpoints.down('xl')]: {
+			width: 768
+		},
 	}
 }));
 
@@ -141,18 +154,15 @@ export default function IndexPage() {
 		}
 	`);
 	
-
-	const dataActivity = [
-		{  type: "Meetup ",name: "Time Management Skills"  },
-		{  type: "Pizza Nights", name: "Guvery"  }
-	]
-
     return (
         <Fragment>
             <Layout>
                 <SEO title="Inicio" />
 				<Box mb={6}>
-					<SwipeableTextMobileStepper></SwipeableTextMobileStepper>
+					{/* <SwipeableTextMobileStepper></SwipeableTextMobileStepper>*/}
+					<video  className={ classes.video } poster={ TecVideoPoster } muted="true" autoplay="true" loop  >
+						<source src={TecVideo} type="video/mp4" />
+					</video>
 				</Box>
 				<Container maxWidth="lg" >
 

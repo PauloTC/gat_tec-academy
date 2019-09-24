@@ -1,5 +1,5 @@
 import React, {  Fragment } from 'react'
-import { Typography, Box, Button, Grid } from '@material-ui/core';
+import { Typography, Box, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'gatsby'
 const useStyles = makeStyles(theme => ({

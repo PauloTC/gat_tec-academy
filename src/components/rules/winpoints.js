@@ -1,14 +1,10 @@
-import React, { Fragment } from "react"
+import React from "react"
 import { 
     Grid, 
     Typography,
-    Button,
     Container,
-    CardMedia,
-    Card,
     Paper,
-    Box, 
-    CardContent} from '@material-ui/core';
+    Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 

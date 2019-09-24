@@ -3,21 +3,17 @@ import React, { Fragment } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import bannerimage from "../assets/media/banner.jpg"
-import bannergoogle from "../assets/media/banner_2.png"
 import { 
     Box, 
-    Button,
     Container,
     CardContent,
     Card,
     CardMedia,
-    Paper, 
     Grid,
     Typography } from '@material-ui/core';
 
 import Ambassadors from '../components/ambassadors'
 import { makeStyles } from '@material-ui/core/styles';
-import HomeAcademy from '../components/home-academy'
 import FormatsSection from '../components/comunity/formats'
 import PillarsSection from '../components/comunity/pillars'
 import  BannerSection from '../components/comoon/banner'

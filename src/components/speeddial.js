@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import SpeedDial from '@material-ui/lab/SpeedDial';
 import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
 import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
@@ -9,7 +8,6 @@ import SaveIcon from '@material-ui/icons/Save';
 import PrintIcon from '@material-ui/icons/Print';
 import ShareIcon from '@material-ui/icons/Share';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { navigate } from "gatsby"
 
 const useStyles = makeStyles(theme => ({
     speedDial: {
@@ -36,10 +34,10 @@ export default function SpeedDialTooltipOpen() {
   const [open, setOpen] = React.useState(false);
   const [hidden, setHidden] = React.useState(false);
 
-  const handleVisibility = () => {
-    setOpen(false);
-    setHidden(prevHidden => !prevHidden);
-  };
+  // const handleVisibility = () => {
+  //   setOpen(false);
+  //   setHidden(prevHidden => !prevHidden);
+  // };
 
   const handleClick = () => {
     setOpen(prevOpen => !prevOpen);

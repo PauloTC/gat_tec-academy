@@ -2,13 +2,10 @@ import React, { Fragment } from "react"
 import { 
     Grid, 
     Typography,
-    Button,
     Container,
     CardMedia,
-    Card,
     Paper,
-    Box, 
-    CardContent} from '@material-ui/core';
+    Box} from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import SecondPlace from '../../assets/media/puesto2.jpg'
 import  ThirdPlace from '../../assets/media/puesto3.jpg'
@@ -83,7 +80,7 @@ const IndividualPrize = () => {
                                                         <Box fontSize="subtitle1.fontSize" >$1,000 para estudios</Box>
                                                     </Typography>  
                                             
-                                                    <img  width={200} className={classes.image} src={SecondPlace} />
+                                                    <img  width={200} className={classes.image} src={SecondPlace} alt="second"/>
                                             </Box>
                                         </Grid>
                                     </Paper>
