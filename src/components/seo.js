@@ -9,6 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import socialBanner from '../images/favicon.png'
 
 function SEO({ description, lang, meta, title }) {
 	const { site } = useStaticQuery(
@@ -69,6 +70,7 @@ function SEO({ description, lang, meta, title }) {
 				}
 			].concat(meta)}
 		>
+			<meta property='og:image' content={ socialBanner } />
 			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 			<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet" />
 		</Helmet>
