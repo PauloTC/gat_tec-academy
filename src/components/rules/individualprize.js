@@ -63,7 +63,7 @@ const IndividualPrize = () => {
                                         </Typography>
                                     </Grid>
                                     <Grid item sm={5} >
-                                        <img className={classes.image} src={rocket} /> 
+                                        <img  alt="rocket" className={classes.image} src={rocket} /> 
                                     </Grid>
                                 </Grid>
                             </CardMedia>
@@ -95,7 +95,7 @@ const IndividualPrize = () => {
                                                         <Box fontSize="subtitle1.fontSize" >$500 para estudios</Box>
                                                     </Typography>  
                                             
-                                                    <img  width={200} className={classes.image} src={ThirdPlace} />
+                                                    <img alt="third"  width={200} className={classes.image} src={ThirdPlace} />
                                             </Box>
                                         </Grid>
                                     </Paper>

@@ -1,6 +1,5 @@
-import React, { Fragment } from 'react';
+import React  from 'react';
 import {  
-    Box, 
     Typography, 
     Grid,
     Container} from '@material-ui/core';
@@ -30,7 +29,7 @@ const Footer = (props) => {
             <Container  maxWidth="lg" >
                 <Grid  alignItems="center"  justify="space-between" container >
                     <Grid item >
-                        <img width={100}  src={logo}  />
+                        <img  alt="logo"  width={100}  src={logo}  />
                     </Grid>
                     <Grid item>
                         <Typography className={ classes.text }  variant="subtitle2" >© 2019 TecAcademy</Typography>
