@@ -65,12 +65,16 @@ function SEO({ description, lang, meta, title }) {
 					content: title
 				},
 				{
+					name: `og.image`,
+					content: socialBanner
+				},
+				{
 					name: `twitter:description`,
 					content: metaDescription
 				}
 			].concat(meta)}
 		>
-			<meta property='og:image' content={ socialBanner } />
+			{/* <meta property='og:image' content={ socialBanner } /> */}
 			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 			<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet" />
 		</Helmet>
