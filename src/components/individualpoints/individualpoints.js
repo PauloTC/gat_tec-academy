@@ -3,7 +3,6 @@ import MaterialTable from 'material-table';
 import Styles from './individualpoints.module.scss';
 import { useStaticQuery, graphql } from 'gatsby';
 import { makeStyles } from '@material-ui/styles';
-import { Typography, Box, Button, Grid } from '@material-ui/core';
 
 
 
@@ -27,7 +26,6 @@ const useStyles = makeStyles({
 
 
 const IndividualPoints = () => {
-	const classes = useStyles();
 	const data = useStaticQuery( graphql`
 		query{
 			allContentfulStudent (sort : {

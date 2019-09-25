@@ -20,7 +20,10 @@ import  BannerSection from '../components/comoon/banner'
 
 const useStyles = makeStyles(theme =>({
     banner: {
-        height: 400
+        height: 400,
+        [theme.breakpoints.down('md')]: {
+            height: 350
+		},
     },
     containertext: {
         [theme.breakpoints.down('sm')]: {

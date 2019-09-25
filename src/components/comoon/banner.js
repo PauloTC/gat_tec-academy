@@ -14,10 +14,16 @@ import building  from '../../assets/media/building.svg'
 
 const useStyles = makeStyles(theme =>({
     container: {
-        overflow: 'hidden'
+        overflow: 'hidden',
+        [theme.breakpoints.down('md')]: {
+            position: 'relative'
+		},
     },
     banner: {
-        height: 400
+        height: 400,
+        [theme.breakpoints.down('md')]: {
+            height: 350
+		},
     },
     containertext: {
         [theme.breakpoints.down('sm')]: {
@@ -31,7 +37,11 @@ const useStyles = makeStyles(theme =>({
         color: "white",
         [theme.breakpoints.down('md')]: {
             left: 0,
-            width: "100%"
+            width: "100%",
+            height: "100%",
+            top: 0,
+            display: 'flex',
+            alignItems: 'center'
 		},
     },
     building: {

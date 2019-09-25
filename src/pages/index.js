@@ -1,6 +1,9 @@
 import React, { Fragment } from "react"
-
+import { useStaticQuery, graphql } from 'gatsby';
 import Layout from "../components/layout"
+import GroupCard from '../components/group-card'
+import SubHeader from '../components/subheader'
+import ActivityItem from '../components/activity-item'
 import SEO from "../components/seo"
 import { 
     Box, 
@@ -8,16 +11,10 @@ import {
 	Button,
 	Typography } from '@material-ui/core';
 
-import SwipeableTextMobileStepper  from '../components/mobcarousel'
-import SubHeader from '../components/subheader'
-import GroupCard from '../components/group-card'
-import ActivityItem from '../components/activity-item'
-import { useStaticQuery, graphql } from 'gatsby';
-import { makeStyles } from '@material-ui/core/styles';
-import Video from "../components/comoon/video";
+	import { makeStyles } from '@material-ui/core/styles';
+	
 import TecVideoPoster from "../assets/media/poster.jpeg"
 import TecVideo from "../assets/media/video.mp4"
-import { textAlign } from "@material-ui/system";
 
 const useStyles = makeStyles(theme => ({
 	teamcontainer: {
@@ -86,7 +83,14 @@ const useStyles = makeStyles(theme => ({
 		margin: 'auto',
 		display: 'flex',
 		alignItems: 'center',
+		height: 395,
 		backgroundColor: 'rgba(0, 0, 0, 0.4)',
+		[theme.breakpoints.down('md')]: {
+			height: 350
+		},
+		[theme.breakpoints.down('sm')]: {
+			height: 350
+		},
 	},
 	text: {
 		color: 'white',
@@ -94,12 +98,13 @@ const useStyles = makeStyles(theme => ({
 		[theme.breakpoints.down('md')]: {
 			fontSize: "1.8rem"
 		},
-		[theme.breakpoints.down('sm')]: {
+		[theme.breakpoints.down('xs')]: {
+			textAlign: 'center',
 			fontSize: "1.5rem"
 		},
 	},
 	container : {
-		[theme.breakpoints.down('sm')]: {
+		[theme.breakpoints.down('xs')]: {
 			textAlign: 'center'
 		},
 	},
@@ -115,12 +120,12 @@ const useStyles = makeStyles(theme => ({
 		// },
 		[theme.breakpoints.down('md')]: {
 			// maxWidth: '100%',
-			height: 300
+			height: 350
 			// width:  768
 		},
 		[theme.breakpoints.down('sm')]: {
 			// maxWidth: '100%',
-			height: 250
+			height: 350
 			// width: 576
 		},
 	}
