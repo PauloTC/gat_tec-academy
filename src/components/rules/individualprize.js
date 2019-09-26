@@ -20,7 +20,11 @@ const useStyles = makeStyles(theme =>({
     cardcontainer: {
         display: 'flex',
         alignItems: 'center',
-        height: 150
+        height: 150,
+        [theme.breakpoints.down('xs')]: {
+            width: "100%",
+            justifyContent: 'space-around'
+		},
     },
     textcolor: {
         color: '#321063'
@@ -80,7 +84,7 @@ const IndividualPrize = () => {
                                                         <Box fontSize="subtitle1.fontSize" >$1,000 para estudios</Box>
                                                     </Typography>  
                                             
-                                                    <img  width={200} className={classes.image} src={SecondPlace} alt="second"/>
+                                                    <img   className={classes.image} src={SecondPlace} alt="second"/>
                                             </Box>
                                         </Grid>
                                     </Paper>
@@ -95,7 +99,7 @@ const IndividualPrize = () => {
                                                         <Box fontSize="subtitle1.fontSize" >$500 para estudios</Box>
                                                     </Typography>  
                                             
-                                                    <img alt="third"  width={200} className={classes.image} src={ThirdPlace} />
+                                                    <img alt="third"  className={classes.image} src={ThirdPlace} />
                                             </Box>
                                         </Grid>
                                     </Paper>

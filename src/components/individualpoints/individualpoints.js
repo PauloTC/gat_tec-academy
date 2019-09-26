@@ -1,5 +1,5 @@
 import React from 'react';
-import MaterialTable from 'material-table';
+import MaterialTable, { MTableToolbar , MTableFilterRow }  from 'material-table';
 import Styles from './individualpoints.module.scss';
 import { useStaticQuery, graphql } from 'gatsby';
 import { makeStyles } from '@material-ui/styles';
@@ -56,6 +56,13 @@ const IndividualPoints = () => {
 				{/*<!-- Tabla de Puntajes -->*/}
 		
 				<MaterialTable
+					// components={{
+					// 	Toolbar: props => (
+					// 		<div style={{ backgroundColor: '#e8eaf5' }}>
+					// 			<MTableToolbar {...props} />
+					// 		</div>
+					// 	)
+					// }}
 					className={Styles.individual__table}
 					title="Puntaje individual"
 					columns={state.columns}

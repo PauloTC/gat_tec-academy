@@ -15,6 +15,12 @@ module.exports = {
 			}
 		},
 		{
+			resolve: `gatsby-plugin-offline`,
+			options: {
+			  appendScript: require.resolve(`${__dirname}/src/sw.js`),
+			},
+		},
+		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `images`,
@@ -34,7 +40,7 @@ module.exports = {
 				background_color: `#663399`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
-				icon: `src/images/favicon.png` // This path is relative to the root of the site.
+				icon: `${__dirname}/src/images/favicon.png` // This path is relative to the root of the site.
 			}
 		},
 		// {

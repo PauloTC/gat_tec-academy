@@ -20,7 +20,10 @@ const useStyles = makeStyles(theme => ({
         },
         [theme.breakpoints.down('xs')]: {
             margin: "2%",
-            marginBottom: 15
+            marginBottom: 15,
+            '&:nth-of-type(5)' :  {
+                marginRight: "2%"
+            },
 		},
     },
     textcontainer: {
@@ -52,10 +55,7 @@ const useStyles = makeStyles(theme => ({
             "background-color": "#fff !important"
         },
         ".Facebook": {
-            background: '#475993',
-            "&:before" : {
-                content: ''
-            }
+            background: '#475993'
         },
         ".Apple" : {
             background : '#5e5e5e'

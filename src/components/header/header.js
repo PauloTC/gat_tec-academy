@@ -81,7 +81,7 @@ function Header(props) {
                 <HideOnScroll {...props}>
                     <AppBar color="primary" elevation={0} className={ classes.header  }  >
                         <Toolbar  className={classes.toolbar}  >
-                            <Container maxWidth="lg">
+                            <Container maxWidth="xl">
                                 <Grid container >
                                     <Grid className={classes.container}   container wrap="nowrap" justify="space-between" item xs={12} md={12}>
                                         <Link className={styles.header__img}>
