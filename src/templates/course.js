@@ -2,7 +2,6 @@ import React from 'react'
 import Layout from "../components/layout"
 import { graphql } from 'gatsby';
 import { 
-          Grid, 
           Typography,
           Button,
           Container,
@@ -10,6 +9,7 @@ import {
           Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import CheckIcon from '@material-ui/icons/Check';
+import Grid from '@material-ui/core/Grid';
 import CloseIcon from '@material-ui/icons/Close';
 import HomeCourse from '../components/home-course/home-course';
 
@@ -71,7 +71,7 @@ const Course = (props) => {
 	return (
 		<Layout>
             <Container maxWidth="lg" spacing={5}  >
-                <Grid  container  justify={"space-between"} >
+                <Grid  container  justify="space-between" >
                     <Grid item xs={12}  md={7}  >
                         <Box my={3}  >
                             <Typography> 

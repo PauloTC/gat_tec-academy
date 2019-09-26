@@ -17,8 +17,8 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-offline`,
 			options: {
-			  appendScript: require.resolve(`${__dirname}/src/sw.js`),
-			},
+				importWorkboxFrom: `cdn`,
+			  },
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
