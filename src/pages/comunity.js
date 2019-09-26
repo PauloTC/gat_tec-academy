@@ -12,7 +12,7 @@ import {
     Grid,
     Typography } from '@material-ui/core';
 
-import Ambassadors from '../components/ambassadors'
+import Ambassadors from '../components/comunity/ambassadors'
 import { makeStyles } from '@material-ui/core/styles';
 import FormatsSection from '../components/comunity/formats'
 import PillarsSection from '../components/comunity/pillars'
@@ -48,11 +48,10 @@ const useStyles = makeStyles(theme =>({
         width: '100%',
         display: 'flex',
         alignItems: 'center'
-        // [theme.breakpoints.down('xs')]: {
-		// },
     },
     bannercontainer: {
-        position: 'relative'
+        position: 'relative',
+        borderRadius: 0
     },
     title: {
         [theme.breakpoints.down('xs')]: {

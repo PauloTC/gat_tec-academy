@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/layout';
 import SEO from "../components/seo"
 import CoursePrincipal from  '../components/courses/course-principal';
-import Course from '../components/course/course'
+import Course from '../components/courses/course'
 import { useStaticQuery, graphql } from 'gatsby';
 import { Container, Box, Typography, Grid } from '@material-ui/core';
 

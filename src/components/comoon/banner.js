@@ -15,6 +15,7 @@ import building  from '../../assets/media/building.svg'
 const useStyles = makeStyles(theme =>({
     container: {
         overflow: 'hidden',
+        borderRadius: 0,
         [theme.breakpoints.down('md')]: {
             position: 'relative'
 		},

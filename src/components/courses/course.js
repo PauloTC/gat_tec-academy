@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby';
-import Styles from './course.module.scss'
+// import Styles from './course.module.scss'
 import {  
                     Box, 
                     Typography, 

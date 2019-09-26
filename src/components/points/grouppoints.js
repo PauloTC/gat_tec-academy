@@ -1,7 +1,6 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Styles from './grouppoints.module.scss'
 import { makeStyles } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
 import { maxWidth } from '@material-ui/system';
@@ -66,8 +65,8 @@ const PointsGroup = (props) => {
                 <Grid item >
                     <img className={classes.image}  src={props.image}  height="60" alt="" />
                 </Grid>
-                <Grid  item className={Styles.group__text}  >
-                    <Typography className={Styles.group__subtitle} variant="subtitle2"> 
+                <Grid  item  >
+                    <Typography  variant="subtitle2"> 
                         <Box  fontWeight={700} >Team {props.name}</Box>    
                     </Typography>
                     <Typography variant="caption" display="block" > {props.points} pts </Typography>

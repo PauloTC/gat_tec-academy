@@ -1,6 +1,5 @@
 import React from 'react';
-import MaterialTable, { MTableToolbar , MTableFilterRow }  from 'material-table';
-import Styles from './individualpoints.module.scss';
+import MaterialTable  from 'material-table';
 import { useStaticQuery, graphql } from 'gatsby';
 import { makeStyles } from '@material-ui/styles';
 
@@ -47,10 +46,10 @@ const IndividualPoints = () => {
 			{ title: 'Puntaje', field: 'points', type: 'numeric' }
 		]
 	});
-
+    const classes = useStyles();
 	return (
 		<div className="individual">
-			<section className={Styles.individual__section}>
+			<section >
 				{/* <h2 className="mt-5  mb-30  g-subtitle">Puntaje Individual</h2>
 				<p className="leadboard-p">Te mostramos el 1 y 2 puesto hasta el primer taller:</p> */}
 				{/*<!-- Tabla de Puntajes -->*/}
@@ -63,7 +62,7 @@ const IndividualPoints = () => {
 					// 		</div>
 					// 	)
 					// }}
-					className={Styles.individual__table}
+					className={classes.table}
 					title="Puntaje individual"
 					columns={state.columns}
 					data={data.allContentfulStudent.nodes}

@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
-import PointsGroup from  '../components/grouppoints/grouppoints';
-import IndividualPoints from '../components/individualpoints/individualpoints'
+import PointsGroup from  '../components/points/grouppoints';
+import IndividualPoints from '../components/points/individualpoints'
 import SEO from "../components/seo"
 import { useStaticQuery, graphql } from 'gatsby';
 import {  Grid, Typography, Container, Box } from '@material-ui/core';
