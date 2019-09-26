@@ -89,7 +89,7 @@ const useStyles = makeStyles(theme => ({
 			height: 350
 		},
 		[theme.breakpoints.down('sm')]: {
-			height: 345
+			height: 350
 		},
 	},
 	text: {
