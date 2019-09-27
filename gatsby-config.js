@@ -35,21 +35,13 @@ module.exports = {
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				name: `TecAcademy`,
-				short_name: `Tec`,
+				short_name: `TecAcademy`,
 				start_url: `/`,
 				background_color: `#663399`,
 				theme_color: `#663399`,
 				display: `minimal-ui`,
 				icon: `${__dirname}/src/images/favicon.png` // This path is relative to the root of the site.
 			}
-		},
-		// {
-		// 	resolve: 'gatsby-plugin-web-font-loader',
-		// 	options: {
-		// 		google: {
-		// 			families: [ 'Avenir: 900', 'Lato: 400, 900, 700' ]
-		// 		}
-		// 	}
-		// }
+		}
 	]
 };

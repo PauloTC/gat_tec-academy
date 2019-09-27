@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 
 import { 
-    Container, 
     Box ,
     Card,
     CardActionArea,
@@ -48,7 +47,7 @@ const CardSection = () => {
                             </CardActionArea>
                         </Card>
                     </Grid>
-                    
+
                     <Grid item  sm={6} >
                         <Card>
                             <CardActionArea>
