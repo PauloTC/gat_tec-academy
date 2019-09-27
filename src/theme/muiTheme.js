@@ -64,7 +64,11 @@ const theme = createMuiTheme({
     overrides: {
         MuiCssBaseline: {
             '@global': {
-                '@font-face': [lato]
+                '@font-face': [lato],
+                a : {
+                    color: 'inherit',
+                    textDecoration: 'none'
+                }
             },
         },
     },

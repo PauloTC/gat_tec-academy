@@ -73,6 +73,7 @@ function Header(props) {
         {  name: 'Puntajes', to: 'points' , icon: 'icon-star'  },
         {  name: 'Nosotros', to: 'comunity', icon: 'icon-group'  },
         {  name: 'Reglas', to: 'rules', icon: 'icon-education'  },
+        {  name: 'Colección', to: 'collection', icon: 'icon-education'  },
         // {  name: 'blog', to: 'points', icon: 'icon-education'  }
     ]
 	return (

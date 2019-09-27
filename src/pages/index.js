@@ -11,7 +11,7 @@ import {
 	Button,
 	Typography } from '@material-ui/core';
 
-	import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 	
 import TecVideoPoster from "../assets/media/poster.jpeg"
 import TecVideo from "../assets/media/video.mp4"
@@ -77,7 +77,6 @@ const useStyles = makeStyles(theme => ({
 	},
 	textcontainer: {
 		top: 0,
-		bottom: 0,
 		left: 0,
 		right:	0,
 		margin: 'auto',
