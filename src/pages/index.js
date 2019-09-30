@@ -15,6 +15,7 @@ import { makeStyles } from '@material-ui/core/styles';
 	
 import TecVideoPoster from "../assets/media/poster.jpeg"
 import TecVideo from "../assets/media/video.mp4"
+import zIndex from "@material-ui/core/styles/zIndex";
 
 const useStyles = makeStyles(theme => ({
 	teamcontainer: {
@@ -82,10 +83,11 @@ const useStyles = makeStyles(theme => ({
 		margin: 'auto',
 		display: 'flex',
 		alignItems: 'center',
-		height: 395,
+		height: 400,
 		backgroundColor: 'rgba(0, 0, 0, 0.4)',
+		zIndex: 2,
 		[theme.breakpoints.down('md')]: {
-			height: 350
+			height: 400
 		},
 		[theme.breakpoints.down('sm')]: {
 			height: 350
@@ -104,23 +106,35 @@ const useStyles = makeStyles(theme => ({
 	},
 	container : {
 		[theme.breakpoints.down('xs')]: {
-			textAlign: 'center'
+			textAlign: 'center',
+			display: 'flex',
+			flexDirection: 'column',
+			alignItems: 'center'
 		},
 	},
 	box : {
 		height: 400,
+		overflow: 'hidden',
 		[theme.breakpoints.down('sm')]: {
 			height: 350
 		},
 	},
 	video: {
-		height: 400,
+		height: 900,
 		objectFit: "fill",
 		width: '100%',
+		position: 'absolute',
+		zIndex: 1,
+		top: -250,
 		[theme.breakpoints.down('md')]: {
-			height: 350
+			height: 600,
+			top: -100
 		},
 		[theme.breakpoints.down('sm')]: {
+			top: 0,
+			height: 400
+		},
+		[theme.breakpoints.down('xs')]: {
 			height: 350
 		},
 	}
