@@ -1,9 +1,9 @@
 import React, { Fragment } from "react"
 import { useStaticQuery, graphql } from 'gatsby';
 import Layout from "../components/layout"
-import GroupCard from '../components/group-card'
-import SubHeader from '../components/subheader'
-import ActivityItem from '../components/activity-item'
+import GroupCard from '../components/index/group-card'
+import SubHeader from '../components/comoon/subheader'
+import ActivityItem from '../components/index/activity-item'
 import SEO from "../components/seo"
 import { 
     Box, 
@@ -15,7 +15,6 @@ import { makeStyles } from '@material-ui/core/styles';
 	
 import TecVideoPoster from "../assets/media/poster.jpeg"
 import TecVideo from "../assets/media/video.mp4"
-import zIndex from "@material-ui/core/styles/zIndex";
 
 const useStyles = makeStyles(theme => ({
 	teamcontainer: {
@@ -120,7 +119,7 @@ const useStyles = makeStyles(theme => ({
 		},
 	},
 	video: {
-		height: 900,
+		height: 700,
 		objectFit: "fill",
 		width: '100%',
 		position: 'absolute',

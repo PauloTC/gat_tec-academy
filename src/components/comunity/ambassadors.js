@@ -1,12 +1,7 @@
 import React from 'react'
 import { 
     Box, 
-    Button,
     Container,
-    CardContent,
-    Card,
-    CardMedia,
-    Paper, 
     Grid,
     Typography } from '@material-ui/core';
 import { useStaticQuery, graphql } from 'gatsby';

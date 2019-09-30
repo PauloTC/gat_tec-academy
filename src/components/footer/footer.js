@@ -3,7 +3,7 @@ import {
     Typography, 
     Grid,
     Container} from '@material-ui/core';
-import logo from '../images/logo-tecacademy.png';
+import logo from '../../images/logo-tecacademy.png';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles({

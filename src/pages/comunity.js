@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import Ambassadors from '../components/comunity/ambassadors'
-import { makeStyles } from '@material-ui/core/styles';
 import FormatsSection from '../components/comunity/formats'
 import PillarsSection from '../components/comunity/pillars'
 import  BannerSection from '../components/comoon/banner'

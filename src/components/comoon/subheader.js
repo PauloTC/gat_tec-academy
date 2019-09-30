@@ -13,7 +13,8 @@ const useStyles = makeStyles(theme => ({
     },
 	button: {
 		textTransform: 'capitalize',
-		fontSize: '16px'
+        fontSize: '16px',
+        fontWeight: 700
     },
     container: {
         display: "flex",

@@ -1,11 +1,6 @@
-import React, { PureComponent } from 'react'
-import { 
-    Container, 
+import React from 'react'
+import {  
     Box ,
-    Card,
-    CardActionArea,
-    CardContent,
-    CardMedia,
     Grid, 
     Typography,
     Button } from '@material-ui/core';

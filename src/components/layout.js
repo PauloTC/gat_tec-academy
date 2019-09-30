@@ -2,13 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header/header"
-
-
 import { ThemeProvider } from '@material-ui/styles';
 import theme from "../theme/muiTheme"
-
-import Footer from "../components/footer"
-// import "./layout.css"
+import Footer from "./footer/footer"
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({

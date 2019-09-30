@@ -3,6 +3,7 @@ const path = require('path')
 module.exports.createPages = async( { graphql, actions } ) => {
     const { createPage } = actions;
     const blogTemplate= path.resolve('./src/templates/course.js')
+    const collectionTemplate = path.resolve('./src/templates/collection.js')
 
     const res = await graphql(`
         query {
@@ -20,6 +21,16 @@ module.exports.createPages = async( { graphql, actions } ) => {
         createPage({
             component: blogTemplate,
             path: `/courses/${edge.node.slug}`,
+            context: {
+                slug: edge.node.slug
+            }
+        })
+    })
+
+    res.data.allContentfulCourse.edges.forEach((edge) => {
+        createPage({
+            component: collectionTemplate,
+            path: `/collections/${edge.node.slug}`,
             context: {
                 slug: edge.node.slug
             }
