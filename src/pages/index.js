@@ -232,7 +232,7 @@ export default function IndexPage() {
 							})		
 						}
 					</section> */}
-
+ 
 					<SubHeader
 							to="courses"
 							title="Próximas actividades"  
