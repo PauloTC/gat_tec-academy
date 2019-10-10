@@ -197,7 +197,7 @@ export default function IndexPage() {
     return (
         <Fragment>
             <Layout>
-                <SEO title="Inicio" />
+                <SEO title="Inicio" /> 
 				<Box className={ classes.box }  position="relative" mb={6}>
 					{/* <SwipeableTextMobileStepper></SwipeableTextMobileStepper>*/}
 					<video  className={ classes.video } poster={ TecVideoPoster } muted="true" autoplay="true" loop  >
