@@ -43,20 +43,8 @@ const SecondBanner = (props) => {
     const classes = useStyles();
     return (
         <Card  className={ classes.bannercontainer } >
-                {
-                    (() => {
-                        if( props.data.imagebg != null ) {
-                            return (
-                                <CardMedia  className={classes.banner} image={ props.data.imagebg.file.url }  />
-                            )
-                        }else {
-                                return (
-                                    <CardMedia  className={classes.banner} image={ bannerimage }  />
-                                )
-                        }
-                    })()
-                }
-                
+
+                <CardMedia  className={classes.banner} image={ props.data.imagebg.file.url }  />            
                 <CardContent className={classes.textbanner}  >
                     <Container maxWidth="md"  >
                         <Grid height={400} container justify="center" alignItems="center" >
