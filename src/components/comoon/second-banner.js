@@ -49,33 +49,8 @@ const SecondBanner = (props) => {
                     <Container maxWidth="md"  >
                         <Grid height={400} container justify="center" alignItems="center" >
                             <Typography align='center' >
-                                {
-                                    (() => {
-                                        if( props.data.principalText ) {
-                                            return (
-                                                <Box className={classes.title} fontSize="h4.fontSize" fontWeight="fontWeightLight">  { props.data.principalText } </Box>
-                                            )
-                                        }else {
-                                            return (
-                                                <Box className={classes.title} fontSize="h4.fontSize" fontWeight="fontWeightLight">  No contiene data </Box>
-                                            )
-                                        }
-                                    })()
-                                }
-                                {
-                                    (() => {
-                                        if( props.data.secondaryText ) {
-                                            return (
-                                                <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > { props.data.secondaryText } </Box>
-                                            )
-                                        }else {
-                                            return (
-                                                <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > No tiene data </Box>
-                                            )
-                                        }
-                                    })()
-                                }
-                               
+                                <Box className={classes.title} fontSize="h4.fontSize" fontWeight="fontWeightLight">  { props.data.principalText } </Box>
+                                <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > { props.data.secondaryText } </Box>   
                             </Typography>
                         </Grid>
                     </Container>
