@@ -49,8 +49,10 @@ const SecondBanner = (props) => {
                     <Container maxWidth="md"  >
                         <Grid height={400} container justify="center" alignItems="center" >
                             <Typography align='center' >
-                                <Box className={classes.title} fontSize="h4.fontSize" fontWeight="fontWeightLight">  { props.data.principalText } </Box>
-                                <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > { props.data.secondaryText } </Box>   
+                                {/* <Box className={classes.title} fontSize="h4.fontSize" fontWeight="fontWeightLight">  { props.data.principalText } </Box> */}
+                                <Box className={classes.title} fontSize="h4.fontSize" fontWeight="fontWeightLight">  123123123 </Box>
+                                {/* <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > { props.data.secondaryText } </Box>    */}
+                                <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > 321321312 </Box>   
                             </Typography>
                         </Grid>
                     </Container>
