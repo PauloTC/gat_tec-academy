@@ -60,7 +60,7 @@ const useStyles = makeStyles(theme =>({
     }
 }));
 
-const Formats = () => {
+const Formats = (props) => {
     const classes = useStyles();
     return (
         <Box mt={10} mb={5} >
@@ -79,7 +79,33 @@ const Formats = () => {
                         </Box>
                     </Grid>
                     <Grid xs={12} sm={6} md={4} item >
-                        <Grid item>
+
+                        {
+                            props.firstColumn.map( ( format, index ) => {
+                                return (
+                                    <Grid item>
+                                        <Paper>
+                                            <Box mb={4} p={2} >
+                                                <Grid container  >
+                                                    <Typography  className={ classes.head } gutterBottom variant="subtitle1"  >
+                                                        <Box  fontWeight={900} > { format.node.title } </Box>
+                                                        <span className={ ` ${classes.circle} ${classes.workshop} `  }  >
+                                                            <img src={ format.node.icon.file.url } alt=""/>
+                                                            {/* <i  className={ `icon-activity1` }  ></i> */}
+                                                        </span>
+                                                    </Typography>
+                                                </Grid>
+                                                <Typography variant="body2"> { format.node.description } </Typography>
+
+                                            </Box>
+                                        </Paper>
+                                    </Grid>
+                                )
+                            } )
+                        }
+
+
+                        {/* <Grid item>
                             <Paper>
                                 <Box mb={4} p={2} >
                                     <Grid container  >
@@ -142,11 +168,39 @@ const Formats = () => {
                                     <Typography variant="body2">Ahora somos internacionales. Colombia será nuestro primer país de expansión.</Typography>
                                 </Box>
                             </Paper>
-                        </Grid>
+                        </Grid> */}
     
                     </Grid>
                     <Grid xs={12} sm={6} item md={4}>
-                        <Grid item>
+                        
+                        {
+                            props.secondColumn.map( ( format, index ) => {
+                                return (
+
+                                    <Grid item>
+                                        <Paper>
+                                            <Box mb={4} p={2} >
+                                                <Grid container  >
+                                                    <Typography  className={ classes.head } gutterBottom variant="subtitle1"  >
+                                                        <Box  fontWeight={900} > { format.node.title } </Box>
+                                                        <span className={ ` ${classes.circle} ${ format.node.title } `  }  >
+                                                            <img src={ format.node.icon.file.url } alt=""/>
+                                                        </span>
+                                                    </Typography>
+                                                </Grid>
+                                                <Typography variant="body2"> { format.node.description } </Typography>
+
+                                            </Box>
+                                        </Paper>
+                                    </Grid>
+
+                                )
+                            })
+
+                        }
+
+
+                        {/* <Grid item>
                             <Paper>
                                 <Box mb={4} p={2} >
                                     <Grid container  >
@@ -202,7 +256,8 @@ const Formats = () => {
                                     <Typography variant="body2">¡Los anunciaremos pronto!</Typography>
                                 </Box>
                             </Paper>
-                        </Grid>
+                        </Grid> */}
+                    
                     </Grid>
                 </Grid>
             </Container>

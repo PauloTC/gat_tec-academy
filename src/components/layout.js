@@ -9,7 +9,11 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   body: {
-    background: 'white'
+    background: 'white',
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent : 'space-between'
   },
   containergeneral: {
     overflow: 'hidden'

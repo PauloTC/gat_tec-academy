@@ -53,7 +53,7 @@ const CardSection = () => {
                     {
                         data.allContentfulCourse.edges.map( (edge, index) => (
                             <Grid key={index}  item  sm={6} >
-                                <CollectionCard  slug={ edge.node.slug }  /> 
+                                <CollectionCard  data={ edge.node }  /> 
                             </Grid>
                         ))
                     }

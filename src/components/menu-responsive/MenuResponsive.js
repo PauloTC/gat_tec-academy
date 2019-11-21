@@ -33,9 +33,9 @@ export default function TemporaryDrawer() {
     const classes = useStyles();
 
     const Links = [
-        {  name: 'Actividades', to: 'courses' , icon: 'icon-support' },
+        {  name: 'Actividades', to: 'activities' , icon: 'icon-support' },
         {  name: 'Puntajes', to: 'points', icon: 'icon-lectern'  },
-        {  name: 'Nosotros', to: 'comunity' , icon: 'icon-star'  },
+        {  name: 'Nosotros', to: 'community' , icon: 'icon-star'  },
         {  name: 'Reglas', to: 'rules' , icon: 'icon-education'  }
     ]
 

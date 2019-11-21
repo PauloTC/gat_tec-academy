@@ -12,7 +12,11 @@ const useStyles =  makeStyles(theme => ({
 		margin: 0
 	},
     button: {
-        textTransform: "capitalize"
+        textTransform: "capitalize",
+        padding: 0,
+        '& a': {
+            padding: "5px 16px"
+        }
     },
     card: {
         height: 305,
@@ -58,7 +62,7 @@ const ActivityItem = (props) => {
                         </Typography>
                         <Box className={ classes.btncontainer  }  >
                             <Button className={classes.button} size="medium" variant="outlined" color="secondary"> 
-                                <Link to={`/courses/${ props.data.slug}`} >Unirme</Link>   </Button>
+                                <Link to={`/activities/${ props.data.slug}`} >Ver más</Link>   </Button>
                         </Box>
                     </div>
                 </div>

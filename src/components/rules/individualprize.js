@@ -11,6 +11,7 @@ import SecondPlace from '../../assets/media/puesto2.jpg'
 import  ThirdPlace from '../../assets/media/puesto3.jpg'
 import rocket from '../../assets/media/rocket.svg'
 import BackgroundMedia from  '../../assets/media/fondo.jpg'
+import { useStaticQuery, graphql } from 'gatsby';
 
 const useStyles = makeStyles(theme =>({
     image: {
@@ -43,8 +44,45 @@ const useStyles = makeStyles(theme =>({
     }
 }));
 
+
+
 const IndividualPrize = () => {
     const classes = useStyles();
+
+    const data = useStaticQuery(graphql`
+    query {
+        individual: allContentfulPrizes( filter : { place : { eq : "1er puesto" } } ) {
+            edges {
+                node {
+                    place
+                    text
+                    title
+                    prizeImage {
+                        file {
+                            url
+                        }
+                    }
+                }
+            }
+        },
+        multiple:allContentfulPrizes ( filter : { title : { eq : null } } ) {
+            edges {
+                node {
+                    place
+                    text
+                    prizeImage {
+                        file {
+                            url
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    `)
+
+
     return(
         <Fragment>
             <Container maxWidth="lg" >
@@ -61,9 +99,9 @@ const IndividualPrize = () => {
                                 <Grid  container alignItems="center" >
                                     <Grid item  sm={7} >
                                         <Typography>
-                                            <Box fontSize="subtitle1.fontSize" fontWeight={900} > 1er puesto:</Box>  
-                                            <Box fontSize="h5.fontSize" fontWeight={900} > Viaje y Tour a Silicon Valley</Box>  
-                                            <Box fontSize="subtitle2.fontSize"  > Aprovecharás de las empresas top en una experiencia inigualable. Viaje, hospedaje y entradas incluidos.</Box>  
+                                            <Box fontSize="subtitle1.fontSize" fontWeight={900} >  { data.individual.edges[0].node.place } </Box>  
+                                            <Box fontSize="h5.fontSize" fontWeight={900} > { data.individual.edges[0].node.title }  </Box>  
+                                            <Box fontSize="subtitle2.fontSize"  > { data.individual.edges[0].node.text } </Box>  
                                         </Typography>
                                     </Grid>
                                     <Grid item sm={5} >
@@ -74,36 +112,26 @@ const IndividualPrize = () => {
                         </Paper>
                         <Box mt={3} >
                             <Grid container spacing={4} >
-                                <Grid  item xs={12} sm={6} >
-                                    <Paper >
-                                        <Grid container justify="center" >
-                                            <Box  className={ classes.cardcontainer } p={2} >
-            
-                                                    <Typography>
-                                                        <Box className={ classes.textcolor } mb={1}  fontSize="subtitle2.fontSize"  fontWeight={900} >2do puesto:</Box>
-                                                        <Box fontSize="subtitle1.fontSize" >$1,000 para estudios</Box>
-                                                    </Typography>  
-                                            
-                                                    <img   className={classes.image} src={SecondPlace} alt="second"/>
-                                            </Box>
-                                        </Grid>
-                                    </Paper>
-                                </Grid>
-                                <Grid  item xs={12} sm={6} >
-                                    <Paper >
-                                        <Grid container  justify="center"  >
-                                            <Box  className={ classes.cardcontainer } p={2} >
-            
-                                                    <Typography>
-                                                        <Box className={ classes.textcolor } mb={1}  fontSize="subtitle2.fontSize"  fontWeight={900} >3er y 4to puesto:</Box>
-                                                        <Box fontSize="subtitle1.fontSize" >$500 para estudios</Box>
-                                                    </Typography>  
-                                            
-                                                    <img alt="third"  className={classes.image} src={ThirdPlace} />
-                                            </Box>
-                                        </Grid>
-                                    </Paper>
-                                </Grid>
+                                { data.multiple.edges.map(  (edge, index) =>  {
+                                        return (
+                                            <Grid id={ index }  item xs={12} sm={6} >
+                                                <Paper >
+                                                    <Grid container justify="center" >
+                                                        <Box  className={ classes.cardcontainer } p={2} >
+                        
+                                                                <Typography>
+                                                                    <Box className={ classes.textcolor } mb={1}  fontSize="subtitle2.fontSize"  fontWeight={900} >{ edge.node.place } :</Box>
+                                                                    <Box fontSize="subtitle1.fontSize" >{ edge.node.text } </Box>
+                                                                </Typography>  
+                                                                <img   className={classes.image} src={ edge.node.prizeImage.file.url } alt="second"/>
+                                                        </Box>
+                                                    </Grid>
+                                                </Paper>
+                                            </Grid>
+                                        )
+                                    })
+                                }
+                                
                             </Grid>
                         </Box>
                     </Grid>

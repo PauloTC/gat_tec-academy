@@ -14,6 +14,8 @@ import TemporaryDrawer from '../menu-responsive/MenuResponsive';
 import { makeStyles } from '@material-ui/core/styles';
 import logo from '../../images/logo-tecacademy.png';
 import "../../assets/icons/style.css"
+import { useStaticQuery, graphql } from 'gatsby';
+
 // import theme from "../../theme/muiTheme"
 
 const useStyles = makeStyles(theme => ({
@@ -68,14 +70,27 @@ HideOnScroll.propTypes = {
 function Header(props) {
     const classes = useStyles();
     const Links = [
-        {  name: 'Actividades', to: 'courses' , icon: 'icon-support' },
+        {  name: 'Actividades', to: 'activities' , icon: 'icon-support' },
         // {  name: 'Talleres', to: 'courses', icon: 'icon-lectern'  },
         {  name: 'Puntajes', to: 'points' , icon: 'icon-star'  },
-        {  name: 'Nosotros', to: 'comunity', icon: 'icon-group'  },
+        {  name: 'Nosotros', to: 'community', icon: 'icon-group'  },
         {  name: 'Reglas', to: 'rules', icon: 'icon-education'  },
         {  name: 'Colección', to: 'collection', icon: 'icon-education'  },
         // {  name: 'blog', to: 'points', icon: 'icon-education'  }
     ]
+
+    const data = useStaticQuery(graphql`
+        query {
+            allContentfulNavigation {
+                edges {
+                    node {
+                        menu
+                    }
+                }
+            }
+        }
+    `)
+
 	return (
 		<React.Fragment>
 			<CssBaseline />
@@ -90,18 +105,80 @@ function Header(props) {
                                         </Link>
                                         <Box className={classes.menu}>
                                             <Typography className={classes.menu} variant="body2">
-                                                {Links.map((link, index) => {
-                                                    return (
-                                                        <Link
-                                                            key={index}
-                                                            activeClassName={ classes.activelink }
-                                                            to={link.to}
-                                                            className={`nav-link ${styles.header__link}  ${classes.link} `}
-                                                        >
-                                                            <i className={`${styles.header__icon} ${link.icon}`} />
-                                                            {link.name}
-                                                        </Link>
-                                                    );
+                                                {data.allContentfulNavigation.edges[0].node.menu.map((item, index) => {
+                                                    if( item === 'Actividades' ){
+                                                        return (
+                                                                <Link
+                                                                    key={index}
+                                                                    activeClassName={ classes.activelink }
+                                                                    to="activities"
+                                                                    className={`nav-link ${styles.header__link}  ${classes.link} `}
+                                                                >
+                                                                    <i className={`${styles.header__icon} icon-support`} /> Actividades
+                                                            </Link>
+
+                                                        )
+                                                    }else if( item === 'Nosotros' ){
+                                                        return (
+                                                                <Link
+                                                                    key={index}
+                                                                    activeClassName={ classes.activelink }
+                                                                    to="community"
+                                                                    className={`nav-link ${styles.header__link}  ${classes.link} `}
+                                                                >
+                                                                    <i className={`${styles.header__icon} icon-group`} /> Nosotros
+                                                            </Link>
+
+                                                        )
+                                                    }else if( item === 'Puntajes' ){
+                                                        return (
+                                                                <Link
+                                                                    key={index}
+                                                                    activeClassName={ classes.activelink }
+                                                                    to="points"
+                                                                    className={`nav-link ${styles.header__link}  ${classes.link} `}
+                                                                >
+                                                                    <i className={`${styles.header__icon} icon-star`} /> Puntajes
+                                                            </Link>
+
+                                                        )
+                                                    } else if( item === 'Reglas' ){
+                                                        return (
+                                                                <Link
+                                                                    key={index}
+                                                                    activeClassName={ classes.activelink }
+                                                                    to="rules"
+                                                                    className={`nav-link ${styles.header__link}  ${classes.link} `}
+                                                                >
+                                                                    <i className={`${styles.header__icon} icon-education`} /> Reglas
+                                                            </Link>
+
+                                                        )
+                                                    } else if( item === 'Colección' ){
+                                                        return (
+                                                                <Link
+                                                                    key={index}
+                                                                    activeClassName={ classes.activelink }
+                                                                    to="collection"
+                                                                    className={`nav-link ${styles.header__link}  ${classes.link} `}
+                                                                >
+                                                                    <i className={`${styles.header__icon} icon-lectern`} /> Colección
+                                                            </Link>
+
+                                                        )
+                                                    }
+                                                    // return (
+                                                    //     <li> { item } </li>
+                                                        // <Link
+                                                        //     key={index}
+                                                        //     activeClassName={ classes.activelink }
+                                                        //     to={link.to}
+                                                        //     className={`nav-link ${styles.header__link}  ${classes.link} `}
+                                                        // >
+                                                        //     <i className={`${styles.header__icon} ${link.icon}`} />
+                                                        //     {link.name}
+                                                        // </Link>
+                                                    // );
                                                 })}
                                             </Typography>
                                         </Box>

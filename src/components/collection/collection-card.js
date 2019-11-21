@@ -22,20 +22,20 @@ const CollectionCard = (props) => {
     return (
             <Card>
                 <CardActionArea>
-                    <Link to={ `/collections/${ props.slug}` }  >
+                    <Link to={ `/collections/${ props.data.slug}` }  >
                         <CardMedia
                             component="img"
                             alt="Contemplative Reptile"
                             height="140"
-                            image={image}
+                            image= { props.data.image.file.url }
                             title="Contemplative Reptile"
                             />
                         <CardContent>
                             <Typography>
-                                <Box mb={1}  fontSize="subtitle2.fontSize"  className={ classes.date } >12 Sept 2019</Box>
-                                <Box mb={1}  fontWeight={900} fontSize="h6.fontSize"  >Meetup: Time Management Skills</Box>
+                                <Box mb={1}  fontSize="subtitle2.fontSize"  className={ classes.date } >  { props.data.fecha1 }  </Box>
+                                <Box mb={1}  fontWeight={900} fontSize="h6.fontSize"  > {  props.data.title } </Box>
                             </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">Gianmarco Ramos</Typography>
+                            <Typography variant="body2" color="textSecondary" component="p"> { props.data.exhibitor } </Typography>
                         </CardContent>
                     </Link>
                 </CardActionArea>

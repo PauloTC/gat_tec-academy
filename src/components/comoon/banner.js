@@ -10,7 +10,7 @@ import {
     Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import building  from '../../assets/media/building.svg'
-
+import { Link } from 'gatsby';
 
 const useStyles = makeStyles(theme =>({
     container: {
@@ -45,6 +45,12 @@ const useStyles = makeStyles(theme =>({
             alignItems: 'center'
 		},
     },
+    title : {
+        maxWidth: 400,
+        [theme.breakpoints.down('sm')]: {
+            maxWidth: '100%'
+		},
+    },
     building: {
         position:'absolute',
         top: 80,
@@ -69,16 +75,17 @@ const Banner = (props) => {
             <Fragment>
                 <Box position="relative" >
                     <Card  className={classes.container}  >
-                        <CardMedia  className={classes.banner} image={ bannergoogle }  />
+                        <CardMedia  className={classes.banner} image={ props.data.imagebg.file.url }  />
                         <CardContent className={classes.text}  >
                             <Container className={classes.containertext} maxWidth="lg"  >
-                                <Typography variant="h4">
-                                    <Box  fontWeight={700} mb={4}>¿Estás cerca de ganar el <br/> viaje a Silicon Valley?  </Box>
+                                <Typography className={classes.title} variant="h4">
+                                    <Box  fontWeight={700} mb={4}> { props.data.principal } </Box>
                                 </Typography>
-                                <Button variant="contained" className={classes.button}> Quiero saber más </Button>
+                                <Button variant="contained" className={classes.button}> 
+                                    <Link  to="community" > { props.data.button } </Link>     </Button>
                             </Container>
                         </CardContent>
-                        <img    className={`${classes.building}` }   src={ building }   />
+                        <img    className={`${classes.building}` }   src={ props.data.imageCalada.file.url }   />
                     </Card>
                 </Box>
             </Fragment>

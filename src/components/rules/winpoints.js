@@ -41,20 +41,20 @@ const data = [
         title: 'Puntaje individual:',
         points : [
             {
-                number : 1,
+                number : "+1",
                 task: "Por asistencia al curso/taller"
             },
             {
-                number : 1,
+                number : "+1",
                 task: "Por participación en el curso/taller"
             },
             {
-                number : 1,
+                number : "+1",
                 task: "Por ganar el Kahoot en el curso"
             },
             {
-                number : 1,
-                task: "Por no asistir o no cancelar a tiempo."
+                number : "-1",
+                task: "Por no asistir o no cancelar a tiempo"
             }
         ]
     },
@@ -62,12 +62,12 @@ const data = [
         title: 'Puntaje grupal:',
         points: [
             {
-                number: 1,
-                task: 'Por mayor asistencia del grupo al curso/taller.'
+                number: "+1",
+                task: 'Por mayor asistencia del grupo al curso/taller'
             },
             {
-                number: 1,
-                task: 'Por iniciativa/emprendimiento a partir  de lo aprendido en los cursos que ayude a Belcorp..'
+                number: "+1",
+                task: 'Por iniciativa/emprendimiento a partir  de lo aprendido en los cursos que ayude a Belcorp'
             }
         ]
     }
@@ -93,7 +93,7 @@ const WinPoints = () => {
                                 data[0].points.map( (point, index)  => {
                                     return(
                                         <Typography  className={ classes.text }  >
-                                                <Box  className={ classes.points }  mr={3} fontWeight={900} > +  { point.number }</Box> 
+                                                <Box  className={ classes.points }  mr={3} fontWeight={900} >  { point.number }</Box> 
                                                 <Box mb={1} >{ point.task }</Box> 
                                         </Typography>
                                     )
@@ -111,7 +111,7 @@ const WinPoints = () => {
                                 data[1].points.map( (point, index)  => {
                                     return(
                                         <Typography className={ classes.text } >
-                                                <Box  className={ classes.points }   mr={3} fontWeight={900} > + { point.number }</Box> 
+                                                <Box  className={ classes.points }   mr={3} fontWeight={900} >  { point.number }</Box> 
                                                 <Box  className={ classes.description } mb={1} >{ point.task }</Box> 
                                         </Typography>
                                     )

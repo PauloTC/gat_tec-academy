@@ -10,11 +10,13 @@ import {
 	Container,
 	Button,
 	Typography } from '@material-ui/core';
-
+import { Link } from 'gatsby';
 import { makeStyles } from '@material-ui/core/styles';
 	
 import TecVideoPoster from "../assets/media/poster.jpeg"
 import TecVideo from "../assets/media/video.mp4"
+import SwipeableTextMobileStepper from  "../components/home-course/carrousel"
+import Carousel from 'nuka-carousel';
 
 const useStyles = makeStyles(theme => ({
 	teamcontainer: {
@@ -28,9 +30,18 @@ const useStyles = makeStyles(theme => ({
 			marginBottom: 30
 		},
 	},
+	image : {
+		width : '100%'
+	},
     banner: {
         height: 400
-    },
+	},
+	button: {
+		padding: 0,
+		'& a' : {
+			padding: "5px 16px"
+		}
+	},
     text: {
         position: "absolute",
         top: 100,
@@ -190,30 +201,61 @@ export default function IndexPage() {
                         }
                     }
                 }
-            }
+			},
+			banner:  allContentfulBannerHome{
+				edges {
+					node {
+						title
+						buttonText
+						media {
+							file {
+								url
+								fileName
+								contentType
+							}
+						}
+					}
+				}
+			}
 		}
 	`);
 	
     return (
         <Fragment>
             <Layout>
-                <SEO title="Inicio" /> 
+                <SEO title="Inicio" />
 				<Box className={ classes.box }  position="relative" mb={6}>
 					{/* <SwipeableTextMobileStepper></SwipeableTextMobileStepper>*/}
 					<video  className={ classes.video } poster={ TecVideoPoster } muted="true" autoplay="true" loop  >
-						<source src={ TecVideo } type="video/mp4" />
+						<source src={ data.banner.edges[0].node.media[0].file.url } type="video/mp4" />
 					</video>
 					<Box  className={classes.textcontainer}  position="absolute"  >
 						<Container className={ classes.container }  maxWidth="lg">
 							<Typography>
-								<Box className={ classes.text }  mb={2} fontSize="h4.fontSize" fontWeight={800} > Sé parte de TecAcademy y viaja a Silicon Valley </Box>
+								<Box className={ classes.text }  mb={2} fontSize="h4.fontSize" fontWeight={800} > { data.banner.edges[0].node.title } </Box>
 								</Typography>
 							<Button variant="contained" color="secondary" className={classes.button}>
-								Inscribete ahora
+								<Link to="/rules" > { data.banner.edges[0].node.buttonText } </Link>
 							</Button>
 						</Container>
 					</Box>
 				</Box>
+				
+				{/* <Carousel>
+					<div>
+						<img  className={ classes.image } src="https://www.wallpaperup.com/uploads/wallpapers/2018/07/31/1281512/08ab27c4fd5dc569b4f61db3d5429e89-700.jpg" />
+					</div>
+					<div>
+						<img  className={ classes.image } src="https://www.wallpaperup.com/uploads/wallpapers/2018/07/31/1281512/08ab27c4fd5dc569b4f61db3d5429e89-700.jpg" />
+					</div>
+					<div>
+						<img className={ classes.image } src="https://www.wallpaperup.com/uploads/wallpapers/2018/07/31/1281512/08ab27c4fd5dc569b4f61db3d5429e89-700.jpg" />
+					</div>
+					<div>
+						<img className={ classes.image } src="https://www.wallpaperup.com/uploads/wallpapers/2018/07/31/1281512/08ab27c4fd5dc569b4f61db3d5429e89-700.jpg" />
+					</div>
+				</Carousel> */}
+
 				<Container maxWidth="lg" >
 
 					{/* <SubHeader  
@@ -232,9 +274,9 @@ export default function IndexPage() {
 							})		
 						}
 					</section> */}
- 
+
 					<SubHeader
-							to="courses"
+							to="activities"
 							title="Próximas actividades"  
 							subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
 							button="Ver actividades"  ></SubHeader>

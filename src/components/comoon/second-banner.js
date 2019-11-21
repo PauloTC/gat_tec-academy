@@ -39,17 +39,55 @@ const useStyles = makeStyles(theme =>({
 }));
 
 
-const SecondBanner = () => {
+const SecondBanner = (props) => {
     const classes = useStyles();
     return (
         <Card  className={ classes.bannercontainer } >
-                <CardMedia  className={classes.banner} image={ bannerimage }  />
+                {
+                    (() => {
+                        if( props.data.imagebg ) {
+                            return (
+                                <CardMedia  className={classes.banner} image={ props.data.imagebg.file.url }  />
+                            )
+                        }else {
+                                return (
+                                    <CardMedia  className={classes.banner} image={ bannerimage }  />
+                                )
+                        }
+                    })()
+                }
+                
                 <CardContent className={classes.textbanner}  >
-                    <Container maxWidth="lg"  >
+                    <Container maxWidth="md"  >
                         <Grid height={400} container justify="center" alignItems="center" >
                             <Typography align='center' >
-                                <Box className={classes.title}  fontFamily="Lato-light" fontSize="h4.fontSize" fontWeight="fontWeightLight">We want to be a movement <br/>  that shares and develops a tech learning culture.</Box>
-                                <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > De nosotros para nosotros.</Box>
+                                {
+                                    (() => {
+                                        if( props.data.principalText ) {
+                                            return (
+                                                <Box className={classes.title} fontSize="h4.fontSize" fontWeight="fontWeightLight">  { props.data.principalText } </Box>
+                                            )
+                                        }else {
+                                            return (
+                                                <Box className={classes.title} fontSize="h4.fontSize" fontWeight="fontWeightLight">  No contiene data </Box>
+                                            )
+                                        }
+                                    })()
+                                }
+                                {
+                                    (() => {
+                                        if( props.data.secondaryText ) {
+                                            return (
+                                                <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > { props.data.secondaryText } </Box>
+                                            )
+                                        }else {
+                                            return (
+                                                <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > No tiene data </Box>
+                                            )
+                                        }
+                                    })()
+                                }
+                               
                             </Typography>
                         </Grid>
                     </Container>

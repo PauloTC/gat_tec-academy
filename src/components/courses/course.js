@@ -37,27 +37,28 @@ const Course = (props) => {
     return(
         <Grid item xs={12} sm={6}  md={4} >
             <Card>
-                <CardActionArea>
-                    <CardMedia className={classes.media} image={ props.image }   />
-                    <CardContent>
-                        <Typography variant="h6">
-                            <Box> { props.title }  </Box>
-                            <Box  my={1} gutterBottom fontSize="subtitle2.fontSize" >{ props.fecha }</Box>
-                            
-                            <Grid gutterBottom container alignItems="center"  >
-                                <img  className={classes.image} width="24"  src={ props.exhibitorImage }  alt="exhibitorimage" />
-                                <Grid item >
-                                    <Box mx={2} fontSize="subtitle2.fontSize"> { props.exhibitor }  </Box>
+                <Link to={`/activities/${ props.slug}`} >
+                    <CardActionArea>
+                        <CardMedia className={classes.media} image={ props.image }   />
+                        <CardContent>
+                            <Typography variant="h6">
+                                <Box> { props.title }  </Box>
+                                <Box  my={1} gutterBottom fontSize="subtitle2.fontSize" >{ props.fecha }</Box>
+                                
+                                <Grid gutterBottom container alignItems="center"  >
+                                    <img  className={classes.image} width="24"  src={ props.exhibitorImage }  alt="exhibitorimage" />
+                                    <Grid item >
+                                        <Box mx={2} fontSize="subtitle2.fontSize"> { props.exhibitor }  </Box>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
 
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-                <CardActions>
-                    <Button className={classes.button} size="small" color="secondary"> 
-                        <Link to={`/courses/${ props.slug}`} > Ver detalle </Link>  </Button>
-                </CardActions>
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                        <Button className={classes.button} size="small" color="secondary">  Ver detalle  </Button>
+                    </CardActions>
+                </Link>
             </Card>
         </Grid>
     )

@@ -41,7 +41,7 @@ const HomeCourse = (props) => {
                 </Box>
                 <Grid  container justify="flex-end" >
                     <Button className={classes.button} size="small" variant="outlined" color="primary">
-                        <Link  to={`/courses/${ props.edge.node.slug}`}  >Asistiré</Link>
+                        <Link  to={`/activities/${ props.edge.node.slug}`}  >Ver detalle</Link>
                     </Button>
                 </Grid>
             </Paper>

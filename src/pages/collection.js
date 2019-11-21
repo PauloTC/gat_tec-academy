@@ -11,16 +11,40 @@ import {
 
 import Subheader from '../components/comoon/subheader'
 import CardSection from '../components/collection/cardsection'
+import { useStaticQuery, graphql } from 'gatsby';
+
 
 const Collection = () => {
+    
+    const data = useStaticQuery( graphql`
+        query {
+            allContentfulBanner ( filter: { view : { eq : "Colección" } } ) {
+                edges {
+                    node {
+                        principalText
+                        secondaryText
+                        imagebg {
+                            file {
+                                url
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `)
+
+
+
     return (
         <Layout>
             <SEO title="Galería" />
-            <SecondBanner />
+            <SecondBanner  
+                data= { data.allContentfulBanner.edges[0].node } />
             <Container maxWidth="lg" >
                 <Box mt={7} >
-                    <Subheader title="Lo más reciente"  subtitle="Descubre todos los detalles de los últimos eventos realizados por TecAcademy. ¡Sí¡ ¡Encontrarás la presentación del expositor!" button='Ver todo' />
-                    <PrincipalCard />
+                    {/* <Subheader title="Lo más reciente"  subtitle="Descubre todos los detalles de los últimos eventos realizados por TecAcademy. ¡Sí¡ ¡Encontrarás la presentación del expositor!" button='Ver todo' /> */}
+                    {/* <PrincipalCard /> */}
                     <CardSection />
                 </Box>
             </Container>

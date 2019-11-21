@@ -12,7 +12,7 @@ import CheckIcon from '@material-ui/icons/Check';
 import Grid from '@material-ui/core/Grid';
 import CloseIcon from '@material-ui/icons/Close';
 import HomeCourse from '../components/home-course/home-course';
-
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const useStyles = makeStyles({
     image: {
@@ -37,6 +37,7 @@ export const query = graphql`
                     url
                 }
             }
+            inscriptionLink
             fecha1
             fecha2
             fecha3
@@ -46,11 +47,7 @@ export const query = graphql`
                 }
             }
             description {
-                content {
-                    content {
-                        value
-                    }
-                }
+                json
             }
         },
         carousel:allContentfulCourse(filter: { showHomeCarousel:{ eq: true }  }){
@@ -101,7 +98,7 @@ const Course = (props) => {
                                 <Typography gutterBottom>
                                     <Box   fontSize="subtitle1" fontWeight={700}  >Detalles</Box>  
                                 </Typography>
-                                <Typography  variant="body2" >  { props.data.course.description.content[0].content[0].value }  </Typography>
+                                <Typography  variant="body2" >  { documentToReactComponents(props.data.course.description.json) }  </Typography>
                                 <Typography  variant="body2" > 
                                         <Box my={3}  >{ props.data.course.fecha2 }</Box> 
                                  </Typography>
@@ -111,25 +108,57 @@ const Course = (props) => {
                             </Paper>
                         </Box>
                     </Grid>
+                
                     <Grid item xs={12}  md={4}   >
-                        <Box  my={3} >
-                            <Typography> 
-                                <Box   fontWeight={700}  fontSize="body2.fontSize" >¿Asistirás?  </Box>
-                            </Typography>
-                        </Box>
-                        <Grid  container spacing={5} > 
-                            <Grid item xs={6} >
-                                <Button  href="https://miscursosucb.belcorp.biz/course/view.php?id=2201"  size="small" fullWidth="true" variant="contained" color="secondary" className={classes.button}>
-                                    <CheckIcon />
-                                </Button>
-                            </Grid>
-                            <Grid item xs={6} >
-                                <Button  size="small" fullWidth="true" variant="contained" color="secondary" className={classes.button}>
-                                    <CloseIcon />
-                                </Button>
-                            </Grid>
-                        </Grid>
+
+                    {(() => {
+                        if(  props.data.course.inscriptionLink ){
+                            return(
+                                <Grid item xs={12}   >
+                                    <Box  my={3} >
+                                        <Typography> 
+                                            <Box   fontWeight={700}  fontSize="body2.fontSize" >¿Asistirás?  </Box>
+                                        </Typography>
+                                    </Box>
+                                    <Grid  container spacing={5} > 
+                                        <Grid item xs={6} >
+                                            <Button  href={ props.data.course.inscriptionLink }  size="small" fullWidth="true" variant="contained" color="secondary" className={classes.button}>
+                                                <CheckIcon />
+                                            </Button>
+                                        </Grid>
+                                        <Grid item xs={6} >
+                                            <Button  size="small" fullWidth="true" variant="contained" color="secondary" className={classes.button}>
+                                                <CloseIcon />
+                                            </Button>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            )
+                        }else {
+                            return (
+                                <Grid item xs={12}    >
+                                    <Box  my={3} >
+                                        <Typography> 
+                                            <Box   fontWeight={700}  fontSize="body2.fontSize" >¿Asistirás?  </Box>
+                                        </Typography>
+                                    </Box>
+                                    <Grid> 
+                                        <Typography  variant="body2" > 
+                                                <Box my={3}  >No es necesario registrarte para asistir a este evento</Box> 
+                                        </Typography>
+                                    </Grid>
+                                </Grid>
+                            )
+                        }
+                            
+                    })()}
+
+
+
+                       
                     </Grid>
+
+
                     <Box width={1}  my={4} >
                         <Typography gutterBottom>
                             <Box  fontSize="subtitle1" fontWeight={700}  >Próximos eventos</Box>  
