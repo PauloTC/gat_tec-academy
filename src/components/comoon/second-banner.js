@@ -45,7 +45,7 @@ const SecondBanner = (props) => {
         <Card  className={ classes.bannercontainer } >
                 {
                     (() => {
-                        if( props.data.imagebg ) {
+                        if( props.data.imagebg.file.url ) {
                             return (
                                 <CardMedia  className={classes.banner} image={ props.data.imagebg.file.url }  />
                             )
