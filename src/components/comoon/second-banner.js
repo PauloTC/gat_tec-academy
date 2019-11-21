@@ -43,16 +43,51 @@ const SecondBanner = (props) => {
     const classes = useStyles();
     return (
         <Card  className={ classes.bannercontainer } >
-
-                {/* <CardMedia  className={classes.banner} image={ props.data.imagebg.file.url }  />             */}
+                {
+                    (() => {
+                        if( props.data.imagebg ) {
+                            return (
+                                <CardMedia  className={classes.banner} image={ props.data.imagebg.file.url }  />
+                            )
+                        }else {
+                                return (
+                                    <CardMedia  className={classes.banner} image={ bannerimage }  />
+                                )
+                        }
+                    })()
+                }
+                
                 <CardContent className={classes.textbanner}  >
                     <Container maxWidth="md"  >
                         <Grid height={400} container justify="center" alignItems="center" >
                             <Typography align='center' >
-                                {/* <Box className={classes.title} fontSize="h4.fontSize" fontWeight="fontWeightLight">  { props.data.principalText } </Box> */}
-                                <Box className={classes.title} fontSize="h4.fontSize" fontWeight="fontWeightLight">  123123123 </Box>
-                                {/* <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > { props.data.secondaryText } </Box>    */}
-                                <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > 321321312 </Box>   
+                                {
+                                    (() => {
+                                        if( props.data.principalText ) {
+                                            return (
+                                                <Box className={classes.title} fontSize="h4.fontSize" fontWeight="fontWeightLight">  { props.data.principalText } </Box>
+                                            )
+                                        }else {
+                                            return (
+                                                <Box className={classes.title} fontSize="h4.fontSize" fontWeight="fontWeightLight">  No contiene data </Box>
+                                            )
+                                        }
+                                    })()
+                                }
+                                {
+                                    (() => {
+                                        if( props.data.secondaryText ) {
+                                            return (
+                                                <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > { props.data.secondaryText } </Box>
+                                            )
+                                        }else {
+                                            return (
+                                                <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > No tiene data </Box>
+                                            )
+                                        }
+                                    })()
+                                }
+                               
                             </Typography>
                         </Grid>
                     </Container>

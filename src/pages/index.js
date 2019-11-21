@@ -17,6 +17,8 @@ import TecVideoPoster from "../assets/media/poster.jpeg"
 import TecVideo from "../assets/media/video.mp4"
 import SwipeableTextMobileStepper from  "../components/home-course/carrousel"
 import Carousel from 'nuka-carousel';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'; 
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 const useStyles = makeStyles(theme => ({
 	teamcontainer: {
@@ -47,7 +49,12 @@ const useStyles = makeStyles(theme => ({
         top: 100,
         left: 150,
         color: "white"
-    },
+	},
+	buttonArrow : {
+		background : "transparent",	
+		color: "#fff",
+		border: "none"
+	},
     textbanner: {
         position: "absolute",
         top: '30%',
@@ -224,8 +231,7 @@ export default function IndexPage() {
         <Fragment>
             <Layout>
                 <SEO title="Inicio" />
-				<Box className={ classes.box }  position="relative" mb={6}>
-					{/* <SwipeableTextMobileStepper></SwipeableTextMobileStepper>*/}
+				{/* <Box className={ classes.box }  position="relative" mb={6}>
 					<video  className={ classes.video } poster={ TecVideoPoster } muted="true" autoplay="true" loop  >
 						<source src={ data.banner.edges[0].node.media[0].file.url } type="video/mp4" />
 					</video>
@@ -239,13 +245,42 @@ export default function IndexPage() {
 							</Button>
 						</Container>
 					</Box>
-				</Box>
+				</Box> */}
 				
-				{/* <Carousel>
-					<div>
-						<img  className={ classes.image } src="https://www.wallpaperup.com/uploads/wallpapers/2018/07/31/1281512/08ab27c4fd5dc569b4f61db3d5429e89-700.jpg" />
-					</div>
-					<div>
+				<Carousel 
+					renderCenterLeftControls={({ previousSlide }) => (
+						<button className={ classes.buttonArrow }  onClick={previousSlide}>
+							<ArrowBackIosIcon />
+						</button>
+					)}
+					renderCenterRightControls={({ nextSlide }) => (
+						<button className={ classes.buttonArrow } onClick={nextSlide}>
+							<ArrowForwardIosIcon />
+						</button>
+					)}
+					renderBottomCenterControls={false}
+					enableKeyboardControls={false}  >
+					{
+						data.banner.edges.map( edge => {
+							return (
+								<Box className={ classes.box }  position="relative" mb={6}>
+									<Box  className={classes.textcontainer}  position="absolute"  >
+										<Container className={ classes.container }  maxWidth="lg">
+											<Typography>
+												<Box className={ classes.text }  mb={2} fontSize="h4.fontSize" fontWeight={800} > { edge.node.title } </Box>
+												</Typography>
+											<Button variant="contained" color="secondary" className={classes.button}>
+												<Link to="/rules" > { edge.node.buttonText } </Link>
+											</Button>
+										</Container>
+									</Box>
+									<img className={ classes.image } src={  edge.node.media[0].file.url } />
+								</Box>
+							)
+						} )
+					}
+				
+					{/* <div>
 						<img  className={ classes.image } src="https://www.wallpaperup.com/uploads/wallpapers/2018/07/31/1281512/08ab27c4fd5dc569b4f61db3d5429e89-700.jpg" />
 					</div>
 					<div>
@@ -253,8 +288,8 @@ export default function IndexPage() {
 					</div>
 					<div>
 						<img className={ classes.image } src="https://www.wallpaperup.com/uploads/wallpapers/2018/07/31/1281512/08ab27c4fd5dc569b4f61db3d5429e89-700.jpg" />
-					</div>
-				</Carousel> */}
+					</div> */}
+				</Carousel>
 
 				<Container maxWidth="lg" >
 
