@@ -44,7 +44,7 @@ const SecondBanner = (props) => {
     return (
         <Card  className={ classes.bannercontainer } >
 
-                <CardMedia  className={classes.banner} image={ props.data.imagebg.file.url }  />            
+                {/* <CardMedia  className={classes.banner} image={ props.data.imagebg.file.url }  />             */}
                 <CardContent className={classes.textbanner}  >
                     <Container maxWidth="md"  >
                         <Grid height={400} container justify="center" alignItems="center" >
