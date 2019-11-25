@@ -280,7 +280,9 @@ export default function IndexPage() {
 					</Box> */}
 					<Carousel 
 							autoplay
-							animation
+							wrapAround
+							cellAlign="center"
+							transitionMode="fade"
 							renderCenterLeftControls={({ previousSlide }) => (
 								<button className={  ` ${classes.buttonArrow} ${classes.leftArrow}` }  onClick={previousSlide}>
 									<ArrowBackIosIcon />
