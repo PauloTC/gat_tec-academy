@@ -1,21 +1,21 @@
 @font-face {
-	font-family: 'Conv_AvenirLTStd-Roman';
-	src: url('fonts/AvenirLTStd-Roman.eot');
-	src: local('☺'), url('fonts/AvenirLTStd-Roman.woff') format('woff'), url('fonts/AvenirLTStd-Roman.ttf') format('truetype'), url('fonts/AvenirLTStd-Roman.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'Conv_AvenirLTStd-Roman';
+    src: url('fonts/AvenirLTStd-Roman.eot');
+    src: local('☺'), url('fonts/AvenirLTStd-Roman.woff') format('woff'), url('fonts/AvenirLTStd-Roman.ttf') format('truetype'), url('fonts/AvenirLTStd-Roman.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-	font-family: 'Conv_AvenirLTStd-Black';
-	src: url('fonts/AvenirLTStd-Black.eot');
-	src: local('☺'), url('fonts/AvenirLTStd-Black.woff') format('woff'), url('fonts/AvenirLTStd-Black.ttf') format('truetype'), url('fonts/AvenirLTStd-Black.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'Conv_AvenirLTStd-Black';
+    src: url('fonts/AvenirLTStd-Black.eot');
+    src: local('☺'), url('fonts/AvenirLTStd-Black.woff') format('woff'), url('fonts/AvenirLTStd-Black.ttf') format('truetype'), url('fonts/AvenirLTStd-Black.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .mt-60 {
-    margin-top: 60px; 
+    margin-top: 60px;
 }
 
 img {
@@ -26,18 +26,15 @@ img {
     padding-top: 60px;
 }
 
-.navbar-toggler-icon{
+.navbar-toggler-icon {
     background-image: url('http://tinyimg.io/i/d3g0s13.png') !important;
 }
-
 
 $lg-screen: 1200px;
 $md-screen: 992px;
 $sm-screen: 768px;
 $xs-screen: 575px;
-
 $subtitle: 'Conv_AvenirLTStd-Black';
-
 ul {
     margin-left: 0 !important;
 }
@@ -53,6 +50,7 @@ strong {
 .g-subtitle {
     font-family: $subtitle;
 }
+
 .mb-30 {
     margin-bottom: 30px;
 }
@@ -79,14 +77,14 @@ strong {
 }
 
 // Home Styles
-
 .home_banner-container {
-    background: linear-gradient(to bottom, rgba(41,9,83,1) 0%, rgba(61,25,120,1) 100%);
+    background: linear-gradient(to bottom, rgba(41, 9, 83, 1) 0%, rgba(61, 25, 120, 1) 100%);
     font-size: 60px;
     line-height: 1.39;
     padding-top: 0px;
     height: 80vh;
 }
+
 .home_banner-img {
     width: 45%;
     right: 0px;
@@ -97,14 +95,16 @@ strong {
 
 .home_banner-title {
     line-height: 130%;
-    strong, 
+    strong,
     span {
         font-family: 'Conv_AvenirLTStd-Black' !important;
     }
 }
+
 .welcome-text {
     font-size: 60px;
 }
+
 .home_awards-container {
     margin-top: 150px;
     margin-bottom: 120px;
@@ -112,11 +112,13 @@ strong {
         margin-bottom: 0;
     }
 }
+
 .image-award-container {
     display: flex;
     justify-content: flex-end;
     padding-right: 100px;
 }
+
 .trophy-img,
 .medal-img {
     width: 50px;
@@ -127,11 +129,12 @@ strong {
 .home_awards-container {
     margin-top: 60px;
 }
+
 @media (max-width: 1200px) {
     .home_banner-title {
         font-size: 45px;
     }
-    .home_banner-subtitle strong{
+    .home_banner-subtitle strong {
         font-size: 55px;
     }
 }
@@ -172,7 +175,7 @@ strong {
     .academy {
         padding-top: 60px;
     }
-    .home_banner-container{
+    .home_banner-container {
         &:before {
             content: '';
             position: absolute;
@@ -185,12 +188,12 @@ strong {
     }
 }
 
-@media screen and (max-width: $xs-screen)  {
+@media screen and (max-width: $xs-screen) {
     .home_awards-container {
         margin-top: 30px;
     }
     .home_banner-container {
-        height:  580px;
+        height: 580px;
         padding-top: 30px;
         overflow: hidden;
         position: relative;
@@ -198,7 +201,6 @@ strong {
             flex-direction: column;
         }
     }
-
     .home_banner-img {
         width: 300px;
         align-self: flex-end;

@@ -8,6 +8,7 @@ import SEO from "../components/seo"
 import { 
     Box, 
 	Container,
+	CardMedia,
 	Button,
 	Typography } from '@material-ui/core';
 import { Link } from 'gatsby';
@@ -19,6 +20,8 @@ import SwipeableTextMobileStepper from  "../components/home-course/carrousel"
 import Carousel from 'nuka-carousel';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'; 
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import  '../styles/index.scss'
+
 
 const useStyles = makeStyles(theme => ({
 	teamcontainer: {
@@ -33,10 +36,14 @@ const useStyles = makeStyles(theme => ({
 		},
 	},
 	image : {
-		width : '100%'
+		width : '100%',
+		height: 500,
+		[theme.breakpoints.down('md')]: {
+				height: 400
+		},
 	},
     banner: {
-        height: 400
+        height: 600
 	},
 	button: {
 		padding: 0,
@@ -53,7 +60,30 @@ const useStyles = makeStyles(theme => ({
 	buttonArrow : {
 		background : "transparent",	
 		color: "#fff",
-		border: "none"
+		border: "none",
+		outline: "none",
+		position: 'relative',
+		cursor : 'pointer',
+		'& svg ' : {
+			fontSize: 40
+		},
+		[theme.breakpoints.down('xs')]: {
+			'& svg' : {
+				fontSize: 25
+			}
+		}
+	},
+	leftArrow: {
+		left: '100%',
+		[theme.breakpoints.down('md')]: {
+			left: 0
+		}
+	},
+	rightArrrow: {
+		right: '100%',
+		[theme.breakpoints.down('md')]: {
+			right: 0
+		}
 	},
     textbanner: {
         position: "absolute",
@@ -100,7 +130,7 @@ const useStyles = makeStyles(theme => ({
 		margin: 'auto',
 		display: 'flex',
 		alignItems: 'center',
-		height: 400,
+		height: 500,
 		backgroundColor: 'rgba(0, 0, 0, 0.4)',
 		zIndex: 2,
 		[theme.breakpoints.down('md')]: {
@@ -130,11 +160,14 @@ const useStyles = makeStyles(theme => ({
 		},
 	},
 	box : {
-		height: 400,
+		height: 500,
 		overflow: 'hidden',
+		[theme.breakpoints.down('md')]: {
+			height: 400
+		},
 		[theme.breakpoints.down('sm')]: {
 			height: 350
-		},
+		}
 	},
 	video: {
 		height: 700,
@@ -142,7 +175,7 @@ const useStyles = makeStyles(theme => ({
 		width: '100%',
 		position: 'absolute',
 		zIndex: 1,
-		top: -250,
+		top: -150,
 		[theme.breakpoints.down('md')]: {
 			height: 600,
 			top: -100
@@ -231,66 +264,59 @@ export default function IndexPage() {
         <Fragment>
             <Layout>
                 <SEO title="Inicio" />
-				{/* <Box className={ classes.box }  position="relative" mb={6}>
-					<video  className={ classes.video } poster={ TecVideoPoster } muted="true" autoplay="true" loop  >
+				<Box className={ classes.box }  position="relative" mb={6}>
+					{/* <video  className={ classes.video } poster={ TecVideoPoster } muted="true" autoplay="true" loop  >
 						<source src={ data.banner.edges[0].node.media[0].file.url } type="video/mp4" />
-					</video>
-					<Box  className={classes.textcontainer}  position="absolute"  >
+					</video> */}
+					{/* <Box  className={classes.textcontainer}  position="absolute"  >
 						<Container className={ classes.container }  maxWidth="lg">
 							<Typography>
 								<Box className={ classes.text }  mb={2} fontSize="h4.fontSize" fontWeight={800} > { data.banner.edges[0].node.title } </Box>
-								</Typography>
+							</Typography>
 							<Button variant="contained" color="secondary" className={classes.button}>
 								<Link to="/rules" > { data.banner.edges[0].node.buttonText } </Link>
 							</Button>
 						</Container>
-					</Box>
-				</Box> */}
+					</Box> */}
+					<Carousel 
+							autoplay
+							animation
+							renderCenterLeftControls={({ previousSlide }) => (
+								<button className={  ` ${classes.buttonArrow} ${classes.leftArrow}` }  onClick={previousSlide}>
+									<ArrowBackIosIcon />
+								</button>
+							)}
+							renderCenterRightControls={({ nextSlide }) => (
+								<button className={ `  ${ classes.buttonArrow }  ${ classes.rightArrrow } `  } onClick={nextSlide}>
+									<ArrowForwardIosIcon />
+								</button>
+							)}
+							renderBottomCenterControls={false}
+							enableKeyboardControls={false}  >
+							{
+								data.banner.edges.map( edge => {
+									return (
+										<Box className={ classes.box }  position="relative" mb={6}>
+											<Box  className={classes.textcontainer}  position="absolute"  >
+												<Container className={ classes.container }  maxWidth="lg">
+													<Typography>
+														<Box className={ classes.text }  mb={2} fontSize="h4.fontSize" fontWeight={800} > { edge.node.title } </Box>
+														</Typography>
+													<Button variant="contained" color="secondary" className={classes.button}>
+														<Link to="/rules" > { edge.node.buttonText } </Link>
+													</Button>
+												</Container>
+											</Box>
+											<CardMedia className={ classes.image } image={  edge.node.media[0].file.url }  />
+											{/* <img /> */}
+										</Box>
+									)
+								} )
+							}				
+							
+						</Carousel>
+				</Box>
 				
-				<Carousel 
-					renderCenterLeftControls={({ previousSlide }) => (
-						<button className={ classes.buttonArrow }  onClick={previousSlide}>
-							<ArrowBackIosIcon />
-						</button>
-					)}
-					renderCenterRightControls={({ nextSlide }) => (
-						<button className={ classes.buttonArrow } onClick={nextSlide}>
-							<ArrowForwardIosIcon />
-						</button>
-					)}
-					renderBottomCenterControls={false}
-					enableKeyboardControls={false}  >
-					{
-						data.banner.edges.map( edge => {
-							return (
-								<Box className={ classes.box }  position="relative" mb={6}>
-									<Box  className={classes.textcontainer}  position="absolute"  >
-										<Container className={ classes.container }  maxWidth="lg">
-											<Typography>
-												<Box className={ classes.text }  mb={2} fontSize="h4.fontSize" fontWeight={800} > { edge.node.title } </Box>
-												</Typography>
-											<Button variant="contained" color="secondary" className={classes.button}>
-												<Link to="/rules" > { edge.node.buttonText } </Link>
-											</Button>
-										</Container>
-									</Box>
-									<img className={ classes.image } src={  edge.node.media[0].file.url } />
-								</Box>
-							)
-						} )
-					}
-				
-					{/* <div>
-						<img  className={ classes.image } src="https://www.wallpaperup.com/uploads/wallpapers/2018/07/31/1281512/08ab27c4fd5dc569b4f61db3d5429e89-700.jpg" />
-					</div>
-					<div>
-						<img className={ classes.image } src="https://www.wallpaperup.com/uploads/wallpapers/2018/07/31/1281512/08ab27c4fd5dc569b4f61db3d5429e89-700.jpg" />
-					</div>
-					<div>
-						<img className={ classes.image } src="https://www.wallpaperup.com/uploads/wallpapers/2018/07/31/1281512/08ab27c4fd5dc569b4f61db3d5429e89-700.jpg" />
-					</div> */}
-				</Carousel>
-
 				<Container maxWidth="lg" >
 
 					{/* <SubHeader  

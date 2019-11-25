@@ -1,0 +1,22 @@
+@media (max-width: 959.95px) {
+    .slider-control-centerleft {
+        position: relative !important;
+        top: inherit !important;
+        bottom: 60px !important;
+        transform: none !important;
+        display: flex !important;
+        justify-content: flex-end;
+        margin-right: 40px !important;
+    }
+    .slider-control-centerright {
+        bottom: 14px !important;
+        top: inherit !important;
+        transform: none !important;
+    }
+}
+
+@media (max-width: 599.95px) {
+    .slider-control-centerleft {
+        bottom: 45px !important;
+    }
+}

@@ -8,6 +8,7 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import rocket from '../../assets/media/rocket.jpg'
 import '../../assets/icons/style.css'
+import { useStaticQuery, graphql } from 'gatsby';
 
 const useStyles = makeStyles(theme =>({
     rocket: {
@@ -30,7 +31,8 @@ const useStyles = makeStyles(theme =>({
         display: 'flex',
         alignItems: 'center',
         justifyContent: ' center',
-        borderRadius: '50%'
+        borderRadius: '50%',
+        background: '#e2af03'
     },
     workshop: {
         background: "#04d3f2"
@@ -62,6 +64,41 @@ const useStyles = makeStyles(theme =>({
 
 const Formats = (props) => {
     const classes = useStyles();
+
+
+    const data = useStaticQuery(graphql`
+        query {
+            firstColumn: allContentfulFormat ( filter : { column : { eq: "1" } } ) {
+                edges {
+                    node {
+                        title
+                        description
+                        icon{
+                            file {
+                                url
+                            }
+                        }
+                        column
+                    }
+                    }
+                }
+            secondColumn:allContentfulFormat ( filter: { column : { eq : "2" } } ) {
+                edges {
+                    node {
+                        title
+                        description
+                        icon {
+                            file {
+                                url
+                            }
+                        }
+                        column
+                    }
+                }
+            }
+        }
+    ` )
+
     return (
         <Box mt={10} mb={5} >
             <Container maxWidth="lg" >
@@ -78,20 +115,20 @@ const Formats = (props) => {
                             <img width={200} src={rocket} />
                         </Box>
                     </Grid>
-                    <Grid xs={12} sm={6} md={4} item >
+                    <Grid xs={12} sm={6} md={4} item className={ classes.content  } >
 
-                        {
-                            props.firstColumn.map( ( format, index ) => {
+                        { 
+
+                            data.firstColumn.edges.map( ( format, index ) => {
                                 return (
-                                    <Grid item>
+                                    <Grid className={ classes.itemcontainer  } item>
                                         <Paper>
                                             <Box mb={4} p={2} >
                                                 <Grid container  >
                                                     <Typography  className={ classes.head } gutterBottom variant="subtitle1"  >
                                                         <Box  fontWeight={900} > { format.node.title } </Box>
-                                                        <span className={ ` ${classes.circle} ${classes.workshop} `  }  >
+                                                        <span className={ ` ${classes.circle}`  }  >
                                                             <img src={ format.node.icon.file.url } alt=""/>
-                                                            {/* <i  className={ `icon-activity1` }  ></i> */}
                                                         </span>
                                                     </Typography>
                                                 </Grid>
@@ -101,10 +138,11 @@ const Formats = (props) => {
                                         </Paper>
                                     </Grid>
                                 )
-                            } )
+                            })
+
                         }
 
-
+            
                         {/* <Grid item>
                             <Paper>
                                 <Box mb={4} p={2} >
@@ -122,21 +160,7 @@ const Formats = (props) => {
                             </Paper>
                         </Grid>
 
-                        <Grid item>
-                            <Paper>
-                                <Box mb={4} p={2} >
-                                    <Grid container  >
-                                        <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
-                                            <Box  fontWeight={900} >Talks</Box>
-                                            <span className={ ` ${classes.circle} ${classes.talks} `  }  >
-                                                <i  className={`icon-activity6`}></i>
-                                            </span>
-                                        </Typography>
-                                    </Grid>
-                                    <Typography variant="body2">Invitados especiales y charlas inspiradoras de innovación y tecnología.</Typography>
-                                </Box>
-                            </Paper>
-                        </Grid>
+                      
 
                         <Grid item>
                             <Paper>
@@ -174,7 +198,7 @@ const Formats = (props) => {
                     <Grid xs={12} sm={6} item md={4}>
                         
                         {
-                            props.secondColumn.map( ( format, index ) => {
+                            data.secondColumn.edges.map( ( format, index ) => {
                                 return (
 
                                     <Grid item>
@@ -183,9 +207,22 @@ const Formats = (props) => {
                                                 <Grid container  >
                                                     <Typography  className={ classes.head } gutterBottom variant="subtitle1"  >
                                                         <Box  fontWeight={900} > { format.node.title } </Box>
-                                                        <span className={ ` ${classes.circle} ${ format.node.title } `  }  >
-                                                            <img src={ format.node.icon.file.url } alt=""/>
-                                                        </span>
+                                                        {
+                                                            (() => {
+                                                                if( format.node.icon ) {
+                                                                    return (
+                                                                        <span className={ ` ${classes.circle} ${ format.node.title } `  }  >
+                                                                            <img src={ format.node.icon.file.url } alt=""/>
+                                                                        </span>
+                                                                    )
+                                                                }else {
+                                                                    return (
+                                                                        <span></span>
+                                                                    )
+                                                                }
+                                                            })()
+                                                        }
+                                                        
                                                     </Typography>
                                                 </Grid>
                                                 <Typography variant="body2"> { format.node.description } </Typography>
