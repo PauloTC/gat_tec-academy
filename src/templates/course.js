@@ -24,7 +24,7 @@ const useStyles = makeStyles({
         maxWidth: '100%'
     }
 });
-
+ 
 
 export const query = graphql`
     query(  $slug: String! ) {
