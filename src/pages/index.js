@@ -142,7 +142,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	text: {
 		color: 'white',
-		maxWidth: 400,
+		maxWidth: 500,
 		[theme.breakpoints.down('md')]: {
 			fontSize: "1.8rem"
 		},
@@ -209,6 +209,20 @@ export default function IndexPage() {
 					}
 				}
 			},
+			allContentfulBannerVideo {
+				edges {
+					node {
+						status
+						textPrincipal
+						buttonText
+						bannerVideo {
+							file {
+								url
+							}
+						}
+					}
+				}
+			},
 			carousel:allContentfulCourse(filter: { showHomeCarousel:{ eq: true }  }){
 				edges {
 					node {
@@ -265,58 +279,76 @@ export default function IndexPage() {
             <Layout>
                 <SEO title="Inicio" />
 				<Box className={ classes.box }  position="relative" mb={6}>
-					{/* <video  className={ classes.video } poster={ TecVideoPoster } muted="true" autoplay="true" loop  >
-						<source src={ data.banner.edges[0].node.media[0].file.url } type="video/mp4" />
-					</video> */}
-					{/* <Box  className={classes.textcontainer}  position="absolute"  >
-						<Container className={ classes.container }  maxWidth="lg">
-							<Typography>
-								<Box className={ classes.text }  mb={2} fontSize="h4.fontSize" fontWeight={800} > { data.banner.edges[0].node.title } </Box>
-							</Typography>
-							<Button variant="contained" color="secondary" className={classes.button}>
-								<Link to="/rules" > { data.banner.edges[0].node.buttonText } </Link>
-							</Button>
-						</Container>
-					</Box> */}
-					<Carousel 
-							autoplay
-							// wrapAround
-							cellAlign="center"
-							transitionMode="scroll"
-							renderCenterLeftControls={({ previousSlide }) => (
-								<button className={  ` ${classes.buttonArrow} ${classes.leftArrow}` }  onClick={previousSlide}>
-									<ArrowBackIosIcon />
-								</button>
-							)}
-							renderCenterRightControls={({ nextSlide }) => (
-								<button className={ `  ${ classes.buttonArrow }  ${ classes.rightArrrow } `  } onClick={nextSlide}>
-									<ArrowForwardIosIcon />
-								</button>
-							)}
-							renderBottomCenterControls={false}
-							enableKeyboardControls={false}  >
-							{
-								data.banner.edges.map( edge => {
-									return (
-										<Box className={ classes.box }  position="relative" mb={6}>
-											<Box  className={classes.textcontainer}  position="absolute"  >
-												<Container className={ classes.container }  maxWidth="lg">
-													<Typography>
-														<Box className={ classes.text }  mb={2} fontSize="h4.fontSize" fontWeight={800} > { edge.node.title } </Box>
-														</Typography>
-													<Button variant="contained" color="secondary" className={classes.button}>
-														<Link to="/rules" > { edge.node.buttonText } </Link>
-													</Button>
-												</Container>
-											</Box>
-											<CardMedia className={ classes.image } image={  edge.node.media[0].file.url }  />
-											{/* <img /> */}
-										</Box>
-									)
-								} )
-							}				
-							
-						</Carousel>
+					
+					{ (() => {
+
+						if( data.allContentfulBannerVideo.edges[0].node.status == "Deshabilitado" ){
+							return (
+								<Carousel 
+									autoplay
+									// wrapArounds
+									cellAlign="center"
+									transitionMode="scroll"
+									renderCenterLeftControls={({ previousSlide }) => (
+										<button className={  ` ${classes.buttonArrow} ${classes.leftArrow}` }  onClick={previousSlide}>
+											<ArrowBackIosIcon />
+										</button>
+									)}
+									renderCenterRightControls={({ nextSlide }) => (
+										<button className={ `  ${ classes.buttonArrow }  ${ classes.rightArrrow } `  } onClick={nextSlide}>
+											<ArrowForwardIosIcon />
+										</button>
+									)}
+									renderBottomCenterControls={false}
+									enableKeyboardControls={false}  >
+									{
+										data.banner.edges.map( edge => {
+											return (
+												<Box className={ classes.box }  position="relative" mb={6}>
+													<Box  className={classes.textcontainer}  position="absolute"  >
+														<Container className={ classes.container }  maxWidth="lg">
+															<Typography>
+																<Box className={ classes.text }  mb={2} fontSize="h4.fontSize" fontWeight={800} > { edge.node.title } </Box>
+															</Typography>
+															<Button variant="contained" color="secondary" className={classes.button}>
+																<Link to="/rules" > { edge.node.buttonText } </Link>
+															</Button>
+														</Container>
+													</Box>
+													<CardMedia className={ classes.image } image={  edge.node.media[0].file.url }  />
+													{/* <img /> */}
+												</Box>
+											)
+										} )
+									}						
+								</Carousel>
+							)
+						} else {
+							return (
+								<div>
+									<video  className={ classes.video } poster={ TecVideoPoster } muted="true" autoplay="true" loop  >
+										<source src={ data.allContentfulBannerVideo.edges[0].node.bannerVideo.file.url } type="video/mp4" />
+									</video>
+									<Box  className={classes.textcontainer}  position="absolute"  >
+										<Container className={ classes.container }  maxWidth="lg">
+											<Typography>
+												<Box className={ classes.text }  mb={2} fontSize="h4.fontSize" fontWeight={800} > { data.allContentfulBannerVideo.edges[0].node.textPrincipal } </Box>
+											</Typography>
+											<Button variant="contained" color="secondary" className={classes.button}>
+												<Link to="/rules" > { data.allContentfulBannerVideo.edges[0].node.buttonText } </Link>
+											</Button>
+										</Container>
+									</Box>
+
+								</div>
+							)
+						}
+
+					})()
+
+					}
+
+					
 				</Box>
 				
 				<Container maxWidth="lg" >
