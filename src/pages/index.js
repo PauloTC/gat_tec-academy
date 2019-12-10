@@ -20,7 +20,9 @@ import TecVideoPoster from "../assets/media/poster.jpeg"
 import Carousel from 'nuka-carousel';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'; 
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ScrollAnimation from 'react-animate-on-scroll';
 import  '../styles/index.scss'
+import "animate.css/animate.min.css";
 
 const useStyles = makeStyles(theme => ({
 	teamcontainer: {
@@ -353,7 +355,7 @@ export default function IndexPage() {
 				</Box>
 				
 				<Container maxWidth="lg" >
-
+					<ScrollAnimation animateIn="fadeIn">
 						<SubHeader
 								to="activities"
 								title="Próximas actividades"  
@@ -370,8 +372,9 @@ export default function IndexPage() {
 									)})
 								}
 							</div>
+					</ScrollAnimation>
 	
-		
+	
 						<SubHeader  
 								to="points"
 								title="Puntajes Tec Valley "  
