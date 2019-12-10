@@ -9,6 +9,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import rocket from '../../assets/media/rocket.jpg'
 import '../../assets/icons/style.css'
 import { useStaticQuery, graphql } from 'gatsby';
+import ScrollAnimation from 'react-animate-on-scroll';
+
 const useStyles = makeStyles(theme =>({
     rocket: {
         [theme.breakpoints.down('md')]: {
@@ -128,28 +130,28 @@ const Formats = (props) => {
             <Container maxWidth="lg" >
                 <Grid   container spacing={2}  >
                     <Grid  
-                        data-sal="slide-right"
-                        data-sal-delay="300"
-                        data-sal-easing="ease"
-                        xs={12} 
-                        md={4} 
-                        item >
-                        <Typography variant="h5" >
-                            <Box fontWeight={900} > Conoce nuestros</Box> 
-                            <Box fontWeight={900} > formatos </Box> 
-                        </Typography>
-                        <Box my={1} >
-                            <Typography   variant="body1"  >Con nuevos y mejores espacios para aprender, compartir y desarrollarnos.</Typography>
-                        </Box>
-                        <Box        
-                                className={ classes.rocket } 
-                                mt={30} >
-                            <img width={200} src={rocket} />
-                        </Box>
-                    </Grid>
-                    <Grid
-
-                        xs={12} sm={6} md={4} item className={ classes.firstColumn  } >
+                            data-sal="slide-right"
+                            data-sal-delay="300"
+                            data-sal-easing="ease"
+                            xs={12} 
+                            md={4} 
+                            item >
+                            <ScrollAnimation animateIn="fadeIn">
+                                <Typography variant="h5" >
+                                    <Box fontWeight={900} > Conoce nuestros</Box> 
+                                    <Box fontWeight={900} > formatos </Box> 
+                                </Typography>
+                                <Box my={1} >
+                                    <Typography   variant="body1"  >Con nuevos y mejores espacios para aprender, compartir y desarrollarnos.</Typography>
+                                </Box>
+                                <Box        
+                                        className={ classes.rocket } 
+                                        mt={30} >
+                                    <img width={200} src={rocket} />
+                                </Box>
+                            </ScrollAnimation>
+                        </Grid>
+                    <Grid xs={12} sm={6} md={4} item className={ classes.firstColumn  } >
 
                         { 
                             data.firstColumn.edges.map( ( format, index ) => {
@@ -157,20 +159,22 @@ const Formats = (props) => {
                                     <Grid  
                                         className={ classes.cardfc  } 
                                         item>
-                                        <Paper>
-                                            <Box mb={4} p={2} >
-                                                <Grid container  >
-                                                    <Typography  className={ classes.head } gutterBottom variant="subtitle1"  >
-                                                        <Box  fontWeight={900} > { format.node.title } </Box>
-                                                        <span className={ ` ${classes.circle}`  }  >
-                                                            <img src={ format.node.icon.file.url } alt=""/>
-                                                        </span>
-                                                    </Typography>
-                                                </Grid>
-                                                <Typography variant="body2"> { format.node.description } </Typography>
+                                        <ScrollAnimation animateIn="fadeIn">
+                                            <Paper>
+                                                <Box mb={4} p={2} >
+                                                    <Grid container  >
+                                                        <Typography  className={ classes.head } gutterBottom variant="subtitle1"  >
+                                                            <Box  fontWeight={900} > { format.node.title } </Box>
+                                                            <span className={ ` ${classes.circle}`  }  >
+                                                                <img src={ format.node.icon.file.url } alt=""/>
+                                                            </span>
+                                                        </Typography>
+                                                    </Grid>
+                                                    <Typography variant="body2"> { format.node.description } </Typography>
 
-                                            </Box>
-                                        </Paper>
+                                                </Box>
+                                            </Paper>
+                                        </ScrollAnimation>
                                     </Grid>
                                 )
                             })
@@ -187,33 +191,35 @@ const Formats = (props) => {
                                 return (
                                     <Grid 
                                         item className={ classes.cardsc  } >
-                                        <Paper>
-                                            <Box mb={4} p={2} >
-                                                <Grid container  >
-                                                    <Typography  className={ classes.head } gutterBottom variant="subtitle1"  >
-                                                        <Box  fontWeight={900} > { format.node.title } </Box>
-                                                        {
-                                                            (() => {
-                                                                if( format.node.icon ) {
-                                                                    return (
-                                                                        <span className={ ` ${classes.circle} ${ format.node.title } `  }  >
-                                                                            <img src={ format.node.icon.file.url } alt=""/>
-                                                                        </span>
-                                                                    )
-                                                                }else {
-                                                                    return (
-                                                                        <span></span>
-                                                                    )
-                                                                }
-                                                            })()
-                                                        }
-                                                        
-                                                    </Typography>
-                                                </Grid>
-                                                <Typography variant="body2"> { format.node.description } </Typography>
+                                        <ScrollAnimation animateIn="fadeIn">
+                                            <Paper>
+                                                <Box mb={4} p={2} >
+                                                    <Grid container  >
+                                                        <Typography  className={ classes.head } gutterBottom variant="subtitle1"  >
+                                                            <Box  fontWeight={900} > { format.node.title } </Box>
+                                                            {
+                                                                (() => {
+                                                                    if( format.node.icon ) {
+                                                                        return (
+                                                                            <span className={ ` ${classes.circle} ${ format.node.title } `  }  >
+                                                                                <img src={ format.node.icon.file.url } alt=""/>
+                                                                            </span>
+                                                                        )
+                                                                    }else {
+                                                                        return (
+                                                                            <span></span>
+                                                                        )
+                                                                    }
+                                                                })()
+                                                            }
+                                                            
+                                                        </Typography>
+                                                    </Grid>
+                                                    <Typography variant="body2"> { format.node.description } </Typography>
 
-                                            </Box>
-                                        </Paper>
+                                                </Box>
+                                            </Paper>
+                                        </ScrollAnimation>
                                     </Grid>
 
                                 )

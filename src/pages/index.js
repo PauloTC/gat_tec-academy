@@ -364,31 +364,28 @@ export default function IndexPage() {
 						
 							<div
 								className={classes.activities} >
-								{ data.carousel.edges.map((item, index) => {
-									return (
-											<div  className={classes.activity}  key= { index }  >
-												<ActivityItem   data={item.node} />
-											</div>
+								{ 	data.carousel.edges.map((item, index) => {
+										return (
+												<div  className={classes.activity}  key= { index }  >
+													<ActivityItem   data={item.node} />
+												</div>
 									)})
 								}
 							</div>
 					</ScrollAnimation>
 	
-	
-						<SubHeader  
-								to="points"
-								title="Puntajes Tec Valley "  
-								subtitle="¿Estás cerca a ganar ese after office?  ¡Aprovecha al máximo TecAcademy!"  
-								button="Ver puntajes"  ></SubHeader>
-							<section 
-								data-sal="slide-up"
-								data-sal-delay="300"
-								data-sal-easing="ease"
-								className={ classes.teamcontainer } >
-									{
-										data.countries.edges.map(  edge =>   <GroupCard  data={edge.node}  />    )
-									}			
-							</section>
+						<ScrollAnimation animateIn="fadeIn">
+							<SubHeader  
+									to="points"
+									title="Puntajes Tec Valley "  
+									subtitle="¿Estás cerca a ganar ese after office?  ¡Aprovecha al máximo TecAcademy!"  
+									button="Ver puntajes"  ></SubHeader>
+								<section  className={ classes.teamcontainer } >
+										{
+											data.countries.edges.map(  edge =>   <GroupCard  data={edge.node}  />    )
+										}			
+								</section>
+						</ScrollAnimation>
 	
 						
 

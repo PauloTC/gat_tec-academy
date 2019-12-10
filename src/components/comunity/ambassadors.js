@@ -6,6 +6,7 @@ import {
     Typography } from '@material-ui/core';
 import { useStaticQuery, graphql } from 'gatsby';
 import { makeStyles } from '@material-ui/styles';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 
 const useStyles = makeStyles(theme => ({
@@ -102,30 +103,38 @@ export default function  Ambassadors() {
             <Box my={8} >
                 <Grid container spacing={1} >
                         <Grid md={4} item >
-                            <Typography variant="h5" >
-                                <Box fontWeight={900} >Nuestros </Box>
-                                <Box fontWeight={900} >embajadores</Box>
-                            </Typography>
-                            <Box my={3} >
-                                <Typography variant="body2" >Un grupo de personas apasionadas y entusiastas. ¡Conócelos!</Typography>
-                            </Box>
+                             <ScrollAnimation animateIn="slideInUp">
+                                <Typography variant="h5" >
+                                    <Box fontWeight={900} >Nuestros </Box>
+                                    <Box fontWeight={900} >embajadores</Box>
+                                </Typography>
+                                <Box my={3} >
+                                    <Typography variant="body2" >Un grupo de personas apasionadas y entusiastas. ¡Conócelos!</Typography>
+                                </Box>
+                             </ScrollAnimation>
                         </Grid>
                         <Grid md={8} container  justify="center" spacing={2}  item >
                             {
                                 data.ambassadors.edges.map( item => {
                                     return (
                                         <Grid className={ classes.item }  key={item.id}  xs={12}  sm={6}   md={4} item > 
-                                            <Box position="relative"  >
-                                                <img className={ classes.image  } src={item.node.image.file.url}   mb={1} />
-                                                <img className={  ` ${classes.imagehover}` } src={item.node.imagehover.file.url}   mb={1} />
-                                            </Box>
-                                            {/* <Box mb={1} >
-                                                <img className={classes.image} src={item.node.image.file.url} />
-                                            </Box> */}
-                                            <Typography  >
-                                                <Box fontWeight={900}  fontSize="h6.fontSize"  > { item.node.name }</Box>
-                                                <span className={classes.line} ></span>
-                                            </Typography>
+
+                                            <ScrollAnimation animateIn="slideInUp">
+                                                <Box position="relative"  >
+                                                    <img className={ classes.image  } src={item.node.image.file.url}   mb={1} />
+                                                    <img className={  ` ${classes.imagehover}` } src={item.node.imagehover.file.url}   mb={1} />
+                                                </Box>
+                                                {/* <Box mb={1} >
+                                                    <img className={classes.image} src={item.node.image.file.url} />
+                                                </Box> */}
+                                                <Typography  >
+                                                    <Box fontWeight={900}  fontSize="h6.fontSize"  > { item.node.name }</Box>
+                                                    <span className={classes.line} ></span>
+                                                </Typography>
+                                            </ScrollAnimation>
+
+
+
                                         </Grid>
                                     )
                                 })
