@@ -66,15 +66,11 @@ export default function TemporaryDrawer() {
                     <ListItem button key={link.to}>
                         
 					    <Link
+							key={index}
 							activeClassName={ classes.activelink } 
 							className={ classes.link }  
-							to={ link.to } >
-                            {/* <i className={`${ link.icon }`} ></i> */}
-                            { link.name }</Link>
-						{/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-						<ListItemText primary={text} /> */}
+							to={ link.to } > { link.name }</Link>
 					</ListItem>
-
 				))}
 			</List>
 		</div>

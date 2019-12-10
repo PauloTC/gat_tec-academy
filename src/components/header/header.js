@@ -16,8 +16,6 @@ import logo from '../../images/logo-tecacademy.png';
 import "../../assets/icons/style.css"
 import { useStaticQuery, graphql } from 'gatsby';
 
-// import theme from "../../theme/muiTheme"
-
 const useStyles = makeStyles(theme => ({
 	menu: {
         display: 'flex',
@@ -100,7 +98,9 @@ function Header(props) {
                             <Container maxWidth="xl">
                                 <Grid container >
                                     <Grid className={classes.container}   container wrap="nowrap" justify="space-between" item xs={12} md={12}>
-                                        <Link className={styles.header__img}>
+                                        <Link
+                                                to="/"
+                                                className={styles.header__img}>
                                             <img alt="logo" id="logo" src={logo} width="120" />
                                         </Link>
                                         <Box className={classes.menu}>
@@ -109,6 +109,7 @@ function Header(props) {
                                                     if( item === 'Actividades' ){
                                                         return (
                                                                 <Link
+        
                                                                     key={index}
                                                                     activeClassName={ classes.activelink }
                                                                     to="activities"
@@ -120,14 +121,14 @@ function Header(props) {
                                                         )
                                                     }else if( item === 'Nosotros' ){
                                                         return (
-                                                                <Link
+                                                                <Link 
                                                                     key={index}
                                                                     activeClassName={ classes.activelink }
                                                                     to="community"
                                                                     className={`nav-link ${styles.header__link}  ${classes.link} `}
                                                                 >
                                                                     <i className={`${styles.header__icon} icon-group`} /> Nosotros
-                                                            </Link>
+                                                            </Link   >
 
                                                         )
                                                     }else if( item === 'Puntajes' ){

@@ -51,7 +51,7 @@ const ActivityItem = (props) => {
     return (
         <Fragment>
                 <div  className={ classes.container }  >
-                    <img alt={props.data.id}  key={ props.data.id } className={ classes.image }   width={430}  src={ props.data.image.file.url } />
+                    <img alt={props.data.id}  key={ props.data.fecha1 } className={ classes.image }   width={430}  src={ props.data.image.file.url } />
                     {/* <CardMedia className={classes.card}    image="" /> */}
                     <div  className={ classes.flexible  } >
                         <Typography className={ classes.text  } > 

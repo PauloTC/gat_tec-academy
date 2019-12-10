@@ -7,7 +7,6 @@ import {
     CardMedia,
     Typography } from '@material-ui/core';
 import { Link } from 'gatsby';
-import image from '../../assets/media/collection.png'
 import { makeStyles } from '@material-ui/core/styles';
 
 

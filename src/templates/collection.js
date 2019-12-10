@@ -31,40 +31,6 @@ const useStyles = makeStyles({
     }
 });
 
-const tileData = [
-        {
-            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTCg20DIyVnRifjJD2abiUAMjRMJ-AnL5tkBgE0gVTamxnZFPXY",
-            title: 'Image',
-            author: 'author',
-            cols: 1,
-        },
-        {
-            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTCg20DIyVnRifjJD2abiUAMjRMJ-AnL5tkBgE0gVTamxnZFPXY",
-            title: 'Image',
-            author: 'author',
-            cols: 2,
-        },
-        {
-            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQwb756rYlwX22A63InRqULfMGAgOfAi6-RTHinkbzws-1x8ZUH",
-            title: 'Image',
-            author: 'author',
-            cols: 2,
-        },
-        {
-            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTCg20DIyVnRifjJD2abiUAMjRMJ-AnL5tkBgE0gVTamxnZFPXY",
-            title: 'Image',
-            author: 'author',
-            cols: 1,
-        },
-        {
-            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQwb756rYlwX22A63InRqULfMGAgOfAi6-RTHinkbzws-1x8ZUH",
-            title: 'Image',
-            author: 'author',
-            cols: 3,
-        },
-    ];
-
-
 export const data = graphql`
     query(  $slug: String! ) {
         course: contentfulCourse ( slug: { eq: $slug }) {
@@ -139,7 +105,6 @@ export const data = graphql`
 
 const Collection = (props) => {
     const classes = useStyles();
-    const subtitle =  ` ${ props.data.course.exhibitor } · ${  props.data.course.fecha1 }`
     return(
         <Layout>
 
@@ -167,7 +132,7 @@ const Collection = (props) => {
                                         <Box fontSize="subtitle2.fontSize" >  { props.data.course.aboutExhibitor.content[0].content[0].value } </Box>
                                     </Grid>
                                     <Grid item>
-                                        <img className={ classes.image } width={95} src={props.data.course.exhibitorImage.file.url} />
+                                        <img alt={props.data.course} className={ classes.image } width={95} src={props.data.course.exhibitorImage.file.url} />
                                     </Grid>
                                 </Grid>
                             </Typography>
@@ -185,7 +150,7 @@ const Collection = (props) => {
                             {   (() => {
                                   if( props.data.course.presentationPpt ) {
                                     return (
-                                        <iframe  className={ classes.iframe } src={ props.data.course.presentationPpt } width="595" height="335" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"  allowfullscreen> </iframe> 
+                                        <iframe  title={ props.data.course.title }  className={ classes.iframe } src={ props.data.course.presentationPpt } width="595" height="335" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"  allowfullscreen> </iframe> 
                                     )
                                 }else {
                                         return (

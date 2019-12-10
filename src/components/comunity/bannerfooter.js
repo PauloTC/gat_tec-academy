@@ -1,5 +1,4 @@
 import React, { Fragment } from "react"
-import bannergoogle from "../../assets/media/banner_2.png"
 import { 
     Box, 
     Button,
@@ -9,7 +8,6 @@ import {
     CardMedia,
     Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import building  from '../../assets/media/building.svg'
 import { Link } from 'gatsby';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -113,7 +111,7 @@ const Banner = (props) => {
                                     <Link  to="community" > { data.allContentfulBannerCalado.edges[0].node.button } </Link>     </Button>
                             </Container>
                         </CardContent>
-                        <img    className={`${classes.building}` }   src={ data.allContentfulBannerCalado.edges[0].node.imageCalada.file.url }   />
+                        <img alt="bannerimg"   className={`${classes.building}` }   src={ data.allContentfulBannerCalado.edges[0].node.imageCalada.file.url }   />
                     </Card>
                 </Box>
             </Fragment>

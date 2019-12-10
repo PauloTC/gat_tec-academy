@@ -177,7 +177,7 @@ const Course = (props) => {
                             <Grid   xs={12}  container  spacing={2}  >
                                 {	
                                     props.data.carousel.edges.map( edge =>  {
-                                        if( edge.node.id  !=  props.data.course.id   ){
+                                        if( edge.node.id  !==  props.data.course.id   ){
                                             return (
                                                 <Grid  item  xs={12} sm={6}  md={4} >
                                                     <HomeCourse key={edge.node.id}  edge={edge} />

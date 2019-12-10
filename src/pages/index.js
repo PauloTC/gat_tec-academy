@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import GroupCard from '../components/index/group-card'
 import SubHeader from '../components/comoon/subheader'
 import ActivityItem from '../components/index/activity-item'
-import ScrollAnimation from 'react-scroll-animation';
+// import ScrollAnimation from 'react-scroll-animation';
 import SEO from "../components/seo"
 import { 
     Box, 
@@ -278,7 +278,9 @@ export default function IndexPage() {
     return (
         <Fragment>
             <Layout>
-                <SEO title="Inicio" />
+				<SEO 
+					title="Inicio"
+					description="Inicio" />
 				<Box className={ classes.box }  position="relative" mb={6}>
 					
 					{ (() => {
@@ -351,14 +353,15 @@ export default function IndexPage() {
 				</Box>
 				
 				<Container maxWidth="lg" >
-					<ScrollAnimation offset={10} animateIn="fadeIn">
+
 						<SubHeader
 								to="activities"
 								title="Próximas actividades"  
 								subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
 								button="Ver actividades"  ></SubHeader>
 						
-							<div  className={classes.activities} >
+							<div
+								className={classes.activities} >
 								{ data.carousel.edges.map((item, index) => {
 									return (
 											<div  className={classes.activity}  key= { index }  >
@@ -367,19 +370,25 @@ export default function IndexPage() {
 									)})
 								}
 							</div>
-					</ScrollAnimation>
-					<ScrollAnimation offset={10} animateIn="fadeIn">
+	
+		
 						<SubHeader  
 								to="points"
 								title="Puntajes Tec Valley "  
 								subtitle="¿Estás cerca a ganar ese after office?  ¡Aprovecha al máximo TecAcademy!"  
 								button="Ver puntajes"  ></SubHeader>
-							<section className={ classes.teamcontainer } >
+							<section 
+								data-sal="slide-up"
+								data-sal-delay="300"
+								data-sal-easing="ease"
+								className={ classes.teamcontainer } >
 									{
 										data.countries.edges.map(  edge =>   <GroupCard  data={edge.node}  />    )
 									}			
 							</section>
-					</ScrollAnimation>
+	
+						
+
 				</Container>
             </Layout>
         </Fragment>

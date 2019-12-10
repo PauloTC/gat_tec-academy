@@ -9,7 +9,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import rocket from '../../assets/media/rocket.jpg'
 import '../../assets/icons/style.css'
 import { useStaticQuery, graphql } from 'gatsby';
-
 const useStyles = makeStyles(theme =>({
     rocket: {
         [theme.breakpoints.down('md')]: {
@@ -128,7 +127,13 @@ const Formats = (props) => {
         <Box mt={10} mb={5} >
             <Container maxWidth="lg" >
                 <Grid   container spacing={2}  >
-                    <Grid xs={12} md={4} item >
+                    <Grid  
+                        data-sal="slide-right"
+                        data-sal-delay="300"
+                        data-sal-easing="ease"
+                        xs={12} 
+                        md={4} 
+                        item >
                         <Typography variant="h5" >
                             <Box fontWeight={900} > Conoce nuestros</Box> 
                             <Box fontWeight={900} > formatos </Box> 
@@ -136,17 +141,22 @@ const Formats = (props) => {
                         <Box my={1} >
                             <Typography   variant="body1"  >Con nuevos y mejores espacios para aprender, compartir y desarrollarnos.</Typography>
                         </Box>
-                        <Box className={ classes.rocket }    mt={30} >
+                        <Box        
+                                className={ classes.rocket } 
+                                mt={30} >
                             <img width={200} src={rocket} />
                         </Box>
                     </Grid>
-                    <Grid xs={12} sm={6} md={4} item className={ classes.firstColumn  } >
+                    <Grid
+
+                        xs={12} sm={6} md={4} item className={ classes.firstColumn  } >
 
                         { 
-
                             data.firstColumn.edges.map( ( format, index ) => {
                                 return (
-                                    <Grid className={ classes.cardfc  } item>
+                                    <Grid  
+                                        className={ classes.cardfc  } 
+                                        item>
                                         <Paper>
                                             <Box mb={4} p={2} >
                                                 <Grid container  >
@@ -168,13 +178,15 @@ const Formats = (props) => {
                         }
     
                     </Grid>
-                    <Grid xs={12} sm={6} item md={4}>
+                    <Grid
+
+                        xs={12} sm={6} item md={4}>
                         
                         {
                             data.secondColumn.edges.map( ( format, index ) => {
                                 return (
-
-                                    <Grid item className={ classes.cardsc  } >
+                                    <Grid 
+                                        item className={ classes.cardsc  } >
                                         <Paper>
                                             <Box mb={4} p={2} >
                                                 <Grid container  >
