@@ -59,6 +59,31 @@ const useStyles = makeStyles(theme =>({
         display: 'flex',
         width: '100%',
         justifyContent: 'space-between'
+    },
+    cardfc: {
+        '&:nth-of-type(1) span' : {
+            background: '#04d3f2'
+        },
+        '&:nth-of-type(2) span' : {
+            background: '#ff71ad'
+        },
+        '&:nth-of-type(3) span' : {
+            background: '#e2af03'
+        },
+        '&:nth-of-type(4) span' : {
+            background: '#17c548'
+        },
+    },
+    cardsc: {
+        '&:nth-of-type(1) span' : {
+            background: '#54008b'
+        },
+        '&:nth-of-type(2) span' : {
+            background: '#0529bb'
+        },
+        '&:nth-of-type(3) span' : {
+            background: '#44deb0'
+        },
     }
 }));
 
@@ -115,13 +140,13 @@ const Formats = (props) => {
                             <img width={200} src={rocket} />
                         </Box>
                     </Grid>
-                    <Grid xs={12} sm={6} md={4} item className={ classes.content  } >
+                    <Grid xs={12} sm={6} md={4} item className={ classes.firstColumn  } >
 
                         { 
 
                             data.firstColumn.edges.map( ( format, index ) => {
                                 return (
-                                    <Grid className={ classes.itemcontainer  } item>
+                                    <Grid className={ classes.cardfc  } item>
                                         <Paper>
                                             <Box mb={4} p={2} >
                                                 <Grid container  >
@@ -141,58 +166,6 @@ const Formats = (props) => {
                             })
 
                         }
-
-            
-                        {/* <Grid item>
-                            <Paper>
-                                <Box mb={4} p={2} >
-                                    <Grid container  >
-                                        <Typography  className={ classes.head } gutterBottom variant="subtitle1"  >
-                                            <Box  fontWeight={900} >Workshops</Box>
-                                            <span className={ ` ${classes.circle} ${classes.workshop} `  }  >
-                                                <i  className={ `icon-activity1` }  ></i>
-                                            </span>
-                                        </Typography>
-                                    </Grid>
-                                    <Typography variant="body2">Ahora más dinámicos y además con Workshops Talks para profundizar y resolver casos del día a día.</Typography>
-
-                                </Box>
-                            </Paper>
-                        </Grid>
-
-                      
-
-                        <Grid item>
-                            <Paper>
-                                <Box mb={4} p={2} >
-                                    <Grid container  >
-                                        <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
-                                            <Box  fontWeight={900} >Pitch Day</Box>
-                                            <span className={ ` ${classes.circle} ${classes.pitch} `  }  >
-                                                <i  className={`icon-activity3`}></i>
-                                            </span>
-                                        </Typography>
-                                    </Grid>
-                                    <Typography variant="body2">Tu creatividad y experiencia se pueden convertir en proyectos reales Belcorp. Te acompañaremos en el proceso de ideación para que expongas frente a líderes de Belcorp.</Typography>
-                                </Box>
-                            </Paper>
-                        </Grid>
-
-                        <Grid item>
-                            <Paper>
-                                <Box mb={4} p={2} >
-                                    <Grid container  >
-                                        <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
-                                            <Box  fontWeight={900} >Countries</Box>
-                                            <span className={ ` ${classes.circle} ${classes.countries} `  }  >
-                                                <i  className={`icon-activity4`}></i>
-                                            </span>
-                                        </Typography>
-                                    </Grid>
-                                    <Typography variant="body2">Ahora somos internacionales. Colombia será nuestro primer país de expansión.</Typography>
-                                </Box>
-                            </Paper>
-                        </Grid> */}
     
                     </Grid>
                     <Grid xs={12} sm={6} item md={4}>
@@ -201,7 +174,7 @@ const Formats = (props) => {
                             data.secondColumn.edges.map( ( format, index ) => {
                                 return (
 
-                                    <Grid item>
+                                    <Grid item className={ classes.cardsc  } >
                                         <Paper>
                                             <Box mb={4} p={2} >
                                                 <Grid container  >
@@ -235,65 +208,6 @@ const Formats = (props) => {
                             })
 
                         }
-
-
-                        {/* <Grid item>
-                            <Paper>
-                                <Box mb={4} p={2} >
-                                    <Grid container  >
-                                        <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
-                                            <Box  fontWeight={900}  >Meetups</Box>
-                                            <span className={ ` ${classes.circle} ${classes.meetups} `  }  >
-                                                <i  className={`icon-activity5`}></i>
-                                            </span>
-                                        </Typography>
-                                    </Grid>
-                                    <Typography variant="body2">Entramos a la plataforma de comunidades para compartir conocimientos con muchos entusiastas de la tecnología. Búscanos en meetup.com como Belcorp Tec Academy</Typography>
-                                </Box>
-                            </Paper>
-                        </Grid>
-                        <Grid item>
-                            <Paper>
-                                <Box mb={4} p={2} >
-                                    <Grid container  >
-                                        <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
-                                            <Box  fontWeight={900} >Special Events!</Box>
-                                            <span className={ ` ${classes.circle} ${classes.special} `  }  >
-                                                <i  className={`icon-activity2`}></i>
-                                            </span>
-                                        </Typography>
-                                    </Grid>
-                                    <Typography variant="body2">TEC Conference Day: Un día entero lleno de conocimiento para retroalimentarnos, integrarnos y energizarnos todos juntos. </Typography>
-                                </Box>
-                            </Paper>
-                        </Grid>
-                        <Grid item>
-                            <Paper>
-                                <Box mb={4} p={2} >
-                                    <Grid container  >
-                                        <Typography className={ classes.head } gutterBottom variant="subtitle1"  >
-                                            <Box  fontWeight={900} >Nights</Box>
-                                            <span className={ ` ${classes.circle} ${classes.nights} `  }  >
-                                                <i  className={`icon-activity7`}></i>                                            
-                                            </span>
-                                        </Typography>
-                                    </Grid>
-                                    <Typography variant="body2">Un espacio para conocer historias de emprendedores como tú y motivarnos a soñar y seguir retándonos. </Typography>
-                                </Box>
-                            </Paper>
-                        </Grid>
-                        <Grid item>
-                            <Paper>
-                                <Box mb={4} p={2} >
-                                    <Grid container  >
-                                        <Typography gutterBottom variant="subtitle1"  >
-                                            <Box  fontWeight={900} >Y muchas novedades más</Box>
-                                        </Typography>
-                                    </Grid>
-                                    <Typography variant="body2">¡Los anunciaremos pronto!</Typography>
-                                </Box>
-                            </Paper>
-                        </Grid> */}
                     
                     </Grid>
                 </Grid>

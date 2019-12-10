@@ -3,7 +3,6 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
-import { maxWidth } from '@material-ui/system';
 
 const useStyles = makeStyles(theme => ({
     position: {

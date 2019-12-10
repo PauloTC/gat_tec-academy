@@ -13,6 +13,7 @@ import Grid from '@material-ui/core/Grid';
 import CloseIcon from '@material-ui/icons/Close';
 import HomeCourse from '../components/home-course/home-course';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+    import { Link } from 'gatsby';
 
 const useStyles = makeStyles({
     image: {
@@ -22,6 +23,11 @@ const useStyles = makeStyles({
     bannerimage: {
         height: 'auto',
         maxWidth: '100%'
+    },
+    aside: {
+        '& a' : {
+            display: 'flex'
+        }
     }
 });
  
@@ -29,6 +35,7 @@ const useStyles = makeStyles({
 export const query = graphql`
     query(  $slug: String! ) {
         course: contentfulCourse ( slug: { eq: $slug }) {
+            id
             title
             exhibitor
             exhibitorJob
@@ -65,6 +72,7 @@ export const query = graphql`
 `
 const Course = (props) => {
     const classes = useStyles();
+    
 	return (
 		<Layout>
             <Container maxWidth="lg" spacing={5}  >
@@ -114,7 +122,7 @@ const Course = (props) => {
                     {(() => {
                         if(  props.data.course.inscriptionLink ){
                             return(
-                                <Grid item xs={12}   >
+                                <Grid item xs={12}   className={classes.aside}   >
                                     <Box  my={3} >
                                         <Typography> 
                                             <Box   fontWeight={700}  fontSize="body2.fontSize" >¿Asistirás?  </Box>
@@ -126,9 +134,11 @@ const Course = (props) => {
                                                 <CheckIcon />
                                             </Button>
                                         </Grid>
-                                        <Grid item xs={6} >
-                                            <Button  size="small" fullWidth="true" variant="contained" color="secondary" className={classes.button}>
-                                                <CloseIcon />
+                                        <Grid  item xs={6} >
+                                            <Button  size="small" fullWidth="true" variant="contained" color="secondary">
+                                                <Link to="activities"  >
+                                                    <CloseIcon />
+                                                </Link>
                                             </Button>
                                         </Grid>
                                     </Grid>
@@ -136,7 +146,7 @@ const Course = (props) => {
                             )
                         }else {
                             return (
-                                <Grid item xs={12}    >
+                                <Grid item xs={12}    className={classes.aside} >
                                     <Box  my={3} >
                                         <Typography> 
                                             <Box   fontWeight={700}  fontSize="body2.fontSize" >¿Asistirás?  </Box>
@@ -161,17 +171,19 @@ const Course = (props) => {
 
                     <Box width={1}  my={4} >
                         <Typography gutterBottom>
-                            <Box  fontSize="subtitle1" fontWeight={700}  >Próximos eventos</Box>  
+                            <Box  fontSize="subtitle1" fontWeight={700}  >Próximos eventos </Box>  
                         </Typography>
                         <Box  my={2}>
                             <Grid   xs={12}  container  spacing={2}  >
                                 {	
                                     props.data.carousel.edges.map( edge =>  {
-                                        return (
-                                            <Grid  item  xs={12} sm={6}  md={4} >
-                                                <HomeCourse key={edge.node.id}  edge={edge} />
-                                            </Grid>
-                                        )
+                                        if( edge.node.id  !=  props.data.course.id   ){
+                                            return (
+                                                <Grid  item  xs={12} sm={6}  md={4} >
+                                                    <HomeCourse key={edge.node.id}  edge={edge} />
+                                                </Grid>
+                                            )
+                                        }
                                     } )
                                 }
                             </Grid>

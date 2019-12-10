@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React, { Fragment , useState, useEffect } from "react"
 import { useStaticQuery, graphql } from 'gatsby';
 import Layout from "../components/layout"
 import GroupCard from '../components/index/group-card'
@@ -21,7 +21,6 @@ import Carousel from 'nuka-carousel';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'; 
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import  '../styles/index.scss'
-
 
 const useStyles = makeStyles(theme => ({
 	teamcontainer: {
@@ -193,6 +192,8 @@ const useStyles = makeStyles(theme => ({
 
 
 export default function IndexPage() {
+
+	
 	const classes = useStyles();
 	const data = useStaticQuery(graphql`
 		query {
@@ -259,7 +260,7 @@ export default function IndexPage() {
 			}
 		}
 	`);
-	
+
     return (
         <Fragment>
             <Layout>
@@ -320,23 +321,6 @@ export default function IndexPage() {
 				</Box>
 				
 				<Container maxWidth="lg" >
-
-					{/* <SubHeader  
-						title="Próximos eventos"  
-						subtitle="Descubre lo que pasará proximamente en Belcorp"  
-						button="Ver talleres"  ></SubHeader> */}
-
-					{/* <section className={ classes.courses }  >
-						{	
-							data.carousel.edges.map( edge => {
-								return (
-									<div className={ classes.course }   >
-										<HomeCourse key={edge.node.id}  edge={edge} />
-									</div>
-								)
-							})		
-						}
-					</section> */}
 
 					<SubHeader
 							to="activities"

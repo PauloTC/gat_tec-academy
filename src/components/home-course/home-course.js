@@ -40,7 +40,7 @@ const HomeCourse = (props) => {
                     </Typography>
                 </Box>
                 <Grid  container justify="flex-end" >
-                    <Button className={classes.button} size="small" variant="outlined" color="primary">
+                    <Button className={classes.button} size="small" variant="outlined" color="secondary">
                         <Link  to={`/activities/${ props.edge.node.slug}`}  >Ver detalle</Link>
                     </Button>
                 </Grid>
