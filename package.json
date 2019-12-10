@@ -35,6 +35,7 @@
         "react-bootstrap": "^1.0.0-beta.12",
         "react-dom": "^16.9.0",
         "react-helmet": "5.2.1",
+        "react-scroll-animation": "^1.0.3",
         "react-slick": "^0.25.2",
         "react-swipeable-views": "^0.13.3",
         "react-swipeable-views-utils": "^0.13.3",

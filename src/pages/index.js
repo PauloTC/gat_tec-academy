@@ -20,6 +20,7 @@ import SwipeableTextMobileStepper from  "../components/home-course/carrousel"
 import Carousel from 'nuka-carousel';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'; 
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ScrollAnimation from 'react-scroll-animation';
 import  '../styles/index.scss'
 
 const useStyles = makeStyles(theme => ({
@@ -353,37 +354,36 @@ export default function IndexPage() {
 				</Box>
 				
 				<Container maxWidth="lg" >
-
-					<SubHeader
-							to="activities"
-							title="Próximas actividades"  
-							subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
-							button="Ver actividades"  ></SubHeader>
-					
-					<div  className={classes.activities} >
-						{ data.carousel.edges.map((item, index) => {
-							return (
-									<div  className={classes.activity}  key= { index }  >
-										<ActivityItem   data={item.node} />
-									</div>
-							)
-						})
-
-						}
-					</div>
-
-
-					<SubHeader  
-						to="points"
-						title="Puntajes Tec Valley "  
-						subtitle="¿Estás cerca a ganar ese after office?  ¡Aprovecha al máximo TecAcademy!"  
-						button="Ver puntajes"  ></SubHeader>
-					<section className={ classes.teamcontainer } >
-							{
-								data.countries.edges.map(  edge =>   <GroupCard  data={edge.node}  />    )
-							}			
-					</section>
-
+					<ScrollAnimation offset={-100} animateIn="fadeIn">
+						<SubHeader
+								to="activities"
+								title="Próximas actividades"  
+								subtitle="¿Pizza Nights? ¿Meetups? Descubre todas las actividades aquí."  
+								button="Ver actividades"  ></SubHeader>
+						
+							<div  className={classes.activities} >
+								{ data.carousel.edges.map((item, index) => {
+									return (
+											<div  className={classes.activity}  key= { index }  >
+												<ActivityItem   data={item.node} />
+											</div>
+									)})
+								}
+							</div>
+	
+					</ScrollAnimation>
+					<ScrollAnimation offset={0} animateIn="fadeIn">
+						<SubHeader  
+							to="points"
+							title="Puntajes Tec Valley "  
+							subtitle="¿Estás cerca a ganar ese after office?  ¡Aprovecha al máximo TecAcademy!"  
+							button="Ver puntajes"  ></SubHeader>
+						<section className={ classes.teamcontainer } >
+								{
+									data.countries.edges.map(  edge =>   <GroupCard  data={edge.node}  />    )
+								}			
+						</section>
+					</ScrollAnimation>
 				</Container>
             </Layout>
         </Fragment>
