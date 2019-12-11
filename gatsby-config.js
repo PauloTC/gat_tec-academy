@@ -7,6 +7,19 @@ module.exports = {
     plugins: [
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-material-ui`,
+
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: `TecAcademy`,
+                short_name: `TecAcademy`,
+                start_url: `/`,
+                background_color: `#663399`,
+                theme_color: `#663399`,
+                display: `minimal-ui`,
+                icon: `${__dirname}/src/images/favicon.png` // This path is relative to the root of the site.
+            }
+        },
         `gatsby-plugin-offline`,
         {
             resolve: `gatsby-source-contentful`,
@@ -32,17 +45,6 @@ module.exports = {
         `gatsby-plugin-sharp`,
         `gatsby-plugin-sass`,
         // 'gatsby-plugin-styled-components',
-        {
-            resolve: `gatsby-plugin-manifest`,
-            options: {
-                name: `TecAcademy`,
-                short_name: `TecAcademy`,
-                start_url: `/`,
-                background_color: `#663399`,
-                theme_color: `#663399`,
-                display: `minimal-ui`,
-                icon: `${__dirname}/src/images/favicon.png` // This path is relative to the root of the site.
-            }
-        }
+
     ]
 };
