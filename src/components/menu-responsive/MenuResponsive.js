@@ -19,6 +19,7 @@ const useStyles = makeStyles({
 		display: 'flex',
 		alignItems: 'center',
 		color: '#321063',
+		width: '100%',
 		'&$active' :  {
 			color: '#ff00a6 !important'
 		},
@@ -26,7 +27,11 @@ const useStyles = makeStyles({
 			color: 'green !important',
 		  },
 	},
-
+	menuItem :{
+		paddingTop: 0,
+		paddingBottom: 0,
+		height: 38
+	}
 });
 
 export default function TemporaryDrawer() {
@@ -63,7 +68,7 @@ export default function TemporaryDrawer() {
 		>
 			<List>
 				{ Links.map(( link, index) => (
-                    <ListItem button key={link.to}>
+                    <ListItem className={ classes.menuItem } button key={link.to}>
                         
 					    <Link
 							key={index}

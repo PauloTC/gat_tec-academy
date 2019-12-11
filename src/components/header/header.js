@@ -108,27 +108,26 @@ function Header(props) {
                                                 {data.allContentfulNavigation.edges[0].node.menu.map((item, index) => {
                                                     if( item === 'Actividades' ){
                                                         return (
-                                                                <Link
-        
+                                                                <Link  
                                                                     key={index}
                                                                     activeClassName={ classes.activelink }
                                                                     to="activities"
                                                                     className={`nav-link ${styles.header__link}  ${classes.link} `}
                                                                 >
                                                                     <i className={`${styles.header__icon} icon-support`} /> Actividades
-                                                            </Link>
+                                                            </Link  >
 
                                                         )
                                                     }else if( item === 'Nosotros' ){
                                                         return (
-                                                                <Link 
+                                                                <Link
                                                                     key={index}
                                                                     activeClassName={ classes.activelink }
                                                                     to="community"
                                                                     className={`nav-link ${styles.header__link}  ${classes.link} `}
                                                                 >
                                                                     <i className={`${styles.header__icon} icon-group`} /> Nosotros
-                                                            </Link   >
+                                                            </Link>
 
                                                         )
                                                     }else if( item === 'Puntajes' ){

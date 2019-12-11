@@ -144,9 +144,7 @@ const Formats = (props) => {
                                 <Box my={1} >
                                     <Typography   variant="body1"  >Con nuevos y mejores espacios para aprender, compartir y desarrollarnos.</Typography>
                                 </Box>
-                                <Box        
-                                        className={ classes.rocket } 
-                                        mt={30} >
+                                <Box className={ classes.rocket } mt={30} >
                                     <img width={200} src={rocket} />
                                 </Box>
                             </ScrollAnimation>

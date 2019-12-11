@@ -3,13 +3,11 @@ import Layout from '../components/layout'
 import SEO from "../components/seo"
 
 import SecondBanner from '../components/comoon/second-banner'
-import PrincipalCard from '../components/collection/principal'
 
 import { 
         Container, 
         Box  } from '@material-ui/core';
 
-import Subheader from '../components/comoon/subheader'
 import CardSection from '../components/collection/cardsection'
 import { useStaticQuery, graphql } from 'gatsby';
 

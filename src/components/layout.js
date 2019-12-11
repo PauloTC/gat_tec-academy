@@ -6,18 +6,19 @@ import { ThemeProvider } from '@material-ui/styles';
 import theme from "../theme/muiTheme"
 import Footer from "./footer/footer"
 import { makeStyles } from '@material-ui/core/styles';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const useStyles = makeStyles(theme => ({
-  body: {
-    background: 'white',
-    minHeight: '100vh',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent : 'space-between'
-  },
-  containergeneral: {
-    overflow: 'hidden'
-  }
+    body: {
+        background: 'white',
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent : 'space-between'
+    },
+    containergeneral: {
+        overflow: 'hidden'
+    }
 }));
 
 
@@ -25,32 +26,31 @@ const Layout = ({ children }) => {
   const classes = useStyles();
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
+        site {
+            siteMetadata {
+                title
+            }
         }
-      }
     }
   `)
   
   return (
     <ThemeProvider theme={theme}>
-      <body  className={classes.body} >
-            <Header siteTitle={data.site.siteMetadata.title} />
-            <div className= { classes.containergeneral }  >
-
-                <main>{children}</main>
-                
-            </div>
-            <Footer></Footer>
-        {/* <Link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> */}
-      </body>
+        <ScrollAnimation animateIn="fadeIn">
+            <body  className={classes.body} >
+                <Header siteTitle={data.site.siteMetadata.title} />
+                <div className= { classes.containergeneral }  >
+                    <main>{children}</main>
+                </div>
+                <Footer></Footer>
+            </body>
+        </ScrollAnimation>
     </ThemeProvider>
   )
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 }
 
 export default Layout

@@ -287,7 +287,7 @@ export default function IndexPage() {
 					
 					{ (() => {
 
-						if( data.allContentfulBannerVideo.edges[0].node.status == "Deshabilitado" ){
+						if( data.allContentfulBannerVideo.edges[0].node.status === "Deshabilitado" ){
 							return (
 								<Carousel 
 									autoplay
