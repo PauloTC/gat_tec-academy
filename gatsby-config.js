@@ -29,12 +29,6 @@ module.exports = {
             }
         },
         {
-            resolve: `gatsby-plugin-offline`,
-            options: {
-                importWorkboxFrom: `cdn`,
-            },
-        },
-        {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `images`,
