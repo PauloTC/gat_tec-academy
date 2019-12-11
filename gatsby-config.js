@@ -8,6 +8,12 @@ module.exports = {
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-material-ui`,
         {
+            resolve: `gatsby-plugin-offline`,
+            options: {
+                appendScript: require.resolve(`src/sw.js`),
+            },
+        },
+        {
             resolve: `gatsby-source-contentful`,
             options: {
                 spaceId: `bk8y4a351wjr`,
