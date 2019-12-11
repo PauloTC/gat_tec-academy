@@ -7,12 +7,7 @@ module.exports = {
     plugins: [
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-material-ui`,
-        {
-            resolve: `gatsby-plugin-offline`,
-            options: {
-                appendScript: require.resolve(`./src/sw.js`),
-            },
-        },
+        `gatsby-plugin-offline`,
         {
             resolve: `gatsby-source-contentful`,
             options: {
