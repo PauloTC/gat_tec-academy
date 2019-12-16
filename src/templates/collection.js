@@ -1,4 +1,4 @@
-import React from 'react'
+import React,  { useState, useCallback }  from 'react'
 import SecondBanner from '../components/comoon/second-banner'
 import Layout from '../components/layout'
 import { 
@@ -8,9 +8,10 @@ import {
     GridListTile,
     Grid,
     Box  } from '@material-ui/core';
-    import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
+import Gallery from "react-photo-gallery";
+import Carousel, { Modal, ModalGateway } from "react-images";
 
- 
 
 const useStyles = makeStyles({
     image: {
@@ -105,6 +106,54 @@ export const data = graphql`
 
 const Collection = (props) => {
     const classes = useStyles();
+
+    
+    const photos = [
+        {
+        src: 'https://picsum.photos/400/300',
+        width: 4,
+        height: 3
+        },
+        {
+        src: 'https://picsum.photos/100/100',
+        width: 1,
+        height: 1
+        },
+        {
+            src: 'https://picsum.photos/400/300',
+            width: 4,
+            height: 3
+        },
+        {
+            src: 'https://picsum.photos/400/300',
+            width: 4,
+            height: 3
+        },
+        {
+            src: 'https://picsum.photos/400/300',
+            width: 4,
+            height: 3
+        },
+        {
+            src: 'https://picsum.photos/600/600',
+            width: 8,
+            height: 4
+        },
+    ];
+
+    const [currentImage, setCurrentImage] = useState(0);
+    const [viewerIsOpen, setViewerIsOpen] = useState(false);
+  
+    const openLightbox = useCallback((event, { photo, index }) => {
+      setCurrentImage(index);
+      setViewerIsOpen(true);
+    }, []);
+  
+    const closeLightbox = () => {
+      setCurrentImage(0);
+      setViewerIsOpen(false);
+    };
+
     return(
         <Layout>
 
@@ -174,28 +223,22 @@ const Collection = (props) => {
                         </Grid>
                         <Grid md={8} item >
 
-                            {
-                                (() => {
-                                        if( props.data.course.gallery ) {
-                                            return (
-                                                <GridList cellHeight={160} className={classes.gridList} cols={3}>
-                                                    {props.data.course.gallery.map( (e, index) => (
-                                                    <GridListTile key={index} cols={1 || 1}>
-                                                        <img src={e.file.url} alt={e.fileName} />
-                                                    </GridListTile>
-                                                    ))}
-                                                </GridList>
-                                            )
-                                        }else {
-                                            return (
-                                                <div> no hay data </div>
-                                            )
-                                        }
-                                })()
-                            }
 
-
-                            
+                            <Gallery photos={photos} onClick={openLightbox}/>;
+                            <ModalGateway>
+                                {viewerIsOpen ? (
+                                <Modal onClose={closeLightbox}>
+                                    <Carousel
+                                    currentIndex={currentImage}
+                                    views={photos.map(x => ({
+                                        ...x,
+                                        srcset: x.srcSet,
+                                        caption: x.title
+                                    }))}
+                                    />
+                                </Modal>
+                                ) : null}
+                            </ModalGateway>
                         </Grid>
                     </Grid>
             </Box>

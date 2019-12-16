@@ -10,10 +10,10 @@ import CollectionCard from './collection-card'
 
 
 const CardSection = () => {
-
+    
     const data = useStaticQuery( graphql`
             query {
-                allContentfulCourse {
+                allContentfulCourse ( filter: { collection: { eq: true } } ) {
                     edges {
                         node {
                             image {

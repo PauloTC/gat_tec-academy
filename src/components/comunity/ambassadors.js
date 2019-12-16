@@ -103,7 +103,7 @@ export default function  Ambassadors() {
             <Box my={8} >
                 <Grid container spacing={1} >
                         <Grid md={4} item >
-                             <ScrollAnimation animateIn="slideInUp">
+                             <ScrollAnimation animateIn="fadeIn">
                                 <Typography variant="h5" >
                                     <Box fontWeight={900} >Nuestros </Box>
                                     <Box fontWeight={900} >embajadores</Box>
@@ -119,7 +119,7 @@ export default function  Ambassadors() {
                                     return (
                                         <Grid className={ classes.item }  key={item.id}  xs={12}  sm={6}   md={4} item > 
 
-                                            <ScrollAnimation animateIn="slideInUp">
+                                            <ScrollAnimation animateIn="fadeIn">
                                                 <Box position="relative"  >
                                                     <img className={ classes.image  } src={item.node.image.file.url}   mb={1} />
                                                     <img className={  ` ${classes.imagehover}` } src={item.node.imagehover.file.url}   mb={1} />
