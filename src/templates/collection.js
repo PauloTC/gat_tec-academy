@@ -224,7 +224,7 @@ const Collection = (props) => {
                         <Grid md={8} item >
 
 
-                            <Gallery photos={photos} onClick={openLightbox}/>;
+                            <Gallery photos={photos} onClick={openLightbox}/>
                             <ModalGateway>
                                 {viewerIsOpen ? (
                                 <Modal onClose={closeLightbox}>

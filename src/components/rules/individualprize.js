@@ -12,6 +12,7 @@ import  ThirdPlace from '../../assets/media/puesto3.jpg'
 import rocket from '../../assets/media/rocket.svg'
 import BackgroundMedia from  '../../assets/media/fondo.jpg'
 import { useStaticQuery, graphql } from 'gatsby';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const useStyles = makeStyles(theme =>({
     image: {
@@ -94,21 +95,26 @@ const IndividualPrize = () => {
                         </Typography>
                     </Grid>
                     <Grid md={8}  >
+
                         <Paper  className={ classes.paper }  elevation={0}  >
-                            <CardMedia className={ classes.media }  image={BackgroundMedia} >
-                                <Grid  container alignItems="center" >
-                                    <Grid item  sm={7} >
-                                        <Typography>
-                                            <Box fontSize="subtitle1.fontSize" fontWeight={900} >  { data.individual.edges[0].node.place } </Box>  
-                                            <Box fontSize="h5.fontSize" fontWeight={900} > { data.individual.edges[0].node.title }  </Box>  
-                                            <Box fontSize="subtitle2.fontSize"  > { data.individual.edges[0].node.text } </Box>  
-                                        </Typography>
+                                <CardMedia className={ classes.media }  image={BackgroundMedia} >
+
+                                    <Grid  container alignItems="center" >
+                                        <Grid item  sm={7} >
+                                            <Typography>
+                                                
+                                                    <Box fontSize="subtitle1.fontSize" fontWeight={900} >  { data.individual.edges[0].node.place } </Box>  
+                                                    <Box fontSize="h5.fontSize" fontWeight={900} > { data.individual.edges[0].node.title }  </Box>  
+                                                    <Box fontSize="subtitle2.fontSize"  > { data.individual.edges[0].node.text } </Box>  
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item sm={5} >
+                                            <img  alt="rocket" className={classes.image} src={rocket} /> 
+                                        </Grid>
                                     </Grid>
-                                    <Grid item sm={5} >
-                                        <img  alt="rocket" className={classes.image} src={rocket} /> 
-                                    </Grid>
-                                </Grid>
-                            </CardMedia>
+
+                                </CardMedia>
+
                         </Paper>
                         <Box mt={3} >
                             <Grid container spacing={4} >
@@ -134,6 +140,8 @@ const IndividualPrize = () => {
                                 
                             </Grid>
                         </Box>
+
+
                     </Grid>
                 </Grid>
             </Box>

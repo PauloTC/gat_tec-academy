@@ -12,6 +12,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import building  from '../../assets/media/building.svg'
 import { Link } from 'gatsby';
 import { useStaticQuery, graphql } from 'gatsby';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 
 const useStyles = makeStyles(theme =>({
@@ -104,16 +105,27 @@ const Banner = (props) => {
                     <Card  className={classes.container}  >
                         <CardMedia  className={classes.banner} image={ data.allContentfulBannerCalado.edges[0].node.imagebg.file.url }  />
                         {/* <img  src={props.data.imagebg.file.url} /> */}
-                        <CardContent className={classes.text}  >
-                            <Container className={classes.containertext} maxWidth="lg"  >
-                                <Typography className={classes.title} variant="h4">
-                                    <Box  fontWeight={700} mb={4}> { data.allContentfulBannerCalado.edges[0].node.principal } </Box>
-                                </Typography>
-                                <Button variant="contained" className={classes.button}> 
-                                    <Link  to="community" > { data.allContentfulBannerCalado.edges[0].node.button } </Link>     </Button>
-                            </Container>
-                        </CardContent>
-                        <img    className={`${classes.building}` }   src={ data.allContentfulBannerCalado.edges[0].node.imageCalada.file.url }   />
+
+                        
+                            <CardContent className={classes.text}  >
+                                <Container className={classes.containertext} maxWidth="lg"  >
+                                    <ScrollAnimation   animateIn="slideInLeft" >
+                                        <Typography className={classes.title} variant="h4">
+                                            <Box  fontWeight={700} mb={4}> { data.allContentfulBannerCalado.edges[0].node.principal } </Box>
+                                        </Typography>
+                                        <Button variant="contained" className={classes.button}> 
+                                            <Link  to="community" > { data.allContentfulBannerCalado.edges[0].node.button } </Link>     </Button>
+                                    </ScrollAnimation>
+                                </Container>
+                            </CardContent>
+               
+                            <ScrollAnimation  animateIn="fade" >
+                                <img  className={`${classes.building}` }   src={ data.allContentfulBannerCalado.edges[0].node.imageCalada.file.url }   />
+                            </ScrollAnimation>
+
+                 
+
+
                     </Card>
                 </Box>
             </Fragment>
