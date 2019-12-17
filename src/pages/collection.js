@@ -39,9 +39,7 @@ const Collection = () => {
             <SEO title="Galería" />
             <SecondBanner  data= { data.allContentfulBanner.edges[0].node } />
             <Container maxWidth="lg" >
-                <Box mt={7} >
-                    {/* <Subheader title="Lo más reciente"  subtitle="Descubre todos los detalles de los últimos eventos realizados por TecAcademy. ¡Sí¡ ¡Encontrarás la presentación del expositor!" button='Ver todo' /> */}
-                    {/* <PrincipalCard /> */}
+                <Box mt={12} >
                     <CardSection />
                 </Box>
             </Container>
