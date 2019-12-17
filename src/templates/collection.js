@@ -1,11 +1,9 @@
 import React,  { useState, useCallback }  from 'react'
-import SecondBanner from '../components/comoon/second-banner'
+import SecondBanner from '../components/comunity/bannertop'
 import Layout from '../components/layout'
 import { 
     Container,
     Typography,
-    GridList,
-    GridListTile,
     Grid,
     Box  } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
@@ -59,8 +57,6 @@ export const data = graphql`
                 } 
             }
             fecha1
-            fecha2
-            fecha3
             image {
                 file {
                     url
@@ -157,8 +153,7 @@ const Collection = (props) => {
     return(
         <Layout>
 
-            <SecondBanner 
-            data= { props.data.course } />
+            <SecondBanner  data= { props.data.course } />
 
             <Container maxWidth="lg" >
                 <Box  my={8}>

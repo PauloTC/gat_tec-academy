@@ -2,7 +2,7 @@ import React  from 'react'
 import Layout from '../components/layout'
 import SEO from "../components/seo"
 
-import SecondBanner from '../components/comoon/second-banner'
+import SecondBanner from '../components/comunity/bannertop'
 
 import { 
         Container, 
@@ -37,8 +37,7 @@ const Collection = () => {
     return (
         <Layout>
             <SEO title="Galería" />
-            <SecondBanner  
-                data= { data.allContentfulBanner.edges[0].node } />
+            <SecondBanner  data= { data.allContentfulBanner.edges[0].node } />
             <Container maxWidth="lg" >
                 <Box mt={7} >
                     {/* <Subheader title="Lo más reciente"  subtitle="Descubre todos los detalles de los últimos eventos realizados por TecAcademy. ¡Sí¡ ¡Encontrarás la presentación del expositor!" button='Ver todo' /> */}

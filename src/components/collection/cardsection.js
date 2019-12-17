@@ -21,7 +21,6 @@ const CardSection = () => {
                                     url
                                 }
                             }
-                            fecha1
                             title
                             exhibitor
                             slug

@@ -39,9 +39,10 @@ export default function TemporaryDrawer() {
 
     const Links = [
         {  name: 'Actividades', to: 'activities' , icon: 'icon-support' },
-        {  name: 'Puntajes', to: 'points', icon: 'icon-lectern'  },
-        {  name: 'Nosotros', to: 'community' , icon: 'icon-star'  },
-        {  name: 'Reglas', to: 'rules' , icon: 'icon-education'  }
+        {  name: 'Nosotros', to: 'community' , icon: 'icon-group'  },
+        {  name: 'Puntajes', to: 'points', icon: 'icon-star'  },
+		{  name: 'Reglas', to: 'rules' , icon: 'icon-education'  },
+        {  name: 'Colección', to: 'collection' , icon: 'icon-lectern'  }
     ]
 
 	const [ state, setState ] = React.useState({

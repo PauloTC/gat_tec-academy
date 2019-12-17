@@ -1,7 +1,5 @@
-import React, { Fragment } from "react"
+import React from "react"
 import { makeStyles } from '@material-ui/core/styles';
-import bannerimage from "../../assets/media/banner.jpg"
-
 import { 
     Box, 
     Container,
@@ -10,7 +8,6 @@ import {
     CardMedia,
     Grid,
     Typography } from '@material-ui/core';
-import { useStaticQuery, graphql } from 'gatsby';
 
 const useStyles = makeStyles(theme =>({
     banner: {
@@ -43,36 +40,19 @@ const useStyles = makeStyles(theme =>({
 const SecondBanner = (props) => {
     const classes = useStyles();
 
-    const data = useStaticQuery( graphql`
-        query {
-            allContentfulBanner ( filter: { view : { eq : "Nosotros" } } ) {
-                edges {
-                    node {
-                        principalText
-                        secondaryText
-                        imagebg {
-                            file {
-                                url
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    `)
 
 
     return (
         <Card  className={ classes.bannercontainer } >
     
-                <CardMedia  className={classes.banner} image={ data.allContentfulBanner.edges[0].node.imagebg.file.url }  />
+                <CardMedia  className={classes.banner} image={ props.data.imagebg.file.url }  />
                 <CardContent className={classes.textbanner}  >
                     <Container maxWidth="md"  >
                         <Grid height={400} container justify="center" alignItems="center" >
                             <Typography align='center' >
                             
-                                <Box className={classes.title} fontSize="h4.fontSize" fontWeight="fontWeightLight">  { data.allContentfulBanner.edges[0].node.principalText } </Box>
-                                <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > { data.allContentfulBanner.edges[0].node.secondaryText } </Box>
+                                <Box className={classes.title} fontSize="h4.fontSize" fontWeight="fontWeightLight">  { props.data.principalText } </Box>
+                                <Box mt={1} fontSize="h6.fontSize"  fontWeight="fontWeightBold" > { props.data.secondaryText } </Box>
                             </Typography>
                         </Grid>
                     </Container>

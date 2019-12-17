@@ -7,12 +7,9 @@ import {
     Paper,
     Box} from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import SecondPlace from '../../assets/media/puesto2.jpg'
-import  ThirdPlace from '../../assets/media/puesto3.jpg'
 import rocket from '../../assets/media/rocket.svg'
 import BackgroundMedia from  '../../assets/media/fondo.jpg'
 import { useStaticQuery, graphql } from 'gatsby';
-import ScrollAnimation from 'react-animate-on-scroll';
 
 const useStyles = makeStyles(theme =>({
     image: {

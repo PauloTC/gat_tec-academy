@@ -1,11 +1,9 @@
 import React, { Fragment} from "react"
 import { useStaticQuery, graphql } from 'gatsby';
-
 import Layout from "../components/layout"
 import GroupCard from '../components/index/group-card'
 import SubHeader from '../components/comoon/subheader'
 import ActivityItem from '../components/index/activity-item'
-// import ScrollAnimation from 'react-scroll-animation';
 import SEO from "../components/seo"
 import { 
     Box, 

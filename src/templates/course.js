@@ -46,8 +46,6 @@ export const query = graphql`
             }
             inscriptionLink
             fecha1
-            fecha2
-            fecha3
             image {
                 file {
                     url
@@ -107,12 +105,6 @@ const Course = (props) => {
                                     <Box   fontSize="subtitle1" fontWeight={700}  >Detalles</Box>  
                                 </Typography>
                                 <Typography  variant="body2" >  { documentToReactComponents(props.data.course.description.json) }  </Typography>
-                                <Typography  variant="body2" > 
-                                        <Box my={3}  >{ props.data.course.fecha2 }</Box> 
-                                 </Typography>
-                                <Typography  variant="body2" > 
-                                        <Box my={3}  >{ props.data.course.fecha3 }</Box> 
-                                 </Typography>
                             </Paper>
                         </Box>
                     </Grid>

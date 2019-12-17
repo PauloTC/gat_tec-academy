@@ -13,11 +13,31 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 const Comunity = () => {
 
+    
+    const data = useStaticQuery( graphql`
+        query {
+            allContentfulBanner ( filter: { view : { eq : "Nosotros" } } ) {
+                edges {
+                    node {
+                        principalText
+                        secondaryText
+                        imagebg {
+                            file {
+                                url
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `)
+    
+
     return (
         <Fragment>
             <Layout>
                 <SEO title="Comunidad" /> 
-                <SecondBanner />
+                <SecondBanner data={ data.allContentfulBanner.edges[0].node } />
                 <FormatsSection/> 
                 <PillarsSection />
                 <Ambassadors />

@@ -154,8 +154,8 @@ function Header(props) {
                                                             </Link>
 
                                                         )
-                                                    } else if( item === 'Colección' ){
-                                                        return (
+                                                  } else if( item === 'Colección' ){
+                                                          return (
                                                                 <Link
                                                                     key={index}
                                                                     activeClassName={ classes.activelink }
@@ -167,18 +167,6 @@ function Header(props) {
 
                                                         )
                                                     }
-                                                    // return (
-                                                    //     <li> { item } </li>
-                                                        // <Link
-                                                        //     key={index}
-                                                        //     activeClassName={ classes.activelink }
-                                                        //     to={link.to}
-                                                        //     className={`nav-link ${styles.header__link}  ${classes.link} `}
-                                                        // >
-                                                        //     <i className={`${styles.header__icon} ${link.icon}`} />
-                                                        //     {link.name}
-                                                        // </Link>
-                                                    // );
                                                 })}
                                             </Typography>
                                         </Box>

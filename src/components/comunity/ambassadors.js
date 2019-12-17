@@ -121,8 +121,8 @@ export default function  Ambassadors() {
 
                                             <ScrollAnimation animateIn="fadeIn">
                                                 <Box position="relative"  >
-                                                    <img className={ classes.image  } src={item.node.image.file.url}   mb={1} />
-                                                    <img className={  ` ${classes.imagehover}` } src={item.node.imagehover.file.url}   mb={1} />
+                                                    <img className={ classes.image  } alt={item.node.image.file.url} src={item.node.image.file.url}   mb={1} />
+                                                    <img className={  ` ${classes.imagehover}` } alt={item.node.image.file.url} src={item.node.imagehover.file.url}   mb={1} />
                                                 </Box>
                                                 {/* <Box mb={1} >
                                                     <img className={classes.image} src={item.node.image.file.url} />

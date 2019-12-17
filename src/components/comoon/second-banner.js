@@ -1,6 +1,5 @@
-import React, { Fragment } from "react"
+import React from "react"
 import { makeStyles } from '@material-ui/core/styles';
-import bannerimage from "../../assets/media/banner.jpg"
 
 import { 
     Box, 

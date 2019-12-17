@@ -1,5 +1,4 @@
 import React, { Fragment } from "react"
-import bannergoogle from "../../assets/media/banner_2.png"
 import { 
     Box, 
     Button,
@@ -9,7 +8,6 @@ import {
     CardMedia,
     Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import building  from '../../assets/media/building.svg'
 import { Link } from 'gatsby';
 import { useStaticQuery, graphql } from 'gatsby';
 import ScrollAnimation from 'react-animate-on-scroll';
