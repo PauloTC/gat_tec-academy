@@ -28,7 +28,7 @@ const useStyles =  makeStyles(theme => ({
         padding: 15
     },
     text: {
-        width: "70%",
+        width: "85%",
     },
     btncontainer: {
         width: "30%",
@@ -50,22 +50,20 @@ const ActivityItem = (props) => {
     const classes = useStyles();
     return (
         <Fragment>
-                <div  className={ classes.container }  >
-                    <img alt={props.data.id}  key={ props.data.fecha1 } className={ classes.image }   width={430}  src={ props.data.image.file.url } />
-                    {/* <CardMedia className={classes.card}    image="" /> */}
-                    <div  className={ classes.flexible  } >
-                        <Typography className={ classes.text  } > 
-                            <Box mb={1}  fontSize="subtitle2.fontSize">{ props.data.fecha1 }</Box>
-                            {/* <Box lineHeight={1.2}    fontSize="h6.fontSize" fontWeight="fontWeightBold" > { props.data.type } :</Box> */}
-                            <Box lineHeight={1.2} mb={1}   fontSize="h6.fontSize" fontWeight="fontWeightBold" > { props.data.title } </Box>
-                            <Box  fontSize="body2.fontSize" > { props.data.exhibitor }</Box>
-                        </Typography>
-                        <Box className={ classes.btncontainer  }  >
-                            <Button className={classes.button} size="medium" variant="outlined" color="secondary"> 
-                                <Link to={`/activities/${ props.data.slug}`} >Ver más</Link>   </Button>
-                        </Box>
-                    </div>
+            <div  className={ classes.container }  >
+                <img alt={props.data.id}  key={ props.data.fecha1 } className={ classes.image }   width={430}  src={ props.data.image.file.url } />
+                <div  className={ classes.flexible  } >
+                    <Typography className={ classes.text  } > 
+                        <Box mb={1}  fontSize="subtitle2.fontSize">{ props.data.fecha1 }</Box>
+                        <Box lineHeight={1.2} mb={1}   fontSize="h6.fontSize" fontWeight="fontWeightBold" > { props.data.title } </Box>
+                        <Box  fontSize="body2.fontSize" > { props.data.exhibitor }</Box>
+                    </Typography>
+                    <Box className={ classes.btncontainer  }  >
+                        <Button className={classes.button} size="medium" variant="outlined" color="secondary"> 
+                            <Link to={`/activities/${ props.data.slug}`} >Ver más</Link>   </Button>
+                    </Box>
                 </div>
+            </div>
         </Fragment>
     )
 }

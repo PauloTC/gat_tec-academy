@@ -306,7 +306,6 @@ export default function IndexPage() {
 														</Container>
 													</Box>
 													<CardMedia className={ classes.image } image={  edge.node.media[0].file.url }  />
-													{/* <img /> */}
 												</Box>
 											)
 										} )
@@ -351,9 +350,9 @@ export default function IndexPage() {
 								className={classes.activities} >
 								{ 	data.carousel.edges.map((item, index) => {
 										return (
-												<div  className={classes.activity}  key= { index }  >
-													<ActivityItem   data={item.node} />
-												</div>
+											<div  className={classes.activity}  key= { index }  >
+												<ActivityItem   data={item.node} />
+											</div>
 									)})
 								}
 							</div>
