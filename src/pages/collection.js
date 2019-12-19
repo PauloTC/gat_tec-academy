@@ -38,8 +38,8 @@ const Collection = () => {
         <Layout>
             <SEO title="Galería" />
             <SecondBanner  data= { data.allContentfulBanner.edges[0].node } />
-            <Container maxWidth="lg" >
-                <Box mt={12} >
+            <Container maxWidth="lg" > 
+                <Box my={7} >
                     <CardSection />
                 </Box>
             </Container>

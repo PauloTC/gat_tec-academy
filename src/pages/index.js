@@ -141,7 +141,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	text: {
 		color: 'white',
-		maxWidth: 500,
+		maxWidth: 560,
 		[theme.breakpoints.down('md')]: {
 			fontSize: "1.8rem"
 		},
@@ -197,19 +197,6 @@ export default function IndexPage() {
 	const classes = useStyles();
 	const data = useStaticQuery(graphql`
 		query {
-			slider : allContentfulCourse(filter: { showHomeBanner: { eq: true } }) {
-				edges {
-					node {
-						title
-						image {
-							file {
-								url
-							}
-						}
-						exhibitor
-					}
-				}
-			},
 			allContentfulBannerVideo {
 				edges {
 					node {
@@ -281,15 +268,13 @@ export default function IndexPage() {
 				<SEO 
 					title="Inicio"
 					description="Inicio" />
-				<Box className={ classes.box }  position="relative" mb={6}>
-					
+				<Box className={ classes.box }  position="relative" mb={6}>		
 					{ (() => {
 
 						if( data.allContentfulBannerVideo.edges[0].node.status === "Deshabilitado" ){
 							return (
 								<Carousel 
 									autoplay
-									// wrapArounds
 									cellAlign="center"
 									transitionMode="scroll"
 									renderCenterLeftControls={({ previousSlide }) => (
@@ -311,11 +296,13 @@ export default function IndexPage() {
 													<Box  className={classes.textcontainer}  position="absolute"  >
 														<Container className={ classes.container }  maxWidth="lg">
 															<Typography>
-																<Box className={ classes.text }  mb={2} fontSize="h4.fontSize" fontWeight={800} > { edge.node.title } </Box>
+																<Box className={ classes.text }  mb={2} fontSize="h3.fontSize" fontWeight={800} > { edge.node.title } </Box>
 															</Typography>
-															<Button variant="contained" color="secondary" className={classes.button}>
-																<Link to="/rules" > { edge.node.buttonText } </Link>
-															</Button>
+															<Box mt={3} >
+																<Button size="large" variant="contained" color="secondary" className={classes.button}>
+																	<Link to="/rules" > { edge.node.buttonText } </Link>
+																</Button>
+															</Box>
 														</Container>
 													</Box>
 													<CardMedia className={ classes.image } image={  edge.node.media[0].file.url }  />

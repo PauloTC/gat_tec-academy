@@ -13,50 +13,72 @@ const CardSection = () => {
     
     const data = useStaticQuery( graphql`
             query {
-                allContentfulCourse ( filter: { collection: { eq: true } } ) {
+                meetup: allContentfulCourse ( filter:{ collection: {eq :true }, eventType: {eq : "Meetup" } } ) {
                     edges {
                         node {
-                            image {
-                                file {
-                                    url
-                                }
-                            }
-                            title
-                            exhibitor
-                            slug
-                            exhibitorImage {
-                                file {
-                                    url
-                                }
-                            }
-                            exhibitorJob
-                            principal
-                            description {
-                                content {
-                                    content {
-                                        value
-                                    }
-                                }
-                            }
+                            ...data
+                        }
+                    }
+                },
+                workshop: allContentfulCourse ( filter:{ collection: {eq :true }, eventType: {eq : "Workshop" } } ) {
+                    edges {
+                        node {
+                            ...data
                         }
                     }
                 }
-            }
+            },
+            fragment data on ContentfulCourse {
+                image {
+                    file {
+                        url
+                    }
+                }
+                title
+                exhibitor
+                slug
+                exhibitorImage {
+                    file {
+                            url
+                    }
+                }
+                exhibitorJob
+                principal
+                description{
+                    content {
+                        content {
+                            value
+                        }
+                    }
+                }
+              }
         `)
 
     return (
         <Box>
-            <Subheader title="Workshops"  subtitle="" button='Ver workshops' />
-            <Box mb={9} >
+            <Subheader title="Workshops"  subtitle="" to="activities" button='Ver workshops' />
+            <Box mb={4} >
                 <Grid container spacing={3} >
                     {
-                        data.allContentfulCourse.edges.map( (edge, index) => (
+                        data.workshop.edges.map( (edge, index) => (
                             <Grid key={index}  item  sm={6} >
                                 <CollectionCard  data={ edge.node }  /> 
                             </Grid>
                         ))
                     }
                     
+                </Grid>
+            </Box>
+            <Subheader title="Meetups"  subtitle="" to="activities" button='Ver meetups' />
+            <Box mb={4} >
+                <Grid container spacing={3} >
+                    {
+                        data.meetup.edges.map( (edge, index) => (
+                            <Grid key={index}  item  sm={6} >
+                                <CollectionCard  data={ edge.node }  /> 
+                            </Grid>
+                        ))
+                    }
                 </Grid>
             </Box>
         </Box>

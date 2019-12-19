@@ -66,6 +66,12 @@ export const data = graphql`
                 file {
                     fileName
                     url
+                    details {
+                        image {
+                            width
+                            height
+                        }
+                    }
                 }
             }
             description {
@@ -83,18 +89,7 @@ export const data = graphql`
                     url
                 } 
             }
-        },
-        carousel:allContentfulCourse(filter: { showHomeCarousel:{ eq: true }  }){
-            edges {
-                node {
-                    id
-                    title
-                    slug
-                    exhibitor
-                    fecha1
-                }
-            }
-        },
+        }
     }
 `
 
@@ -103,39 +98,18 @@ export const data = graphql`
 const Collection = (props) => {
     const classes = useStyles();
 
-    
-    const photos = [
-        {
-        src: 'https://picsum.photos/400/300',
-        width: 4,
-        height: 3
-        },
-        {
-        src: 'https://picsum.photos/100/100',
-        width: 1,
-        height: 1
-        },
-        {
-            src: 'https://picsum.photos/400/300',
-            width: 4,
-            height: 3
-        },
-        {
-            src: 'https://picsum.photos/400/300',
-            width: 4,
-            height: 3
-        },
-        {
-            src: 'https://picsum.photos/400/300',
-            width: 4,
-            height: 3
-        },
-        {
-            src: 'https://picsum.photos/600/600',
-            width: 8,
-            height: 4
-        },
-    ];
+    const photos = props.data.course.gallery.map((e) => {
+        return (
+            {
+                src : e.file.url,
+                width : e.file.details.image.width,
+                height  :  e.file.details.image.height
+
+            }
+        )
+    })
+
+      
 
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
@@ -217,18 +191,16 @@ const Collection = (props) => {
                             </Typography>
                         </Grid>
                         <Grid md={8} item >
-
-
-                            <Gallery photos={photos} onClick={openLightbox}/>
+                            <Gallery photos={ photos } onClick={openLightbox}/>
                             <ModalGateway>
                                 {viewerIsOpen ? (
                                 <Modal onClose={closeLightbox}>
                                     <Carousel
-                                    currentIndex={currentImage}
-                                    views={photos.map(x => ({
-                                        ...x,
-                                        srcset: x.srcSet,
-                                        caption: x.title
+                                        currentIndex={currentImage}
+                                        views={photos.map(x => ({
+                                            ...x,
+                                            srcset: x.srcSet,
+                                            caption: x.title
                                     }))}
                                     />
                                 </Modal>
