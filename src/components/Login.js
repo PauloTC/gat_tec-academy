@@ -6,7 +6,7 @@ const config = {
     baseUrl: 'https://dev-856828.okta.com',
     clientId: '0oa2d3ldiX5DJbubD4x6',
     logo: '//logo.clearbit.com/gatsbyjs.org',
-    redirectUri: typeof window !== 'undefined' && window.location.origin + '/account',
+    redirectUri: typeof window !== 'undefined' && window.location.origin + '/activities',
     el: '#signIn',
     authParams: {
         pkce: true,
