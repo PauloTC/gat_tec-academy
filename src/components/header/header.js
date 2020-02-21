@@ -16,6 +16,8 @@ import logo from '../../images/logo-tecacademy.png';
 import "../../assets/icons/style.css"
 import { useStaticQuery, graphql } from 'gatsby';
 
+import LoginData from '../../components/account-header'
+
 const useStyles = makeStyles(theme => ({
 	menu: {
         display: 'flex',
@@ -168,6 +170,7 @@ function Header(props) {
                                                         )
                                                     }
                                                 })}
+                                                <LoginData />
                                             </Typography>
                                         </Box>
                                         <TemporaryDrawer  className={ classes.menuresponsive } ></TemporaryDrawer>

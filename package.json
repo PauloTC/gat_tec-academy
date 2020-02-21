@@ -10,6 +10,7 @@
         "@material-ui/icons": "4.5.1",
         "@material-ui/lab": "4.0.0-alpha.35",
         "@material-ui/styles": "4.7.1",
+        "@okta/okta-signin-widget": "^3.7.2",
         "animate.css": "^3.7.2",
         "babel-plugin-styled-components": "1.10.6",
         "gatsby": "2.10.4",

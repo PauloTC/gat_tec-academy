@@ -155,10 +155,7 @@ const Course = (props) => {
                             
                     })()}
 
-
-
-                       
-                    </Grid>
+                </Grid>
 
 
                     <Box width={1}  my={4} >
