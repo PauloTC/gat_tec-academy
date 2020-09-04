@@ -31,7 +31,7 @@
         "gsap": "^3.0.2",
         "install": "0.13.0",
         "material-table": "1.54.1",
-        "node-sass": "4.12.0",
+        "node-sass": "4.13.1",
         "npm": "6.13.3",
         "nuka-carousel": "4.5.13",
         "prop-types": "15.7.2",
